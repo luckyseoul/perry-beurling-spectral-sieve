@@ -74,6 +74,43 @@ def probe_critical_line_mode(
     return np.sin(t * T * u + phase)
 
 
+def probe_off_critical_mode(
+    u: np.ndarray,
+    T: float = 20.0,
+    t: float = 14.134725,
+    sigma: float = 0.75,
+    phase: float = 0.0,
+) -> np.ndarray:
+    """
+    Model contribution of a zero at σ + it with σ ≠ 1/2:
+
+      x^{σ - 1/2} sin(t log x)  on  x = exp(u T)
+
+    becomes  exp(α u) sin(ω u) with α = T(σ - 1/2), ω = t T.
+
+    This is the standard off-line envelope in the log-window coordinate.
+    """
+    u = np.asarray(u, dtype=np.float64)
+    alpha = T * (sigma - 0.5)
+    omega = t * T
+    return np.exp(alpha * u) * np.sin(omega * u + phase)
+
+
+def probe_persistent_defect(
+    u: np.ndarray,
+    eps: float = 0.5,
+    j: int = 0,
+    waves: int = 80,
+) -> np.ndarray:
+    """
+    Lemma M2 family: fixed low-degree mass ε independent of frequency.
+    Uses lemmas.synthetic_orthogonal_defect.
+    """
+    from .lemmas import synthetic_orthogonal_defect
+
+    return synthetic_orthogonal_defect(u, eps=eps, j=j, waves=waves)
+
+
 def probe_defective(
     u: np.ndarray,
     waves: int = 40,

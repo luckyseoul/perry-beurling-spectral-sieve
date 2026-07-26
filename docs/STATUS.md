@@ -1,102 +1,78 @@
-# Status: Perry–Beurling Spectral Sieve reconstruction
+# Status: Perry–Beurling Spectral Sieve
 
 **Date:** 2026-07-26  
-**Repo:** `luckyseoul/perry-beurling-spectral-sieve` (private)  
-**Author of original research notes:** Nicholas Perry  
+**Repo:** `luckyseoul/perry-beurling-spectral-sieve` (private)
 
 ## Explicit non-claim
 
-**This repository does not prove or disprove the Riemann Hypothesis.**  
-The framework is a **conditional / diagnostic classifier** for RH-like spectral structure on density perturbations of prime (or Beurling generalized prime) systems.
+**This repository does not contain an unconditional proof of the Riemann Hypothesis.**
+
+What *is* claimed: precise conditional Theorems A/B, **proved model lemmas M1–M4**
+about the diagnostic, and multi-\(T\) numerics supporting the model forms A₀/B₀.
+
+Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md)
 
 ---
 
-## Theorems A / B (conditional, as archived)
+## Proved in-repo (model diagnostic)
 
-### Theorem A (conditional on RH) — diagnostic statement
+| Lemma | Statement | Code / test |
+|-------|-----------|-------------|
+| **M1** | \(R_d(\varphi_m)=1_{m\le d}\) | `lemmas.continuous_R_d_pure_mode` · `test_M1_*` |
+| **M2** | Orthogonal defect \(R_d=\varepsilon^2\) | `continuous_R_d_orthogonal_defect` · `test_M2_*` |
+| **M3** | Critical-line mode \(R_d(\sin(tTu))=O(T^{-2})\) | `test_M3_*` |
+| **M4** | Fixed \(\varepsilon>0\) ⇒ \(R_d\not\to0\) | `test_M4_*` |
 
-*Assuming the Riemann Hypothesis*, the degree-\(d\) projection strength of the
-normalized density residual \(q_T\) on a logarithmic window of length \(T\)
-decays to 0 as \(T\to\infty\):
+## Theorems A/B (status split)
 
-\[
-R_d(q_T)=\frac{\|P_d q_T\|_{L^2}^2}{\|q_T\|_{L^2}^2}\to 0.
-\]
-
-The archive notes the rate heuristic \(R_d(q_T)=O(T^{-2(d+1)})\).
-
-**Status:** Conditional on RH; not verified as a full theorem with published
-proof in this repo. Used as a design principle for the scaled statistic
-\(S_d=T^{2(d+1)}R_d\).
-
-### Theorem B (obstruction / converse direction)
-
-*If* \(R_d(q_T)\) decays sufficiently rapidly as \(T\to\infty\), then there are
-no zeros off the critical line (conditional equivalence / obstruction sketch).
-
-**Status:** The converse is essentially as hard as RH itself (README limitation).
-**Not** an unconditional proof. Recorded here only as the intended logical
-role of the diagnostic.
+| Result | Status |
+|--------|--------|
+| **A₀** (critical-line pure mode \(R_d\to0\)) | **Proved** (M3) |
+| **A** (arithmetic residual under RH) | **Conditional / open** |
+| **B₀** (persistent defect blocks \(R_d\to0\)) | **Proved** (M2+M4) |
+| **B** (fast decay of prime residual ⇒ RH) | **Open** (as hard as RH) |
 
 ---
 
-## What this session shipped (needle move)
+## Multi-\(T\) campaign (shipped path)
 
-| Item | Location |
-|------|----------|
-| Orthonormal shifted Legendre basis on \([0,1]\) | `src/pbss/basis.py` |
-| Projection API: \(c_k\), \(E_d\), \(R_d\), \(S_d=P\) | `src/pbss/projection.py` |
-| Synthetic + prime residual probes | `src/pbss/probes.py` |
-| Unit tests driving real projection path | `tests/test_projection.py` |
-| End-to-end experiment (RH-like vs defective) | `experiments/run_diagnostic.py` |
-| Numerical results | `results/diagnostic_run.json` |
+Command:
+```bash
+PYTHONPATH=src python3 experiments/run_multi_T.py --workers 86 --scratch …
+```
 
-### Formulas used (reconstruction)
+Representative numbers (`results/multi_T_scan.json`, d=4, n=8192, ε=0.5):
 
-- Basis: \(\varphi_k(u)=\sqrt{2k+1}\,L_k(2u-1)\) on \(u\in[0,1]\).
-- Coefficients: \(c_k=\langle q,\varphi_k\rangle\) via trapezoid quadrature.
-- Energy: \(E_d=\sum_{k=0}^d|c_k|^2\).
-- Energy ratio: \(R_d=E_d/\|q\|^2\in[0,1]\).
-- Working projection strength: \(P:=S_d=T^{2(d+1)}R_d\).
+| \(T\) | \(R_4\) critical-line | \(R_4\) persistent defect | gap |
+|------:|----------------------:|--------------------------:|----:|
+| 3 | 2.28e-02 | 0.250 | 0.227 |
+| 20 | 1.00e-03 | 0.250 | 0.249 |
+| 80 | 6.13e-05 | 0.250 | 0.250 |
 
-### Legacy numbers
+- Critical-line: **decays** \(\sim T^{-2}\) (0.023 → 6e-5).  
+- Persistent defect: **flat** at \(\varepsilon^2=0.25\) (Lemma M2).  
+- Gap at large \(T\): **≥ 0.249**.
 
-Archive README quotes **P(q)≈3.92** for zeta and threshold **≈29.5**. Those
-came from lost high-precision scripts with incompletely documented normalization.
-**This reconstruction does not hard-code or force agreement with 3.92.**  
-It reports honest \(R_d\) and \(S_d\) from the shipped code. Matching or
-refuting 3.92 is future work once the original normalization is recovered.
-
-### Representative run (d=4, n=4096; see `results/diagnostic_run.json`)
-
-| Probe | \(R_4\) (energy ratio) | Role |
-|-------|------------------------:|------|
-| High-frequency sinusoid | \(\approx 8.8\times 10^{-4}\) | RH-like synthetic |
-| Critical-line mode \(\sin(tTu)\) | \(\approx 1.0\times 10^{-3}\) | RH-consistent form |
-| Demeaned prime residual (\(x\le 10^5\)) | \(\approx 0.22\) | real primes; residual still has mid-band mass |
-| Defective (HF + degree-1 weight 2.5) | \(\approx 0.93\) | non-RH control |
-
-Classifier: defective \(R_d\) exceeds both RH-like synthetics by \(\approx 0.92\).
+Off-critical envelope modes are implemented (`probe_off_critical_mode`) for further attack; they are **not** yet a complete reduction of arithmetic off-line zeros.
 
 ---
 
-## Limitations (from README, still in force)
+## Session progress vs open
 
-1. Classifier / diagnostic — not a decisive RH proof.  
-2. Finite windows cannot exclude zeros at extremely high height.  
-3. Not a practical local primality sieve.  
-4. Cost grows with degree \(d\) and window size.  
-5. Converse (low energy ⇒ RH) is as hard as RH.
+**Moved this session (A/B push):**
 
----
+1. Precise A/B definitions and status split.  
+2. Proved M1–M4 with written proofs + unit tests on shipped projection.  
+3. Multi-core multi-\(T\) separation: A₀ decay vs B₀ flat defect.  
+4. Off-critical probe for next-stage B work.
 
-## Remaining open (next needles)
+**Still open:**
 
-1. Recover or re-derive the exact historical normalization that produced P≈3.92.  
-2. Diamond-system ground-truth battery (Beurling systems with known RH / non-RH).  
-3. PSWF basis swap (mentioned in archive notes).  
-4. Large-\(T\) prime residual scans and Monte Carlo defect campaigns (MC=4000 lore).  
-5. Rigorous statement + proof of Theorems A/B under stated hypotheses (analytic number theory, not code).
+1. Full Theorem A for prime residual under RH.  
+2. Full Theorem B (obstruction ⇒ RH).  
+3. Sharp rate \(O(T^{-2(d+1)})\).  
+4. Large-\(T\) arithmetic residual without staircase artifact.  
+5. Legacy P≈3.92 normalization.
 
 ---
 
@@ -105,5 +81,6 @@ Classifier: defective \(R_d\) exceeds both RH-like synthetics by \(\approx 0.92\
 ```bash
 cd perry-beurling-spectral-sieve
 PYTHONPATH=src python3 -m pytest tests/ -v
-PYTHONPATH=src python3 experiments/run_diagnostic.py --scratch /path/to/scratch
+PYTHONPATH=src python3 experiments/run_multi_T.py --workers 86
+PYTHONPATH=src python3 experiments/run_diagnostic.py
 ```

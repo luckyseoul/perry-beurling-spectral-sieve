@@ -5,7 +5,8 @@ Diagnostic framework: project a density perturbation q onto low-degree
 orthonormal polynomials and measure projection strength / L² energy ratio.
 
 This is a classifier / conditional diagnostic for RH-like spectral structure
-on Beurling generalized prime systems — **not** a proof of RH.
+on Beurling generalized prime systems — **not** an unconditional proof of RH.
+See docs/THEOREMS_AB.md for precise A/B statements and proved lemmas.
 """
 
 from .basis import shifted_legendre_values, orthonormal_legendre_design
@@ -22,9 +23,18 @@ from .probes import (
     probe_low_degree,
     probe_high_frequency,
     probe_critical_line_mode,
+    probe_off_critical_mode,
     probe_defective,
+    probe_persistent_defect,
     probe_prime_residual,
     normalize_l2,
+)
+from .lemmas import (
+    continuous_R_d_pure_mode,
+    continuous_R_d_orthogonal_defect,
+    synthetic_orthogonal_defect,
+    predicted_R_d_critical_scaling,
+    critical_line_omega,
 )
 
 __all__ = [
@@ -40,9 +50,16 @@ __all__ = [
     "probe_low_degree",
     "probe_high_frequency",
     "probe_critical_line_mode",
+    "probe_off_critical_mode",
     "probe_defective",
+    "probe_persistent_defect",
     "probe_prime_residual",
     "normalize_l2",
+    "continuous_R_d_pure_mode",
+    "continuous_R_d_orthogonal_defect",
+    "synthetic_orthogonal_defect",
+    "predicted_R_d_critical_scaling",
+    "critical_line_omega",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

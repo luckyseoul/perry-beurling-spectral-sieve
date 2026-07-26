@@ -49,12 +49,18 @@ used lost high-precision scripts. This reconstruction **does not hard-code
 those values**; it reports \(R_d\) and \(S_d\) from the shipped path. See
 `docs/STATUS.md`.
 
-### Theorems (conditional)
+### Theorems A/B (precise status)
 
-- **Theorem A** *(assuming RH)*: \(R_d(q_T)\to 0\) as \(T\to\infty\).  
-- **Theorem B** *(obstruction)*: sufficiently rapid decay of \(R_d(q_T)\) precludes off-line zeros — conditional / as hard as RH in the converse direction.
+| Result | Status |
+|--------|--------|
+| **A₀** critical-line mode \(R_d\to0\) at \(O(T^{-2})\) | **Proved** (Lemma M3) |
+| **A** arithmetic residual under RH | conditional / open |
+| **B₀** persistent defect \(\Rightarrow R_d=\varepsilon^2\not\to0\) | **Proved** (Lemmas M2–M4) |
+| **B** fast residual decay \(\Rightarrow\) RH | open |
 
-Full caveats: `docs/STATUS.md`.
+Details: [`docs/THEOREMS_AB.md`](docs/THEOREMS_AB.md) · Proofs: [`docs/PROOFS_LEMMAS.md`](docs/PROOFS_LEMMAS.md) · Status: [`docs/STATUS.md`](docs/STATUS.md).
+
+**Not an unconditional RH proof.**
 
 ## Repository layout
 
