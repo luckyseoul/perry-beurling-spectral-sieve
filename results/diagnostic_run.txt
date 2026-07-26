@@ -1,0 +1,25 @@
+Perry–Beurling Spectral Sieve — diagnostic run
+degree d=4, n_points=4096
+
+RH-like high-frequency:
+  R_d=8.779175e-04
+  P=S_d=8.989876e+09
+
+RH-like critical-line mode:
+  R_d=9.993949e-04
+  P=S_d=1.023380e+10
+
+Prime residual (demeaned, modest x_max — see note in JSON):
+  R_d=2.238677e-01
+  P=S_d=9.159005e+09
+  T=log(x_max)=11.5129
+
+Defective control:
+  R_d=9.253563e-01
+  P=S_d=9.475648e+12
+
+Separation (R_def - R_hf)=9.244784e-01
+Separation (R_def - R_critical)=9.243569e-01
+classifier_ok=True
+
+Not a proof of RH. Conditional diagnostic only.

@@ -1,0 +1,45 @@
+{
+  "degree": 4,
+  "n_points": 4096,
+  "definitions": {
+    "energy_ratio": "R_d = ||P_d q||^2 / ||q||^2",
+    "scaled_strength_P": "P := S_d = T^{2(d+1)} R_d  (working projection strength)",
+    "basis": "orthonormal shifted Legendre on [0,1]",
+    "note": "Legacy archive quoted P\u22483.92 for zeta with lost normalization; this reconstruction reports honest R_d and S_d from the shipped code."
+  },
+  "rh_like_high_frequency": {
+    "label": "synthetic high-frequency (RH-like)",
+    "T": 20.0,
+    "energy": 0.0004389587744485072,
+    "energy_ratio": 0.0008779175488970144,
+    "P_scaled_strength": 8989875700.705427
+  },
+  "rh_like_critical_line_mode": {
+    "label": "sin(t T u) with t=Im(first zeta zero) (RH-consistent form)",
+    "T": 20.0,
+    "energy": 0.0004997834922024434,
+    "energy_ratio": 0.0009993948754529996,
+    "P_scaled_strength": 10233803524.638716
+  },
+  "rh_like_prime_residual": {
+    "label": "demeaned prime Chebyshev residual x_max=100000",
+    "T": 11.512925464970229,
+    "x_max": 100000.0,
+    "energy": 0.01258669541111919,
+    "energy_ratio": 0.22386767105932406,
+    "P_scaled_strength": 9159005326.5347,
+    "note": "At modest x_max the residual still has substantial low-degree mass; not expected to match pure high-frequency R_d."
+  },
+  "defective_control": {
+    "label": "high-frequency + strong degree-1 defect (non-RH control)",
+    "T": 20.0,
+    "energy": 6.19303625525477,
+    "energy_ratio": 0.9253562724078277,
+    "P_scaled_strength": 9475648229456.156
+  },
+  "separation": {
+    "energy_ratio_defective_minus_hf": 0.9244783548589307,
+    "energy_ratio_defective_minus_critical": 0.9243568775323747,
+    "classifier_ok": true
+  }
+}

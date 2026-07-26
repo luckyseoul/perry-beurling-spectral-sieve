@@ -1,65 +1,82 @@
 # Perry–Beurling Spectral Sieve
 
-Private research archive and reconstruction of the **Perry–Beurling Spectral Sieve** (also referred to as the spectral diagnostic / P(q) framework) for testing consistency with the Riemann Hypothesis on Beurling generalized prime systems.
+Private research archive and **runnable reconstruction** of the **Perry–Beurling Spectral Sieve** (spectral diagnostic / P(q) framework) for testing consistency with the Riemann Hypothesis on Beurling generalized prime systems.
 
 **Author:** Nicholas Perry  
-**Status:** Independent research notes reconstructed primarily from November–December 2025 technical sessions (and related follow-ups). Full original scripts, high-precision code, and complete derivations may reside in local archives or earlier session logs.
+**Status:** Independent research. Reconstruction of core projection diagnostic (2026-07).  
+**Not a proof of RH** — see [`docs/STATUS.md`](docs/STATUS.md).
 
 ## Overview
 
-A spectral approach combining Beurling’s theory of generalized primes / Beurling zeta functions with a projection-based “sieve-like” diagnostic. The goal is to analyze density perturbations or spectral measures associated with prime systems and test whether their behavior is consistent with all non-trivial zeros lying on the critical line Re(s) = 1/2.
+A spectral approach combining Beurling’s theory of generalized primes / Beurling zeta functions with a projection-based diagnostic. Analyze density perturbations \(q\) associated with prime systems and test whether their low-degree polynomial energy is consistent with all non-trivial zeros on \(\mathrm{Re}(s)=1/2\).
 
-The framework is numerically stable, basis-invariant, and designed as an exploratory diagnostic / classifier rather than a full proof of RH.
+The framework is a **classifier / diagnostic**, not a full proof of RH.
 
-## Core Components
+## Quick start
 
-### 1. Projection Strength Metric P(q)
+```bash
+pip install -r requirements.txt
+PYTHONPATH=src python3 -m pytest tests/ -v
+PYTHONPATH=src python3 experiments/run_diagnostic.py
+```
 
-- Construct a normalized density perturbation function *q*.
-- Project *q* onto a finite-dimensional space of orthonormalized shifted Legendre polynomials.
-- **P(q)** measures the projection strength (energy in the low-degree polynomial subspace).
-- Low P(q) indicates high-frequency oscillatory behavior orthogonal to low-degree polynomials — characteristic of RH-like systems.
-- Empirical threshold ≈ 29.5 for classification.
-- Computed value for the Riemann zeta function: **P(q) ≈ 3.92** (lowest among systems tested).
+## Core math (shipped)
 
-### 2. Theorems (Conditional Framework)
+### Projection strength
 
-- **Theorem A**: Assuming the Riemann Hypothesis, the degree-*d* projection strength P_d(q_T) decays to 0 as the logarithmic window size T → ∞.
-- **Theorem B**: If P_d(q_T) decays sufficiently rapidly, then there are no zeros off the critical line (provides a conditional equivalence / obstruction argument, not an unconditional proof).
+1. Normalize a density perturbation \(q\) on the unit log-window \(u\in[0,1]\).
+2. Project onto orthonormal **shifted Legendre** polynomials
+   \(\varphi_k(u)=\sqrt{2k+1}\,L_k(2u-1)\).
+3. Energy ratio
+   \[
+   R_d(q)=\frac{\|P_d q\|_{L^2}^2}{\|q\|_{L^2}^2}
+   =\frac{\sum_{k=0}^d|\langle q,\varphi_k\rangle|^2}{\|q\|^2}.
+   \]
+4. Working projection strength (scaled)
+   \[
+   P(q)\;:=\;S_d(q)=T^{2(d+1)}\,R_d(q),
+   \]
+   with \(T\) the logarithmic window length (so \(S_d\) is \(O(1)\) under the
+   RH decay heuristic \(R_d=O(T^{-2(d+1)})\)).
 
-### 3. L² Energy Ratio Diagnostic
+- **Low** \(R_d\) / controlled \(S_d\): high-frequency content — RH-like signature.  
+- **High** \(R_d\): low-degree mass — defective / non-RH-like control.
 
-- Alternative / complementary formulation using a finite-window L² energy ratio of the polynomial projection component.
-- Under RH the projection energy decays as O(T^{-2(d+1)}).
-- Ground-truth validation performed on Diamond’s constructed Beurling systems.
-- Confirms the diagnostic correctly separates RH-consistent from non-consistent generalized prime systems in tested cases.
+### Legacy numbers
 
-### 4. Numerical Experiments & Validation
+Earlier notes quoted **P(q)≈3.92** for zeta and threshold **≈29.5**. Those
+used lost high-precision scripts. This reconstruction **does not hard-code
+those values**; it reports \(R_d\) and \(S_d\) from the shipped path. See
+`docs/STATUS.md`.
 
-- High-precision Monte Carlo simulations (including runs with MC = 4000 samples) examining baseline proportionality and behavior under controlled spectral defects / perturbations.
-- Tests against real primes (up to 10^5): observed reduced defect spread relative to theoretical baseline, consistent with spectral rigidity expected under RH-like statistics.
-- Results supported claims of spectral equilibrium for the sieve diagnostic in the context of RH testing.
-- Framework shown to be robust for distinguishing systems while remaining computationally intensive for very large windows.
+### Theorems (conditional)
 
-## Limitations (Explicitly Noted in Development)
+- **Theorem A** *(assuming RH)*: \(R_d(q_T)\to 0\) as \(T\to\infty\).  
+- **Theorem B** *(obstruction)*: sufficiently rapid decay of \(R_d(q_T)\) precludes off-line zeros — conditional / as hard as RH in the converse direction.
 
-- Functions as a **classifier / diagnostic**, not a decisive proof of the Riemann Hypothesis.
-- Finite windows cannot rigorously exclude the possibility of zeros at extremely high heights.
-- Global / continuous character makes it less suitable as a practical local primality sieve.
-- High computational cost for large degree or large T.
-- Converse direction (low energy ⇒ RH) is essentially as hard as RH itself.
+Full caveats: `docs/STATUS.md`.
 
-## Related Private Repositories
+## Repository layout
 
-- `perry-spirals` — related spiral geometry / Perry’s Law work
-- `wieferich-hunts` — parallel prime-search experiments
-- Other space-tech / math archives under the same account
+```
+src/pbss/           # library: basis, projection, probes
+tests/              # pytest driving real projection API
+experiments/        # end-to-end RH-like vs defective run
+results/            # last diagnostic JSON/TXT
+docs/STATUS.md      # theorem status, session progress, open items
+```
 
-## Notes on Reconstruction
+## Limitations
 
-This repository was created to centralize the work after it was confirmed that no dedicated GitHub archive existed. Content is synthesized from detailed technical discussions (primarily late 2025). If original Python scripts, notebooks, exact Legendre projection implementations, or full theorem write-ups are recovered from local storage or session exports, they should be added here.
+- Diagnostic, not a decisive RH proof.  
+- Finite windows cannot exclude extremely high zeros.  
+- Not a practical local primality sieve.  
+- Large \(d\) or \(T\) is expensive.  
+- Converse (low energy ⇒ RH) is essentially as hard as RH.
 
-Further extensions discussed in later notes include PSWF (Prolate Spheroidal Wave Function) basis swaps for the zeta sieve.
+## Related private repos
+
+- `perry-spirals`, `wieferich-hunts`, other archives under the same account.
 
 ---
 
