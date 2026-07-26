@@ -76,6 +76,10 @@ from .ef_identify import (
     multi_hypothesis_scan,
     model_sanity_identify,
     summarize_attack,
+    multi_N_enrich_scan,
+    summarize_enrich_kill021,
+    build_m_columns,
+    M_ENRICHMENTS,
 )
 
 __all__ = [
@@ -138,6 +142,10 @@ __all__ = [
     "multi_hypothesis_scan",
     "model_sanity_identify",
     "summarize_attack",
+    "multi_N_enrich_scan",
+    "summarize_enrich_kill021",
+    "build_m_columns",
+    "M_ENRICHMENTS",
 ]
 
-__version__ = "0.9.0"
+__version__ = "0.9.1"

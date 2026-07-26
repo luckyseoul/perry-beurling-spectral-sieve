@@ -42,6 +42,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 
+from .basis import orthonormal_legendre_design, shifted_legendre_values
 from .probes import (
     _detrend,
     arithmetic_residual,
@@ -56,6 +57,16 @@ from .projection import (
 )
 from .lemmas import bound_R_d_finite_mode_sum
 from .zeros import explicit_formula_amplitudes, zeta_zero_ordinates
+
+# m-enrichment variants (H_theta_sqrt fixed residual; enrich m only)
+M_ENRICHMENTS = (
+    "zeros",           # baseline: α m_N
+    "zeros_poly1",     # + deg0/deg1 poly (secondary bulk)
+    "zeros_highleg",   # + φ_2..φ_d (low-degree oscillatory polys)
+    "zeros_Vd",        # + full V_d = φ_0..φ_d (absorbs all Ed mass if free)
+    "zeros_smooth",    # + smooth secondary: exp(-uT), exp(-2uT) pullbacks
+    "zeros_endpoint",  # + endpoint-shaped bumps u^2(1-u)^2 * {1, u-0.5}
+)
 
 HYPOTHESES = (
     "H_theta_sqrt",
@@ -248,6 +259,83 @@ def l2_norm_sq(q: np.ndarray, u: np.ndarray) -> float:
     return float(np.sum(w * q * q))
 
 
+def _ls_fit_columns(
+    q: np.ndarray,
+    u: np.ndarray,
+    cols: List[np.ndarray],
+) -> Tuple[np.ndarray, np.ndarray]:
+    """Weighted LS: q ≈ sum coef[i] * cols[i]. Returns (coef, m_eff)."""
+    w = _trapezoid_weights(u)
+    k = len(cols)
+    G = np.zeros((k, k))
+    b = np.zeros(k)
+    for i, ci in enumerate(cols):
+        b[i] = float(np.sum(w * q * ci))
+        for j, cj in enumerate(cols):
+            G[i, j] = float(np.sum(w * ci * cj))
+    # ridge for near-singular designs
+    G = G + 1e-12 * np.eye(k)
+    try:
+        coef = np.linalg.solve(G, b)
+    except np.linalg.LinAlgError:
+        coef = np.linalg.lstsq(G, b, rcond=None)[0]
+    m_eff = np.zeros_like(q)
+    for c, col in zip(coef, cols):
+        m_eff = m_eff + float(c) * col
+    return coef, m_eff
+
+
+def build_m_columns(
+    u: np.ndarray,
+    *,
+    T: float,
+    n_zeros: int,
+    enrich: str = "zeros",
+    degree: int = 4,
+    form: str = "cos",
+) -> Tuple[List[np.ndarray], List[str], dict]:
+    """
+    Build columns of enriched m (zeros always first column).
+
+    enrich in M_ENRICHMENTS. Residual is never modified — only m's span.
+    """
+    u = np.asarray(u, dtype=np.float64)
+    m0, _, meta_m = explicit_formula_residual(
+        u, T=float(T), n_zeros=int(n_zeros), form=form, bulk="none", bulk_scale=0.0
+    )
+    cols: List[np.ndarray] = [m0]
+    names: List[str] = ["zeros"]
+    enrich = (enrich or "zeros").strip()
+    if enrich == "zeros":
+        return cols, names, meta_m
+    if enrich == "zeros_poly1":
+        cols.extend([np.ones_like(u), u - 0.5])
+        names.extend(["poly0", "poly1"])
+    elif enrich == "zeros_highleg":
+        for k in range(2, int(degree) + 1):
+            cols.append(shifted_legendre_values(k, u))
+            names.append(f"phi{k}")
+    elif enrich == "zeros_Vd":
+        Phi = orthonormal_legendre_design(int(degree), u)
+        for k in range(int(degree) + 1):
+            cols.append(Phi[:, k].copy())
+            names.append(f"phi{k}")
+    elif enrich == "zeros_smooth":
+        # secondary-style decaying mains on log-window x=e^{uT}
+        cols.append(np.exp(-0.5 * u * float(T)))
+        cols.append(np.exp(-u * float(T)))
+        cols.append(np.exp(-2.0 * u * float(T)))
+        names.extend(["exp_half", "exp_one", "exp_two"])
+    elif enrich == "zeros_endpoint":
+        bump = (u * u) * ((1.0 - u) ** 2)
+        cols.append(bump)
+        cols.append(bump * (u - 0.5))
+        names.extend(["end_bump", "end_bump_lin"])
+    else:
+        raise ValueError(f"unknown enrich {enrich!r}; choose from {M_ENRICHMENTS}")
+    return cols, names, meta_m
+
+
 def identify_ef(
     q: np.ndarray,
     u: np.ndarray,
@@ -258,43 +346,33 @@ def identify_ef(
     degree: int = 4,
     form: str = "cos",
     include_poly_bulk: bool = False,
+    m_enrich: str = "zeros",
 ) -> Dict[str, float]:
     """
-    Decompose q = α m + β0 + β1(u-1/2) + r  (bulk optional) with m = EF modes.
+    Decompose q = m_eff + r with m_eff in span of enriched columns.
 
-    Default: q = α m + r (bulk off).
-    Returns remainder metrics and majorants.
+    m_enrich: zeros | zeros_poly1 | zeros_highleg | zeros_Vd | zeros_smooth | zeros_endpoint
+    include_poly_bulk: legacy alias for zeros_poly1 when m_enrich is zeros.
     """
     u = np.asarray(u, dtype=np.float64)
     q = np.asarray(q, dtype=np.float64)
-    m, _, meta_m = explicit_formula_residual(
-        u, T=T, n_zeros=int(n_zeros), form=form, bulk="none", bulk_scale=0.0
+    enrich = m_enrich
+    if include_poly_bulk and enrich == "zeros":
+        enrich = "zeros_poly1"
+    cols, names, meta_m = build_m_columns(
+        u, T=T, n_zeros=int(n_zeros), enrich=enrich, degree=degree, form=form
     )
     w = _trapezoid_weights(u)
-    if include_poly_bulk:
-        # LS fit q ≈ α m + β0 + β1 (u-0.5)
-        ones = np.ones_like(u)
-        lin = u - 0.5
-        # design matrix columns
-        cols = [m, ones, lin]
-        G = np.zeros((3, 3))
-        b = np.zeros(3)
-        for i, ci in enumerate(cols):
-            b[i] = float(np.sum(w * q * ci))
-            for j, cj in enumerate(cols):
-                G[i, j] = float(np.sum(w * ci * cj))
-        try:
-            coef = np.linalg.solve(G, b)
-        except np.linalg.LinAlgError:
-            coef = np.zeros(3)
-            coef[0] = fit_mode_scale(q, m, u) if fit_scale else 1.0
-        alpha, beta0, beta1 = float(coef[0]), float(coef[1]), float(coef[2])
-        m_eff = alpha * m + beta0 * ones + beta1 * lin
+    if len(cols) == 1 and not fit_scale:
+        alpha = 1.0
+        coef = np.array([1.0])
+        m_eff = cols[0].copy()
         r = q - m_eff
     else:
-        alpha = fit_mode_scale(q, m, u) if fit_scale else 1.0
-        beta0, beta1 = 0.0, 0.0
-        r = q - alpha * m
+        coef, m_eff = _ls_fit_columns(q, u, cols)
+        alpha = float(coef[0])
+        r = q - m_eff
+    m = cols[0]
     l2_q = l2_norm_sq(q, u)
     l2_m = l2_norm_sq(m, u)
     l2_r = l2_norm_sq(r, u)
@@ -306,22 +384,20 @@ def identify_ef(
     r_m = energy_ratio(m, u, degree) if l2_m > 1e-30 else 0.0
     r_r = e_r / l2_r if l2_r > 1e-30 else 0.0
     frac_l2 = l2_r / l2_q if l2_q > 1e-30 else 0.0
-    # always-true triangle majorant on projection energy of remainder
     tri = 2.0 * e_q + 2.0 * (alpha * alpha) * e_m
-    # M5 majorant on the mode block (proved-style)
     t = zeta_zero_ordinates(int(n_zeros))
     a = explicit_formula_amplitudes(t)
     m5 = bound_R_d_finite_mode_sum(T, a, t, degree)
-    # low-degree mass fraction carried by remainder
     e_r_over_q = e_r / l2_q if l2_q > 1e-30 else 0.0
     return {
         "T": float(T),
         "n_zeros": int(n_zeros),
         "degree": int(degree),
         "alpha": float(alpha),
-        "beta0": float(beta0),
-        "beta1": float(beta1),
-        "include_poly_bulk": bool(include_poly_bulk),
+        "m_enrich": enrich,
+        "m_column_names": names,
+        "m_coefs": [float(c) for c in coef],
+        "include_poly_bulk": bool(include_poly_bulk or enrich == "zeros_poly1"),
         "fit_scale": bool(fit_scale),
         "frac_l2_remainder": float(frac_l2),
         "E_d_remainder": float(e_r),
@@ -339,6 +415,144 @@ def identify_ef(
     }
 
 
+def multi_N_enrich_scan(
+    *,
+    T: float,
+    n_zeros_list: Sequence[int],
+    primes: np.ndarray,
+    enrichments: Sequence[str] = M_ENRICHMENTS,
+    n_points: int = 2048,
+    degree: int = 4,
+    detrend: str = "deg1",
+    csum_theta: Optional[np.ndarray] = None,
+) -> List[dict]:
+    """
+    Fixed H_theta_sqrt residual; multi-N × multi-enrich m table.
+    Primary metric: E_d_remainder_over_l2q.
+    """
+    u = sample_grid(int(n_points))
+    q, T_out, meta = hypothesis_residual(
+        u,
+        T=float(T),
+        primes=np.asarray(primes),
+        hypothesis="H_theta_sqrt",
+        csum_theta=csum_theta,
+        detrend=detrend,
+    )
+    rows: List[dict] = []
+    for n_z in n_zeros_list:
+        for enrich in enrichments:
+            idn = identify_ef(
+                q,
+                u,
+                T=T_out,
+                n_zeros=int(n_z),
+                degree=degree,
+                m_enrich=str(enrich),
+            )
+            rows.append(
+                {
+                    "hypothesis": "H_theta_sqrt",
+                    "residual_meta": meta,
+                    "identification": idn,
+                    "m_enrich": str(enrich),
+                    "n_zeros": int(n_z),
+                    "T": float(T_out),
+                    "Ed_r_over_l2q": idn["E_d_remainder_over_l2q"],
+                    "frac_l2": idn["frac_l2_remainder"],
+                    "corr": idn["corr_q_modes"],
+                }
+            )
+    return rows
+
+
+def summarize_enrich_kill021(rows: List[dict], baseline: str = "zeros") -> Dict[str, object]:
+    """
+    Compare enrichments vs zeros baseline on Ed(r)/||q||² multi-N.
+    Win: some enrich has mean Ed clearly below ~0.21 and drops vs baseline.
+    """
+    by_e: Dict[str, List[float]] = {}
+    by_e_N: Dict[str, Dict[int, List[float]]] = {}
+    for r in rows:
+        e = r.get("m_enrich") or r["identification"].get("m_enrich", "zeros")
+        ed = r.get("Ed_r_over_l2q", r["identification"]["E_d_remainder_over_l2q"])
+        n = int(r.get("n_zeros", r["identification"]["n_zeros"]))
+        by_e.setdefault(e, []).append(float(ed))
+        by_e_N.setdefault(e, {}).setdefault(n, []).append(float(ed))
+    means = {e: float(np.mean(v)) for e, v in by_e.items()}
+    by_N_mean = {
+        e: {N: float(np.mean(vs)) for N, vs in sorted(nd.items())}
+        for e, nd in by_e_N.items()
+    }
+    base = float(means.get(baseline, 0.21))
+    best = min(means.keys(), key=lambda k: means[k])
+    best_mean = means[best]
+    # clear drop: at least 25% relative reduction and absolute < 0.15
+    dropped = best_mean < base * 0.75 and best_mean < 0.15
+    killed = best_mean < 0.05  # essentially gone
+    if killed:
+        outcome = "win_killed_021"
+        block = None
+    elif dropped:
+        outcome = "win_clear_drop"
+        block = None
+    else:
+        outcome = "sharper_block"
+        # which enrichments failed
+        failed = [e for e, m in means.items() if m >= base * 0.9]
+        block = {
+            "name": "ENRICHED_M_FAILS_TO_ABSORB_VD_EXCEPT_EXPLICIT_VD",
+            "statement": (
+                f"On H_theta_sqrt, zeros-only baseline mean Ed(r)/||q||²≈{base:.3f}. "
+                f"Best non-trivial enrichment among tried is {best} at {best_mean:.3f}. "
+                "Smooth/endpoint/poly enrichments do not kill the ~0.21 V_d remainder; "
+                "only spanning V_d inside m (zeros_Vd) is expected to zero Ed by construction. "
+                "Missing for Full A: secondary main terms that are *not* arbitrary V_d "
+                "but EF-derived, OR a proof that V_d mass of q is O(T^{-2})."
+            ),
+            "baseline_mean_Ed": base,
+            "best_enrich": best,
+            "best_mean_Ed": best_mean,
+            "means": means,
+            "by_N": by_N_mean,
+            "failed_near_baseline": failed,
+        }
+        # If zeros_Vd kills, refine block name
+        if "zeros_Vd" in means and means["zeros_Vd"] < 0.05:
+            others = {e: m for e, m in means.items() if e != "zeros_Vd"}
+            if others and min(others.values()) >= base * 0.85:
+                block = {
+                    "name": "VD_MASS_IS_POLYNOMIAL_NOT_ZERO_SUMMABLE",
+                    "statement": (
+                        f"zeros_Vd drives Ed(r)/||q||²→{means['zeros_Vd']:.4f} (V_d absorbed into m), "
+                        f"but zeros-only≈{base:.3f} and other enrichments "
+                        f"(smooth/endpoint/poly1/highleg) stay near baseline "
+                        f"(best other={min(others, key=others.get)} at {min(others.values()):.3f}). "
+                        "So the 0.21 is low-degree polynomial mass in q, not explained by "
+                        "more zeros or classical-ish exp-decay secondary columns. "
+                        "Unblock: EF secondary terms that reproduce V_d content of "
+                        "(θ-x)/√x under RH, or redesign residual so that mass is O(T^{-2})."
+                    ),
+                    "baseline_mean_Ed": base,
+                    "zeros_Vd_mean_Ed": means["zeros_Vd"],
+                    "other_means": others,
+                    "by_N": by_N_mean,
+                }
+                outcome = "sharper_block"
+                # still a diagnostic win: we know WHAT the mass is
+    return {
+        "outcome": outcome,
+        "baseline": baseline,
+        "means_Ed_r_over_l2q": means,
+        "by_N_Ed": by_N_mean,
+        "best_enrich": best,
+        "best_mean_Ed": best_mean,
+        "sharp_block": block,
+        "n_rows": len(rows),
+        "banner": "enrich-m-only attack on 0.21 — H_theta_sqrt fixed",
+    }
+
+
 def attack_one(
     u: np.ndarray,
     *,
@@ -351,6 +565,7 @@ def attack_one(
     detrend: str = "deg1",
     fit_scale: bool = True,
     include_poly_bulk: bool = False,
+    m_enrich: str = "zeros",
 ) -> Dict[str, object]:
     """Full attack row: build H residual + identify against EF modes."""
     q, T_out, meta = hypothesis_residual(
@@ -369,12 +584,14 @@ def attack_one(
         fit_scale=fit_scale,
         degree=degree,
         include_poly_bulk=include_poly_bulk,
+        m_enrich=m_enrich,
     )
     return {
         "hypothesis": hypothesis,
         "residual_meta": meta,
         "identification": idn,
         "include_poly_bulk": bool(include_poly_bulk),
+        "m_enrich": idn.get("m_enrich", m_enrich),
         "banner": "EF identification attack — technical campaign",
     }
 

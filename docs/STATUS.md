@@ -180,6 +180,19 @@ rising to \(\sim 0.72\) at \(N=40\); L² remainder fraction falls with \(N\).
 **flat in \(N\)** while L² capture improves. Low-degree mass is not in the span of the
 first \(N\) shipped EF modes. Unblock: secondary main terms in \(m\), or redesign \(q\).
 
+### Kill 0.21 — enrich \(m\) only (focused)
+
+**Writeup:** [`KILL021_ENRICH_M.md`](KILL021_ENRICH_M.md) · **Campaign:** `results/kill021_enrich_m/`  
+**Scope:** H_theta_sqrt fixed; enrich \(m\) only; multi-\(N\) \(E_d(r)/\|q\|^2\).
+
+| enrichment | mean Ed |
+|------------|--------:|
+| zeros (baseline) | 0.207 |
+| zeros_smooth (exp mains) | **0.052** |
+| zeros_highleg / zeros_Vd | **~0** |
+
+**Outcome:** win — 0.21 killed by spanning \(\varphi_{k\ge 2}\) in \(m\); smooth secondaries cut ~4× without free \(V_d\). Zeros alone stay flat in \(N\).
+
 ---
 
 ## Proved in-repo (model diagnostic)

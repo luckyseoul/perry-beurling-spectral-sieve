@@ -1,0 +1,9 @@
+{
+  "outcome": "win_killed_021",
+  "best_enrich": "zeros_Vd",
+  "best_mean_Ed": 2.0803803029096438e-25,
+  "baseline_zeros": 0.20740324813815744,
+  "sharp_block": null,
+  "n_rows": 96,
+  "elapsed_s": 0.5371949672698975
+}

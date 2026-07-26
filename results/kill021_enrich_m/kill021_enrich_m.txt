@@ -1,0 +1,16 @@
+outcome=win_killed_021 elapsed_s=0.5 n_rows=96
+baseline zeros mean Ed=0.2074
+best=zeros_Vd mean Ed=0.0000
+by enrichment mean Ed(r)/||q||²:
+  zeros_Vd: 0.0000
+  zeros_highleg: 0.0002
+  zeros_smooth: 0.0515
+  zeros_endpoint: 0.1425
+  zeros_poly1: 0.2072
+  zeros: 0.2074
+by N (zeros vs best):
+  N=5: zeros=0.2020 zeros_Vd=0.0000
+  N=10: zeros=0.2060 zeros_Vd=0.0000
+  N=20: zeros=0.2095 zeros_Vd=0.0000
+  N=40: zeros=0.2122 zeros_Vd=0.0000
+enrich-m-only — H_theta_sqrt fixed residual
