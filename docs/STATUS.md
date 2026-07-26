@@ -45,17 +45,35 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 
 Critical-line **decays**; defect **flat** at \(\varepsilon^2\).
 
-### Arithmetic residual (`experiments/run_arithmetic_multi_T.py`)
+### Arithmetic residual — overnight campaign (`experiments/run_overnight_campaign.py`)
 
-Builder: `arithmetic_residual` — \((\theta(x)-x)/\sqrt{x}\), detrend=deg1.
+**Scale reached:** \(x_{\max}=10^9\) (50.8M primes, segmented sieve ~5s), 86 workers, clean exit.  
+Builder: `arithmetic_residual` — \((\theta(x)-x)/\sqrt{x}\).
 
-| \(T\) | \(x_{\max}\) | \(R_4\) arithmetic | vs defect 0.25 |
-|------:|-------------:|-------------------:|:---------------|
-| 8 | 3e3 | 0.108 | below |
-| 12 | 1.6e5 | 0.189 | below |
-| 16 | 8.9e6 | 0.193 | below |
+**Focus arm** (detrend=`deg1`, smooth=1, d=4):
 
-**Reading:** arithmetic \(R_d\) **plateaus** (~0.19), does **not** show A0-style decay at \(T\le 16\). Still separated from defect floor. Full details: `results/arithmetic_multi_T.json`, `docs/THEOREMS_AB.md`.
+| \(T\) | \(x_{\max}\) | \(R_4\) arith | notes |
+|------:|-------------:|-------------:|:------|
+| 8.0 | 3.0e3 | 0.108 | |
+| 16.0 | 8.9e6 | 0.193 | peak region |
+| 18.7 | 1.3e8 | 0.180 | |
+| 20.7 | **1.0e9** | **0.165** | still ≫ A0 mode |
+
+Controls at \(T=20.7\): critical-line \(R_4\approx 1.0\times10^{-3}\), defect \(=0.250\), off-critical \(\approx 2.9\times10^{-3}\).
+
+**Ablations at \(T=20.7\)** (same residual family):
+
+| detrend \ smooth | 1 | 5 | 15 |
+|:-----------------|--:|--:|---:|
+| none | 0.966 | 0.974 | 0.983 |
+| deg0 | 0.200 | 0.249 | 0.344 |
+| deg1 | **0.165** | 0.208 | 0.294 |
+
+**Reading:** With linear detrend, arithmetic \(R_d\) **rises then soft-plateaus** near 0.16–0.19 through \(x=10^9\) — **no A0-style \(T^{-2}\) collapse**. Raw residual is almost fully low-degree (\(\sim 0.97\)). Defect floor remains 0.25.  
+Plots: `results/overnight_Rd_vs_T.png`, `results/overnight_arith_deg1_linear.png`.  
+JSON: `results/overnight_campaign.json`.
+
+**Not a proof of RH or of full Theorem A.**
 
 ---
 
@@ -65,14 +83,14 @@ Builder: `arithmetic_residual` — \((\theta(x)-x)/\sqrt{x}\), detrend=deg1.
 
 1. A0/B0 lemmas M1–M4 proved + tested.  
 2. Model multi-\(T\) separation.  
-3. **Arithmetic residual multi-\(T\)** measured to \(x_{\max}\approx 9\cdot 10^6\) (honest plateau).  
-4. Detrend/smooth options on residual builder.
+3. Arithmetic multi-\(T\) to \(10^9\) with detrend/smooth ablations + controls + plots.  
+4. Segmented sieve for large \(x_{\max}\).
 
 **Still open:**
 
-1. Full Theorem A (arithmetic \(R_d\to 0\) under RH) — **not** seen yet at accessible \(T\).  
+1. Full Theorem A (arithmetic \(R_d\to 0\) under RH) — **not** seen at \(x\le 10^9\).  
 2. Full Theorem B.  
-3. Larger \(T\) / better residual whitening / explicit formula.  
+3. Explicit-formula residual / stronger whitening beyond deg1.  
 4. Legacy P≈3.92 normalization.
 
 ---

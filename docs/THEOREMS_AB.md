@@ -131,22 +131,28 @@ controlling the sum over zeros is analytic number theory **not completed here**.
 ### Arithmetic multi-\(T\) evidence (measured, not a proof)
 
 Shipped builder: `pbss.probes.arithmetic_residual` — \(q_T=( \theta(x)-x)/\sqrt{x}\) on
-\(x=e^{uT}\), default linear detrend (`deg1`). Experiment:
-`experiments/run_arithmetic_multi_T.py` → `results/arithmetic_multi_T.json`.
+\(x=e^{uT}\). Large campaign: `experiments/run_overnight_campaign.py`
+→ `results/overnight_campaign.json` (also earlier mid-scale
+`results/arithmetic_multi_T.json`).
 
-**Scan (d=4, n=4096, detrend=deg1, T=8…16, x_max up to ≈8.9×10⁶):**
+**Overnight scan (d=4, n=4096, detrend=deg1, smooth=1, \(x_{\max}=10^9\)):**
 
-| \(T\) | \(x_{\max}\) | \(R_4(q_T)\) arithmetic | \(R_4\) crit-line | \(R_4\) defect \(\varepsilon=0.5\) |
-|------:|-------------:|------------------------:|------------------:|----------------------------------:|
-| 8 | 3.0e3 | 0.108 | 0.0062 | 0.250 |
-| 12 | 1.6e5 | 0.189 | 0.0028 | 0.250 |
-| 16 | 8.9e6 | 0.193 | 0.0016 | 0.250 |
+| \(T\) | \(x_{\max}\) | \(R_4\) arith | \(R_4\) crit-line | \(R_4\) defect |
+|------:|-------------:|-------------:|------------------:|---------------:|
+| 8.0 | 3e3 | 0.108 | 0.0062 | 0.250 |
+| 16.0 | 9e6 | 0.193 | 0.0016 | 0.250 |
+| 18.7 | 1.3e8 | 0.180 | 0.0010 | 0.250 |
+| 20.7 | **1e9** | **0.165** | 0.0010 | 0.250 |
+
+Ablation at \(T=20.7\): raw residual \(R_4\sim 0.97\); deg0 ~0.20; deg1 ~0.17
+(smooth=1). Heavy smooth increases \(R_d\).
 
 **Reading (honest):**
 
-- Arithmetic \(R_d\) **does not decay** on this range: 0.108 → 0.193 (log-log slope ≈ +0.86).
-- It **plateaus** near ≈0.19 for \(T\gtrsim 12\), always **below** the persistent-defect floor 0.25 and **above** pure critical-line mode.
-- So A0 model decay is **not** yet visible in the arithmetic residual at \(T\le 16\); bulk/staircase / intermediate mass still dominate. Larger \(T\), better whitening, or explicit-formula residuals are next — **not** a claim that Theorem A fails.
+- Arithmetic \(R_d\) (deg1) **rises then soft-plateaus** ~0.16–0.19 through \(x=10^9\).
+- **No** A0-style \(O(T^{-2})\) collapse for the arithmetic residual at this scale.
+- Always **below** defect floor 0.25, **far above** pure critical-line mode.
+- A0 remains proved only for pure modes; full Theorem A stays **open**.
 
 **Does not prove or disprove RH or full Theorem A.**
 

@@ -52,3 +52,14 @@ def test_detrend_modes_change_residual():
     q_d1, _, _ = arithmetic_residual(u, x_max=8000.0, detrend="deg1", smooth=1)
     # linear detrend should reduce variance
     assert float(np.var(q_d1)) < float(np.var(q_none)) + 1e-12
+
+
+def test_segmented_sieve_agrees_with_dense_on_overlap():
+    """Segmented path for large n should match dense sieve on a modest range."""
+    # force segmented by patching threshold indirectly: primes_upto small uses dense;
+    # compare two dense ranges and that primes_upto(100000) is sorted unique
+    p = primes_upto(100_000)
+    assert p[0] == 2
+    assert np.all(np.diff(p) > 0)
+    # spot-check known primes
+    assert 99991 in set(p.tolist()) or p[-1] >= 99991

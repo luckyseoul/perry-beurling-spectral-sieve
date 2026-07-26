@@ -20,11 +20,13 @@ PYTHONPATH=src python3 -m pytest tests/ -v
 PYTHONPATH=src python3 experiments/run_diagnostic.py
 PYTHONPATH=src python3 experiments/run_multi_T.py --workers 86
 PYTHONPATH=src python3 experiments/run_arithmetic_multi_T.py --workers 86
+PYTHONPATH=src python3 experiments/run_overnight_campaign.py --workers 86 --scratch /tmp/pbss_campaign
 ```
 
-Arithmetic residual multi-\(T\): real primes \(\theta(x)-x\), compared to A0 critical-line
-mode and B0 defect control. At \(T\le 16\) (\(x\le 10^7\)) arithmetic \(R_d\) **plateaus**
-near ~0.19 (below defect 0.25) — see `results/arithmetic_multi_T.json`.
+**Overnight campaign** (shipped): arithmetic residual to \(x_{\max}=10^9\), detrend/smooth
+ablations, A0/B0/off-critical controls, plots in `results/overnight_*.png`.
+Focus arm (deg1): \(R_4\) soft-plateaus ~0.16–0.19 — **no A0-style decay** at this scale.
+See `results/overnight_campaign.json` and `docs/STATUS.md`.
 
 ## Core math (shipped)
 
@@ -71,11 +73,11 @@ Details: [`docs/THEOREMS_AB.md`](docs/THEOREMS_AB.md) · Proofs: [`docs/PROOFS_L
 ## Repository layout
 
 ```
-src/pbss/           # library: basis, projection, probes
+src/pbss/           # library: basis, projection, probes, lemmas
 tests/              # pytest driving real projection API
-experiments/        # end-to-end RH-like vs defective run
-results/            # last diagnostic JSON/TXT
-docs/STATUS.md      # theorem status, session progress, open items
+experiments/        # multi-T, arithmetic, overnight campaign
+results/            # JSON/TXT/plots from campaigns
+docs/               # THEOREMS_AB, PROOFS_LEMMAS, STATUS
 ```
 
 ## Limitations

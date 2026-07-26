@@ -1,0 +1,34 @@
+PBSS overnight large-T campaign
+x_max=1.000e+09  n_primes=50847534  sieve_s=5.0
+d=4 n_points=4096 workers=86
+T grid: [8.0, 9.6, 11.2, 12.8, 14.4, 16.0, 16.674752262420917, 17.34950452484183, 18.024256787262747, 18.699009049683664, 19.37376131210458, 20.048513574525494, 20.72326583694641]
+detrends=['none', 'deg0', 'deg1']  smooths=[1, 5, 15]
+
+Focus arithmetic R_d plateaus near 0.165 at large T (max T=20.72, x_max=1.000e+09). No A0-style decay observed for arithmetic residual at this scale. Not a proof of RH.
+
+Focus (deg1, smooth=1):
+  T=  8.000  x=2.981e+03  R_d=1.079917e-01
+  T=  9.600  x=1.476e+04  R_d=1.365081e-01
+  T= 11.200  x=7.313e+04  R_d=1.707382e-01
+  T= 12.800  x=3.622e+05  R_d=1.915973e-01
+  T= 14.400  x=1.794e+06  R_d=1.930652e-01
+  T= 16.000  x=8.886e+06  R_d=1.932360e-01
+  T= 16.675  x=1.745e+07  R_d=1.893555e-01
+  T= 17.350  x=3.426e+07  R_d=1.894790e-01
+  T= 18.024  x=6.727e+07  R_d=1.801420e-01
+  T= 18.699  x=1.321e+08  R_d=1.800046e-01
+  T= 19.374  x=2.594e+08  R_d=1.748488e-01
+  T= 20.049  x=5.093e+08  R_d=1.742900e-01
+  T= 20.723  x=1.000e+09  R_d=1.651413e-01
+
+Controls (sample):
+  T=  8.000  R_cl=6.222e-03  R_def=2.500e-01  R_off=1.512e-02
+  T= 11.200  R_cl=1.977e-03  R_def=2.500e-01  R_off=6.958e-04
+  T= 14.400  R_cl=2.423e-03  R_def=2.500e-01  R_off=5.998e-03
+  T= 16.675  R_cl=2.136e-03  R_def=2.500e-01  R_off=7.401e-03
+  T= 18.024  R_cl=1.734e-03  R_def=2.500e-01  R_off=6.139e-03
+  T= 19.374  R_cl=1.358e-03  R_def=2.500e-01  R_off=4.561e-03
+  T= 20.723  R_cl=1.028e-03  R_def=2.500e-01  R_off=2.936e-03
+
+Not an unconditional RH proof; not a complete proof of Theorem A.
+Elapsed 111.5s

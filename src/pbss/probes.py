@@ -127,18 +127,48 @@ def probe_defective(
     )
 
 
-def primes_upto(n: int) -> np.ndarray:
-    """Sieve of Eratosthenes; returns primes ≤ n as int64 array."""
+def primes_upto(n: int, segment_size: int = 10_000_000) -> np.ndarray:
+    """
+    Sieve of Eratosthenes; returns primes ≤ n as int64 array.
+
+    For n ≥ 50_000_000 uses a segmented sieve so peak RAM stays ~O(√n + segment)
+    rather than a full bool array of length n (important for x_max ~ 1e8–1e9).
+    """
     n = int(n)
     if n < 2:
         return np.array([], dtype=np.int64)
-    sieve = np.ones(n + 1, dtype=bool)
-    sieve[0:2] = False
-    r = int(n**0.5)
-    for p in range(2, r + 1):
-        if sieve[p]:
-            sieve[p * p :: p] = False
-    return np.nonzero(sieve)[0].astype(np.int64)
+
+    # Small-n: classic dense sieve
+    if n < 50_000_000:
+        sieve = np.ones(n + 1, dtype=bool)
+        sieve[0:2] = False
+        r = int(n**0.5)
+        for p in range(2, r + 1):
+            if sieve[p]:
+                sieve[p * p :: p] = False
+        return np.nonzero(sieve)[0].astype(np.int64)
+
+    # Segmented sieve
+    r = int(n**0.5) + 1
+    base = primes_upto(r, segment_size=segment_size)  # recursive small path
+    out: list[np.ndarray] = [base]
+    seg = int(segment_size)
+    low = r + 1
+    while low <= n:
+        high = min(low + seg - 1, n)
+        mark = np.ones(high - low + 1, dtype=bool)
+        for p in base:
+            p = int(p)
+            # first multiple of p at or above low
+            start = ((low + p - 1) // p) * p
+            if start < p * p:
+                start = p * p
+            if start > high:
+                continue
+            mark[start - low : high - low + 1 : p] = False
+        out.append((np.nonzero(mark)[0] + low).astype(np.int64))
+        low = high + 1
+    return np.concatenate(out)
 
 
 # backward-compatible alias
