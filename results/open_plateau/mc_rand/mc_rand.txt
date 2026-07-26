@@ -1,0 +1,6 @@
+class=mc_rand
+hypothesis=Randomized spectral defects keep high R_d independent of T; large-N MC quantifies the defect floor vs arithmetic plateau levels.
+elapsed_s=6179.561902046204
+n_rows=40
+deep=True
+NOT AN UNCONDITIONAL PROOF OF RH

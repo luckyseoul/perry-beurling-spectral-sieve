@@ -1,0 +1,462 @@
+{
+  "class": "measure",
+  "hypothesis": "Plateau depends on residual definition: (\u03b8-x)/\u221ax vs /x vs raw vs /log x; a better normalization might reveal A0-like decay under RH.",
+  "elapsed_s": 742.9421761035919,
+  "n_rows": 48,
+  "rows": [
+    {
+      "T": 16.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.18738128051095004,
+      "n_primes": 1077323,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 16.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.8931885802817885,
+      "n_primes": 1077323,
+      "variant": "norm_x"
+    },
+    {
+      "T": 16.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8916550049234725,
+      "n_primes": 1077323,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 16.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8748880276731982,
+      "n_primes": 1077323,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 17.363,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.1883931331197641,
+      "n_primes": 2130992,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 17.363,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.8994910944686387,
+      "n_primes": 2130992,
+      "variant": "norm_x"
+    },
+    {
+      "T": 17.363,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.893904520165351,
+      "n_primes": 2130992,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 17.363,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8773898494305449,
+      "n_primes": 2130992,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 18.09,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.18182972098602454,
+      "n_primes": 4220022,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 18.09,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9050639341778726,
+      "n_primes": 4220022,
+      "variant": "norm_x"
+    },
+    {
+      "T": 18.09,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8895930068214658,
+      "n_primes": 4220022,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 18.09,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8769318878733063,
+      "n_primes": 4220022,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 18.817,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.17907054040032847,
+      "n_primes": 8371945,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 18.817,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9097317340141062,
+      "n_primes": 8371945,
+      "variant": "norm_x"
+    },
+    {
+      "T": 18.817,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.89326374329308,
+      "n_primes": 8371945,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 18.817,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8826934515390488,
+      "n_primes": 8371945,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 19.544,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.1755232030833182,
+      "n_primes": 16636683,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 19.544,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.913946247578192,
+      "n_primes": 16636683,
+      "variant": "norm_x"
+    },
+    {
+      "T": 19.544,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.89966324471795,
+      "n_primes": 16636683,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 19.544,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.89101002237499,
+      "n_primes": 16636683,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 20.272,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.16993692268962932,
+      "n_primes": 33143700,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 20.272,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9176095555336871,
+      "n_primes": 33143700,
+      "variant": "norm_x"
+    },
+    {
+      "T": 20.272,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8913219058266421,
+      "n_primes": 33143700,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 20.272,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.885169741050479,
+      "n_primes": 33143700,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 20.999,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.1654583338083447,
+      "n_primes": 66062051,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 20.999,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9207546645856274,
+      "n_primes": 66062051,
+      "variant": "norm_x"
+    },
+    {
+      "T": 20.999,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8838996865155833,
+      "n_primes": 66062051,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 20.999,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8792757407789675,
+      "n_primes": 66062051,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 21.726,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.16325411067427203,
+      "n_primes": 131854368,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 21.726,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9234952679805265,
+      "n_primes": 131854368,
+      "variant": "norm_x"
+    },
+    {
+      "T": 21.726,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8935076753478861,
+      "n_primes": 131854368,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 21.726,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8892791883355293,
+      "n_primes": 131854368,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 22.453,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.1576792138585045,
+      "n_primes": 263496293,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 22.453,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9259303214416043,
+      "n_primes": 263496293,
+      "variant": "norm_x"
+    },
+    {
+      "T": 22.453,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8930035387683523,
+      "n_primes": 263496293,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 22.453,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8918226043018155,
+      "n_primes": 263496293,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 23.181,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.15272432045218043,
+      "n_primes": 527688293,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 23.181,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9279905627267885,
+      "n_primes": 527688293,
+      "variant": "norm_x"
+    },
+    {
+      "T": 23.181,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8808786249861741,
+      "n_primes": 527688293,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 23.181,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.880123811559464,
+      "n_primes": 527688293,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 23.908,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.14945714785115072,
+      "n_primes": 1056916833,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 23.908,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9295934471289594,
+      "n_primes": 1056916833,
+      "variant": "norm_x"
+    },
+    {
+      "T": 23.908,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8919708013926815,
+      "n_primes": 1056916833,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 23.908,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8914351268630805,
+      "n_primes": 1056916833,
+      "variant": "norm_logx"
+    },
+    {
+      "T": 24.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "sqrt",
+      "R_d": 0.14643499409359204,
+      "n_primes": 2119068237,
+      "variant": "norm_sqrt"
+    },
+    {
+      "T": 24.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "x",
+      "R_d": 0.9312004833266894,
+      "n_primes": 2119068237,
+      "variant": "norm_x"
+    },
+    {
+      "T": 24.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "plain",
+      "R_d": 0.8904843554631421,
+      "n_primes": 2119068237,
+      "variant": "norm_plain"
+    },
+    {
+      "T": 24.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "norm": "logx",
+      "R_d": 0.8925918196430077,
+      "n_primes": 2119068237,
+      "variant": "norm_logx"
+    }
+  ],
+  "deep": false,
+  "norms": [
+    "sqrt",
+    "x",
+    "plain",
+    "logx"
+  ],
+  "T_values": [
+    16.635,
+    17.363,
+    18.09,
+    18.817,
+    19.544,
+    20.272,
+    20.999,
+    21.726,
+    22.453,
+    23.181,
+    23.908,
+    24.635
+  ],
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+}

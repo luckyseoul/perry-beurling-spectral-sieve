@@ -1,0 +1,6 @@
+class=basis
+hypothesis=Plateau energy is concentrated in lowest Legendre modes; raising d or high-passing V_k should change R_d character if the defect is low-degree bulk.
+elapsed_s=1910.5175886154175
+n_rows=120
+deep=False
+NOT AN UNCONDITIONAL PROOF OF RH

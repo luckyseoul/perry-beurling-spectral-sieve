@@ -1,0 +1,6 @@
+class=whiten
+hypothesis=Slow bulk (mean/linear trend, light smoothing, edge taper) inflates low-degree mass; whitening should lower R_d if the plateau is bulk not zeros.
+elapsed_s=1089.5982010364532
+n_rows=72
+deep=False
+NOT AN UNCONDITIONAL PROOF OF RH

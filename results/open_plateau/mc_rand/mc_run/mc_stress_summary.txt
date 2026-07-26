@@ -1,0 +1,14 @@
+PBSS MC stress campaign
+status=completed elapsed_s=6178.3 mc_per_t=5000000 min_achieved=5000000
+NOT AN UNCONDITIONAL PROOF OF RH
+
+T=8 n=5000000 mean_R_d[6]=7.948136e-01 std=1.598074e-01
+T=9.5 n=5000000 mean_R_d[6]=7.947793e-01 std=1.598233e-01
+T=11 n=5000000 mean_R_d[6]=7.947686e-01 std=1.598341e-01
+T=12.5 n=5000000 mean_R_d[6]=7.947721e-01 std=1.598314e-01
+T=14 n=5000000 mean_R_d[6]=7.947670e-01 std=1.598264e-01
+T=15.5 n=5000000 mean_R_d[6]=7.947395e-01 std=1.598422e-01
+T=17 n=5000000 mean_R_d[6]=7.947631e-01 std=1.598116e-01
+T=18.5 n=5000000 mean_R_d[6]=7.947757e-01 std=1.598155e-01
+T=20 n=5000000 mean_R_d[6]=7.947890e-01 std=1.598138e-01
+T=21.5 n=5000000 mean_R_d[6]=7.947516e-01 std=1.598421e-01

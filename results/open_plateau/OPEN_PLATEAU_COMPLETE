@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "classes": [
+    "peel",
+    "whiten",
+    "measure",
+    "basis",
+    "scale",
+    "beurling",
+    "mc_rand"
+  ],
+  "deep_count": 3,
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "note": "assembled after multi-process class runs"
+}

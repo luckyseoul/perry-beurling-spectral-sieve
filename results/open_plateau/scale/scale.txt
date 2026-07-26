@@ -1,0 +1,6 @@
+class=scale
+hypothesis=Plateau is a finite-x artifact; denser multi-T near T_max=log(5e10) across construction variants should show decay if asymptotic A0 applies.
+elapsed_s=2202.7904794216156
+n_rows=144
+deep=True
+NOT AN UNCONDITIONAL PROOF OF RH

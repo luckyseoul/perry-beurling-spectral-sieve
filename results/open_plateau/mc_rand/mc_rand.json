@@ -1,0 +1,334 @@
+{
+  "class": "mc_rand",
+  "hypothesis": "Randomized spectral defects keep high R_d independent of T; large-N MC quantifies the defect floor vs arithmetic plateau levels.",
+  "elapsed_s": 6179.561902046204,
+  "n_rows": 40,
+  "rows": [
+    {
+      "T": 8.0,
+      "degree": 2,
+      "R_d": 0.7946025396545399,
+      "std_R_d": 0.15997213619071282,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.7946850863967524,
+      "std_R_d": 0.15990768223494556,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 8.0,
+      "degree": 6,
+      "R_d": 0.7948136193892273,
+      "std_R_d": 0.15980742587011904,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 8.0,
+      "degree": 8,
+      "R_d": 0.794984079953683,
+      "std_R_d": 0.1596746549820805,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 9.5,
+      "degree": 2,
+      "R_d": 0.7945681552321848,
+      "std_R_d": 0.15998807623648728,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 9.5,
+      "degree": 4,
+      "R_d": 0.7946507200365338,
+      "std_R_d": 0.15992359959458569,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 9.5,
+      "degree": 6,
+      "R_d": 0.7947792811345825,
+      "std_R_d": 0.1598233080459278,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 9.5,
+      "degree": 8,
+      "R_d": 0.7949497788965195,
+      "std_R_d": 0.15969049100619828,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 11.0,
+      "degree": 2,
+      "R_d": 0.7945575015633782,
+      "std_R_d": 0.15999888657344358,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 11.0,
+      "degree": 4,
+      "R_d": 0.7946400686647211,
+      "std_R_d": 0.15993440260507574,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 11.0,
+      "degree": 6,
+      "R_d": 0.7947686334902405,
+      "std_R_d": 0.15983409936026266,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 11.0,
+      "degree": 8,
+      "R_d": 0.7949391368017545,
+      "std_R_d": 0.1597012657455103,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 12.5,
+      "degree": 2,
+      "R_d": 0.7945609996487051,
+      "std_R_d": 0.15999604577817786,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 12.5,
+      "degree": 4,
+      "R_d": 0.7946435397667422,
+      "std_R_d": 0.1599315979472222,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 12.5,
+      "degree": 6,
+      "R_d": 0.7947720628215204,
+      "std_R_d": 0.159831350641434,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 12.5,
+      "degree": 8,
+      "R_d": 0.7949425117358382,
+      "std_R_d": 0.15969858996871597,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 14.0,
+      "degree": 2,
+      "R_d": 0.794555936620693,
+      "std_R_d": 0.15999112153908615,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.7946384772483633,
+      "std_R_d": 0.1599266708523064,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 14.0,
+      "degree": 6,
+      "R_d": 0.7947670011059014,
+      "std_R_d": 0.15982641918621826,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 14.0,
+      "degree": 8,
+      "R_d": 0.7949374511236046,
+      "std_R_d": 0.15969365306196337,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 15.5,
+      "degree": 2,
+      "R_d": 0.7945284733249935,
+      "std_R_d": 0.16000689474069446,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 15.5,
+      "degree": 4,
+      "R_d": 0.7946110155313193,
+      "std_R_d": 0.1599424539105047,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 15.5,
+      "degree": 6,
+      "R_d": 0.7947395420220057,
+      "std_R_d": 0.1598422172851955,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 15.5,
+      "degree": 8,
+      "R_d": 0.7949099962418659,
+      "std_R_d": 0.15970946993438903,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 17.0,
+      "degree": 2,
+      "R_d": 0.7945520774106701,
+      "std_R_d": 0.15997631262020157,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 17.0,
+      "degree": 4,
+      "R_d": 0.7946346076578981,
+      "std_R_d": 0.15991187507998883,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 17.0,
+      "degree": 6,
+      "R_d": 0.7947631155184992,
+      "std_R_d": 0.1598116438698335,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 17.0,
+      "degree": 8,
+      "R_d": 0.7949335449962164,
+      "std_R_d": 0.15967890484570177,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 18.5,
+      "degree": 2,
+      "R_d": 0.7945647923632178,
+      "std_R_d": 0.1599801295126083,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 18.5,
+      "degree": 4,
+      "R_d": 0.7946472908455137,
+      "std_R_d": 0.15991571094697637,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 18.5,
+      "degree": 6,
+      "R_d": 0.7947757496618589,
+      "std_R_d": 0.15981550866518993,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 18.5,
+      "degree": 8,
+      "R_d": 0.7949461157847855,
+      "std_R_d": 0.1596828057537688,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 20.0,
+      "degree": 2,
+      "R_d": 0.7945780063182283,
+      "std_R_d": 0.15997845288836895,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 20.0,
+      "degree": 4,
+      "R_d": 0.7946605097553168,
+      "std_R_d": 0.1599140111166672,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 20.0,
+      "degree": 6,
+      "R_d": 0.7947889759969657,
+      "std_R_d": 0.15981377316951645,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 20.0,
+      "degree": 8,
+      "R_d": 0.7949593507934236,
+      "std_R_d": 0.159681024719437,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 21.5,
+      "degree": 2,
+      "R_d": 0.7945405922809184,
+      "std_R_d": 0.16000683343007718,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 21.5,
+      "degree": 4,
+      "R_d": 0.7946231077051334,
+      "std_R_d": 0.15994238234976435,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 21.5,
+      "degree": 6,
+      "R_d": 0.7947515926939537,
+      "std_R_d": 0.15984212988560653,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    },
+    {
+      "T": 21.5,
+      "degree": 8,
+      "R_d": 0.7949219926843547,
+      "std_R_d": 0.1597093620750958,
+      "n_trials": 5000000,
+      "variant": "mc_defect"
+    }
+  ],
+  "deep": true,
+  "total_trials": 50000000,
+  "mc_per_t": 5000000,
+  "n_T": 10,
+  "mc_summary_path": "results/open_plateau/mc_rand/mc_run/mc_stress_summary.json",
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+}

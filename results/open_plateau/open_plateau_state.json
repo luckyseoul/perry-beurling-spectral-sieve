@@ -1,0 +1,50 @@
+{
+  "phases": {
+    "PEEL": {
+      "status": "completed",
+      "elapsed_s": 195.7902374267578,
+      "n_rows": 2048,
+      "deep": false
+    },
+    "WHITEN": {
+      "status": "completed",
+      "elapsed_s": 1089.5982010364532,
+      "n_rows": 72,
+      "deep": false
+    },
+    "MEASURE": {
+      "status": "completed",
+      "elapsed_s": 742.9421761035919,
+      "n_rows": 48,
+      "deep": false
+    },
+    "BASIS": {
+      "status": "completed",
+      "elapsed_s": 1910.5175886154175,
+      "n_rows": 120,
+      "deep": false
+    },
+    "SCALE": {
+      "status": "completed",
+      "elapsed_s": 2202.7904794216156,
+      "n_rows": 144,
+      "deep": true,
+      "product": 144
+    },
+    "MC_RAND": {
+      "status": "completed",
+      "elapsed_s": 6179.561902046204,
+      "total_trials": 50000000,
+      "deep": true
+    },
+    "BEURLING": {
+      "status": "completed",
+      "elapsed_s": 422.02079939842224,
+      "n_systems": 100000,
+      "n_rows": 600000,
+      "deep": true
+    }
+  },
+  "updated_unix": 1785084693.5013447,
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+}

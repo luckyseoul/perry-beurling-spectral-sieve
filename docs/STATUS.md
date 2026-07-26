@@ -126,6 +126,17 @@ This STATUS + theorem pointers. Paper: `docs/paper/`. **No RH proof claim.**
 
 ---
 
+## Open-plateau campaign (`OPEN_GOAL.md`)
+
+**Entry:** `experiments/run_open_plateau.py`  
+**Artifacts:** `results/open_plateau/` (per-class JSON + `PHASE_*_COMPLETE` resume stamps)  
+**Synthesis:** [`RESEARCH_PLATEAU.md`](RESEARCH_PLATEAU.md) — plateau numbers, per-class judgment, RH non-claim.  
+**Classes (≥5):** peel, whiten, measure, basis, scale, mc_rand, beurling.  
+**Deep axes (≥3):** MC **50M** trials (~1.7 h, 86w); scale **24 T × 6** variants on \(5\times10^{10}\); Beurling **≥500** systems multi-\(T\) (enlarged battery).  
+**Headline judgment:** Peeling zeros does **not** collapse arithmetic \(R_d\); deg1+optional taper is best residual recipe; dense multi-\(T\) shows **no** A₀ decay through \(x\sim5\times10^{10}\). **RH remains open.**
+
+---
+
 ## Proved in-repo (model diagnostic)
 
 | Lemma | Statement | Code / test |
@@ -152,4 +163,5 @@ PYTHONPATH=src python3 experiments/run_beurling_battery.py
 PYTHONPATH=src python3 experiments/run_mc_stress.py --mc-per-t 50000 --workers 86
 PYTHONPATH=src python3 experiments/run_extend_x_scan.py --workers 86
 PYTHONPATH=src python3 experiments/run_explicit_formula_peel.py
+PYTHONPATH=src python3 experiments/run_open_plateau.py --classes peel,whiten,measure,basis,scale,beurling,mc_rand --workers 86
 ```

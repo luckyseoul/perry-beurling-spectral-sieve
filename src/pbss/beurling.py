@@ -155,19 +155,24 @@ def default_battery_specs() -> List[dict]:
 
 def marathon_battery_specs(n_systems: int = 100) -> List[dict]:
     """
-    Expand to ≥ n_systems Beurling constructions for overnight battery.
+    Expand to ≥ n_systems Beurling constructions for overnight / open-plateau battery.
 
     Includes one ordinary (rh_like) plus many gapped / thinned / shifted-gap
-    defective systems. Deterministic, offline, no network.
+    defective systems. Deterministic, offline, no network. Scales to tens of
+    thousands of systems for deep multi-T stress.
     """
     n_systems = max(3, int(n_systems))
     specs: List[dict] = [
         {"name": "ordinary_primes", "kind": "rh_like", "builder": "ordinary"}
     ]
-    # Gapped family: gaps 1.5 .. and p0 shifts
-    g = 1.5
-    while len(specs) < n_systems and g < 80.0:
-        for p0 in (2.0, 3.0, 5.0):
+    # Gapped family: dense gap grid × many p0 seeds
+    p0_seeds = (
+        2.0, 3.0, 5.0, 7.0, 11.0, 13.0, 17.0, 19.0, 23.0, 29.0,
+        31.0, 37.0, 41.0, 43.0, 47.0, 53.0, 59.0, 61.0, 67.0, 71.0,
+    )
+    g = 1.25
+    while len(specs) < n_systems and g < 5000.0:
+        for p0 in p0_seeds:
             if len(specs) >= n_systems:
                 break
             specs.append(
@@ -179,10 +184,19 @@ def marathon_battery_specs(n_systems: int = 100) -> List[dict]:
                     "p0": float(p0),
                 }
             )
-        g += 0.5 if g < 10 else (1.0 if g < 30 else 2.0)
-    # Thinned ordinary
+        if g < 5:
+            g += 0.05
+        elif g < 20:
+            g += 0.1
+        elif g < 100:
+            g += 0.25
+        elif g < 500:
+            g += 0.5
+        else:
+            g += 1.0
+    # Thinned ordinary (every k-th prime)
     k = 2
-    while len(specs) < n_systems and k <= 200:
+    while len(specs) < n_systems and k <= 100_000:
         specs.append(
             {
                 "name": f"thinned_every{k}",
@@ -192,6 +206,19 @@ def marathon_battery_specs(n_systems: int = 100) -> List[dict]:
             }
         )
         k += 1
+    # Extra rh_like variants if still short (should be rare)
+    extra = 0
+    while len(specs) < n_systems and extra < 10:
+        specs.append(
+            {
+                "name": f"ordinary_primes_v{extra}",
+                "kind": "rh_like",
+                "builder": "ordinary",
+            }
+        )
+        extra += 1
+    if len(specs) < n_systems:
+        raise ValueError(f"could only build {len(specs)} systems < {n_systems}")
     return specs[:n_systems]
 
 

@@ -1,0 +1,6 @@
+class=beurling
+hypothesis=If the diagnostic is meaningful, defective Beurling systems keep high R_d while ordinary stays lower; a large battery stress-tests separation vs noise.
+elapsed_s=259.8826472759247
+n_rows=12000
+deep=True
+NOT AN UNCONDITIONAL PROOF OF RH

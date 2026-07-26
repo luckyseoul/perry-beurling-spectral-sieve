@@ -1,0 +1,6 @@
+class=peel
+hypothesis=If low zeros dominate low-degree mass, stripping first N CL modes should reduce R_d toward A0 levels as N grows at large T.
+elapsed_s=195.7902374267578
+n_rows=2048
+deep=False
+NOT AN UNCONDITIONAL PROOF OF RH

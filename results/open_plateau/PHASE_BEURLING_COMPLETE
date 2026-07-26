@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "elapsed_s": 422.02079939842224,
+  "n_systems": 100000,
+  "n_rows": 600000,
+  "deep": true
+}

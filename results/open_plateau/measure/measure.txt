@@ -1,0 +1,6 @@
+class=measure
+hypothesis=Plateau depends on residual definition: (θ-x)/√x vs /x vs raw vs /log x; a better normalization might reveal A0-like decay under RH.
+elapsed_s=742.9421761035919
+n_rows=48
+deep=False
+NOT AN UNCONDITIONAL PROOF OF RH

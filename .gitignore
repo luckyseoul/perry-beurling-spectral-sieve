@@ -7,3 +7,14 @@ venv/
 
 results/prime_checkpoints/
 *.npy
+results/open_plateau/beurling/beurling_full_rows.json
+results/open_plateau/beurling/*_fast.json
+
+# open-plateau large local dumps (compact beurling.json is committed)
+results/open_plateau/beurling/beurling_full_rows.json
+results/open_plateau/beurling/beurling_n*_fast.json
+results/open_plateau/beurling/beurling_n20k_w86.json
+results/open_plateau/beurling/ordinary_le_*.npy
+results/beurling_battery_smoke/
+results/mc_stress_smoke/
+results/overnight_marathon/smoke_*/
