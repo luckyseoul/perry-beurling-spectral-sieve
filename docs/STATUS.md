@@ -9,9 +9,13 @@
 
 What *is* claimed: model lemmas M1–M6, multi-\(T\) numerics, truncated explicit-formula
 residuals, arithmetic zero-peel diagnostics, Beurling battery scorecards, extended-\(x\)
-scans, and MC instrument stress. Full Theorems A/B and RH remain open.
+scans, and MC instrument stress. The **Conditional Theorem A package** (statement +
+lemma chain + labeled ANT gaps) is complete; **Full arithmetic A under RH** still needs
+external ANT inputs. Full Theorems A/B and **RH remain open**.
 
-Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md)
+Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) ·  
+**Conditional A package:** [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) ·  
+**RH close-out roadmap (not a proof):** [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md)
 
 
 ---
@@ -153,6 +157,17 @@ This STATUS + theorem pointers. Paper: `docs/paper/`. **No RH proof claim.**
 **Tail note:** [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md) — what the model
 tail majorant controls vs true \(\psi\)/\(\theta\) remainder.  
 **Arithmetic weights:** `experiments/run_arithmetic_weights.py` → `results/arithmetic_weights/`.
+
+### Conditional Theorem A package + RH roadmap
+
+| Artifact | Role |
+|----------|------|
+| [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) | Full A under RH stated; M1–M6 chain; ANT-1…4 open; RH non-claim |
+| [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) | Ordered milestones M0–M7; **RH not closed** |
+| `pbss.theorem_a_chain` | Checkable multi-\(T\) model chain (not arithmetic A₀) |
+| `results/theorem_a_model_chain/` | Optional model-chain JSON |
+
+**Status:** Conditional A **package complete**. Full arithmetic A **open**. RH **open**.
 
 ---
 

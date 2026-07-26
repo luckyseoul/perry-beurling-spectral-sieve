@@ -1,0 +1,8 @@
+n_rows=5
+package={'conditional_theorem_a_package': 'complete', 'full_arithmetic_A': 'open', 'rh': 'open', 'banner': 'NOT AN UNCONDITIONAL PROOF OF RH', 'writeup': 'docs/THEOREM_A_PACKAGE.md', 'roadmap': 'docs/RH_CLOSEOUT_ROADMAP.md'}
+T=12.0 R_cl=0.00277444 R_cl_w=3.45395e-09 R_ef=0.00549087 ok=True
+T=18.0 R_cl=0.00184857 R_cl_w=4.53609e-10 R_ef=0.00291049 ok=True
+T=24.0 R_cl=0.000693641 R_cl_w=5.45016e-11 R_ef=0.00112904 ok=True
+T=36.0 R_cl=0.000307309 R_cl_w=4.78429e-12 R_ef=0.000504682 ok=True
+T=48.0 R_cl=0.000172023 R_cl_w=8.49547e-13 R_ef=0.000277667 ok=True
+NOT AN UNCONDITIONAL PROOF OF RH

@@ -152,7 +152,7 @@ Shipped (not full A):
 Writeup: [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md). Campaign:
 `results/theorem_a_scaffold/`. **Full arithmetic A still open.**
 
-### Full Theorem A (**conditional / not proved in this repo**)
+### Full Theorem A (**conditional package complete; arithmetic proof open**)
 
 **Hypothesis (RH).** All non-trivial zeros of \(\zeta\) satisfy \(\mathrm{Re}\,\rho=\tfrac12\).
 
@@ -162,10 +162,14 @@ equivalent explicit-formula residual) on the window of length \(T\),
 R_d(q_T)\to0\qquad(T\to\infty).
 \]
 
-**Status:** Conditional on RH. Outline: under RH the residual is a superposition
-of critical-line modes; each finite truncation contributes \(O(T^{-2})\) by M5;
-controlling the **infinite** sum over zeros (and remainders) is analytic number
-theory **not completed here**.
+**Package:** Self-contained writeup with proved/assumed/open labels:  
+[`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md). Model chain exercise:
+`pbss.theorem_a_chain`.
+
+**Status:** The **statement + lemma chain + gap list** is complete. The arithmetic
+implication still requires external ANT inputs (infinite zeros, \(\psi\)/\(\theta\)
+remainder, residual identification) — **not proved in-repo**. RH remains open.
+Roadmap: [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) (**not** a proof of RH).
 
 ### Arithmetic multi-\(T\) evidence (measured, not a proof)
 

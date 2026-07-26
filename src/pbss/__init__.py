@@ -69,6 +69,7 @@ from .remainder import (
     remainder_diagnostic,
     truncated_mode_sum,
 )
+from .theorem_a_chain import model_chain_report, multi_T_model_chain, package_status
 
 __all__ = [
     "shifted_legendre_values",
@@ -122,6 +123,9 @@ __all__ = [
     "peel_via_remainder",
     "remainder_diagnostic",
     "truncated_mode_sum",
+    "model_chain_report",
+    "multi_T_model_chain",
+    "package_status",
 ]
 
-__version__ = "0.7.0"
+__version__ = "0.8.0"

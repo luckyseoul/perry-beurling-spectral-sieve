@@ -1,0 +1,218 @@
+{
+  "campaign": "theorem_a_model_chain",
+  "package_status": {
+    "conditional_theorem_a_package": "complete",
+    "full_arithmetic_A": "open",
+    "rh": "open",
+    "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+    "writeup": "docs/THEOREM_A_PACKAGE.md",
+    "roadmap": "docs/RH_CLOSEOUT_ROADMAP.md"
+  },
+  "n_rows": 5,
+  "T_values": [
+    12.0,
+    18.0,
+    24.0,
+    36.0,
+    48.0
+  ],
+  "rows": [
+    {
+      "T": 12.0,
+      "degree": 4,
+      "n_zeros": 10,
+      "weight_name": "hanning",
+      "empirical": {
+        "R_d_cl": 0.002774438517057531,
+        "R_d_cl_weighted": 3.453947317435766e-09,
+        "R_d_ef": 0.005490871500432916,
+        "R_d_ef_weighted": 2.2728556595200256e-09
+      },
+      "majorants": {
+        "M3_style_cl_flat": {
+          "value": 0.013903456177703876,
+          "label": "proved_style_majorant_M3_M6"
+        },
+        "M6_cl_weighted": {
+          "value": 0.03475864044425969,
+          "label": "proved_style_majorant_M6"
+        },
+        "M5_ef_flat": {
+          "value": 0.007524582968130816,
+          "label": "proved_style_majorant_M5"
+        },
+        "M6_ef_weighted": {
+          "value": 0.037622914840654074,
+          "label": "proved_style_majorant_M6"
+        },
+        "infinite_tail_scaffold": {
+          "value": 0.002268063420281167,
+          "label": "scaffolding_model_zero_tail_not_arithmetic_remainder"
+        }
+      },
+      "proved_model_decay_ok": true,
+      "full_arithmetic_A_status": "open",
+      "rh_status": "open",
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+      "note": "Model chain only. Full arithmetic Theorem A remains open. RH remains open. See docs/THEOREM_A_PACKAGE.md."
+    },
+    {
+      "T": 18.0,
+      "degree": 4,
+      "n_zeros": 10,
+      "weight_name": "hanning",
+      "empirical": {
+        "R_d_cl": 0.0018485675894281113,
+        "R_d_cl_weighted": 4.5360928827862235e-10,
+        "R_d_ef": 0.0029104948598263187,
+        "R_d_ef_weighted": 2.675402365528166e-10
+      },
+      "majorants": {
+        "M3_style_cl_flat": {
+          "value": 0.006179313856757276,
+          "label": "proved_style_majorant_M3_M6"
+        },
+        "M6_cl_weighted": {
+          "value": 0.015448284641893191,
+          "label": "proved_style_majorant_M6"
+        },
+        "M5_ef_flat": {
+          "value": 0.003344259096947029,
+          "label": "proved_style_majorant_M5"
+        },
+        "M6_ef_weighted": {
+          "value": 0.01672129548473514,
+          "label": "proved_style_majorant_M6"
+        },
+        "infinite_tail_scaffold": {
+          "value": 0.0010080281867916297,
+          "label": "scaffolding_model_zero_tail_not_arithmetic_remainder"
+        }
+      },
+      "proved_model_decay_ok": true,
+      "full_arithmetic_A_status": "open",
+      "rh_status": "open",
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+      "note": "Model chain only. Full arithmetic Theorem A remains open. RH remains open. See docs/THEOREM_A_PACKAGE.md."
+    },
+    {
+      "T": 24.0,
+      "degree": 4,
+      "n_zeros": 10,
+      "weight_name": "hanning",
+      "empirical": {
+        "R_d_cl": 0.0006936405870795307,
+        "R_d_cl_weighted": 5.4501597436432095e-11,
+        "R_d_ef": 0.0011290429725493156,
+        "R_d_ef_weighted": 2.8796925174797538e-11
+      },
+      "majorants": {
+        "M3_style_cl_flat": {
+          "value": 0.003475864044425969,
+          "label": "proved_style_majorant_M3_M6"
+        },
+        "M6_cl_weighted": {
+          "value": 0.008689660111064923,
+          "label": "proved_style_majorant_M6"
+        },
+        "M5_ef_flat": {
+          "value": 0.001881145742032704,
+          "label": "proved_style_majorant_M5"
+        },
+        "M6_ef_weighted": {
+          "value": 0.009405728710163519,
+          "label": "proved_style_majorant_M6"
+        },
+        "infinite_tail_scaffold": {
+          "value": 0.0005670158550702917,
+          "label": "scaffolding_model_zero_tail_not_arithmetic_remainder"
+        }
+      },
+      "proved_model_decay_ok": true,
+      "full_arithmetic_A_status": "open",
+      "rh_status": "open",
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+      "note": "Model chain only. Full arithmetic Theorem A remains open. RH remains open. See docs/THEOREM_A_PACKAGE.md."
+    },
+    {
+      "T": 36.0,
+      "degree": 4,
+      "n_zeros": 10,
+      "weight_name": "hanning",
+      "empirical": {
+        "R_d_cl": 0.000307309150994727,
+        "R_d_cl_weighted": 4.784285548429229e-12,
+        "R_d_ef": 0.0005046822379167336,
+        "R_d_ef_weighted": 2.42882478279859e-12
+      },
+      "majorants": {
+        "M3_style_cl_flat": {
+          "value": 0.001544828464189319,
+          "label": "proved_style_majorant_M3_M6"
+        },
+        "M6_cl_weighted": {
+          "value": 0.0038620711604732978,
+          "label": "proved_style_majorant_M6"
+        },
+        "M5_ef_flat": {
+          "value": 0.0008360647742367572,
+          "label": "proved_style_majorant_M5"
+        },
+        "M6_ef_weighted": {
+          "value": 0.004180323871183785,
+          "label": "proved_style_majorant_M6"
+        },
+        "infinite_tail_scaffold": {
+          "value": 0.0002520070466979074,
+          "label": "scaffolding_model_zero_tail_not_arithmetic_remainder"
+        }
+      },
+      "proved_model_decay_ok": true,
+      "full_arithmetic_A_status": "open",
+      "rh_status": "open",
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+      "note": "Model chain only. Full arithmetic Theorem A remains open. RH remains open. See docs/THEOREM_A_PACKAGE.md."
+    },
+    {
+      "T": 48.0,
+      "degree": 4,
+      "n_zeros": 10,
+      "weight_name": "hanning",
+      "empirical": {
+        "R_d_cl": 0.00017202317868002205,
+        "R_d_cl_weighted": 8.495466037912023e-13,
+        "R_d_ef": 0.0002776673100762783,
+        "R_d_ef_weighted": 4.617296125632296e-13
+      },
+      "majorants": {
+        "M3_style_cl_flat": {
+          "value": 0.0008689660111064922,
+          "label": "proved_style_majorant_M3_M6"
+        },
+        "M6_cl_weighted": {
+          "value": 0.0021724150277662307,
+          "label": "proved_style_majorant_M6"
+        },
+        "M5_ef_flat": {
+          "value": 0.000470286435508176,
+          "label": "proved_style_majorant_M5"
+        },
+        "M6_ef_weighted": {
+          "value": 0.0023514321775408797,
+          "label": "proved_style_majorant_M6"
+        },
+        "infinite_tail_scaffold": {
+          "value": 0.00014175396376757293,
+          "label": "scaffolding_model_zero_tail_not_arithmetic_remainder"
+        }
+      },
+      "proved_model_decay_ok": true,
+      "full_arithmetic_A_status": "open",
+      "rh_status": "open",
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+      "note": "Model chain only. Full arithmetic Theorem A remains open. RH remains open. See docs/THEOREM_A_PACKAGE.md."
+    }
+  ],
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "note": "Model chain exercise for Conditional Theorem A package. Full arithmetic A open. RH open."
+}
