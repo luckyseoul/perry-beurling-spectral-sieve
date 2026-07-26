@@ -4,8 +4,9 @@
 **Not an unconditional proof of the Riemann Hypothesis.**
 
 This document locks definitions so numerics, code, and math refer to the same objects.
-Proved results in this repo are **about the diagnostic**. Claims that need RH or
-that convert low \(R_d\) into zero-free regions are labeled **conditional / open**.
+Proved results in this repo are **about the diagnostic** (lemmas M1–M5, including
+finite-mode A₀). Claims that need RH or that convert low \(R_d\) into zero-free
+regions are labeled **conditional / open**.
 
 ---
 
@@ -114,6 +115,24 @@ R_d\bigl(q_T^{\mathrm{cl}}\bigr)\to0\quad(T\to\infty)
 \]
 at rate \(O(T^{-2})\) (Lemma M3).
 
+### Finite-mode A₀ (**proved**, Lemma M5)
+
+For a **finite** superposition of critical-line modes
+\[
+q_T^{(N)}(u)=\sum_{n=1}^{N}a_n\sin(t_n T u+\phi_n)
+\]
+(\(N<\infty\), \(t_n>0\), \(a\not\equiv0\)),
+\[
+R_d\bigl(q_T^{(N)}\bigr)=O_d(T^{-2})\qquad(T\to\infty)
+\]
+at the **same order** as pure-mode M3. Proof: `docs/PROOFS_LEMMAS.md` (M5);
+code: `lemmas.bound_R_d_finite_mode_sum`, `probes.finite_cl_superposition`,
+`probes.explicit_formula_residual`.
+
+This is the bridge from pure A₀ to truncated explicit-formula residuals. It does
+**not** prove full Theorem A for infinite zero sums or for the arithmetic prime
+residual.
+
 ### Full Theorem A (**conditional / not proved in this repo**)
 
 **Hypothesis (RH).** All non-trivial zeros of \(\zeta\) satisfy \(\mathrm{Re}\,\rho=\tfrac12\).
@@ -125,8 +144,9 @@ R_d(q_T)\to0\qquad(T\to\infty).
 \]
 
 **Status:** Conditional on RH. Outline: under RH the residual is a superposition
-of critical-line modes; each contributes \(O(T^{-2})\) (or better) to \(R_d\);
-controlling the sum over zeros is analytic number theory **not completed here**.
+of critical-line modes; each finite truncation contributes \(O(T^{-2})\) by M5;
+controlling the **infinite** sum over zeros (and remainders) is analytic number
+theory **not completed here**.
 
 ### Arithmetic multi-\(T\) evidence (measured, not a proof)
 
@@ -177,13 +197,32 @@ complete reduction from arithmetic residuals to these modes is open.
 
 ---
 
+### Explicit-formula residual + peel scan (measured)
+
+Builder: `pbss.probes.explicit_formula_residual` — truncated sum of first \(N\)
+critical-line modes with amplitudes \(2/|\rho_n|\) on the log-window (offline
+ordinates in `pbss.zeros`). Peel helper: `peel_residual`.
+
+Campaign: `experiments/run_explicit_formula_peel.py` →
+`results/explicit_formula_peel/` (JSON, TXT, plot). Multi-\(T\) × multi-\(N\):
+include \(R_d(q_T^{(N)})\) decays with \(T\) for each fixed \(N\) (finite-mode A₀);
+peel column records \(R_d\) after stripping the first \(N\) modes from a fixed
+\(N_{\mathrm{full}}\) sum.
+
+**Not a proof of RH or full Theorem A.**
+
+---
+
 ## 4. What is open
 
-1. Full Theorem A for the **arithmetic** residual under RH (zero-sum estimates).  
+1. Full Theorem A for the **arithmetic** residual under RH (infinite zero-sum /
+   remainder control). Finite truncations are covered by M5.  
 2. Full Theorem B (converse / obstruction ⇒ RH).  
 3. Sharp rate \(O(T^{-2(d+1)})\) for model or arithmetic residuals.  
 4. Legacy normalization with \(P\approx3.92\).  
-5. Diamond-system battery and large-\(T\) prime scans beyond current \(x_{\max}\).
+5. Diamond-system battery and large-\(T\) prime scans beyond current \(x_{\max}\).  
+6. Matching arithmetic \(q_T=(\theta-x)/\sqrt{x}\) to an explicit-formula residual
+   (zero-peeling the **prime** residual, not only the model sum).
 
 ---
 

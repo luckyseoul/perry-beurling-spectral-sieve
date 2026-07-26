@@ -21,6 +21,7 @@ PYTHONPATH=src python3 experiments/run_diagnostic.py
 PYTHONPATH=src python3 experiments/run_multi_T.py --workers 86
 PYTHONPATH=src python3 experiments/run_arithmetic_multi_T.py --workers 86
 PYTHONPATH=src python3 experiments/run_overnight_campaign.py --workers 86 --scratch /tmp/pbss_campaign
+PYTHONPATH=src python3 experiments/run_explicit_formula_peel.py
 ```
 
 **Grand campaign** (shipped): `experiments/run_grand_campaign.py` — arithmetic residual to
@@ -63,11 +64,15 @@ those values**; it reports \(R_d\) and \(S_d\) from the shipped path. See
 | Result | Status |
 |--------|--------|
 | **A₀** critical-line mode \(R_d\to0\) at \(O(T^{-2})\) | **Proved** (Lemma M3) |
+| **Finite-mode A₀** finite CL sum \(R_d=O(T^{-2})\) | **Proved** (Lemma M5) |
 | **A** arithmetic residual under RH | conditional / open |
 | **B₀** persistent defect \(\Rightarrow R_d=\varepsilon^2\not\to0\) | **Proved** (Lemmas M2–M4) |
 | **B** fast residual decay \(\Rightarrow\) RH | open |
 
-Details: [`docs/THEOREMS_AB.md`](docs/THEOREMS_AB.md) · Proofs: [`docs/PROOFS_LEMMAS.md`](docs/PROOFS_LEMMAS.md) · Status: [`docs/STATUS.md`](docs/STATUS.md).
+Explicit-formula residual: `pbss.probes.explicit_formula_residual` · peel scan:
+`experiments/run_explicit_formula_peel.py` → `results/explicit_formula_peel/`.
+
+Details: [`docs/THEOREMS_AB.md`](docs/THEOREMS_AB.md) · Proofs: [`docs/PROOFS_LEMMAS.md`](docs/PROOFS_LEMMAS.md) · Status: [`docs/STATUS.md`](docs/STATUS.md) · Paper: [`docs/paper/`](docs/paper/).
 
 **Not an unconditional RH proof.**
 

@@ -30,6 +30,9 @@ from .probes import (
     arithmetic_residual,
     primes_upto,
     normalize_l2,
+    finite_cl_superposition,
+    explicit_formula_residual,
+    peel_residual,
 )
 from .lemmas import (
     continuous_R_d_pure_mode,
@@ -37,7 +40,10 @@ from .lemmas import (
     synthetic_orthogonal_defect,
     predicted_R_d_critical_scaling,
     critical_line_omega,
+    bound_R_d_finite_mode_sum,
+    finite_mode_R_d_order_T,
 )
+from .zeros import zeta_zero_ordinates, ZETA_ZERO_ORDINATES_50
 
 __all__ = [
     "shifted_legendre_values",
@@ -59,11 +65,18 @@ __all__ = [
     "arithmetic_residual",
     "primes_upto",
     "normalize_l2",
+    "finite_cl_superposition",
+    "explicit_formula_residual",
+    "peel_residual",
     "continuous_R_d_pure_mode",
     "continuous_R_d_orthogonal_defect",
     "synthetic_orthogonal_defect",
     "predicted_R_d_critical_scaling",
     "critical_line_omega",
+    "bound_R_d_finite_mode_sum",
+    "finite_mode_R_d_order_T",
+    "zeta_zero_ordinates",
+    "ZETA_ZERO_ORDINATES_50",
 ]
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"

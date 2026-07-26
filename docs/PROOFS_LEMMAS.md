@@ -1,4 +1,4 @@
-# Proofs of Lemmas M1–M4
+# Proofs of Lemmas M1–M5
 
 All integrals are on \([0,1]\) with measure \(du\). Let \(\{\varphi_k\}\) be the
 orthonormal shifted Legendre system of `basis.py`.
@@ -98,3 +98,45 @@ choice of unit \(f\perp V_d\).
 representation of \(q_T\) cannot keep a fixed low-degree mass \(\varepsilon_0>0\)
 orthogonal-defect form. Vanishing of \(R_d\) is necessary for “no persistent
 polynomial defect.” Converting that into RH is **not** included in M4.
+
+---
+
+## Lemma M5 (finite critical-line superposition — finite-mode A₀)
+
+**Statement.** Let \(N<\infty\), amplitudes \(a_n\in\mathbb{R}\), ordinates \(t_n>0\),
+phases \(\phi_n\in\mathbb{R}\), and
+\[
+q_T(u)=\sum_{n=1}^{N}a_n\sin(t_n T u+\phi_n)
+\]
+(or the cosine form with the same frequencies). Then
+\[
+R_d(q_T)=O_d(T^{-2})\qquad(T\to\infty)
+\]
+at the **same order** as pure-mode M3 (not a weaker rate). Code:
+`bound_R_d_finite_mode_sum`, `finite_cl_superposition`, tests `test_M5_*`.
+
+**Proof.** Fix \(k\le d\). Linearity and the M3 integration-by-parts bound give
+\[
+\bigl|\langle q_T,\varphi_k\rangle\bigr|
+\le\sum_{n=1}^{N}|a_n|\,\frac{C_k}{t_n T}
+=\frac{C_k}{T}\sum_{n=1}^{N}\frac{|a_n|}{t_n}.
+\]
+Hence
+\[
+\|P_d q_T\|_2^2
+=\sum_{k=0}^{d}|\langle q_T,\varphi_k\rangle|^2
+\le\frac{(d+1)C_{\max}^2}{T^2}\Bigl(\sum_n\frac{|a_n|}{t_n}\Bigr)^2
+=O_{d,N,\{a,t\}}(T^{-2}).
+\]
+Expanding \(\|q_T\|_2^2\) into diagonal sine terms \(\to\tfrac12\sum a_n^2\) and
+cross terms \(O(T^{-1})\), for large \(T\) and \(a\not\equiv0\) we have
+\(\|q_T\|_2^2\ge\tfrac14\sum a_n^2>0\). Therefore
+\[
+R_d(q_T)=\frac{\|P_d q_T\|_2^2}{\|q_T\|_2^2}=O_d(T^{-2}).
+\]
+□
+
+**Remark.** This is the finite-mode extension of model theorem A₀ needed for
+truncated explicit-formula residuals. It does **not** control infinite zero sums
+or the arithmetic residual \(q_T=(\theta-x)/\sqrt{x}\); full Theorem A and RH
+remain open.

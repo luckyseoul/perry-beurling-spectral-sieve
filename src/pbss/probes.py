@@ -317,3 +317,180 @@ def default_T_from_xmax(x_max: float) -> float:
 
 def xmax_from_T(T: float) -> float:
     return float(np.exp(T))
+
+
+def finite_cl_superposition(
+    u: np.ndarray,
+    T: float,
+    amplitudes: np.ndarray,
+    ordinates: np.ndarray,
+    phases: Optional[np.ndarray] = None,
+    *,
+    form: str = "sin",
+) -> np.ndarray:
+    """
+    Finite critical-line mode sum on the log-window (Lemma M5 family):
+
+      q(u) = ∑_n a_n sin(t_n T u + φ_n)   (form='sin')
+           = ∑_n a_n cos(t_n T u - φ_n)   (form='cos')
+
+    This is the pure oscillatory skeleton of a truncated explicit-formula residual.
+    """
+    u = np.asarray(u, dtype=np.float64)
+    T = float(T)
+    if T <= 0:
+        raise ValueError("T > 0")
+    a = np.asarray(amplitudes, dtype=np.float64).ravel()
+    t = np.asarray(ordinates, dtype=np.float64).ravel()
+    if a.size == 0 or a.size != t.size:
+        raise ValueError("amplitudes and ordinates must match and be nonempty")
+    if phases is None:
+        ph = np.zeros_like(a)
+    else:
+        ph = np.asarray(phases, dtype=np.float64).ravel()
+        if ph.size != a.size:
+            raise ValueError("phases length must match amplitudes")
+    q = np.zeros_like(u, dtype=np.float64)
+    form = form.lower()
+    if form == "sin":
+        for an, tn, pn in zip(a, t, ph):
+            q += an * np.sin(tn * T * u + pn)
+    elif form == "cos":
+        for an, tn, pn in zip(a, t, ph):
+            q += an * np.cos(tn * T * u - pn)
+    else:
+        raise ValueError("form must be 'sin' or 'cos'")
+    return q
+
+
+def explicit_formula_residual(
+    u: np.ndarray,
+    *,
+    T: float,
+    n_zeros: int = 10,
+    ordinates: Optional[np.ndarray] = None,
+    amplitudes: Optional[np.ndarray] = None,
+    phases: Optional[np.ndarray] = None,
+    bulk: str = "none",
+    bulk_scale: float = 0.0,
+    form: str = "cos",
+) -> Tuple[np.ndarray, float, dict]:
+    """
+    Truncated explicit-formula-style residual on the PBSS log-window.
+
+    Under RH the prime residual is a superposition of critical-line modes. This
+    builder ships a **finite truncation** of that structure (first ``n_zeros``
+    ordinates), not the full arithmetic ψ-explicit formula with all remainders:
+
+      q_T^{(N)}(u) = ∑_{n=1}^N a_n cos(t_n T u - α_n)  [default]
+                   + optional bulk (constant / linear in u)
+
+    Default a_n = 2/|ρ_n|, α_n = arg(1/2 + i t_n) with ρ_n = 1/2 + i t_n
+    (see ``pbss.zeros``). Compatible with ``energy_ratio`` / ``project``.
+
+    **Not a proof of RH or full Theorem A** — a model residual for finite-mode A₀
+    and multi-(T,N) peel scans.
+
+    Returns
+    -------
+    q : residual samples (raw sum; caller may normalize)
+    T : window length
+    meta : dict with n_zeros, ordinates, amplitudes, bulk, form
+    """
+    from .zeros import (
+        explicit_formula_amplitudes,
+        explicit_formula_phases,
+        zeta_zero_ordinates,
+    )
+
+    u = np.asarray(u, dtype=np.float64)
+    T = float(T)
+    if T <= 0:
+        raise ValueError("T > 0")
+
+    t = zeta_zero_ordinates(n_zeros, ordinates=ordinates)
+    if amplitudes is None:
+        a = explicit_formula_amplitudes(t)
+    else:
+        a = np.asarray(amplitudes, dtype=np.float64).ravel()
+        if a.size != t.size:
+            raise ValueError("amplitudes length must equal n_zeros / ordinates")
+    if phases is None:
+        ph = explicit_formula_phases(t)
+    else:
+        ph = np.asarray(phases, dtype=np.float64).ravel()
+        if ph.size != t.size:
+            raise ValueError("phases length must equal n_zeros / ordinates")
+
+    q = finite_cl_superposition(u, T, a, t, ph, form=form)
+
+    bulk = (bulk or "none").lower()
+    if bulk_scale != 0.0 and bulk not in ("none", "raw", "off"):
+        if bulk in ("deg0", "const", "constant"):
+            q = q + float(bulk_scale)
+        elif bulk in ("deg1", "linear"):
+            q = q + float(bulk_scale) * (u - 0.5)
+        else:
+            raise ValueError(f"unknown bulk mode: {bulk}")
+
+    meta = {
+        "T": T,
+        "n_zeros": int(t.size),
+        "ordinates": t.tolist(),
+        "amplitudes": a.tolist(),
+        "phases": ph.tolist(),
+        "bulk": bulk,
+        "bulk_scale": float(bulk_scale),
+        "form": form,
+        "kind": "explicit_formula_truncated",
+        "note": (
+            "Truncated CL-mode sum; not full arithmetic residual; "
+            "not an RH proof."
+        ),
+    }
+    return q, T, meta
+
+
+def peel_residual(
+    q_full: np.ndarray,
+    u: np.ndarray,
+    T: float,
+    n_strip: int,
+    *,
+    ordinates: Optional[np.ndarray] = None,
+    amplitudes: Optional[np.ndarray] = None,
+    phases: Optional[np.ndarray] = None,
+    form: str = "cos",
+) -> Tuple[np.ndarray, dict]:
+    """
+    Strip the first ``n_strip`` explicit-formula modes from a residual sample:
+
+      q_peel = q_full - q_T^{(n_strip)}
+
+    Used in multi-N peel scans (full truncated sum minus low zeros).
+    """
+    if n_strip < 0:
+        raise ValueError("n_strip >= 0")
+    if n_strip == 0:
+        return np.asarray(q_full, dtype=np.float64).copy(), {
+            "n_strip": 0,
+            "stripped": False,
+        }
+    q_modes, _, meta = explicit_formula_residual(
+        u,
+        T=T,
+        n_zeros=n_strip,
+        ordinates=ordinates,
+        amplitudes=amplitudes,
+        phases=phases,
+        form=form,
+        bulk="none",
+        bulk_scale=0.0,
+    )
+    q_peel = np.asarray(q_full, dtype=np.float64) - q_modes
+    meta_out = {
+        "n_strip": int(n_strip),
+        "stripped": True,
+        "mode_meta": meta,
+    }
+    return q_peel, meta_out

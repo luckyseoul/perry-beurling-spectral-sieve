@@ -1,0 +1,308 @@
+{
+  "degree": 4,
+  "n_points": 8192,
+  "T_values": [
+    8.0,
+    12.0,
+    20.0,
+    32.0,
+    48.0
+  ],
+  "N_values": [
+    1,
+    2,
+    5,
+    10,
+    20
+  ],
+  "N_full": 30,
+  "rows": [
+    {
+      "T": 8.0,
+      "N": 1,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0062193984652977865,
+      "R_d_peel": 0.008736670989088932,
+      "M5_bound_include": 0.006256555154492646,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 8.0,
+      "N": 2,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.007179179430284404,
+      "R_d_peel": 0.0071804610302167796,
+      "M5_bound_include": 0.009085081815310375,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 8.0,
+      "N": 5,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.009896554315870235,
+      "R_d_peel": 0.004689269275216929,
+      "M5_bound_include": 0.013586087020981075,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 8.0,
+      "N": 10,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.011639016108192428,
+      "R_d_peel": 0.0031786803215713482,
+      "M5_bound_include": 0.01693031167829433,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 8.0,
+      "N": 20,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.012545141037843727,
+      "R_d_peel": 0.0009455766930166443,
+      "M5_bound_include": 0.019960716284824497,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 12.0,
+      "N": 1,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0027744449631804165,
+      "R_d_peel": 0.00415273074481032,
+      "M5_bound_include": 0.002780691179774509,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 12.0,
+      "N": 2,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0034870982570315056,
+      "R_d_peel": 0.0033206178471749566,
+      "M5_bound_include": 0.004037814140137943,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 12.0,
+      "N": 5,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.00475760136564137,
+      "R_d_peel": 0.002146991454944773,
+      "M5_bound_include": 0.006038260898213811,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 12.0,
+      "N": 10,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.005494891842767769,
+      "R_d_peel": 0.001329850583303742,
+      "M5_bound_include": 0.007524582968130816,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 12.0,
+      "N": 20,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.006046798835761458,
+      "R_d_peel": 0.0004661551849823995,
+      "M5_bound_include": 0.008871429459922,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 20.0,
+      "N": 1,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0010004654554818563,
+      "R_d_peel": 0.0015103463275527424,
+      "M5_bound_include": 0.0010010488247188234,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 20.0,
+      "N": 2,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0014041592446764092,
+      "R_d_peel": 0.0013473306701141385,
+      "M5_bound_include": 0.0014536130904496596,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 20.0,
+      "N": 5,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0015721422784461773,
+      "R_d_peel": 0.0009125456742822718,
+      "M5_bound_include": 0.002173773923356972,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 20.0,
+      "N": 10,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0017879361230883628,
+      "R_d_peel": 0.0005751683220850786,
+      "M5_bound_include": 0.0027088498685270933,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 20.0,
+      "N": 20,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0019870017162137033,
+      "R_d_peel": 0.00018903095232991366,
+      "M5_bound_include": 0.0031937146055719223,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 32.0,
+      "N": 1,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.00039061421895131174,
+      "R_d_peel": 0.0006010968844644053,
+      "M5_bound_include": 0.00039103469715579036,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 32.0,
+      "N": 2,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.000549732115637575,
+      "R_d_peel": 0.0005605383304452545,
+      "M5_bound_include": 0.0005678176134568984,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 32.0,
+      "N": 5,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0006064153377376212,
+      "R_d_peel": 0.0003880790632771882,
+      "M5_bound_include": 0.0008491304388113172,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 32.0,
+      "N": 10,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0006462099332482308,
+      "R_d_peel": 0.00017728603359147376,
+      "M5_bound_include": 0.0010581444798933956,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 32.0,
+      "N": 20,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0007495698867790331,
+      "R_d_peel": 5.6776976379983306e-05,
+      "M5_bound_include": 0.001247544767801531,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 48.0,
+      "N": 1,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.00017311400299451412,
+      "R_d_peel": 0.0002988111876231448,
+      "M5_bound_include": 0.00017379319873590682,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 48.0,
+      "N": 2,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0001601104006485955,
+      "R_d_peel": 0.00022250348538331796,
+      "M5_bound_include": 0.0002523633837586214,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 48.0,
+      "N": 5,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.00022648609757561108,
+      "R_d_peel": 0.00014246569192429256,
+      "M5_bound_include": 0.0003773913061383632,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 48.0,
+      "N": 10,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0002811985596977106,
+      "R_d_peel": 9.56028986512426e-05,
+      "M5_bound_include": 0.000470286435508176,
+      "n_points": 8192,
+      "form": "cos"
+    },
+    {
+      "T": 48.0,
+      "N": 20,
+      "N_full": 30,
+      "degree": 4,
+      "R_d_include": 0.0003311899247432252,
+      "R_d_peel": 2.5386755030713505e-05,
+      "M5_bound_include": 0.000554464341245125,
+      "n_points": 8192,
+      "form": "cos"
+    }
+  ],
+  "qualitative": {
+    "R_include_decays_with_T_per_N": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "10": true,
+      "20": true
+    },
+    "all_N_decay_ok": true
+  },
+  "interpretation": "Supports finite-mode A0 (Lemma M5): truncated explicit-formula residuals have R_d \u2192 0 as T\u2192\u221e at O(T^{-2}) scale. Peel columns show residual after stripping first N modes from an N_full sum. Not a proof of RH or full Theorem A for arithmetic primes.",
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+}
