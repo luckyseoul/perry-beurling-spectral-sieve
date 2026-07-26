@@ -222,7 +222,14 @@ peel column records \(R_d\) after stripping the first \(N\) modes from a fixed
 4. Legacy normalization with \(P\approx3.92\).  
 5. Diamond-system battery and large-\(T\) prime scans beyond current \(x_{\max}\).  
 6. Matching arithmetic \(q_T=(\theta-x)/\sqrt{x}\) to an explicit-formula residual
-   (zero-peeling the **prime** residual, not only the model sum).
+   (zero-peeling the **prime** residual, not only the model sum) — peel campaign
+   shipped; arithmetic \(R_d\) still plateaus through \(x\le5\times10^{10}\).
+
+### Marathon campaigns (measured)
+
+See `docs/STATUS.md` marathon section: arithmetic zero-peel, extend-\(x\) to
+\(5\times10^{10}\) (parallel sieve), Beurling battery, MC ≥50k/T. **Not RH proofs.**
+
 
 ---
 

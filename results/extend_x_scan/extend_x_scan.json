@@ -1,0 +1,645 @@
+{
+  "status": "completed",
+  "elapsed_s": 782.5078718662262,
+  "sieve_seconds": 130.78368043899536,
+  "residual_finish_s": 41.724191427230835,
+  "x_max": 50000000000.0,
+  "x_max_gt_1e10": true,
+  "n_primes": 2119654578,
+  "choose_note": "x_max=5e10 (1e11 rejected: est ~42GiB primes > ~55% of 60GiB RAM)",
+  "prime_meta": {
+    "x_max": 50000000000,
+    "n_primes": 2119654578,
+    "path": "/home/nick/perry-beurling-spectral-sieve/results/prime_checkpoints/primes_le_50000000000.npy",
+    "method": "extend_from_10000000000_parallel_w86",
+    "extended_from": 10000000000,
+    "sieve_seconds": 130.78368043899536,
+    "workers": 86
+  },
+  "T_values": [
+    16.635,
+    17.524,
+    18.413,
+    19.302,
+    20.191,
+    21.08,
+    21.969,
+    22.858,
+    23.746,
+    24.635
+  ],
+  "degrees": [
+    2,
+    4,
+    6
+  ],
+  "detrends": [
+    "deg1",
+    "none"
+  ],
+  "rows": [
+    {
+      "T": 16.635,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.12487,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 16768287.30364781,
+      "n_primes": null
+    },
+    {
+      "T": 16.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.18738,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 16768287.30364781,
+      "n_primes": null
+    },
+    {
+      "T": 16.635,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.19072,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 16768287.30364781,
+      "n_primes": null
+    },
+    {
+      "T": 16.635,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96519,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 16768287.30364781,
+      "n_primes": null
+    },
+    {
+      "T": 16.635,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.96768,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 16768287.30364781,
+      "n_primes": null
+    },
+    {
+      "T": 16.635,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.96781,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 16768287.30364781,
+      "n_primes": null
+    },
+    {
+      "T": 17.524,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.11422,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 40792141.07051885,
+      "n_primes": null
+    },
+    {
+      "T": 17.524,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.18222,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 40792141.07051885,
+      "n_primes": null
+    },
+    {
+      "T": 17.524,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.18534,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 40792141.07051885,
+      "n_primes": null
+    },
+    {
+      "T": 17.524,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96434,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 40792141.07051885,
+      "n_primes": null
+    },
+    {
+      "T": 17.524,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.96708,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 40792141.07051885,
+      "n_primes": null
+    },
+    {
+      "T": 17.524,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.9672,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 40792141.07051885,
+      "n_primes": null
+    },
+    {
+      "T": 18.413,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.10506,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 99234867.75868404,
+      "n_primes": null
+    },
+    {
+      "T": 18.413,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.18047,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 99234867.75868404,
+      "n_primes": null
+    },
+    {
+      "T": 18.413,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.1837,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 99234867.75868404,
+      "n_primes": null
+    },
+    {
+      "T": 18.413,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96397,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 99234867.75868404,
+      "n_primes": null
+    },
+    {
+      "T": 18.413,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.967,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 99234867.75868404,
+      "n_primes": null
+    },
+    {
+      "T": 18.413,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.96713,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 99234867.75868404,
+      "n_primes": null
+    },
+    {
+      "T": 19.302,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.090493,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 241408239.93669948,
+      "n_primes": null
+    },
+    {
+      "T": 19.302,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.1742,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 241408239.93669948,
+      "n_primes": null
+    },
+    {
+      "T": 19.302,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.17748,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 241408239.93669948,
+      "n_primes": null
+    },
+    {
+      "T": 19.302,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96321,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 241408239.93669948,
+      "n_primes": null
+    },
+    {
+      "T": 19.302,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.96659,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 241408239.93669948,
+      "n_primes": null
+    },
+    {
+      "T": 19.302,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.96672,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 241408239.93669948,
+      "n_primes": null
+    },
+    {
+      "T": 20.191,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.077622,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 587272796.6046507,
+      "n_primes": null
+    },
+    {
+      "T": 20.191,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.17051,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 587272796.6046507,
+      "n_primes": null
+    },
+    {
+      "T": 20.191,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.17413,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 587272796.6046507,
+      "n_primes": null
+    },
+    {
+      "T": 20.191,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96286,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 587272796.6046507,
+      "n_primes": null
+    },
+    {
+      "T": 20.191,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.9666,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 587272796.6046507,
+      "n_primes": null
+    },
+    {
+      "T": 20.191,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.96675,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 587272796.6046507,
+      "n_primes": null
+    },
+    {
+      "T": 21.08,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.068491,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 1428656029.8119159,
+      "n_primes": null
+    },
+    {
+      "T": 21.08,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.16482,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 1428656029.8119159,
+      "n_primes": null
+    },
+    {
+      "T": 21.08,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.16744,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 1428656029.8119159,
+      "n_primes": null
+    },
+    {
+      "T": 21.08,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96211,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 1428656029.8119159,
+      "n_primes": null
+    },
+    {
+      "T": 21.08,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.96603,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 1428656029.8119159,
+      "n_primes": null
+    },
+    {
+      "T": 21.08,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.96614,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 1428656029.8119159,
+      "n_primes": null
+    },
+    {
+      "T": 21.969,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.056705,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 3475485435.931036,
+      "n_primes": null
+    },
+    {
+      "T": 21.969,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.15915,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 3475485435.931036,
+      "n_primes": null
+    },
+    {
+      "T": 21.969,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.16263,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 3475485435.931036,
+      "n_primes": null
+    },
+    {
+      "T": 21.969,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96171,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 3475485435.931036,
+      "n_primes": null
+    },
+    {
+      "T": 21.969,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.96587,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 3475485435.931036,
+      "n_primes": null
+    },
+    {
+      "T": 21.969,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.96601,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 3475485435.931036,
+      "n_primes": null
+    },
+    {
+      "T": 22.858,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.049712,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 8454798610.242743,
+      "n_primes": null
+    },
+    {
+      "T": 22.858,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.15679,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 8454798610.242743,
+      "n_primes": null
+    },
+    {
+      "T": 22.858,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.15887,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 8454798610.242743,
+      "n_primes": null
+    },
+    {
+      "T": 22.858,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96128,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 8454798610.242743,
+      "n_primes": null
+    },
+    {
+      "T": 22.858,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.96565,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 8454798610.242743,
+      "n_primes": null
+    },
+    {
+      "T": 22.858,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.96573,
+      "residual_backend": "cupy_searchsorted",
+      "proj_backend": "cupy",
+      "x_max_window": 8454798610.242743,
+      "n_primes": null
+    },
+    {
+      "T": 23.746,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.039479,
+      "residual_backend": "numpy",
+      "proj_backend": "cupy",
+      "x_max_window": 20547394879.527443,
+      "n_primes": null
+    },
+    {
+      "T": 23.746,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.15071,
+      "residual_backend": "numpy",
+      "proj_backend": "cupy",
+      "x_max_window": 20547394879.527443,
+      "n_primes": null
+    },
+    {
+      "T": 23.746,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.15409,
+      "residual_backend": "numpy",
+      "proj_backend": "cupy",
+      "x_max_window": 20547394879.527443,
+      "n_primes": null
+    },
+    {
+      "T": 23.746,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.96108,
+      "residual_backend": "numpy",
+      "proj_backend": "cupy",
+      "x_max_window": 20547394879.527443,
+      "n_primes": null
+    },
+    {
+      "T": 23.746,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.96559,
+      "residual_backend": "numpy",
+      "proj_backend": "cupy",
+      "x_max_window": 20547394879.527443,
+      "n_primes": null
+    },
+    {
+      "T": 23.746,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.96572,
+      "residual_backend": "numpy",
+      "proj_backend": "cupy",
+      "x_max_window": 20547394879.527443,
+      "n_primes": null
+    },
+    {
+      "T": 24.635,
+      "degree": 2,
+      "detrend": "deg1",
+      "R_d": 0.03401927229052612,
+      "x_max_window": 49985559966.81935,
+      "n_primes": 2119068237,
+      "residual_backend": "numpy_mmap",
+      "proj_backend": "cupy"
+    },
+    {
+      "T": 24.635,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d": 0.1464349940935922,
+      "x_max_window": 49985559966.81935,
+      "n_primes": 2119068237,
+      "residual_backend": "numpy_mmap",
+      "proj_backend": "cupy"
+    },
+    {
+      "T": 24.635,
+      "degree": 6,
+      "detrend": "deg1",
+      "R_d": 0.14927699545507034,
+      "x_max_window": 49985559966.81935,
+      "n_primes": 2119068237,
+      "residual_backend": "numpy_mmap",
+      "proj_backend": "cupy"
+    },
+    {
+      "T": 24.635,
+      "degree": 2,
+      "detrend": "none",
+      "R_d": 0.960834201459338,
+      "x_max_window": 49985559966.81935,
+      "n_primes": 2119068237,
+      "residual_backend": "numpy_mmap",
+      "proj_backend": "cupy"
+    },
+    {
+      "T": 24.635,
+      "degree": 4,
+      "detrend": "none",
+      "R_d": 0.965392099216507,
+      "x_max_window": 49985559966.81935,
+      "n_primes": 2119068237,
+      "residual_backend": "numpy_mmap",
+      "proj_backend": "cupy"
+    },
+    {
+      "T": 24.635,
+      "degree": 6,
+      "detrend": "none",
+      "R_d": 0.9655073341151079,
+      "x_max_window": 49985559966.81935,
+      "n_primes": 2119068237,
+      "residual_backend": "numpy_mmap",
+      "proj_backend": "cupy"
+    }
+  ],
+  "residual_strategy": "gpu_prefix_then_mmap_final_T",
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "interpretation": "Multi-T arithmetic residual through x_max=5.000e+10 (>1e10). Not a proof of RH or full Theorem A."
+}

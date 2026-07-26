@@ -7,11 +7,56 @@
 
 **This repository does not contain an unconditional proof of the Riemann Hypothesis.**
 
-What *is* claimed: precise conditional Theorems A/B, **proved model lemmas M1–M5**
-about the diagnostic (including finite-mode A₀), multi-\(T\) numerics supporting
-A₀/B₀, truncated explicit-formula residuals, and multi-\((T,N)\) peel scans.
+What *is* claimed: model lemmas M1–M5, multi-\(T\) numerics, truncated explicit-formula
+residuals, arithmetic zero-peel diagnostics, Beurling battery scorecards, extended-\(x\)
+scans, and MC instrument stress. Full Theorems A/B and RH remain open.
 
 Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md)
+
+---
+
+## Marathon legs 1–5 (2026-07-26)
+
+### 1. Arithmetic zero-peel
+
+**Entry:** `experiments/run_arithmetic_zero_peel.py`  
+**Artifacts:** `results/arith_zero_peel/` (JSON, TXT, plot)  
+**What:** \(q_T=(\theta-x)/\sqrt{x}\) with first \(N\) CL modes stripped (optional LS scale α), multi-\((T,N,d,\mathrm{detrend})\).  
+**Reading:** Peeling model modes does **not** collapse arithmetic \(R_d\) to A₀ levels through \(10^{10}\). Diagnostic only.
+
+### 2. Larger-\(x\) stack
+
+**Entry:** `experiments/run_extend_x_scan.py` (+ GPU residual helpers in `pbss.gpu_residual`)  
+**Checkpoint:** `results/prime_checkpoints/primes_le_50000000000.*`  
+**Artifacts:** `results/extend_x_scan/` (JSON, TXT, plot, csum)  
+
+| Quantity | Value |
+|----------|------:|
+| Chosen \(x_{\max}\) | \(5\times10^{10}\) |
+| \(n_{\mathrm{primes}}\) | 2 119 654 578 |
+| Sieve | parallel segment extend from \(10^{10}\), **86 workers**, ~131 s |
+| \(10^{11}\) | **Rejected:** est. ~42 GiB primes > ~55% of 60 GiB RAM |
+| \(10^{12}\) | Infeasible (disk/RAM) |
+| Residual | GPU searchsorted+project when prefix fits V100; mmap for full table |
+| Focus \(R_4\) deg1 at \(T\approx24.6\) | ~0.146 (soft plateau continues) |
+
+### 3. Beurling battery
+
+**Entry:** `experiments/run_beurling_battery.py`  
+**Artifacts:** `results/beurling_battery/`  
+**Systems:** `ordinary_primes` (rh_like), `gapped_gap3`, `thinned_every3` (defective).  
+**At \(T=18\):** ordinary \(R_4\sim0.18\); defective \(\sim0.98\)–\(0.99\) — clear separation.
+
+### 4. MC / ablation stress
+
+**Entry:** `experiments/run_mc_stress.py`  
+**Artifacts:** `results/mc_stress/`  
+**Scale:** **50 000** trials/T × 4 windows = 200 000 trials; degrees \(2,4,6,8\); 86 workers.  
+**Result:** mean \(R_d\sim0.79\) flat in \(T\); stamp `MC_STRESS_COMPLETE`.
+
+### 5. Docs / non-claim
+
+This STATUS + theorem pointers. Paper: `docs/paper/`. **No RH proof claim.**
 
 ---
 
@@ -19,85 +64,15 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 
 | Lemma | Statement | Code / test |
 |-------|-----------|-------------|
-| **M1** | \(R_d(\varphi_m)=1_{m\le d}\) | `lemmas.continuous_R_d_pure_mode` · `test_M1_*` |
-| **M2** | Orthogonal defect \(R_d=\varepsilon^2\) | `continuous_R_d_orthogonal_defect` · `test_M2_*` |
-| **M3** | Critical-line mode \(R_d(\sin(tTu))=O(T^{-2})\) | `test_M3_*` |
-| **M4** | Fixed \(\varepsilon>0\) ⇒ \(R_d\not\to0\) | `test_M4_*` |
-| **M5** | Finite CL superposition \(R_d=O_d(T^{-2})\) (finite-mode A₀) | `bound_R_d_finite_mode_sum` · `test_M5_*` |
-
-## Theorems A/B (status split)
+| **M1–M4** | pure mode / defect / CL decay / blocks vanishing | `lemmas` · `test_lemmas` |
+| **M5** | Finite CL sum \(R_d=O_d(T^{-2})\) | `bound_R_d_finite_mode_sum` · `test_M5_*` |
 
 | Result | Status |
 |--------|--------|
-| **A₀** (critical-line pure mode \(R_d\to0\)) | **Proved** (M3) |
-| **Finite-mode A₀** (finite CL sum \(R_d=O(T^{-2})\)) | **Proved** (M5) |
-| **A** (arithmetic residual under RH) | **Conditional / open** |
-| **B₀** (persistent defect blocks \(R_d\to0\)) | **Proved** (M2+M4) |
-| **B** (fast residual decay ⇒ RH) | **Open** (as hard as RH) |
-
----
-
-## Explicit-formula residual + peel scan
-
-**Builder:** `pbss.probes.explicit_formula_residual` — truncated sum of first \(N\)
-critical-line modes (\(a_n=2/|\rho_n|\), offline ordinates in `pbss.zeros`).  
-**Peel:** `peel_residual` strips the first \(N\) modes from a full truncated sum.  
-**Experiment:** `experiments/run_explicit_formula_peel.py`  
-**Artifacts:** `results/explicit_formula_peel/` (JSON, TXT, PNG).
-
-| \(T\) | \(N\) | \(R_d\) include (d=4) | note |
-|------:|------:|----------------------:|------|
-| 8 | 1 | \(6.2\times10^{-3}\) | decays with \(T\) |
-| 48 | 1 | \(1.7\times10^{-4}\) | |
-| 8 | 20 | \(1.3\times10^{-2}\) | more modes, still \(O(T^{-2})\) |
-| 48 | 20 | \(3.3\times10^{-4}\) | |
-
-**Reading:** Truncated EF residuals behave like finite-mode A₀ (M5). This does
-**not** make the arithmetic residual at \(x\le10^{10}\) collapse, and is **not**
-an RH proof.
-
----
-
-## Multi-\(T\) campaigns (shipped path)
-
-### Model A0/B0 (`experiments/run_multi_T.py`)
-
-| \(T\) | \(R_4\) critical-line | \(R_4\) persistent defect |
-|------:|----------------------:|--------------------------:|
-| 3 | 2.28e-02 | 0.250 |
-| 80 | 6.13e-05 | 0.250 |
-
-Critical-line **decays**; defect **flat** at \(\varepsilon^2\).
-
-### Grand campaign (`experiments/run_grand_campaign.py`)
-
-**Scale:** \(x_{\max}=10^{10}\) (455,052,511 primes, segmented sieve + **on-disk checkpoint**).  
-**MC:** **20,000** spectral-defect trials **per \(T\)** × 14 windows = **280,000** trials.  
-**Arithmetic focus** (d=4, deg1): soft plateau \(R_4\sim0.15\)–\(0.19\) through \(10^{10}\).
-
-**Reading:** Arithmetic \(R_d\) soft-plateaus; still no A0-style collapse. Full Theorem A open. **Not a proof of RH.**
-
-Plots: `results/grand_campaign/grand_Rd_vs_T.png`, `grand_arith_focus_linear.png`.
-
----
-
-## Progress vs open
-
-**Done:**
-
-1. A0/B0 lemmas M1–M4; **finite-mode A₀ as M5**.  
-2. Explicit-formula truncated residual + peel + multi-\((T,N)\) scan.  
-3. Segmented sieve + prime checkpoint to \(10^{10}\).  
-4. Grand campaign: multi-\(T\) arithmetic ablations, controls, MC, resume, plots.  
-5. Optional CuPy projection backend with NumPy fallback.  
-6. Status paper: `docs/paper/`.
-
-**Still open:**
-
-1. Full Theorem A (arithmetic \(R_d\to 0\) under RH) — not seen at \(x\le 10^{10}\).  
-2. Full Theorem B.  
-3. Zero-peeling the **arithmetic** residual (match primes to EF modes).  
-4. Legacy P≈3.92 normalization.
+| **A₀ / finite-mode A₀** | **Proved** (M3/M5) |
+| **A** arithmetic under RH | **Open** |
+| **B₀** | **Proved** (M2+M4) |
+| **B** | **Open** |
 
 ---
 
@@ -106,7 +81,9 @@ Plots: `results/grand_campaign/grand_Rd_vs_T.png`, `grand_arith_focus_linear.png
 ```bash
 cd perry-beurling-spectral-sieve
 PYTHONPATH=src python3 -m pytest tests/ -v
-PYTHONPATH=src python3 experiments/run_multi_T.py --workers 4
+PYTHONPATH=src python3 experiments/run_arithmetic_zero_peel.py
+PYTHONPATH=src python3 experiments/run_beurling_battery.py
+PYTHONPATH=src python3 experiments/run_mc_stress.py --mc-per-t 50000 --workers 86
+PYTHONPATH=src python3 experiments/run_extend_x_scan.py --workers 86
 PYTHONPATH=src python3 experiments/run_explicit_formula_peel.py
-PYTHONPATH=src python3 experiments/run_diagnostic.py
 ```

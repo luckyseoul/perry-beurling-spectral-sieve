@@ -461,13 +461,15 @@ def peel_residual(
     amplitudes: Optional[np.ndarray] = None,
     phases: Optional[np.ndarray] = None,
     form: str = "cos",
+    mode_scale: float = 1.0,
 ) -> Tuple[np.ndarray, dict]:
     """
     Strip the first ``n_strip`` explicit-formula modes from a residual sample:
 
-      q_peel = q_full - q_T^{(n_strip)}
+      q_peel = q_full - mode_scale * q_T^{(n_strip)}
 
-    Used in multi-N peel scans (full truncated sum minus low zeros).
+    Used in multi-N peel scans (full truncated sum minus low zeros) and for
+    arithmetic residual zero-peeling (``mode_scale`` may be fitted or 1).
     """
     if n_strip < 0:
         raise ValueError("n_strip >= 0")
@@ -475,6 +477,7 @@ def peel_residual(
         return np.asarray(q_full, dtype=np.float64).copy(), {
             "n_strip": 0,
             "stripped": False,
+            "mode_scale": float(mode_scale),
         }
     q_modes, _, meta = explicit_formula_residual(
         u,
@@ -487,10 +490,89 @@ def peel_residual(
         bulk="none",
         bulk_scale=0.0,
     )
-    q_peel = np.asarray(q_full, dtype=np.float64) - q_modes
+    q_peel = np.asarray(q_full, dtype=np.float64) - float(mode_scale) * q_modes
     meta_out = {
         "n_strip": int(n_strip),
         "stripped": True,
+        "mode_scale": float(mode_scale),
         "mode_meta": meta,
     }
     return q_peel, meta_out
+
+
+def arithmetic_zero_peel(
+    u: np.ndarray,
+    *,
+    T: Optional[float] = None,
+    x_max: Optional[float] = None,
+    n_strip: int = 0,
+    primes: Optional[np.ndarray] = None,
+    csum: Optional[np.ndarray] = None,
+    detrend: str = "deg1",
+    smooth: int = 1,
+    mode_scale: float = 1.0,
+    form: str = "cos",
+    fit_scale: bool = False,
+) -> Tuple[np.ndarray, float, dict]:
+    """
+    Arithmetic residual with the first ``n_strip`` critical-line modes removed.
+
+      q_raw = detrend((θ(x)-x)/√x) on x=e^{uT}
+      q     = q_raw - α · q_T^{(N)}
+
+    If ``fit_scale`` is True, α is least-squares against the mode sum on the
+    sample grid (minimizes ‖q_raw - α m‖); else α = mode_scale.
+
+    **Not a proof of RH.** Peeling model modes from the prime residual is a
+    diagnostic; full Theorem A remains open.
+    """
+    q_raw, T_out, meta = arithmetic_residual(
+        u,
+        T=T,
+        x_max=x_max,
+        primes=primes,
+        csum=csum,
+        detrend=detrend,
+        smooth=smooth,
+    )
+    if n_strip <= 0:
+        meta = {
+            **meta,
+            "n_strip": 0,
+            "mode_scale": 0.0,
+            "fit_scale": False,
+            "kind": "arithmetic_zero_peel",
+            "note": "No modes stripped. Not an RH proof.",
+        }
+        return q_raw, T_out, meta
+
+    q_modes, _, mode_meta = explicit_formula_residual(
+        u, T=T_out, n_zeros=int(n_strip), form=form, bulk="none", bulk_scale=0.0
+    )
+    alpha = float(mode_scale)
+    if fit_scale:
+        # least-squares α = ⟨q_raw, m⟩ / ⟨m, m⟩ with trapezoid weights
+        from .projection import _trapezoid_weights
+
+        w = _trapezoid_weights(np.asarray(u, dtype=np.float64))
+        num = float(np.sum(w * q_raw * q_modes))
+        den = float(np.sum(w * q_modes * q_modes))
+        alpha = num / den if den > 1e-30 else 0.0
+    q = q_raw - alpha * q_modes
+    meta = {
+        **meta,
+        "n_strip": int(n_strip),
+        "mode_scale": alpha,
+        "fit_scale": bool(fit_scale),
+        "form": form,
+        "mode_meta": {
+            "n_zeros": mode_meta.get("n_zeros"),
+            "kind": mode_meta.get("kind"),
+        },
+        "kind": "arithmetic_zero_peel",
+        "note": (
+            "Arithmetic residual minus truncated CL modes. "
+            "Not an unconditional RH proof or full Theorem A."
+        ),
+    }
+    return q, T_out, meta

@@ -33,6 +33,14 @@ from .probes import (
     finite_cl_superposition,
     explicit_formula_residual,
     peel_residual,
+    arithmetic_zero_peel,
+)
+from .beurling import (
+    beurling_theta_residual,
+    gapped_beurling_primes,
+    thinned_ordinary_primes,
+    default_battery_specs,
+    build_system_primes,
 )
 from .lemmas import (
     continuous_R_d_pure_mode,
@@ -44,6 +52,7 @@ from .lemmas import (
     finite_mode_R_d_order_T,
 )
 from .zeros import zeta_zero_ordinates, ZETA_ZERO_ORDINATES_50
+from .gpu_residual import arithmetic_residual_fast, energy_ratios_multi_degree
 
 __all__ = [
     "shifted_legendre_values",
@@ -68,6 +77,12 @@ __all__ = [
     "finite_cl_superposition",
     "explicit_formula_residual",
     "peel_residual",
+    "arithmetic_zero_peel",
+    "beurling_theta_residual",
+    "gapped_beurling_primes",
+    "thinned_ordinary_primes",
+    "default_battery_specs",
+    "build_system_primes",
     "continuous_R_d_pure_mode",
     "continuous_R_d_orthogonal_defect",
     "synthetic_orthogonal_defect",
@@ -77,6 +92,8 @@ __all__ = [
     "finite_mode_R_d_order_T",
     "zeta_zero_ordinates",
     "ZETA_ZERO_ORDINATES_50",
+    "arithmetic_residual_fast",
+    "energy_ratios_multi_degree",
 ]
 
-__version__ = "0.3.0"
+__version__ = "0.5.0"
