@@ -1,5 +1,10 @@
 # Perry–Beurling Spectral Sieve
 
+**PBSS** in this repository means **Perry–Beurling Spectral Sieve** — a projection
+diagnostic for density residuals on logarithmic windows (not the pharmaceutical
+society, IEEE WLAN “personal basic service set,” actuarial IAA section, or other
+public expansions of the same acronym).
+
 Private research archive and **runnable reconstruction** of the **Perry–Beurling Spectral Sieve** (spectral diagnostic / P(q) framework) for testing consistency with the Riemann Hypothesis on Beurling generalized prime systems.
 
 **Author:** Nicholas Perry  
@@ -65,12 +70,17 @@ those values**; it reports \(R_d\) and \(S_d\) from the shipped path. See
 |--------|--------|
 | **A₀** critical-line mode \(R_d\to0\) at \(O(T^{-2})\) | **Proved** (Lemma M3) |
 | **Finite-mode A₀** finite CL sum \(R_d=O(T^{-2})\) | **Proved** (Lemma M5) |
+| **Weighted model A₀** \(R_d(w q)=O(T^{-2})\) for \(w\in W_\alpha\) | **Proved** (Lemma M6) |
 | **A** arithmetic residual under RH | conditional / open |
 | **B₀** persistent defect \(\Rightarrow R_d=\varepsilon^2\not\to0\) | **Proved** (Lemmas M2–M4) |
 | **B** fast residual decay \(\Rightarrow\) RH | open |
 
 Explicit-formula residual: `pbss.probes.explicit_formula_residual` · peel scan:
 `experiments/run_explicit_formula_peel.py` → `results/explicit_formula_peel/`.
+
+Open-plateau: [`docs/RESEARCH_PLATEAU.md`](docs/RESEARCH_PLATEAU.md) · Theorem-A scaffold:
+[`docs/THEOREM_A_SCAFFOLD.md`](docs/THEOREM_A_SCAFFOLD.md) · Tail remainder note:
+[`docs/INFINITE_TAIL_REMAINDER.md`](docs/INFINITE_TAIL_REMAINDER.md).
 
 Details: [`docs/THEOREMS_AB.md`](docs/THEOREMS_AB.md) · Proofs: [`docs/PROOFS_LEMMAS.md`](docs/PROOFS_LEMMAS.md) · Status: [`docs/STATUS.md`](docs/STATUS.md) · Paper: [`docs/paper/`](docs/paper/).
 

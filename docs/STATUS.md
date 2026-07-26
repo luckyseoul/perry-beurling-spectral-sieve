@@ -7,7 +7,7 @@
 
 **This repository does not contain an unconditional proof of the Riemann Hypothesis.**
 
-What *is* claimed: model lemmas M1–M5, multi-\(T\) numerics, truncated explicit-formula
+What *is* claimed: model lemmas M1–M6, multi-\(T\) numerics, truncated explicit-formula
 residuals, arithmetic zero-peel diagnostics, Beurling battery scorecards, extended-\(x\)
 scans, and MC instrument stress. Full Theorems A/B and RH remain open.
 
@@ -146,6 +146,14 @@ This STATUS + theorem pointers. Paper: `docs/paper/`. **No RH proof claim.**
 **What it is:** formal weight class for endpoint control + truncated zero-sum remainder path with multi-\((T,N)\) numerics.  
 **What it is not:** full Theorem A or RH. Tail majorants are scaffolding labels, not sharp ANT bounds.
 
+### Lemma M6 + infinite-tail note
+
+**M6 (proved model):** weighted CL / finite EF residuals still have \(R_d=O(T^{-2})\) —
+`lemmas.bound_R_d_weighted_sine_order`, `docs/PROOFS_LEMMAS.md`.  
+**Tail note:** [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md) — what the model
+tail majorant controls vs true \(\psi\)/\(\theta\) remainder.  
+**Arithmetic weights:** `experiments/run_arithmetic_weights.py` → `results/arithmetic_weights/`.
+
 ---
 
 ## Proved in-repo (model diagnostic)
@@ -154,6 +162,7 @@ This STATUS + theorem pointers. Paper: `docs/paper/`. **No RH proof claim.**
 |-------|-----------|-------------|
 | **M1–M4** | pure mode / defect / CL decay / blocks vanishing | `lemmas` · `test_lemmas` |
 | **M5** | Finite CL sum \(R_d=O_d(T^{-2})\) | `bound_R_d_finite_mode_sum` · `test_M5_*` |
+| **M6** | Weighted model CL/EF \(R_d=O_d(T^{-2})\) | `bound_R_d_weighted_*` · `test_lemma_m6_weights` |
 
 | Result | Status |
 |--------|--------|

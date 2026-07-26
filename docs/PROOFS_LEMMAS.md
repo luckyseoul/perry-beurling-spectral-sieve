@@ -1,4 +1,4 @@
-# Proofs of Lemmas M1–M5
+# Proofs of Lemmas M1–M6
 
 All integrals are on \([0,1]\) with measure \(du\). Let \(\{\varphi_k\}\) be the
 orthonormal shifted Legendre system of `basis.py`.
@@ -140,3 +140,38 @@ R_d(q_T)=\frac{\|P_d q_T\|_2^2}{\|q_T\|_2^2}=O_d(T^{-2}).
 truncated explicit-formula residuals. It does **not** control infinite zero sums
 or the arithmetic residual \(q_T=(\theta-x)/\sqrt{x}\); full Theorem A and RH
 remain open.
+
+---
+
+## Lemma M6 (admissible weight preserves model-mode decay)
+
+**Statement.** Let \(w\in L^\infty([0,1])\) with \(\|w\|_\infty\le W<\infty\), and suppose
+for the family \(q_\omega(u)=\sin(\omega u)\) one has \(\|w q_\omega\|_2^2\ge c_w>0\) for
+large \(\omega\) (true for Hanning/Tukey with a positive bulk). Then
+\[
+R_d(w q_\omega)=O_d(\omega^{-2})\qquad(\omega\to\infty).
+\]
+The same bound holds for finite critical-line superpositions (weighted finite-mode A₀).
+
+**Proof.** For each \(k\le d\),
+\[
+|\langle w q_\omega,\varphi_k\rangle|
+\le W\,|\langle q_\omega,\varphi_k\rangle|
+\le W\frac{C_k}{\omega}
+\]
+by the M3 integration-by-parts bound on \(\langle q_\omega,\varphi_k\rangle\). Hence
+\[
+\|P_d(w q_\omega)\|_2^2
+=\sum_{k=0}^d|\langle w q_\omega,\varphi_k\rangle|^2
+\le W^2\sum_{k=0}^d\frac{C_k^2}{\omega^2}
+=O_d(W^2\omega^{-2}).
+\]
+Dividing by \(\|w q_\omega\|_2^2\ge c_w\) yields \(R_d(w q_\omega)=O_d(\omega^{-2})\).
+For a finite sum \(q_T^{(N)}=\sum_{n=1}^N a_n\sin(t_n T u+\phi_n)\), apply the same
+estimate modewise and sum (as in M5) to get \(O_d(T^{-2})\). □
+
+**Scope.** Model residuals only. **Not** a proof that \(R_d(w q_T^{\mathrm{arith}})\to0\).
+
+**Code.** `lemmas.bound_R_d_weighted_sine_order`,
+`lemmas.bound_R_d_weighted_finite_mode_sum`, weights in `pbss.weights`.
+

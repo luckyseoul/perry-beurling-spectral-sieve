@@ -20,9 +20,9 @@
 \floatplacement{figure}{H}
 \floatplacement{table}{H}
 
-\title{\textbf{Perry--Beurling Spectral Sieve:\\
-Status Note on Diagnostic Lemmas and\\
-Grand Arithmetic Campaign}}
+\title{\textbf{Perry--Beurling Spectral Sieve (PBSS):\\
+Status Note on Lemmas, Open Plateau,\\
+and Theorem-A Scaffolding}}
 \author{Nicholas Perry\\[0.2em]
 \textit{Private research note --- not a proof of RH}\\[0.15em]
 \normalsize\texttt{luckyseoul/perry-beurling-spectral-sieve}}
@@ -34,14 +34,14 @@ Grand Arithmetic Campaign}}
 
 \begin{abstract}
 \noindent
-We summarize the reconstructed Perry--Beurling Spectral Sieve (PBSS): a projection
-diagnostic for density residuals on log-windows, with model theorems A$_0$/B$_0$ proved
-as lemmas M1--M4, and a grand numerical campaign of the arithmetic Chebyshev residual
-through \(x_{\max}=10^{10}\). The instrument behaves as designed on critical-line and
-defect controls. The arithmetic residual soft-plateaus at \(R_d\approx 0.15\)--\(0.19\)
-and does \emph{not} exhibit A$_0$-style collapse. Full Theorems A and B, and the
-Riemann Hypothesis, remain open. This note is a status brief with diagrams, not a
-submission claiming RH.
+We summarize the reconstructed \textbf{Perry--Beurling Spectral Sieve (PBSS)}:
+a projection diagnostic for density residuals on log-windows. Model theorems
+A$_0$/B$_0$ are proved as lemmas M1--M5; admissible weights preserve model decay
+(M6). A grand campaign and open-plateau interventions show the arithmetic residual
+soft-plateaus at \(R_d\approx 0.15\)--\(0.19\) through \(x\sim 5\times 10^{10}\)
+and does \emph{not} exhibit A$_0$-style collapse under peel, detrend, or dense multi-\(T\).
+Theorem-A scaffolding (weight class \(W_\alpha\), truncation remainder, tail majorants)
+is shipped; full A/B and RH remain open. This note is a status brief, not a claim of RH.
 \end{abstract}
 
 \section{Setup}
@@ -83,7 +83,7 @@ q_T(u)=\operatorname{detrend}\!\Bigl(\frac{\theta(e^{uT})-e^{uT}}{\sqrt{e^{uT}}}
 \quad\text{(default detrend: degree one).}
 \]
 
-\section{Proved diagnostic lemmas (A$_0$/B$_0$)}
+\section{Proved diagnostic lemmas (A$_0$/B$_0$/M5/M6)}
 \begin{center}
 \small
 \begin{tabular}{@{}cl@{}}
@@ -94,18 +94,20 @@ M1 & \(R_d(\varphi_m)=1_{m\le d}\) \\
 M2 & Orthogonal defect \(\Rightarrow R_d(q)=\varepsilon^2\) \\
 M3 & CL pure mode \(R_d(\sin(tTu))=O_d(T^{-2})\) \textbf{(A$_0$)} \\
 M4 & Fixed \(\varepsilon>0\Rightarrow R_d\not\to 0\) (blocks vanishing) \\
+M5 & Finite CL sum \(R_d=O_d(T^{-2})\) (finite-mode A$_0$) \\
+M6 & Admissible weight \(w\): \(R_d(w q)=O_d(T^{-2})\) on model CL/EF \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-M1--M4 are continuous \(L^2\) arguments (\texttt{src/pbss/lemmas.py}) with discrete
-verification in \texttt{tests/}. They prove the \emph{model} theorems:
+M1--M6 are continuous \(L^2\) arguments (\texttt{src/pbss/lemmas.py},
+\texttt{docs/PROOFS\_LEMMAS.md}) with discrete verification in \texttt{tests/}.
 \begin{itemize}
-\item \textbf{A$_0$ (proved):} critical-line pure mode has \(R_d\to 0\) as \(T\to\infty\).
-\item \textbf{B$_0$ (proved):} a uniform low-degree defect keeps \(R_d=\varepsilon^2\not\to 0\).
+\item \textbf{A$_0$ / finite-mode A$_0$ (proved):} pure and finite CL residuals decay.
+\item \textbf{Weighted model A$_0$ (proved, M6):} Tukey/Hanning weights preserve decay.
+\item \textbf{B$_0$ (proved):} fixed low-degree defect blocks vanishing.
 \end{itemize}
-Vanishing of \(R_d\) is \emph{necessary} for the absence of a persistent polynomial defect.
-It is \emph{not} a proof that arithmetic primes are free of such structure, nor a proof of RH.
+None of this proves arithmetic Theorem A or RH.
 
 \begin{figure}[H]
 \centering
@@ -174,36 +176,60 @@ through ten billion; it soft-plateaus.
 the object for which full Theorem A is numerically visible.
 \end{enumerate}
 
-\section{Done vs open; next step}
+\section{Open-plateau interventions (to \(x\sim 5\times 10^{10}\))}
+Runner: \texttt{experiments/run\_open\_plateau.py}; synthesis:
+\texttt{docs/RESEARCH\_PLATEAU.md}.
+
+Seven intervention classes (peel, whiten, measure, basis, scale, MC, Beurling).
+Deep axes: 50M MC trials; dense multi-\(T\) residual rebuilds on the full
+\(5\times 10^{10}\) table; Beurling battery \(\ge 500\) systems.
+
+\paragraph{Headline numbers (deg1 arithmetic).}
+Focus \(R_4\sim 0.15\)--\(0.19\) through \(T\approx\log(5\times 10^{10})\).
+Peeling more model zeros does \textbf{not} collapse \(R_d\). Detrend is required;
+edge taper lowers \(R_d\) (endpoint mass). Dense multi-\(T\) shows no A$_0$ decay.
+
+\section{Theorem-A scaffolding}
+\begin{itemize}
+\item \textbf{Weight class \(W_\alpha\):} Tukey/Hanning; endpoint estimator \(E_{\mathrm{end}}\)
+  (\texttt{pbss.weights}). Model decay under weights: Lemma M6.
+\item \textbf{Truncation remainder:} peel \(q-\alpha q_T^{(N)}\); M5 majorant on finite
+  blocks; scaffolding infinite-tail majorant
+  (\texttt{pbss.remainder}, \texttt{docs/INFINITE\_TAIL\_REMAINDER.md}).
+\item \textbf{Arithmetic weights campaign:} multi-\(T\) raw vs weighted \(R_d\) and
+  \(E_{\mathrm{end}}\) on available primes (\texttt{results/arithmetic\_weights/}).
+\end{itemize}
+Writeup: \texttt{docs/THEOREM\_A\_SCAFFOLD.md}. Full arithmetic A still open
+(infinite zero sum + true \(\psi\)/\(\theta\) remainder + weight-class theorem for
+arithmetic \(q_T\)).
+
+\section{Done vs open}
 \begin{center}
 \small
 \begin{tabular}{@{}p{0.46\textwidth}p{0.46\textwidth}@{}}
 \toprule
 \textbf{Done} & \textbf{Open} \\
 \midrule
-Lemmas M1--M4; A$_0$/B$_0$ & Full Theorem A (arithmetic under RH) \\
-Sieve + checkpoint to \(10^{10}\) & Full Theorem B \\
-Grand multi-\(T\) ablations, MC & Explicit-formula residual / zero-peeling \\
-Optional CuPy (NumPy fallback) & Finite-mode sum lemma; stronger whitening \\
-Tests green; docs locked & Legacy \(P\approx 3.92\) normalization \\
+Lemmas M1--M6; A$_0$/B$_0$/weighted model A$_0$ & Full Theorem A (arithmetic under RH) \\
+Sieve + checkpoint to \(5\times 10^{10}\) & Full Theorem B \\
+Open-plateau catalog + deep MC/scale/Beurling & Sharp zero-density tail under \(\zeta\) \\
+Weight class + truncation remainder scaffold & Arithmetic EF remainder with constants \\
+Tests green; status note refreshed & Legacy \(P\approx 3.92\) normalization \\
 \bottomrule
 \end{tabular}
 \end{center}
-
-\paragraph{Highest-leverage next step.}
-Build an \emph{explicit-formula residual}: subtract truncated zero sums / secondary main terms,
-then re-project. Couple with a proved finite-superposition form of M3. Larger \(x\) alone
-mostly reconfirms the plateau; the A-gap is the missing bridge from arithmetic \(q_T\) to
-CL mode sums.
 
 \section{Explicit non-claim}
 \begin{quote}
 \itshape
 This repository and this note do not contain an unconditional proof of the Riemann Hypothesis.
-Proved results are about the diagnostic (A$_0$/B$_0$). Full A/B and RH remain open.
+Proved results are about the diagnostic (A$_0$/B$_0$/M5/M6). Full A/B and RH remain open.
 \end{quote}
 \noindent
 Artifacts: \texttt{docs/STATUS.md}, \texttt{THEOREMS\_AB.md}, \texttt{PROOFS\_LEMMAS.md},
-\texttt{results/grand\_campaign/}. Private research; not for public distribution without permission.
+\texttt{RESEARCH\_PLATEAU.md}, \texttt{THEOREM\_A\_SCAFFOLD.md},
+\texttt{INFINITE\_TAIL\_REMAINDER.md}, \texttt{results/grand\_campaign/},
+\texttt{results/open\_plateau/}, \texttt{results/arithmetic\_weights/}.
+Private research; not for public distribution without permission.
 
 \end{document}

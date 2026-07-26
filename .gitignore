@@ -18,3 +18,7 @@ results/open_plateau/beurling/ordinary_le_*.npy
 results/beurling_battery_smoke/
 results/mc_stress_smoke/
 results/overnight_marathon/smoke_*/
+results/open_plateau/beurling/beurling_n100k_compact.json
+results/open_plateau/beurling/beurling_n20k_w86.json
+results/open_plateau/beurling/beurling_full_rows.json
+**/beurling_full_rows.json

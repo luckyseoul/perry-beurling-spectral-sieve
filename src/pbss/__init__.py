@@ -50,6 +50,8 @@ from .lemmas import (
     critical_line_omega,
     bound_R_d_finite_mode_sum,
     finite_mode_R_d_order_T,
+    bound_R_d_weighted_sine_order,
+    bound_R_d_weighted_finite_mode_sum,
 )
 from .zeros import zeta_zero_ordinates, ZETA_ZERO_ORDINATES_50
 from .gpu_residual import arithmetic_residual_fast, energy_ratios_multi_degree
@@ -62,6 +64,7 @@ from .weights import (
 )
 from .remainder import (
     bound_R_d_mode_tail,
+    bound_infinite_zero_tail_scaffold,
     peel_via_remainder,
     remainder_diagnostic,
     truncated_mode_sum,
@@ -103,6 +106,8 @@ __all__ = [
     "critical_line_omega",
     "bound_R_d_finite_mode_sum",
     "finite_mode_R_d_order_T",
+    "bound_R_d_weighted_sine_order",
+    "bound_R_d_weighted_finite_mode_sum",
     "zeta_zero_ordinates",
     "ZETA_ZERO_ORDINATES_50",
     "arithmetic_residual_fast",
@@ -113,9 +118,10 @@ __all__ = [
     "endpoint_contribution",
     "weighted_energy_ratio",
     "bound_R_d_mode_tail",
+    "bound_infinite_zero_tail_scaffold",
     "peel_via_remainder",
     "remainder_diagnostic",
     "truncated_mode_sum",
 ]
 
-__version__ = "0.6.0"
+__version__ = "0.7.0"

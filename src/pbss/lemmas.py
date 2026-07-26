@@ -47,6 +47,19 @@ below by a positive constant depending only on {a_n} (diagonal sine terms →
 at the **same order** as pure-mode M3. This is the finite-mode extension of A₀
 for truncated explicit-formula residuals. It does **not** prove full Theorem A
 for the arithmetic prime residual or RH.
+
+Lemma M6 (admissible weight preserves model-mode decay)
+-------------------------------------------------------
+Let w ∈ L^∞([0,1]) with ‖w‖_∞ ≤ W < ∞ and ‖w q‖₂² ≥ c_w > 0 for the residual
+family under consideration (true for Hanning/Tukey on pure CL modes at large T).
+If q_ω(u)=sin(ω u), then
+  |⟨w q_ω, φ_k⟩| ≤ W |⟨q_ω, φ_k⟩| ≤ W C_k / ω
+by M3's integration-by-parts bound. Hence
+  R_d(w q_ω) = O_d(W² / (c_w ω²)) = O_d(ω^{-2}).
+The same argument with a finite CL sum gives weighted finite-mode A₀:
+  R_d(w q_T^{(N)}) = O_d(T^{-2}).
+This is a model lemma about the diagnostic under fixed admissible weights.
+It does **not** prove R_d(w q_T^{arith})→0 (arithmetic Theorem A remains open).
 """
 from __future__ import annotations
 
@@ -200,3 +213,84 @@ def finite_mode_R_d_order_T(
     Useful for scaling checks (value stable as T grows).
     """
     return float(T * T * bound_R_d_finite_mode_sum(T, amplitudes, ordinates, d))
+
+
+def bound_R_d_weighted_sine_order(
+    omega: float,
+    d: int,
+    *,
+    w_linf: float = 1.0,
+    wq_l2_floor: float = 0.05,
+) -> float:
+    """
+    Explicit majorant consistent with Lemma M6 for q=sin(ω·) under a weight
+    with ‖w‖_∞ ≤ w_linf and ‖w q‖₂² ≥ wq_l2_floor:
+
+      |⟨w q, φ_k⟩| ≤ w_linf · 2/ω   (loose, same style as M3 majorant),
+      ‖P_d (w q)‖² ≤ (d+1) (2 w_linf/ω)²,
+      R_d(w q) ≤ (d+1) (2 w_linf/ω)² / wq_l2_floor.
+
+    Scaling majorant for tests — not sharp. Not arithmetic Theorem A.
+    """
+    if omega <= 0:
+        raise ValueError("omega > 0")
+    if d < 0:
+        raise ValueError("d >= 0")
+    if w_linf < 0:
+        raise ValueError("w_linf >= 0")
+    if wq_l2_floor <= 0:
+        raise ValueError("wq_l2_floor must be positive")
+    return float((d + 1) * (2.0 * w_linf / omega) ** 2 / wq_l2_floor)
+
+
+def bound_R_d_weighted_finite_mode_sum(
+    T: float,
+    amplitudes: Union[Sequence[float], np.ndarray],
+    ordinates: Union[Sequence[float], np.ndarray],
+    d: int,
+    *,
+    w_linf: float = 1.0,
+    wq_l2_floor: Optional[float] = None,
+) -> float:
+    """
+    Weighted finite-mode A₀ majorant (Lemma M6 + M5).
+
+    Unweighted M5 uses |c_k| ≤ ∑ |a_n|·2/(t_n T). With ‖w‖_∞ ≤ w_linf,
+      |⟨w q, φ_k⟩| ≤ w_linf ∑ |a_n|·2/(t_n T).
+    Default l2 floor: (1/4)∑a_n² · min(1, rough weight mass factor) — we use
+    0.05 · ∑a_n² when wq_l2_floor is None (safe under Hanning/Tukey for large T).
+    """
+    if T <= 0:
+        raise ValueError("T > 0")
+    a = np.asarray(amplitudes, dtype=np.float64).ravel()
+    t = np.asarray(ordinates, dtype=np.float64).ravel()
+    if a.size == 0 or a.size != t.size:
+        raise ValueError("amplitudes and ordinates must be nonempty and same length")
+    if np.any(t <= 0):
+        raise ValueError("ordinates must be positive")
+    sum_term = float(w_linf * np.sum(np.abs(a) * 2.0 / (t * T)))
+    proj_energy_bound = (d + 1) * (sum_term**2)
+    if wq_l2_floor is None:
+        wq_l2_floor = 0.05 * float(np.sum(a * a))
+    if wq_l2_floor <= 0:
+        raise ValueError("wq_l2_floor must be positive")
+    return float(proj_energy_bound / wq_l2_floor)
+
+
+def weighted_cl_R_d_order_T(
+    T: float,
+    t: float = 14.134725,
+    d: int = 4,
+    *,
+    w_linf: float = 1.0,
+    wq_l2_floor: float = 0.05,
+) -> float:
+    """T² · bound_R_d_weighted_sine_order(t T, d) — T-independent scaling check."""
+    omega = float(t * T)
+    return float(
+        T
+        * T
+        * bound_R_d_weighted_sine_order(
+            omega, d, w_linf=w_linf, wq_l2_floor=wq_l2_floor
+        )
+    )

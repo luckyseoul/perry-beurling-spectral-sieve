@@ -1,0 +1,10 @@
+campaign=arithmetic_weights n_rows=6 elapsed_s=64.8
+T=[14.0, 16.0, 18.0, 20.0, 22.0, 24.0]
+x_max_primes=5.000000e+10
+T=14.000 R_raw=0.1908 E_end=0.0853 R_tukey=0.1248 R_peel=0.3526
+T=16.000 R_raw=0.1932 E_end=0.0861 R_tukey=0.1160 R_peel=0.3612
+T=18.000 R_raw=0.1841 E_end=0.0879 R_tukey=0.1035 R_peel=0.3485
+T=20.000 R_raw=0.1771 E_end=0.0942 R_tukey=0.0876 R_peel=0.3353
+T=22.000 R_raw=0.1611 E_end=0.0907 R_tukey=0.0771 R_peel=0.3187
+T=24.000 R_raw=0.1503 E_end=0.0784 R_tukey=0.0681 R_peel=0.2991
+NOT AN UNCONDITIONAL PROOF OF RH

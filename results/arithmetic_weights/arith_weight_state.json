@@ -1,0 +1,19 @@
+{
+  "phases": {
+    "ARITH_WEIGHTS": {
+      "status": "completed",
+      "elapsed_s": 64.83833312988281,
+      "n_rows": 6,
+      "T_values": [
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0
+      ]
+    }
+  },
+  "updated_unix": 1785092694.2645698,
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+}

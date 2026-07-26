@@ -1,0 +1,250 @@
+{
+  "campaign": "arithmetic_weights",
+  "hypothesis": "Admissible weights reduce E_end and may lower R_d vs flat on arithmetic deg1 residual; multi-T scan tests whether weighted R_d decays (A0) or plateaus.",
+  "elapsed_s": 64.83833312988281,
+  "n_rows": 6,
+  "rows": [
+    {
+      "T": 14.0,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d_raw": 0.19083922069335876,
+      "E_end": 0.08527674480271959,
+      "E_bulk": 0.08653821615774,
+      "R_d_bulk_only": 0.1098870764713889,
+      "weights": {
+        "flat": {
+          "R_d_weighted": 0.19083922069335876,
+          "R_d_raw": 0.19083922069335876,
+          "E_end": 0.08527674480271959,
+          "E_bulk": 0.08653821615774
+        },
+        "tukey": {
+          "R_d_weighted": 0.12481217792169656,
+          "R_d_raw": 0.19083922069335876,
+          "E_end": 0.08527674480271959,
+          "E_bulk": 0.08653821615774
+        },
+        "hanning": {
+          "R_d_weighted": 0.14374815432134266,
+          "R_d_raw": 0.19083922069335876,
+          "E_end": 0.08527674480271959,
+          "E_bulk": 0.08653821615774
+        }
+      },
+      "remainder_peel": {
+        "n_strip": 10,
+        "R_d_remainder": 0.35262655985986086,
+        "alpha": -0.9241342755076672,
+        "tail_majorant_R_d": 0.0020436584889450314
+      },
+      "n_primes": 93117,
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+    },
+    {
+      "T": 16.0,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d_raw": 0.1932360083244965,
+      "E_end": 0.08612174813490348,
+      "E_bulk": 0.08025134405382624,
+      "R_d_bulk_only": 0.10082077393353672,
+      "weights": {
+        "flat": {
+          "R_d_weighted": 0.1932360083244965,
+          "R_d_raw": 0.1932360083244965,
+          "E_end": 0.08612174813490348,
+          "E_bulk": 0.08025134405382624
+        },
+        "tukey": {
+          "R_d_weighted": 0.11603875211290311,
+          "R_d_raw": 0.1932360083244965,
+          "E_end": 0.08612174813490348,
+          "E_bulk": 0.08025134405382624
+        },
+        "hanning": {
+          "R_d_weighted": 0.13137061241160616,
+          "R_d_raw": 0.1932360083244965,
+          "E_end": 0.08612174813490348,
+          "E_bulk": 0.08025134405382624
+        }
+      },
+      "remainder_peel": {
+        "n_strip": 10,
+        "R_d_remainder": 0.36123906080917223,
+        "alpha": -0.9399415921296123,
+        "tail_majorant_R_d": 0.0015646760305985394
+      },
+      "n_primes": 595341,
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+    },
+    {
+      "T": 18.0,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d_raw": 0.18411297601752585,
+      "E_end": 0.08791032504340307,
+      "E_bulk": 0.07224709066912069,
+      "R_d_bulk_only": 0.09232755605847033,
+      "weights": {
+        "flat": {
+          "R_d_weighted": 0.18411297601752585,
+          "R_d_raw": 0.18411297601752585,
+          "E_end": 0.08791032504340307,
+          "E_bulk": 0.07224709066912069
+        },
+        "tukey": {
+          "R_d_weighted": 0.10352590693194474,
+          "R_d_raw": 0.18411297601752585,
+          "E_end": 0.08791032504340307,
+          "E_bulk": 0.07224709066912069
+        },
+        "hanning": {
+          "R_d_weighted": 0.10683478281789734,
+          "R_d_raw": 0.18411297601752585,
+          "E_end": 0.08791032504340307,
+          "E_bulk": 0.07224709066912069
+        }
+      },
+      "remainder_peel": {
+        "n_strip": 10,
+        "R_d_remainder": 0.34853999738021346,
+        "alpha": -0.941201753497502,
+        "tail_majorant_R_d": 0.001236287234053167
+      },
+      "n_primes": 3877186,
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+    },
+    {
+      "T": 20.0,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d_raw": 0.17708372090935898,
+      "E_end": 0.0941534009919724,
+      "E_bulk": 0.0645566374218853,
+      "R_d_bulk_only": 0.08282902103777302,
+      "weights": {
+        "flat": {
+          "R_d_weighted": 0.17708372090935898,
+          "R_d_raw": 0.17708372090935898,
+          "E_end": 0.0941534009919724,
+          "E_bulk": 0.0645566374218853
+        },
+        "tukey": {
+          "R_d_weighted": 0.08758652246868273,
+          "R_d_raw": 0.17708372090935898,
+          "E_end": 0.0941534009919724,
+          "E_bulk": 0.0645566374218853
+        },
+        "hanning": {
+          "R_d_weighted": 0.08462317569752635,
+          "R_d_raw": 0.17708372090935898,
+          "E_end": 0.0941534009919724,
+          "E_bulk": 0.0645566374218853
+        }
+      },
+      "remainder_peel": {
+        "n_strip": 10,
+        "R_d_remainder": 0.33532795128070064,
+        "alpha": -0.9400051202900206,
+        "tail_majorant_R_d": 0.0010013926595830653
+      },
+      "n_primes": 25614562,
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+    },
+    {
+      "T": 22.0,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d_raw": 0.1610967372679107,
+      "E_end": 0.09070943109512661,
+      "E_bulk": 0.062229243398639375,
+      "R_d_bulk_only": 0.08098055232095053,
+      "weights": {
+        "flat": {
+          "R_d_weighted": 0.1610967372679107,
+          "R_d_raw": 0.1610967372679107,
+          "E_end": 0.09070943109512661,
+          "E_bulk": 0.062229243398639375
+        },
+        "tukey": {
+          "R_d_weighted": 0.07707335456278838,
+          "R_d_raw": 0.1610967372679107,
+          "E_end": 0.09070943109512661,
+          "E_bulk": 0.062229243398639375
+        },
+        "hanning": {
+          "R_d_weighted": 0.06264260541744937,
+          "R_d_raw": 0.1610967372679107,
+          "E_end": 0.09070943109512661,
+          "E_bulk": 0.062229243398639375
+        }
+      },
+      "remainder_peel": {
+        "n_strip": 10,
+        "R_d_remainder": 0.31868528908504096,
+        "alpha": -0.9502126324737009,
+        "tail_majorant_R_d": 0.0008275972393248476
+      },
+      "n_primes": 171141897,
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+    },
+    {
+      "T": 24.0,
+      "degree": 4,
+      "detrend": "deg1",
+      "R_d_raw": 0.1503346337489907,
+      "E_end": 0.07836621963406229,
+      "E_bulk": 0.05264261600570729,
+      "R_d_bulk_only": 0.0687714091265535,
+      "weights": {
+        "flat": {
+          "R_d_weighted": 0.1503346337489907,
+          "R_d_raw": 0.1503346337489907,
+          "E_end": 0.07836621963406229,
+          "E_bulk": 0.05264261600570729
+        },
+        "tukey": {
+          "R_d_weighted": 0.06806431114507562,
+          "R_d_raw": 0.1503346337489907,
+          "E_end": 0.07836621963406229,
+          "E_bulk": 0.05264261600570729
+        },
+        "hanning": {
+          "R_d_weighted": 0.04878318621292816,
+          "R_d_raw": 0.1503346337489907,
+          "E_end": 0.07836621963406229,
+          "E_bulk": 0.05264261600570729
+        }
+      },
+      "remainder_peel": {
+        "n_strip": 10,
+        "R_d_remainder": 0.29911893351332025,
+        "alpha": -0.9550677579887535,
+        "tail_majorant_R_d": 0.0006954115691549064
+      },
+      "n_primes": 1154106844,
+      "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+    }
+  ],
+  "T_values": [
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0
+  ],
+  "x_max_primes": 49999999967.0,
+  "primes_path": "results/prime_checkpoints/primes_le_50000000000.npy",
+  "weights": [
+    "flat",
+    "tukey",
+    "hanning"
+  ],
+  "degree": 4,
+  "alpha": 0.1,
+  "workers": 1,
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "note": "Numeric diagnostic only; not full Theorem A or RH."
+}

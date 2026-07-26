@@ -140,9 +140,14 @@ Shipped (not full A):
 1. **Weight class \(W_\alpha\)** — `pbss.weights`: Tukey/Hanning windows, endpoint
    contribution \(E_{\mathrm{end}}\), weighted \(R_d\). Documents the taper effect seen
    in open-plateau as a controlled object.
-2. **Truncation remainder path** — `pbss.remainder`: peel via \(q-\alpha q_T^{(N)}\),
-   M5 majorant on finite stripped blocks, scaffolding tail majorant for zeros
-   beyond \(N\).
+2. **Lemma M6 (proved model):** admissible weights preserve \(O(T^{-2})\) decay for pure
+   CL and finite EF residuals — `bound_R_d_weighted_sine_order`,
+   `docs/PROOFS_LEMMAS.md`.
+3. **Truncation remainder path** — `pbss.remainder`: peel via \(q-\alpha q_T^{(N)}\),
+   M5 majorant on finite stripped blocks, scaffolding infinite-tail majorant
+   (`bound_infinite_zero_tail_scaffold`). Note: [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md).
+4. **Arithmetic weight multi-\(T\)** — `experiments/run_arithmetic_weights.py` →
+   `results/arithmetic_weights/`.
 
 Writeup: [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md). Campaign:
 `results/theorem_a_scaffold/`. **Full arithmetic A still open.**

@@ -340,6 +340,76 @@ def remainder_diagnostic_from_q(
     }
 
 
+def bound_infinite_zero_tail_scaffold(
+    T: float,
+    *,
+    n_kept: int,
+    t_next: Optional[float] = None,
+    N_eff: int = 10_000,
+    d: int = 4,
+    amp_model: str = "2_over_t",
+) -> Dict[str, object]:
+    """
+    Scaffolding majorant for zeros beyond n_kept under a model density of zeros.
+
+    Model (not a theorem about ζ):
+      - ordinates t_n for n > n_kept grow at least like t_next · (n / (n_kept+1))
+      - amplitudes a_n = 2/t_n
+      - only the first N_eff model zeros past n_kept are summed (finite cutoff)
+
+    Then apply M5-style bound_R_d_finite_mode_sum on that finite model tail.
+
+    **Labels:** scaffolding / heuristic zero density + amplitude model.
+    Does **not** control the true arithmetic explicit-formula remainder
+    (prime powers, contour integrals, smoothed ψ−x, …).
+
+    What would be needed for full A (documented, not proved here):
+      (i) RH (or zero-free region) to put all zeros on/near the line;
+      (ii) zero-density / large-value estimates to truncate the sum;
+      (iii) explicit-formula arithmetic remainder with constants.
+    """
+    T = float(T)
+    if T <= 0:
+        raise ValueError("T > 0")
+    n_kept = int(n_kept)
+    N_eff = int(N_eff)
+    if n_kept < 0 or N_eff < 1:
+        raise ValueError("n_kept >= 0 and N_eff >= 1")
+    table = np.asarray(ZETA_ZERO_ORDINATES_50, dtype=np.float64)
+    if t_next is None:
+        if n_kept < table.size:
+            t_next = float(table[n_kept])  # next tabulated zero (1-based: index n_kept)
+        else:
+            t_next = float(table[-1]) * ((n_kept + 1) / table.size)
+    t_next = float(t_next)
+    # Build model tail ordinates
+    idx = np.arange(1, N_eff + 1, dtype=np.float64)
+    t_tail = t_next * (idx + n_kept) / max(n_kept + 1, 1)
+    if amp_model != "2_over_t":
+        raise ValueError("only amp_model='2_over_t' is shipped")
+    a_tail = 2.0 / t_tail
+    b = bound_R_d_finite_mode_sum(T, a_tail, t_tail, d)
+    return {
+        "T": T,
+        "n_kept": n_kept,
+        "t_next": t_next,
+        "N_eff": N_eff,
+        "degree": int(d),
+        "bound_R_d_model_tail": float(b),
+        "amp_model": amp_model,
+        "label": "scaffolding_model_zero_tail_not_arithmetic_remainder",
+        "controls": (
+            "Finite model zero tail under a_n=2/t_n and linear t_n growth; "
+            "M5-style majorant only."
+        ),
+        "does_not_control": (
+            "True ζ zero density; arithmetic ψ/θ explicit-formula remainder; "
+            "prime powers; contour terms; unconditional RH."
+        ),
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+    }
+
+
 def multi_TN_remainder_scan(
     *,
     T_values: Sequence[float],
