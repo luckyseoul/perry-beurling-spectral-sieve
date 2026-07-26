@@ -1,15 +1,27 @@
 PBSS Beurling battery scorecard
-status=completed elapsed_s=0.0 systems=3
+status=completed elapsed_s=7.3 systems=3
 NOT AN UNCONDITIONAL PROOF OF RH
 
 system           kind              T          R_d
 ordinary_primes  rh_like        8.00   1.0960e-01
 ordinary_primes  rh_like       10.00   1.4288e-01
+ordinary_primes  rh_like       12.00   1.8842e-01
+ordinary_primes  rh_like       14.00   1.9102e-01
+ordinary_primes  rh_like       16.00   1.9002e-01
+ordinary_primes  rh_like       18.00   1.8095e-01
 gapped_gap3      defective      8.00   9.9891e-01
 gapped_gap3      defective     10.00   9.9793e-01
+gapped_gap3      defective     12.00   9.9589e-01
+gapped_gap3      defective     14.00   9.9280e-01
+gapped_gap3      defective     16.00   9.8856e-01
+gapped_gap3      defective     18.00   9.8314e-01
 thinned_every3   defective      8.00   9.9856e-01
 thinned_every3   defective     10.00   9.9924e-01
+thinned_every3   defective     12.00   9.9831e-01
+thinned_every3   defective     14.00   9.9649e-01
+thinned_every3   defective     16.00   9.9369e-01
+thinned_every3   defective     18.00   9.8974e-01
 
-At T=10.0: scorecard={'ordinary_primes': 0.14288417220319627, 'gapped_gap3': 0.9979265740776593, 'thinned_every3': 0.9992442837215059}
+At T=18.0: scorecard={'ordinary_primes': 0.18094809725730626, 'gapped_gap3': 0.9831359623265266, 'thinned_every3': 0.989741459999059}
 defective_above_ordinary=True
 Beurling battery: ordinary vs gapped/thinned systems. Defective systems should keep higher R_d. Not an RH proof.

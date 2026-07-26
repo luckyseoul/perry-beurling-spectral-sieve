@@ -24,7 +24,12 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--prime-dir", type=str, default=str(ROOT / "results" / "prime_checkpoints"))
     ap.add_argument("--x-max", type=float, default=1e8, help="window max for battery (uses primes ≤ this)")
-    ap.add_argument("--out-dir", type=str, default=str(ROOT / "results" / "beurling_battery"))
+    ap.add_argument(
+        "--out-dir",
+        type=str,
+        default=str(ROOT / "results" / "beurling_battery"),
+        help="results dir; smoke tests MUST use a separate path (not this default)",
+    )
     ap.add_argument("--scratch", type=str, default="")
     ap.add_argument("--n-points", type=int, default=8192)
     ap.add_argument("--degree", type=int, default=4)
@@ -33,6 +38,13 @@ def main() -> None:
     args = ap.parse_args()
 
     out_dir = Path(args.out_dir)
+    # Refuse to clobber durable scorecard with tiny smoke runs
+    default_out = (ROOT / "results" / "beurling_battery").resolve()
+    if out_dir.resolve() == default_out and float(args.x_max) < 1e7:
+        raise SystemExit(
+            "refusing to write smoke-scale x_max to results/beurling_battery; "
+            "pass --out-dir results/beurling_battery_smoke (or similar)"
+        )
     out_dir.mkdir(parents=True, exist_ok=True)
 
     from pbss.beurling import (

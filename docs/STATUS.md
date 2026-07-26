@@ -43,9 +43,10 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 ### 3. Beurling battery
 
 **Entry:** `experiments/run_beurling_battery.py`  
-**Artifacts:** `results/beurling_battery/`  
+**Artifacts:** `results/beurling_battery/` (durable full run; smoke must use `--out-dir` elsewhere)  
+**Scale:** \(x_{\max}=10^{8}\), \(T\in\{8,10,12,14,16,18\}\), degree 4, 3 systems, elapsed ~7.3 s.  
 **Systems:** `ordinary_primes` (rh_like), `gapped_gap3`, `thinned_every3` (defective).  
-**At \(T=18\):** ordinary \(R_4\sim0.18\); defective \(\sim0.98\)–\(0.99\) — clear separation.
+**Scorecard at \(T=18\):** ordinary \(R_4\approx0.181\); gapped \(\approx0.983\); thinned \(\approx0.990\) — clear separation.
 
 ### 4. MC / ablation stress
 

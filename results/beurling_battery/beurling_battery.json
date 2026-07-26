@@ -1,32 +1,36 @@
 {
   "status": "completed",
-  "elapsed_s": 0.030180931091308594,
-  "x_max": 1000000.0,
+  "elapsed_s": 7.332925081253052,
+  "x_max": 100000000.0,
   "degree": 4,
   "T_values": [
     8.0,
-    10.0
+    10.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0
   ],
   "systems": [
     {
       "name": "ordinary_primes",
       "kind": "rh_like",
-      "n_primes": 78498,
-      "p_max": 999983.0,
+      "n_primes": 5761455,
+      "p_max": 99999989.0,
       "builder": "ordinary"
     },
     {
       "name": "gapped_gap3",
       "kind": "defective",
-      "n_primes": 333333,
-      "p_max": 999998.0,
+      "n_primes": 33333333,
+      "p_max": 99999998.0,
       "builder": "gapped"
     },
     {
       "name": "thinned_every3",
       "kind": "defective",
-      "n_primes": 26166,
-      "p_max": 999961.0,
+      "n_primes": 1920485,
+      "p_max": 99999959.0,
       "builder": "thinned"
     }
   ],
@@ -48,6 +52,38 @@
       "n_primes": 2466
     },
     {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.18841981849582562,
+      "n_primes": 14912
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.19101735034853737,
+      "n_primes": 93117
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.19002331281783139,
+      "n_primes": 595341
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.18094809725730626,
+      "n_primes": 3877186
+    },
+    {
       "system": "gapped_gap3",
       "kind": "defective",
       "T": 8.0,
@@ -64,6 +100,38 @@
       "n_primes": 7342
     },
     {
+      "system": "gapped_gap3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9958850217712996,
+      "n_primes": 54251
+    },
+    {
+      "system": "gapped_gap3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9927967655436876,
+      "n_primes": 400868
+    },
+    {
+      "system": "gapped_gap3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9885609918306252,
+      "n_primes": 2962037
+    },
+    {
+      "system": "gapped_gap3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9831359623265266,
+      "n_primes": 21886656
+    },
+    {
       "system": "thinned_every3",
       "kind": "defective",
       "T": 8.0,
@@ -78,20 +146,52 @@
       "degree": 4,
       "R_d": 0.9992442837215059,
       "n_primes": 822
+    },
+    {
+      "system": "thinned_every3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9983056452287821,
+      "n_primes": 4971
+    },
+    {
+      "system": "thinned_every3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9964947075564003,
+      "n_primes": 31039
+    },
+    {
+      "system": "thinned_every3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9936904688943332,
+      "n_primes": 198447
+    },
+    {
+      "system": "thinned_every3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.989741459999059,
+      "n_primes": 1292396
     }
   ],
   "scorecard_at_Tmax": {
-    "ordinary_primes": 0.14288417220319627,
-    "gapped_gap3": 0.9979265740776593,
-    "thinned_every3": 0.9992442837215059
+    "ordinary_primes": 0.18094809725730626,
+    "gapped_gap3": 0.9831359623265266,
+    "thinned_every3": 0.989741459999059
   },
   "qualitative": {
-    "T_star": 10.0,
+    "T_star": 18.0,
     "defective_above_ordinary": true,
-    "ordinary_R_d": 0.14288417220319627,
+    "ordinary_R_d": 0.18094809725730626,
     "defective_R_d": [
-      0.9979265740776593,
-      0.9992442837215059
+      0.9831359623265266,
+      0.989741459999059
     ]
   },
   "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
