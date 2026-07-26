@@ -165,13 +165,14 @@ def marathon_battery_specs(n_systems: int = 100) -> List[dict]:
     specs: List[dict] = [
         {"name": "ordinary_primes", "kind": "rh_like", "builder": "ordinary"}
     ]
-    # Gapped family: dense gap grid × many p0 seeds
+    # Gapped family: dense gap grid × many p0 seeds (unbounded for deep batteries)
     p0_seeds = (
         2.0, 3.0, 5.0, 7.0, 11.0, 13.0, 17.0, 19.0, 23.0, 29.0,
         31.0, 37.0, 41.0, 43.0, 47.0, 53.0, 59.0, 61.0, 67.0, 71.0,
+        73.0, 79.0, 83.0, 89.0, 97.0, 101.0, 103.0, 107.0, 109.0, 113.0,
     )
     g = 1.25
-    while len(specs) < n_systems and g < 5000.0:
+    while len(specs) < n_systems and g < 1.0e6:
         for p0 in p0_seeds:
             if len(specs) >= n_systems:
                 break
@@ -192,11 +193,13 @@ def marathon_battery_specs(n_systems: int = 100) -> List[dict]:
             g += 0.25
         elif g < 500:
             g += 0.5
-        else:
+        elif g < 5000:
             g += 1.0
+        else:
+            g += 5.0
     # Thinned ordinary (every k-th prime)
     k = 2
-    while len(specs) < n_systems and k <= 100_000:
+    while len(specs) < n_systems and k <= 2_000_000:
         specs.append(
             {
                 "name": f"thinned_every{k}",
@@ -206,17 +209,23 @@ def marathon_battery_specs(n_systems: int = 100) -> List[dict]:
             }
         )
         k += 1
-    # Extra rh_like variants if still short (should be rare)
-    extra = 0
-    while len(specs) < n_systems and extra < 10:
-        specs.append(
-            {
-                "name": f"ordinary_primes_v{extra}",
-                "kind": "rh_like",
-                "builder": "ordinary",
-            }
-        )
-        extra += 1
+    # Second gapped pass with offset seeds if still short
+    g2 = 1.3
+    p0b = (2.5, 4.0, 6.0, 8.0, 12.0, 15.0, 18.0, 21.0, 25.0, 28.0)
+    while len(specs) < n_systems and g2 < 1.0e6:
+        for p0 in p0b:
+            if len(specs) >= n_systems:
+                break
+            specs.append(
+                {
+                    "name": f"gapped2_g{g2:g}_p{p0:g}",
+                    "kind": "defective",
+                    "builder": "gapped",
+                    "gap": float(g2),
+                    "p0": float(p0),
+                }
+            )
+        g2 += 0.07 if g2 < 50 else 1.0
     if len(specs) < n_systems:
         raise ValueError(f"could only build {len(specs)} systems < {n_systems}")
     return specs[:n_systems]

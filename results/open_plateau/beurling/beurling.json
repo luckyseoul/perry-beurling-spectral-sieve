@@ -1,18 +1,20 @@
 {
   "class": "beurling",
   "hypothesis": "If the diagnostic is meaningful, defective Beurling systems keep high R_d while ordinary stays lower; a large battery stress-tests separation vs noise.",
-  "elapsed_s": 422.02079939842224,
-  "n_rows": 600000,
-  "n_systems": 100000,
+  "elapsed_s": 2112.8765263557434,
+  "n_rows": 16000,
+  "n_systems": 2000,
   "deep": true,
-  "deep_product": 600000,
+  "deep_product": 16000,
   "T_values": [
     8.0,
     10.0,
     12.0,
     14.0,
     16.0,
-    18.0
+    18.0,
+    20.0,
+    22.0
   ],
   "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
   "rows_sample": [
@@ -20,228 +22,299 @@
       "system": "ordinary_primes",
       "kind": "rh_like",
       "T": 8.0,
-      "R_d": 0.10799173304405807,
+      "R_d": 0.10959605620105688,
       "n_primes": 429
     },
     {
       "system": "ordinary_primes",
       "kind": "rh_like",
       "T": 10.0,
-      "R_d": 0.1434224562387933,
+      "R_d": 0.14288417220319627,
       "n_primes": 2466
     },
     {
       "system": "ordinary_primes",
       "kind": "rh_like",
       "T": 12.0,
-      "R_d": 0.1888232362225105,
+      "R_d": 0.18841981849582562,
       "n_primes": 14912
     },
     {
       "system": "ordinary_primes",
       "kind": "rh_like",
       "T": 14.0,
-      "R_d": 0.19083922069335876,
+      "R_d": 0.19101735034853737,
       "n_primes": 93117
     },
     {
       "system": "ordinary_primes",
       "kind": "rh_like",
       "T": 16.0,
-      "R_d": 0.1932360083244965,
+      "R_d": 0.19002331281783139,
       "n_primes": 595341
     },
     {
       "system": "ordinary_primes",
       "kind": "rh_like",
       "T": 18.0,
-      "R_d": 0.6818222377035389,
-      "n_primes": 1270607
+      "R_d": 0.18094809725730626,
+      "n_primes": 3877186
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 20.0,
+      "R_d": 0.750139587304643,
+      "n_primes": 5761455
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 22.0,
+      "R_d": 0.9501076233136676,
+      "n_primes": 5761455
     },
     {
       "system": "gapped_g1.25_p2",
       "kind": "defective",
       "T": 8.0,
-      "R_d": 0.9993278082518334,
+      "R_d": 0.999329871540606,
       "n_primes": 2384
     },
     {
       "system": "gapped_g1.25_p2",
       "kind": "defective",
       "T": 10.0,
-      "R_d": 0.9982782624585699,
+      "R_d": 0.9982766101591478,
       "n_primes": 17620
     },
     {
       "system": "gapped_g1.25_p2",
       "kind": "defective",
       "T": 12.0,
-      "R_d": 0.9963637943261355,
+      "R_d": 0.9963627238741045,
       "n_primes": 130203
     },
     {
       "system": "gapped_g1.25_p2",
       "kind": "defective",
       "T": 14.0,
-      "R_d": 0.9934070534813952,
+      "R_d": 0.9934059393403152,
       "n_primes": 962082
     },
     {
       "system": "gapped_g1.25_p2",
       "kind": "defective",
       "T": 16.0,
-      "R_d": 0.9892828697436039,
+      "R_d": 0.9892815705633423,
       "n_primes": 7108887
     },
     {
       "system": "gapped_g1.25_p2",
       "kind": "defective",
       "T": 18.0,
-      "R_d": 0.7562896793840858,
-      "n_primes": 15999999
+      "R_d": 0.9839417517361053,
+      "n_primes": 52527974
+    },
+    {
+      "system": "gapped_g1.25_p2",
+      "kind": "defective",
+      "T": 20.0,
+      "R_d": 0.6470033708800416,
+      "n_primes": 79999999
+    },
+    {
+      "system": "gapped_g1.25_p2",
+      "kind": "defective",
+      "T": 22.0,
+      "R_d": 0.6395046774415015,
+      "n_primes": 79999999
     },
     {
       "system": "gapped_g1.25_p3",
       "kind": "defective",
       "T": 8.0,
-      "R_d": 0.9993376383908061,
+      "R_d": 0.9993337944189635,
       "n_primes": 2383
     },
     {
       "system": "gapped_g1.25_p3",
       "kind": "defective",
       "T": 10.0,
-      "R_d": 0.9982764885615706,
+      "R_d": 0.9982752747339986,
       "n_primes": 17619
     },
     {
       "system": "gapped_g1.25_p3",
       "kind": "defective",
       "T": 12.0,
-      "R_d": 0.9963620944500466,
+      "R_d": 0.9963612347262866,
       "n_primes": 130202
     },
     {
       "system": "gapped_g1.25_p3",
       "kind": "defective",
       "T": 14.0,
-      "R_d": 0.9934061847022801,
+      "R_d": 0.9934050418088812,
       "n_primes": 962082
     },
     {
       "system": "gapped_g1.25_p3",
       "kind": "defective",
       "T": 16.0,
-      "R_d": 0.9892823841633273,
+      "R_d": 0.9892811024881736,
       "n_primes": 7108887
     },
     {
       "system": "gapped_g1.25_p3",
       "kind": "defective",
       "T": 18.0,
-      "R_d": 0.7562877297482605,
-      "n_primes": 15999998
+      "R_d": 0.9839415460323051,
+      "n_primes": 52527973
+    },
+    {
+      "system": "gapped_g1.25_p3",
+      "kind": "defective",
+      "T": 20.0,
+      "R_d": 0.6470024017799667,
+      "n_primes": 79999998
+    },
+    {
+      "system": "gapped_g1.25_p3",
+      "kind": "defective",
+      "T": 22.0,
+      "R_d": 0.6395046610249366,
+      "n_primes": 79999998
     },
     {
       "system": "gapped_g1.25_p5",
       "kind": "defective",
       "T": 8.0,
-      "R_d": 0.999312615418441,
+      "R_d": 0.9993117727115592,
       "n_primes": 2381
     },
     {
       "system": "gapped_g1.25_p5",
       "kind": "defective",
       "T": 10.0,
-      "R_d": 0.9982945645191363,
+      "R_d": 0.9982945571089787,
       "n_primes": 17618
     },
     {
       "system": "gapped_g1.25_p5",
       "kind": "defective",
       "T": 12.0,
-      "R_d": 0.9963755263815696,
+      "R_d": 0.9963744575775956,
       "n_primes": 130200
     },
     {
       "system": "gapped_g1.25_p5",
       "kind": "defective",
       "T": 14.0,
-      "R_d": 0.9934123862348335,
+      "R_d": 0.99341116684199,
       "n_primes": 962080
     },
     {
       "system": "gapped_g1.25_p5",
       "kind": "defective",
       "T": 16.0,
-      "R_d": 0.9892847705085629,
+      "R_d": 0.989283548145715,
       "n_primes": 7108885
     },
     {
       "system": "gapped_g1.25_p5",
       "kind": "defective",
       "T": 18.0,
-      "R_d": 0.7562826674191011,
-      "n_primes": 15999997
+      "R_d": 0.9839424272806462,
+      "n_primes": 52527972
+    },
+    {
+      "system": "gapped_g1.25_p5",
+      "kind": "defective",
+      "T": 20.0,
+      "R_d": 0.6469995367491366,
+      "n_primes": 79999997
+    },
+    {
+      "system": "gapped_g1.25_p5",
+      "kind": "defective",
+      "T": 22.0,
+      "R_d": 0.6395024734306329,
+      "n_primes": 79999997
     }
   ],
   "scorecard_by_T": [
     {
       "T": 8.0,
-      "rh_like_mean": 0.10799173304405807,
+      "rh_like_mean": 0.10959605620105688,
       "rh_like_n": 1,
-      "defective_mean": 0.9986775769413995,
-      "defective_n": 99999
+      "defective_mean": 0.9963609277493458,
+      "defective_n": 1999
     },
     {
       "T": 10.0,
-      "rh_like_mean": 0.1434224562387933,
+      "rh_like_mean": 0.14288417220319627,
       "rh_like_n": 1,
-      "defective_mean": 0.9988211880636277,
-      "defective_n": 99999
+      "defective_mean": 0.9969426520466045,
+      "defective_n": 1999
     },
     {
       "T": 12.0,
-      "rh_like_mean": 0.1888232362225105,
+      "rh_like_mean": 0.18841981849582562,
       "rh_like_n": 1,
-      "defective_mean": 0.9979049196744371,
-      "defective_n": 99999
+      "defective_mean": 0.9954407691024794,
+      "defective_n": 1999
     },
     {
       "T": 14.0,
-      "rh_like_mean": 0.19083922069335876,
+      "rh_like_mean": 0.19101735034853737,
       "rh_like_n": 1,
-      "defective_mean": 0.9959766927740188,
-      "defective_n": 99999
+      "defective_mean": 0.992666118176424,
+      "defective_n": 1999
     },
     {
       "T": 16.0,
-      "rh_like_mean": 0.1932360083244965,
+      "rh_like_mean": 0.19002331281783139,
       "rh_like_n": 1,
-      "defective_mean": 0.9929308868269655,
-      "defective_n": 99999
+      "defective_mean": 0.9885429615704768,
+      "defective_n": 1999
     },
     {
       "T": 18.0,
-      "rh_like_mean": 0.6818222377035389,
+      "rh_like_mean": 0.18094809725730626,
       "rh_like_n": 1,
-      "defective_mean": 0.9655602055653834,
-      "defective_n": 99999
+      "defective_mean": 0.9831518819591001,
+      "defective_n": 1999
+    },
+    {
+      "T": 20.0,
+      "rh_like_mean": 0.750139587304643,
+      "rh_like_n": 1,
+      "defective_mean": 0.5270317768573783,
+      "defective_n": 1999
+    },
+    {
+      "T": 22.0,
+      "rh_like_mean": 0.9501076233136676,
+      "rh_like_n": 1,
+      "defective_mean": 0.7302753800241578,
+      "defective_n": 1999
     }
   ],
   "kind_summary": {
     "rh_like": {
-      "n": 6,
-      "mean": 0.25102248203779265,
-      "min": 0.10799173304405807,
-      "max": 0.6818222377035389
+      "n": 8,
+      "mean": 0.33789200224275806,
+      "min": 0.10959605620105688,
+      "max": 0.9501076233136676
     },
     "defective": {
-      "n": 599994,
-      "mean": 0.9916452449743053,
-      "min": 0.24818099117814166,
-      "max": 0.9999792536438012
+      "n": 15992,
+      "mean": 0.9013015584357458,
+      "min": 0.4023493820083627,
+      "max": 0.9993337944189635
     }
   },
-  "full_rows_path": "beurling_full_rows.json"
+  "full_rows_path": "beurling_full_rows.json",
+  "workers_note": "24-worker ProcessPool at x_max=1e8 dense systems"
 }

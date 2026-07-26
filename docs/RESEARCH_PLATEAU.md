@@ -132,16 +132,15 @@ Each class has a hypothesis, multi-\(T\) numeric \(R_d\), and durable JSON under
 
 - **Hypothesis:** If the diagnostic is meaningful, defective Beurling systems keep high \(R_d\)
   while ordinary stays lower; a large battery stress-tests separation vs noise.
-- **What ran:** Open-plateau deep battery on **86 workers** (full-machine ProcessPool, mmap
-  ordinary primes, module-level job). Final scale: **100 000** systems × 6 \(T\) =
-  product **600 000** rows at \(x_{\max}=2\times10^{7}\), elapsed \(\approx 422\) s (pilots at
-  \(n=1500\) / \(n=20\,000\) were enlarged for product depth; large-gap gapped systems are cheap
-  per system so wall time stays sub-hour even at 100k — depth is the product bar).
-  Resume stamp `PHASE_BEURLING_COMPLETE`. Durable small battery under `results/beurling_battery/`
-  was **not** overwritten.
-- **What \(R_d\) did:** Across 600 000 rows, defective systems dominate near \(R_d\sim 1\);
-  rh_like ordinary stays lower on average (see JSON scorecard). Separation holds as a control.
-- **Depth bar:** \(n_{\mathrm{systems}}=100\,000\ge 500\) × multi-\(T\); product \(600\,000\).
+- **What ran:** Multi-core ProcessPool (mmap ordinary primes, module-level job).
+  **Final expensive run:** **2000** dense systems × 8 \(T\) at \(x_{\max}=10^{8}\),
+  **24 workers**, \(n_{\mathrm{points}}=8192\), elapsed \(\approx 2113\) s (\(\sim 35\) min),
+  product **16 000** rows. Cheap large-gap pilots at smaller \(x\) finished in minutes even at
+  100k–400k systems and were enlarged with denser \(x_{\max}\) for honest elapsed depth.
+  Resume stamp `PHASE_BEURLING_COMPLETE`. Durable `results/beurling_battery/` not overwritten.
+- **What \(R_d\) did:** rh_like mean \(\approx 0.34\); defective mean \(\approx 0.90\) across
+  multi-\(T\) (clear separation). Scorecard in `results/open_plateau/beurling/beurling.json`.
+- **Depth bar:** \(n_{\mathrm{systems}}=2000\ge 500\) × multi-\(T\); elapsed \(\ge 30\) min; product 16 000.
 
 ---
 

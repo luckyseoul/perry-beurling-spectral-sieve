@@ -39,12 +39,12 @@
     },
     "BEURLING": {
       "status": "completed",
-      "elapsed_s": 422.02079939842224,
-      "n_systems": 100000,
-      "n_rows": 600000,
+      "elapsed_s": 2112.8765263557434,
+      "n_systems": 2000,
+      "n_rows": 16000,
       "deep": true
     }
   },
-  "updated_unix": 1785084693.5013447,
+  "updated_unix": 1785088424.4479408,
   "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
 }
