@@ -1,0 +1,247 @@
+{
+  "degree": 4,
+  "n_points": 4096,
+  "eps": 0.5,
+  "detrend": "deg1",
+  "smooth": 1,
+  "T_values": [
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0
+  ],
+  "workers": 86,
+  "n_primes_global": 595341,
+  "x_max_global": 8886110.520507872,
+  "rows": [
+    {
+      "T": 8.0,
+      "x_max": 2980.9579870417283,
+      "n_primes_used": 429,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.10799173304405807,
+        "S_d": 115955240.41564798,
+        "energy": 0.005897612504348424,
+        "l2_norm_sq": 0.054611703489769334
+      },
+      "critical_line": {
+        "R_d": 0.0062221943824099365,
+        "S_d": 6681030.345451399
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 268435456.0001017,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.14200826695603663,
+      "gap_arith_minus_cl": 0.10176953866164813
+    },
+    {
+      "T": 9.0,
+      "x_max": 8103.083927575384,
+      "n_primes_used": 1019,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.1262190322379713,
+        "S_d": 440098552.7166744,
+        "energy": 0.006883612563153609,
+        "l2_norm_sq": 0.05453704121400138
+      },
+      "critical_line": {
+        "R_d": 0.003285768850731837,
+        "S_d": 11456767.574023467
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 871696100.2503302,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.12378096776212341,
+      "gap_arith_minus_cl": 0.12293326338723945
+    },
+    {
+      "T": 10.0,
+      "x_max": 22026.465794806718,
+      "n_primes_used": 2466,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.1434224562387933,
+        "S_d": 1434224562.387933,
+        "energy": 0.007998438467857322,
+        "l2_norm_sq": 0.05576838298278902
+      },
+      "critical_line": {
+        "R_d": 0.005949689839763909,
+        "S_d": 59496898.39763909
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 2500000000.000947,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.10657754376130141,
+      "gap_arith_minus_cl": 0.1374727663990294
+    },
+    {
+      "T": 11.0,
+      "x_max": 59874.14171519782,
+      "n_primes_used": 6048,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.16926817052558252,
+        "S_d": 4390380410.356507,
+        "energy": 0.00981456997904151,
+        "l2_norm_sq": 0.057982371692013854
+      },
+      "critical_line": {
+        "R_d": 0.0019587484718568944,
+        "S_d": 50804890.80111217
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 6484356150.252457,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.08073182947451218,
+      "gap_arith_minus_cl": 0.16730942205372562
+    },
+    {
+      "T": 12.0,
+      "x_max": 162754.79141900392,
+      "n_primes_used": 14912,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.1888232362225105,
+        "S_d": 11691437091.143572,
+        "energy": 0.010995346563491395,
+        "l2_norm_sq": 0.058230897761620874
+      },
+      "critical_line": {
+        "R_d": 0.002774438517057531,
+        "S_d": 171785920.17774558
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 15479341056.005863,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.061176763777584214,
+      "gap_arith_minus_cl": 0.18604879770545296
+    },
+    {
+      "T": 13.0,
+      "x_max": 442413.3920089205,
+      "n_primes_used": 37128,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.1868059317552472,
+        "S_d": 25752784020.225597,
+        "energy": 0.010914185075447069,
+        "l2_norm_sq": 0.058425259695429874
+      },
+      "critical_line": {
+        "R_d": 0.0015351905454401332,
+        "S_d": 211639053.29522046
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 34464622962.263054,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.0631940682448475,
+      "gap_arith_minus_cl": 0.18527074120980708
+    },
+    {
+      "T": 14.0,
+      "x_max": 1202604.2841647768,
+      "n_primes_used": 93117,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.19083922069335876,
+        "S_d": 55201132937.54621,
+        "energy": 0.011231739272274438,
+        "l2_norm_sq": 0.058854459955700836
+      },
+      "critical_line": {
+        "R_d": 0.003050832374838849,
+        "S_d": 882467465.973622
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 72313663744.02739,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.05916077930673594,
+      "gap_arith_minus_cl": 0.1877883883185199
+    },
+    {
+      "T": 15.0,
+      "x_max": 3269017.3724721107,
+      "n_primes_used": 234855,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.19232086591047898,
+        "S_d": 110901902452.61595,
+        "energy": 0.011293246438439116,
+        "l2_norm_sq": 0.058720858940474345
+      },
+      "critical_line": {
+        "R_d": 0.001075545798314704,
+        "S_d": 620213904.7332516
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 144162597656.3046,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.057679134089615725,
+      "gap_arith_minus_cl": 0.19124532011216427
+    },
+    {
+      "T": 16.0,
+      "x_max": 8886110.520507872,
+      "n_primes_used": 595341,
+      "detrend": "deg1",
+      "arithmetic": {
+        "R_d": 0.1932360083244965,
+        "S_d": 212465238057.80383,
+        "energy": 0.0113397463584051,
+        "l2_norm_sq": 0.05868340200529573
+      },
+      "critical_line": {
+        "R_d": 0.0015617480218679419,
+        "S_d": 1717160109.6999688
+      },
+      "persistent_defect": {
+        "R_d": 0.2500000000000947,
+        "S_d": 274877906944.1041,
+        "eps2": 0.25
+      },
+      "gap_def_minus_arith": 0.0567639916755982,
+      "gap_arith_minus_cl": 0.19167426030262855
+    }
+  ],
+  "reading": {
+    "R_ar_first": 0.10799173304405807,
+    "R_ar_last": 0.1932360083244965,
+    "R_ar_min": 0.10799173304405807,
+    "R_ar_max": 0.1932360083244965,
+    "loglog_slope_R_ar_vs_T": 0.8577601893951492,
+    "arith_decreases_end_vs_start": false,
+    "arith_below_defect_all": true,
+    "arith_above_critical_line_all": true,
+    "mean_gap_def_minus_ar": 0.08345259389426168,
+    "mean_gap_ar_minus_cl": 0.16350138868335726,
+    "max_T": 16.0,
+    "max_x_max": 8886110.520507872
+  },
+  "narrative": "Arithmetic R_d stays below the persistent-defect control but does not show clean T^{-2}-style decay over this window (plateau / slow drift). Staircase and intermediate spectral mass still dominate at max T=16.0.",
+  "not_an_RH_proof": true,
+  "note": "Arithmetic residual uses \u03b8(x)-x over \u221ax on u=log(x)/T with detrend. A0 pure-mode decay is separate (proved). Full Theorem A under RH remains open."
+}

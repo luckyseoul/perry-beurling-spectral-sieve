@@ -34,45 +34,46 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 
 ---
 
-## Multi-\(T\) campaign (shipped path)
+## Multi-\(T\) campaigns (shipped path)
 
-Command:
-```bash
-PYTHONPATH=src python3 experiments/run_multi_T.py --workers 86 --scratch …
-```
+### Model A0/B0 (`experiments/run_multi_T.py`)
 
-Representative numbers (`results/multi_T_scan.json`, d=4, n=8192, ε=0.5):
+| \(T\) | \(R_4\) critical-line | \(R_4\) persistent defect |
+|------:|----------------------:|--------------------------:|
+| 3 | 2.28e-02 | 0.250 |
+| 80 | 6.13e-05 | 0.250 |
 
-| \(T\) | \(R_4\) critical-line | \(R_4\) persistent defect | gap |
-|------:|----------------------:|--------------------------:|----:|
-| 3 | 2.28e-02 | 0.250 | 0.227 |
-| 20 | 1.00e-03 | 0.250 | 0.249 |
-| 80 | 6.13e-05 | 0.250 | 0.250 |
+Critical-line **decays**; defect **flat** at \(\varepsilon^2\).
 
-- Critical-line: **decays** \(\sim T^{-2}\) (0.023 → 6e-5).  
-- Persistent defect: **flat** at \(\varepsilon^2=0.25\) (Lemma M2).  
-- Gap at large \(T\): **≥ 0.249**.
+### Arithmetic residual (`experiments/run_arithmetic_multi_T.py`)
 
-Off-critical envelope modes are implemented (`probe_off_critical_mode`) for further attack; they are **not** yet a complete reduction of arithmetic off-line zeros.
+Builder: `arithmetic_residual` — \((\theta(x)-x)/\sqrt{x}\), detrend=deg1.
+
+| \(T\) | \(x_{\max}\) | \(R_4\) arithmetic | vs defect 0.25 |
+|------:|-------------:|-------------------:|:---------------|
+| 8 | 3e3 | 0.108 | below |
+| 12 | 1.6e5 | 0.189 | below |
+| 16 | 8.9e6 | 0.193 | below |
+
+**Reading:** arithmetic \(R_d\) **plateaus** (~0.19), does **not** show A0-style decay at \(T\le 16\). Still separated from defect floor. Full details: `results/arithmetic_multi_T.json`, `docs/THEOREMS_AB.md`.
 
 ---
 
-## Session progress vs open
+## Progress vs open
 
-**Moved this session (A/B push):**
+**Done:**
 
-1. Precise A/B definitions and status split.  
-2. Proved M1–M4 with written proofs + unit tests on shipped projection.  
-3. Multi-core multi-\(T\) separation: A₀ decay vs B₀ flat defect.  
-4. Off-critical probe for next-stage B work.
+1. A0/B0 lemmas M1–M4 proved + tested.  
+2. Model multi-\(T\) separation.  
+3. **Arithmetic residual multi-\(T\)** measured to \(x_{\max}\approx 9\cdot 10^6\) (honest plateau).  
+4. Detrend/smooth options on residual builder.
 
 **Still open:**
 
-1. Full Theorem A for prime residual under RH.  
-2. Full Theorem B (obstruction ⇒ RH).  
-3. Sharp rate \(O(T^{-2(d+1)})\).  
-4. Large-\(T\) arithmetic residual without staircase artifact.  
-5. Legacy P≈3.92 normalization.
+1. Full Theorem A (arithmetic \(R_d\to 0\) under RH) — **not** seen yet at accessible \(T\).  
+2. Full Theorem B.  
+3. Larger \(T\) / better residual whitening / explicit formula.  
+4. Legacy P≈3.92 normalization.
 
 ---
 

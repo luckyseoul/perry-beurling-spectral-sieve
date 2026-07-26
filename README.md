@@ -18,7 +18,13 @@ The framework is a **classifier / diagnostic**, not a full proof of RH.
 pip install -r requirements.txt
 PYTHONPATH=src python3 -m pytest tests/ -v
 PYTHONPATH=src python3 experiments/run_diagnostic.py
+PYTHONPATH=src python3 experiments/run_multi_T.py --workers 86
+PYTHONPATH=src python3 experiments/run_arithmetic_multi_T.py --workers 86
 ```
+
+Arithmetic residual multi-\(T\): real primes \(\theta(x)-x\), compared to A0 critical-line
+mode and B0 defect control. At \(T\le 16\) (\(x\le 10^7\)) arithmetic \(R_d\) **plateaus**
+near ~0.19 (below defect 0.25) — see `results/arithmetic_multi_T.json`.
 
 ## Core math (shipped)
 

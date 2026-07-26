@@ -27,6 +27,8 @@ from .probes import (
     probe_defective,
     probe_persistent_defect,
     probe_prime_residual,
+    arithmetic_residual,
+    primes_upto,
     normalize_l2,
 )
 from .lemmas import (
@@ -54,6 +56,8 @@ __all__ = [
     "probe_defective",
     "probe_persistent_defect",
     "probe_prime_residual",
+    "arithmetic_residual",
+    "primes_upto",
     "normalize_l2",
     "continuous_R_d_pure_mode",
     "continuous_R_d_orthogonal_defect",

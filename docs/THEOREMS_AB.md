@@ -128,6 +128,28 @@ R_d(q_T)\to0\qquad(T\to\infty).
 of critical-line modes; each contributes \(O(T^{-2})\) (or better) to \(R_d\);
 controlling the sum over zeros is analytic number theory **not completed here**.
 
+### Arithmetic multi-\(T\) evidence (measured, not a proof)
+
+Shipped builder: `pbss.probes.arithmetic_residual` — \(q_T=( \theta(x)-x)/\sqrt{x}\) on
+\(x=e^{uT}\), default linear detrend (`deg1`). Experiment:
+`experiments/run_arithmetic_multi_T.py` → `results/arithmetic_multi_T.json`.
+
+**Scan (d=4, n=4096, detrend=deg1, T=8…16, x_max up to ≈8.9×10⁶):**
+
+| \(T\) | \(x_{\max}\) | \(R_4(q_T)\) arithmetic | \(R_4\) crit-line | \(R_4\) defect \(\varepsilon=0.5\) |
+|------:|-------------:|------------------------:|------------------:|----------------------------------:|
+| 8 | 3.0e3 | 0.108 | 0.0062 | 0.250 |
+| 12 | 1.6e5 | 0.189 | 0.0028 | 0.250 |
+| 16 | 8.9e6 | 0.193 | 0.0016 | 0.250 |
+
+**Reading (honest):**
+
+- Arithmetic \(R_d\) **does not decay** on this range: 0.108 → 0.193 (log-log slope ≈ +0.86).
+- It **plateaus** near ≈0.19 for \(T\gtrsim 12\), always **below** the persistent-defect floor 0.25 and **above** pure critical-line mode.
+- So A0 model decay is **not** yet visible in the arithmetic residual at \(T\le 16\); bulk/staircase / intermediate mass still dominate. Larger \(T\), better whitening, or explicit-formula residuals are next — **not** a claim that Theorem A fails.
+
+**Does not prove or disprove RH or full Theorem A.**
+
 ---
 
 ## 3. Theorem B (obstruction) — precise form

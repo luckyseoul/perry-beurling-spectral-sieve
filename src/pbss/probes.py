@@ -127,64 +127,149 @@ def probe_defective(
     )
 
 
-def _primes_upto(n: int) -> np.ndarray:
-    """Simple sieve of Eratosthenes; returns primes ≤ n."""
+def primes_upto(n: int) -> np.ndarray:
+    """Sieve of Eratosthenes; returns primes ≤ n as int64 array."""
+    n = int(n)
     if n < 2:
         return np.array([], dtype=np.int64)
     sieve = np.ones(n + 1, dtype=bool)
     sieve[0:2] = False
-    for p in range(2, int(n**0.5) + 1):
+    r = int(n**0.5)
+    for p in range(2, r + 1):
         if sieve[p]:
             sieve[p * p :: p] = False
     return np.nonzero(sieve)[0].astype(np.int64)
+
+
+# backward-compatible alias
+_primes_upto = primes_upto
+
+
+def _detrend(residual: np.ndarray, u: np.ndarray, mode: str) -> np.ndarray:
+    """
+    Remove slow bulk from arithmetic residual without projecting out all of V_d.
+
+    - none:   raw residual
+    - deg0:   subtract mean
+    - deg1:   subtract least-squares a + b u  (default for multi-T)
+    """
+    mode = mode.lower()
+    r = np.asarray(residual, dtype=np.float64).copy()
+    u = np.asarray(u, dtype=np.float64)
+    if mode in ("none", "raw"):
+        return r
+    if mode in ("deg0", "mean"):
+        return r - float(np.mean(r))
+    if mode in ("deg1", "linear"):
+        # least squares fit a + b u
+        A = np.column_stack([np.ones_like(u), u])
+        coef, _, _, _ = np.linalg.lstsq(A, r, rcond=None)
+        return r - (A @ coef)
+    raise ValueError(f"unknown detrend mode: {mode}")
+
+
+def arithmetic_residual(
+    u: np.ndarray,
+    *,
+    T: Optional[float] = None,
+    x_max: Optional[float] = None,
+    primes: Optional[np.ndarray] = None,
+    detrend: str = "deg1",
+    smooth: int = 1,
+) -> Tuple[np.ndarray, float, dict]:
+    """
+    Arithmetic Chebyshev residual on the unit log-window (shipped entry point).
+
+    Window: x = exp(u * T) for u in [0,1], with T = log(x_max).
+      θ(x) = ∑_{p ≤ x} log p
+      raw(u) = (θ(x) - x) / √x
+      q(u)   = detrend(raw)   [optional light moving-average smooth first]
+
+    Parameters
+    ----------
+    u : sample grid on [0,1]
+    T, x_max : specify one; T = log(x_max)
+    primes : optional precomputed primes (must cover ≤ x_max); speeds multi-T
+    detrend : 'none' | 'deg0' | 'deg1' (default deg1 removes slow linear bulk)
+    smooth : moving-average width in samples (1 = off)
+
+    Returns
+    -------
+    q : residual samples
+    T : window length
+    meta : dict with x_max, n_primes, detrend, smooth
+    """
+    u = np.asarray(u, dtype=np.float64)
+    if T is None and x_max is None:
+        raise ValueError("provide T or x_max")
+    if T is None:
+        x_max = float(x_max)
+        if x_max < 3:
+            raise ValueError("x_max too small")
+        T = float(np.log(x_max))
+    else:
+        T = float(T)
+        if T <= 0:
+            raise ValueError("T must be positive")
+        x_max = float(np.exp(T))
+
+    x_max_i = int(np.floor(x_max))
+    if primes is None:
+        primes = primes_upto(x_max_i)
+    else:
+        primes = np.asarray(primes, dtype=np.int64)
+        # keep only primes in range
+        primes = primes[primes <= x_max_i]
+
+    x = np.exp(u * T)
+    x = np.maximum(x, 2.0)
+
+    if primes.size == 0:
+        raise ValueError("no primes in range")
+    logp = np.log(primes.astype(np.float64))
+    csum = np.cumsum(logp)
+    idx = np.searchsorted(primes, x, side="right") - 1
+    theta = np.zeros_like(x)
+    ok = idx >= 0
+    theta[ok] = csum[idx[ok]]
+
+    residual = (theta - x) / np.sqrt(x)
+    if smooth > 1:
+        kernel = np.ones(smooth, dtype=np.float64) / float(smooth)
+        residual = np.convolve(residual, kernel, mode="same")
+    residual = _detrend(residual, u, detrend)
+
+    meta = {
+        "x_max": x_max,
+        "T": T,
+        "n_primes": int(primes.size),
+        "detrend": detrend,
+        "smooth": int(smooth),
+    }
+    return residual, T, meta
 
 
 def probe_prime_residual(
     u: np.ndarray,
     x_max: float = 1e5,
     smooth: int = 3,
+    detrend: str = "deg1",
+    primes: Optional[np.ndarray] = None,
 ) -> Tuple[np.ndarray, float]:
     """
-    Build a Chebyshev-function residual probe from real primes.
+    Backward-compatible wrapper around ``arithmetic_residual``.
 
-    On the multiplicative scale x = exp(u * log x_max):
-      θ(x) = ∑_{p≤x} log p
-      q(u) ∝ (θ(x) - x) / x^{1/2}     (normalized later)
-
-    Under RH, θ(x)-x = O(x^{1/2} log² x); the residual is oscillatory and
-    high-frequency on the log window — an RH-consistent probe.
-
-    Returns
-    -------
-    q : residual samples on u
-    T : logarithmic window length log(x_max)
+    Returns (q, T) only. Prefer ``arithmetic_residual`` for new code.
     """
-    u = np.asarray(u, dtype=np.float64)
-    if x_max < 3:
-        raise ValueError("x_max too small")
-    T = float(np.log(x_max))
-    x = np.exp(u * T)
-    # avoid x<2
-    x = np.maximum(x, 2.0)
-
-    primes = _primes_upto(int(x_max))
-    logp = np.log(primes.astype(np.float64))
-    # θ at each x via searchsorted cumulative sum
-    csum = np.cumsum(logp)
-    idx = np.searchsorted(primes, x, side="right") - 1
-    theta = np.where(idx >= 0, csum[np.clip(idx, 0, len(csum) - 1)], 0.0)
-    theta = np.where(idx < 0, 0.0, theta)
-
-    residual = (theta - x) / np.sqrt(x)
-    # light moving average to reduce pure step noise (optional)
-    if smooth > 1:
-        kernel = np.ones(smooth) / smooth
-        residual = np.convolve(residual, kernel, mode="same")
-    # remove mean (degree-0 bulk) so the diagnostic sees oscillatory content;
-    # raw staircase bias otherwise floods low-degree Legendre modes at modest x_max
-    residual = residual - float(np.mean(residual))
-    return residual, T
+    q, T, _ = arithmetic_residual(
+        u, x_max=x_max, primes=primes, detrend=detrend, smooth=smooth
+    )
+    return q, T
 
 
 def default_T_from_xmax(x_max: float) -> float:
     return float(np.log(x_max))
+
+
+def xmax_from_T(T: float) -> float:
+    return float(np.exp(T))
