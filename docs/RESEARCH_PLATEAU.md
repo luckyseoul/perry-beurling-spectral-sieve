@@ -209,6 +209,7 @@ This is a **research judgment from numerics**, not a proof that RH is true or fa
 ## Pointers
 
 - Status board: [`STATUS.md`](STATUS.md)
+- **Theorem-A scaffolding (weight class + truncation remainder):** [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md)
 - Overnight floors: `OVERNIGHT_GOAL.md`, `results/overnight_marathon/`
 - Open goal: `OPEN_GOAL.md`
 - Lemmas / theorems: `THEOREMS_AB.md`, `PROOFS_LEMMAS.md`

@@ -53,6 +53,19 @@ from .lemmas import (
 )
 from .zeros import zeta_zero_ordinates, ZETA_ZERO_ORDINATES_50
 from .gpu_residual import arithmetic_residual_fast, energy_ratios_multi_degree
+from .weights import (
+    admissible_weight,
+    apply_weight,
+    bulk_vs_weighted_report,
+    endpoint_contribution,
+    weighted_energy_ratio,
+)
+from .remainder import (
+    bound_R_d_mode_tail,
+    peel_via_remainder,
+    remainder_diagnostic,
+    truncated_mode_sum,
+)
 
 __all__ = [
     "shifted_legendre_values",
@@ -94,6 +107,15 @@ __all__ = [
     "ZETA_ZERO_ORDINATES_50",
     "arithmetic_residual_fast",
     "energy_ratios_multi_degree",
+    "admissible_weight",
+    "apply_weight",
+    "bulk_vs_weighted_report",
+    "endpoint_contribution",
+    "weighted_energy_ratio",
+    "bound_R_d_mode_tail",
+    "peel_via_remainder",
+    "remainder_diagnostic",
+    "truncated_mode_sum",
 ]
 
-__version__ = "0.5.0"
+__version__ = "0.6.0"

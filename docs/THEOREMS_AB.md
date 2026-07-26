@@ -133,6 +133,20 @@ This is the bridge from pure A₀ to truncated explicit-formula residuals. It do
 **not** prove full Theorem A for infinite zero sums or for the arithmetic prime
 residual.
 
+### Scaffolding toward full A (2026-07-26)
+
+Shipped (not full A):
+
+1. **Weight class \(W_\alpha\)** — `pbss.weights`: Tukey/Hanning windows, endpoint
+   contribution \(E_{\mathrm{end}}\), weighted \(R_d\). Documents the taper effect seen
+   in open-plateau as a controlled object.
+2. **Truncation remainder path** — `pbss.remainder`: peel via \(q-\alpha q_T^{(N)}\),
+   M5 majorant on finite stripped blocks, scaffolding tail majorant for zeros
+   beyond \(N\).
+
+Writeup: [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md). Campaign:
+`results/theorem_a_scaffold/`. **Full arithmetic A still open.**
+
 ### Full Theorem A (**conditional / not proved in this repo**)
 
 **Hypothesis (RH).** All non-trivial zeros of \(\zeta\) satisfy \(\mathrm{Re}\,\rho=\tfrac12\).

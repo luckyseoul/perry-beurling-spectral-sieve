@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "elapsed_s": 12.119734764099121,
+  "phases": [
+    "weight",
+    "remainder",
+    "arithmetic"
+  ],
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "note": "Scaffolding for Theorem A \u2014 weight class + truncation remainder. Full A open."
+}

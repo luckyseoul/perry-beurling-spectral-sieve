@@ -1,0 +1,4 @@
+class=arithmetic
+elapsed_s=11.233712673187256
+n_rows=4
+NOT AN UNCONDITIONAL PROOF OF RH

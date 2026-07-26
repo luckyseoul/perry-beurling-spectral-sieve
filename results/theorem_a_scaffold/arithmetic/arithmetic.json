@@ -1,0 +1,138 @@
+{
+  "class": "arithmetic",
+  "status": "completed",
+  "elapsed_s": 11.233712673187256,
+  "n_rows": 4,
+  "rows": [
+    {
+      "weight": {
+        "R_d_raw": 0.1888232362225105,
+        "R_d_bulk": 0.10924518144025182,
+        "R_d_weighted": 0.1262991014131894,
+        "E_end": 0.08618615472426333,
+        "E_bulk": 0.08949449978043222,
+        "alpha": 0.1,
+        "weight_name": "tukey",
+        "weight_admissible_ok": true,
+        "weight_l2_mass": 0.875,
+        "degree": 4,
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+        "T": 12.0,
+        "source": "arithmetic_deg1"
+      },
+      "remainder": {
+        "T": 12.0,
+        "n_strip": 10,
+        "degree": 4,
+        "R_d_full": 0.1888232362225105,
+        "R_d_remainder": 0.33894592766604364,
+        "alpha": -0.9286384815128246,
+        "M5_bound_stripped_block": 0.007524582968130816,
+        "tail_majorant_R_d": 0.0027816462766196257,
+        "fit_scale": true,
+        "kind": "remainder_diagnostic_external",
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+        "note": "External residual (e.g. arithmetic). Peeling model modes is a diagnostic; full Theorem A remains open.",
+        "source": "arithmetic_deg1"
+      }
+    },
+    {
+      "weight": {
+        "R_d_raw": 0.1932360083244965,
+        "R_d_bulk": 0.10082077393353672,
+        "R_d_weighted": 0.11603875211290311,
+        "E_end": 0.08612174813490348,
+        "E_bulk": 0.08025134405382624,
+        "alpha": 0.1,
+        "weight_name": "tukey",
+        "weight_admissible_ok": true,
+        "weight_l2_mass": 0.875,
+        "degree": 4,
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+        "T": 16.0,
+        "source": "arithmetic_deg1"
+      },
+      "remainder": {
+        "T": 16.0,
+        "n_strip": 10,
+        "degree": 4,
+        "R_d_full": 0.1932360083244965,
+        "R_d_remainder": 0.36123906080917223,
+        "alpha": -0.9399415921296123,
+        "M5_bound_stripped_block": 0.004232577919573583,
+        "tail_majorant_R_d": 0.0015646760305985394,
+        "fit_scale": true,
+        "kind": "remainder_diagnostic_external",
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+        "note": "External residual (e.g. arithmetic). Peeling model modes is a diagnostic; full Theorem A remains open.",
+        "source": "arithmetic_deg1"
+      }
+    },
+    {
+      "weight": {
+        "R_d_raw": 0.17708372090935898,
+        "R_d_bulk": 0.08282902103777302,
+        "R_d_weighted": 0.08758652246868273,
+        "E_end": 0.0941534009919724,
+        "E_bulk": 0.0645566374218853,
+        "alpha": 0.1,
+        "weight_name": "tukey",
+        "weight_admissible_ok": true,
+        "weight_l2_mass": 0.875,
+        "degree": 4,
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+        "T": 20.0,
+        "source": "arithmetic_deg1"
+      },
+      "remainder": {
+        "T": 20.0,
+        "n_strip": 10,
+        "degree": 4,
+        "R_d_full": 0.17708372090935898,
+        "R_d_remainder": 0.33532795128070064,
+        "alpha": -0.9400051202900206,
+        "M5_bound_stripped_block": 0.0027088498685270933,
+        "tail_majorant_R_d": 0.0010013926595830653,
+        "fit_scale": true,
+        "kind": "remainder_diagnostic_external",
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+        "note": "External residual (e.g. arithmetic). Peeling model modes is a diagnostic; full Theorem A remains open.",
+        "source": "arithmetic_deg1"
+      }
+    },
+    {
+      "weight": {
+        "R_d_raw": 0.1503346337489907,
+        "R_d_bulk": 0.0687714091265535,
+        "R_d_weighted": 0.06806431114507562,
+        "E_end": 0.07836621963406229,
+        "E_bulk": 0.05264261600570729,
+        "alpha": 0.1,
+        "weight_name": "tukey",
+        "weight_admissible_ok": true,
+        "weight_l2_mass": 0.875,
+        "degree": 4,
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+        "T": 24.0,
+        "source": "arithmetic_deg1"
+      },
+      "remainder": {
+        "T": 24.0,
+        "n_strip": 10,
+        "degree": 4,
+        "R_d_full": 0.1503346337489907,
+        "R_d_remainder": 0.29911893351332025,
+        "alpha": -0.9550677579887535,
+        "M5_bound_stripped_block": 0.001881145742032704,
+        "tail_majorant_R_d": 0.0006954115691549064,
+        "fit_scale": true,
+        "kind": "remainder_diagnostic_external",
+        "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+        "note": "External residual (e.g. arithmetic). Peeling model modes is a diagnostic; full Theorem A remains open.",
+        "source": "arithmetic_deg1"
+      }
+    }
+  ],
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "note": "Light arithmetic diagnostic only; not full Theorem A."
+}

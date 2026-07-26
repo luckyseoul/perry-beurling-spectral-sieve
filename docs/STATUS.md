@@ -137,6 +137,17 @@ This STATUS + theorem pointers. Paper: `docs/paper/`. **No RH proof claim.**
 
 ---
 
+## Theorem-A scaffolding (items 1–2)
+
+**Writeup:** [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md)  
+**Code:** `pbss.weights` (admissible \(W_\alpha\), endpoint estimator), `pbss.remainder` (peel-via-remainder, M5 + tail majorant)  
+**Entry:** `experiments/run_theorem_a_scaffold.py`  
+**Artifacts:** `results/theorem_a_scaffold/` (`PHASE_{WEIGHT,REMAINDER,ARITHMETIC}_COMPLETE`, `SCAFFOLD_COMPLETE`)  
+**What it is:** formal weight class for endpoint control + truncated zero-sum remainder path with multi-\((T,N)\) numerics.  
+**What it is not:** full Theorem A or RH. Tail majorants are scaffolding labels, not sharp ANT bounds.
+
+---
+
 ## Proved in-repo (model diagnostic)
 
 | Lemma | Statement | Code / test |
@@ -164,4 +175,5 @@ PYTHONPATH=src python3 experiments/run_mc_stress.py --mc-per-t 50000 --workers 8
 PYTHONPATH=src python3 experiments/run_extend_x_scan.py --workers 86
 PYTHONPATH=src python3 experiments/run_explicit_formula_peel.py
 PYTHONPATH=src python3 experiments/run_open_plateau.py --classes peel,whiten,measure,basis,scale,beurling,mc_rand --workers 86
+PYTHONPATH=src python3 experiments/run_theorem_a_scaffold.py --out-dir results/theorem_a_scaffold --workers 32
 ```

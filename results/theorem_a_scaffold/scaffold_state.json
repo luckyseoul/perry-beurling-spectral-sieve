@@ -1,0 +1,21 @@
+{
+  "phases": {
+    "WEIGHT": {
+      "status": "completed",
+      "elapsed_s": 0.5009751319885254,
+      "n_rows": 36
+    },
+    "REMAINDER": {
+      "status": "completed",
+      "elapsed_s": 0.31966471672058105,
+      "n_rows": 42
+    },
+    "ARITHMETIC": {
+      "status": "completed",
+      "elapsed_s": 11.233712673187256,
+      "n_rows": 4
+    }
+  },
+  "updated_unix": 1785090724.1354668,
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+}
