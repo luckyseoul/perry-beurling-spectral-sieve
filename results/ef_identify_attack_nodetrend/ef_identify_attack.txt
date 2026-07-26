@@ -1,0 +1,7 @@
+n_rows=24 elapsed_s=11.5
+T=[14.0, 16.0, 18.0, 20.0] N=[10, 20, 40, 50]
+best=H_psi_sqrt score_Ed=0.7172625363796451
+status=partial_capture
+  H_theta_sqrt: corr=0.1519 frac_l2=0.9769 Ed_rem/l2q=0.9649
+  H_psi_sqrt: corr=0.4289 frac_l2=0.8152 Ed_rem/l2q=0.7173
+technical attack log — not an RH announcement

@@ -70,6 +70,13 @@ from .remainder import (
     truncated_mode_sum,
 )
 from .theorem_a_chain import model_chain_report, multi_T_model_chain, package_status
+from .ef_identify import (
+    identify_ef,
+    hypothesis_residual,
+    multi_hypothesis_scan,
+    model_sanity_identify,
+    summarize_attack,
+)
 
 __all__ = [
     "shifted_legendre_values",
@@ -126,6 +133,11 @@ __all__ = [
     "model_chain_report",
     "multi_T_model_chain",
     "package_status",
+    "identify_ef",
+    "hypothesis_residual",
+    "multi_hypothesis_scan",
+    "model_sanity_identify",
+    "summarize_attack",
 ]
 
-__version__ = "0.8.0"
+__version__ = "0.9.0"

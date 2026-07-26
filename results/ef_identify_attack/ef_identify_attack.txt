@@ -1,0 +1,12 @@
+n_rows=64 elapsed_s=23.0
+T=[12.0, 14.0, 16.0, 18.0, 20.0] N=[5, 10, 20, 40]
+best=H_theta_sqrt score_Ed=0.20829022793249924
+status=sharp_block
+  H_theta_sqrt: corr=0.6540 frac_l2=0.5691 Ed_rem/l2q=0.2083
+  H_psi_sqrt: corr=0.5941 frac_l2=0.6442 Ed_rem/l2q=0.3687
+  H_psi_x: corr=0.1241 frac_l2=0.9844 Ed_rem/l2q=0.8728
+  H_theta_x: corr=0.1458 frac_l2=0.9782 Ed_rem/l2q=0.8589
+SHARP_BLOCK=LOW_DEGREE_MASS_INVARIANT_TO_ZERO_TRUNCATION_N
+Best hypothesis H_theta_sqrt shows partial EF capture (mean |corr(q,m)|≈0.65, L² remainder fraction falls as N grows), but the low-degree remainder mass E_d(r)/||q||² stays flat ≈0.21 across N (spread 0.011). So the Legendre-V_d mass of the arithmetic residual is not in the span of the first N critical-line modes after optimal scale (and poly bulk) fit. Missing ingredient: either (i) a secondary main-term / smooth component in the residual definition that accounts for V_d mass independent of zer
+UNBLOCK: Construct m_full = zero sum + secondary terms so that E_d(q-α m_full)/||q||² → 0 as N→∞ or T→∞ under RH; or change q so its V_d content is proved O(T^{-2}).
+technical attack log — not an RH announcement

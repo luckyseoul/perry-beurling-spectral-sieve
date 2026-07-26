@@ -169,6 +169,17 @@ tail majorant controls vs true \(\psi\)/\(\theta\) remainder.
 
 **Status:** Conditional A **package complete**. Full arithmetic A **open**. RH **open**.
 
+### EF identification attack (headway + sharp block)
+
+**Writeup:** [`EF_IDENTIFY_ATTACK.md`](EF_IDENTIFY_ATTACK.md)  
+**Code:** `pbss.ef_identify` · **Campaign:** `results/ef_identify_attack/`  
+
+**Progress:** Best match is **H_theta_sqrt** \((\theta-x)/\sqrt{x}\); mean \(|\mathrm{corr}(q,m)|\approx 0.65\)
+rising to \(\sim 0.72\) at \(N=40\); L² remainder fraction falls with \(N\).  
+**Sharp block:** `LOW_DEGREE_MASS_INVARIANT_TO_ZERO_TRUNCATION_N` — \(E_d(r)/\|q\|^2\approx 0.21\)
+**flat in \(N\)** while L² capture improves. Low-degree mass is not in the span of the
+first \(N\) shipped EF modes. Unblock: secondary main terms in \(m\), or redesign \(q\).
+
 ---
 
 ## Proved in-repo (model diagnostic)

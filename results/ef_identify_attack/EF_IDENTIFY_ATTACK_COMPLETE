@@ -1,0 +1,7 @@
+{
+  "status": "sharp_block",
+  "n_rows": 64,
+  "elapsed_s": 22.99282455444336,
+  "sharp_block": "LOW_DEGREE_MASS_INVARIANT_TO_ZERO_TRUNCATION_N",
+  "best_hypothesis": "H_theta_sqrt"
+}
