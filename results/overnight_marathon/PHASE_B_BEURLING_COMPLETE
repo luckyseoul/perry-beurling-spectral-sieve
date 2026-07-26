@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "elapsed_s": 86.12509870529175,
+  "n_systems": 100,
+  "n_rows": 600,
+  "path": "results/overnight_marathon/beurling/beurling.json"
+}

@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "elapsed_s_sum_phases": 652.1777310371399,
+  "phases": {
+    "A_PEEL": {
+      "status": "completed",
+      "elapsed_s": 195.7902374267578,
+      "n_rows": 2048,
+      "path": "results/overnight_marathon/peel/peel.json"
+    },
+    "B_BEURLING": {
+      "status": "completed",
+      "elapsed_s": 86.12509870529175,
+      "n_systems": 100,
+      "n_rows": 600,
+      "path": "results/overnight_marathon/beurling/beurling.json"
+    },
+    "C_MC": {
+      "status": "completed",
+      "elapsed_s": 231.9224202632904,
+      "min_mc_per_t": 200000,
+      "n_T": 8,
+      "total_trials": 1600000,
+      "path": "results/overnight_marathon/mc/mc_stress_summary.json"
+    },
+    "D_RESIDUAL": {
+      "status": "completed",
+      "elapsed_s": 138.33997464179993,
+      "n_rows": 96,
+      "path": "results/overnight_marathon/residual/residual.json"
+    }
+  },
+  "floors": {
+    "peel_rows": 2048,
+    "beurling_systems": 100,
+    "mc_per_t": 200000,
+    "mc_n_T": 8,
+    "residual_rows": 96
+  },
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "interpretation": "Overnight marathon work floors met. Not an RH proof."
+}

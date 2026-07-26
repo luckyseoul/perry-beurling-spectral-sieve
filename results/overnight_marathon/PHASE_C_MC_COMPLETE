@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "elapsed_s": 231.9224202632904,
+  "min_mc_per_t": 200000,
+  "n_T": 8,
+  "total_trials": 1600000,
+  "path": "results/overnight_marathon/mc/mc_stress_summary.json"
+}

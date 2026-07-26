@@ -1,0 +1,4920 @@
+{
+  "status": "completed",
+  "phase": "beurling",
+  "elapsed_s": 86.12509870529175,
+  "n_systems": 100,
+  "x_max": 100000000.0,
+  "T_values": [
+    8.0,
+    10.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0
+  ],
+  "rows": [
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.10959605620105688,
+      "n_primes": 429
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.14288417220319627,
+      "n_primes": 2466
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.18841981849582562,
+      "n_primes": 14912
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.19101735034853737,
+      "n_primes": 93117
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.19002331281783139,
+      "n_primes": 595341
+    },
+    {
+      "system": "ordinary_primes",
+      "kind": "rh_like",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.18094809725730626,
+      "n_primes": 3877186
+    },
+    {
+      "system": "gapped_g1.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9992931959092676,
+      "n_primes": 1986
+    },
+    {
+      "system": "gapped_g1.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9982374252366177,
+      "n_primes": 14683
+    },
+    {
+      "system": "gapped_g1.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9963058229312982,
+      "n_primes": 108502
+    },
+    {
+      "system": "gapped_g1.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9933311716102341,
+      "n_primes": 801735
+    },
+    {
+      "system": "gapped_g1.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9891911013091694,
+      "n_primes": 5924073
+    },
+    {
+      "system": "gapped_g1.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9838387530127183,
+      "n_primes": 43773312
+    },
+    {
+      "system": "gapped_g1.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9992951114620775,
+      "n_primes": 1986
+    },
+    {
+      "system": "gapped_g1.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9982326681455621,
+      "n_primes": 14683
+    },
+    {
+      "system": "gapped_g1.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9963025740409722,
+      "n_primes": 108502
+    },
+    {
+      "system": "gapped_g1.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9933294264810202,
+      "n_primes": 801735
+    },
+    {
+      "system": "gapped_g1.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9891902440037721,
+      "n_primes": 5924072
+    },
+    {
+      "system": "gapped_g1.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9838383926567295,
+      "n_primes": 43773311
+    },
+    {
+      "system": "gapped_g1.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9992802231259909,
+      "n_primes": 1984
+    },
+    {
+      "system": "gapped_g1.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9982541125227891,
+      "n_primes": 14681
+    },
+    {
+      "system": "gapped_g1.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9963163629622367,
+      "n_primes": 108500
+    },
+    {
+      "system": "gapped_g1.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9933357161879779,
+      "n_primes": 801733
+    },
+    {
+      "system": "gapped_g1.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.989192761005216,
+      "n_primes": 5924071
+    },
+    {
+      "system": "gapped_g1.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9838392979425187,
+      "n_primes": 43773310
+    },
+    {
+      "system": "gapped_g2_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9992067028003254,
+      "n_primes": 1490
+    },
+    {
+      "system": "gapped_g2_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9981504306796012,
+      "n_primes": 11013
+    },
+    {
+      "system": "gapped_g2_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9961824899164421,
+      "n_primes": 81377
+    },
+    {
+      "system": "gapped_g2_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9931707270021833,
+      "n_primes": 601302
+    },
+    {
+      "system": "gapped_g2_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9889986790004764,
+      "n_primes": 4443055
+    },
+    {
+      "system": "gapped_g2_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9836214760943798,
+      "n_primes": 32829984
+    },
+    {
+      "system": "gapped_g2_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9991979754269178,
+      "n_primes": 1489
+    },
+    {
+      "system": "gapped_g2_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9981355643842318,
+      "n_primes": 11012
+    },
+    {
+      "system": "gapped_g2_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9961744066615238,
+      "n_primes": 81376
+    },
+    {
+      "system": "gapped_g2_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9931670174335995,
+      "n_primes": 601301
+    },
+    {
+      "system": "gapped_g2_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.988997111689078,
+      "n_primes": 4443054
+    },
+    {
+      "system": "gapped_g2_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9836208603708326,
+      "n_primes": 32829984
+    },
+    {
+      "system": "gapped_g2_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9992045426660217,
+      "n_primes": 1488
+    },
+    {
+      "system": "gapped_g2_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9981646414644331,
+      "n_primes": 11011
+    },
+    {
+      "system": "gapped_g2_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9961904413607809,
+      "n_primes": 81375
+    },
+    {
+      "system": "gapped_g2_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9931737861413856,
+      "n_primes": 601300
+    },
+    {
+      "system": "gapped_g2_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9889996530519793,
+      "n_primes": 4443053
+    },
+    {
+      "system": "gapped_g2_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9836217513591384,
+      "n_primes": 32829983
+    },
+    {
+      "system": "gapped_g2.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9990820225819956,
+      "n_primes": 1192
+    },
+    {
+      "system": "gapped_g2.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9980475503147368,
+      "n_primes": 8810
+    },
+    {
+      "system": "gapped_g2.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9960434507678453,
+      "n_primes": 65102
+    },
+    {
+      "system": "gapped_g2.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9929934276684615,
+      "n_primes": 481041
+    },
+    {
+      "system": "gapped_g2.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9887893632579454,
+      "n_primes": 3554444
+    },
+    {
+      "system": "gapped_g2.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9833878356570758,
+      "n_primes": 26263987
+    },
+    {
+      "system": "gapped_g2.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9990658725754512,
+      "n_primes": 1192
+    },
+    {
+      "system": "gapped_g2.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9980226231002101,
+      "n_primes": 8810
+    },
+    {
+      "system": "gapped_g2.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9960299887723802,
+      "n_primes": 65101
+    },
+    {
+      "system": "gapped_g2.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9929877190600018,
+      "n_primes": 481041
+    },
+    {
+      "system": "gapped_g2.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9887870422609659,
+      "n_primes": 3554444
+    },
+    {
+      "system": "gapped_g2.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9833869375510085,
+      "n_primes": 26263987
+    },
+    {
+      "system": "gapped_g2.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.999099165975809,
+      "n_primes": 1191
+    },
+    {
+      "system": "gapped_g2.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.998060297293656,
+      "n_primes": 8809
+    },
+    {
+      "system": "gapped_g2.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9960480701467426,
+      "n_primes": 65100
+    },
+    {
+      "system": "gapped_g2.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9929947921064093,
+      "n_primes": 481040
+    },
+    {
+      "system": "gapped_g2.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9887896301446397,
+      "n_primes": 3554443
+    },
+    {
+      "system": "gapped_g2.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9833878199000478,
+      "n_primes": 26263986
+    },
+    {
+      "system": "gapped_g3_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9989112311543915,
+      "n_primes": 993
+    },
+    {
+      "system": "gapped_g3_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9979265740776593,
+      "n_primes": 7342
+    },
+    {
+      "system": "gapped_g3_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9958850217712996,
+      "n_primes": 54251
+    },
+    {
+      "system": "gapped_g3_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9927967655436876,
+      "n_primes": 400868
+    },
+    {
+      "system": "gapped_g3_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9885609918306252,
+      "n_primes": 2962037
+    },
+    {
+      "system": "gapped_g3_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9831359623265266,
+      "n_primes": 21886656
+    },
+    {
+      "system": "gapped_g3_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9988758327892944,
+      "n_primes": 993
+    },
+    {
+      "system": "gapped_g3_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9978873865386607,
+      "n_primes": 7342
+    },
+    {
+      "system": "gapped_g3_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9958652631836384,
+      "n_primes": 54251
+    },
+    {
+      "system": "gapped_g3_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.992788602791947,
+      "n_primes": 400868
+    },
+    {
+      "system": "gapped_g3_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9885576936623653,
+      "n_primes": 2962036
+    },
+    {
+      "system": "gapped_g3_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.983134704676389,
+      "n_primes": 21886656
+    },
+    {
+      "system": "gapped_g3_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9989520041966068,
+      "n_primes": 992
+    },
+    {
+      "system": "gapped_g3_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9979353437861291,
+      "n_primes": 7341
+    },
+    {
+      "system": "gapped_g3_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9958858571897687,
+      "n_primes": 54250
+    },
+    {
+      "system": "gapped_g3_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.992796097376023,
+      "n_primes": 400867
+    },
+    {
+      "system": "gapped_g3_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9885603704463845,
+      "n_primes": 2962036
+    },
+    {
+      "system": "gapped_g3_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9831355969834485,
+      "n_primes": 21886655
+    },
+    {
+      "system": "gapped_g3.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9986708224407784,
+      "n_primes": 852
+    },
+    {
+      "system": "gapped_g3.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9977805541769639,
+      "n_primes": 6293
+    },
+    {
+      "system": "gapped_g3.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9957041741184628,
+      "n_primes": 46501
+    },
+    {
+      "system": "gapped_g3.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9925775953549704,
+      "n_primes": 343601
+    },
+    {
+      "system": "gapped_g3.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9883106877244281,
+      "n_primes": 2538889
+    },
+    {
+      "system": "gapped_g3.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9828635884941623,
+      "n_primes": 18759991
+    },
+    {
+      "system": "gapped_g3.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9986069435571534,
+      "n_primes": 851
+    },
+    {
+      "system": "gapped_g3.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9977251656580216,
+      "n_primes": 6293
+    },
+    {
+      "system": "gapped_g3.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9956764985436997,
+      "n_primes": 46501
+    },
+    {
+      "system": "gapped_g3.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.992566278031467,
+      "n_primes": 343601
+    },
+    {
+      "system": "gapped_g3.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9883063984207864,
+      "n_primes": 2538888
+    },
+    {
+      "system": "gapped_g3.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9828619921099556,
+      "n_primes": 18759991
+    },
+    {
+      "system": "gapped_g3.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.998743994523397,
+      "n_primes": 851
+    },
+    {
+      "system": "gapped_g3.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9977846673844668,
+      "n_primes": 6292
+    },
+    {
+      "system": "gapped_g3.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9957006288470241,
+      "n_primes": 46500
+    },
+    {
+      "system": "gapped_g3.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9925743971530683,
+      "n_primes": 343600
+    },
+    {
+      "system": "gapped_g3.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9883091685480023,
+      "n_primes": 2538888
+    },
+    {
+      "system": "gapped_g3.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9828628124260316,
+      "n_primes": 18759990
+    },
+    {
+      "system": "gapped_g4_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9983240521744876,
+      "n_primes": 745
+    },
+    {
+      "system": "gapped_g4_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9976020412262998,
+      "n_primes": 5507
+    },
+    {
+      "system": "gapped_g4_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9954948070507436,
+      "n_primes": 40689
+    },
+    {
+      "system": "gapped_g4_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9923315817741993,
+      "n_primes": 300651
+    },
+    {
+      "system": "gapped_g4_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9880353963693275,
+      "n_primes": 2221528
+    },
+    {
+      "system": "gapped_g4_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9825681520001788,
+      "n_primes": 16414992
+    },
+    {
+      "system": "gapped_g4_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9982224204992959,
+      "n_primes": 745
+    },
+    {
+      "system": "gapped_g4_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9975243363667537,
+      "n_primes": 5506
+    },
+    {
+      "system": "gapped_g4_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9954587713569144,
+      "n_primes": 40688
+    },
+    {
+      "system": "gapped_g4_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9923168072715531,
+      "n_primes": 300651
+    },
+    {
+      "system": "gapped_g4_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9880298468150318,
+      "n_primes": 2221527
+    },
+    {
+      "system": "gapped_g4_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.98256616484609,
+      "n_primes": 16414992
+    },
+    {
+      "system": "gapped_g4_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9984399795133541,
+      "n_primes": 744
+    },
+    {
+      "system": "gapped_g4_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9976026368455452,
+      "n_primes": 5506
+    },
+    {
+      "system": "gapped_g4_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9954859268174971,
+      "n_primes": 40688
+    },
+    {
+      "system": "gapped_g4_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9923257536553236,
+      "n_primes": 300650
+    },
+    {
+      "system": "gapped_g4_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9880326785883765,
+      "n_primes": 2221527
+    },
+    {
+      "system": "gapped_g4_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9825670152395827,
+      "n_primes": 16414992
+    },
+    {
+      "system": "gapped_g4.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9977930079227622,
+      "n_primes": 662
+    },
+    {
+      "system": "gapped_g4.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9973811890241372,
+      "n_primes": 4895
+    },
+    {
+      "system": "gapped_g4.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9952496378716,
+      "n_primes": 36168
+    },
+    {
+      "system": "gapped_g4.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9920532733926231,
+      "n_primes": 267245
+    },
+    {
+      "system": "gapped_g4.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9877310429105175,
+      "n_primes": 1974691
+    },
+    {
+      "system": "gapped_g4.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9822467461663968,
+      "n_primes": 14591104
+    },
+    {
+      "system": "gapped_g4.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9976304309768796,
+      "n_primes": 662
+    },
+    {
+      "system": "gapped_g4.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9972764368256056,
+      "n_primes": 4895
+    },
+    {
+      "system": "gapped_g4.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9952045120017752,
+      "n_primes": 36168
+    },
+    {
+      "system": "gapped_g4.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9920349713167034,
+      "n_primes": 267245
+    },
+    {
+      "system": "gapped_g4.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9877241862710517,
+      "n_primes": 1974691
+    },
+    {
+      "system": "gapped_g4.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9822442465218609,
+      "n_primes": 14591104
+    },
+    {
+      "system": "gapped_g4.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9979856173850451,
+      "n_primes": 662
+    },
+    {
+      "system": "gapped_g4.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9973764077423513,
+      "n_primes": 4894
+    },
+    {
+      "system": "gapped_g4.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9952347699658761,
+      "n_primes": 36167
+    },
+    {
+      "system": "gapped_g4.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.992044125619916,
+      "n_primes": 267245
+    },
+    {
+      "system": "gapped_g4.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9877270717314699,
+      "n_primes": 1974691
+    },
+    {
+      "system": "gapped_g4.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9822451098863699,
+      "n_primes": 14591104
+    },
+    {
+      "system": "gapped_g5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9969942696388642,
+      "n_primes": 596
+    },
+    {
+      "system": "gapped_g5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9971004690568845,
+      "n_primes": 4405
+    },
+    {
+      "system": "gapped_g5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9949619452747267,
+      "n_primes": 32551
+    },
+    {
+      "system": "gapped_g5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.991736786654642,
+      "n_primes": 240521
+    },
+    {
+      "system": "gapped_g5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9873928993377559,
+      "n_primes": 1777222
+    },
+    {
+      "system": "gapped_g5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9818956853589138,
+      "n_primes": 13131994
+    },
+    {
+      "system": "gapped_g5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9967388223467778,
+      "n_primes": 596
+    },
+    {
+      "system": "gapped_g5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.996960819014461,
+      "n_primes": 4405
+    },
+    {
+      "system": "gapped_g5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9949026759227474,
+      "n_primes": 32551
+    },
+    {
+      "system": "gapped_g5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9917142648646906,
+      "n_primes": 240521
+    },
+    {
+      "system": "gapped_g5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9873847058267646,
+      "n_primes": 1777222
+    },
+    {
+      "system": "gapped_g5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.981892757940879,
+      "n_primes": 13131994
+    },
+    {
+      "system": "gapped_g5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9972731118069456,
+      "n_primes": 596
+    },
+    {
+      "system": "gapped_g5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9970871553834074,
+      "n_primes": 4405
+    },
+    {
+      "system": "gapped_g5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9949392765661236,
+      "n_primes": 32550
+    },
+    {
+      "system": "gapped_g5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9917243704190837,
+      "n_primes": 240520
+    },
+    {
+      "system": "gapped_g5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9873875254600135,
+      "n_primes": 1777222
+    },
+    {
+      "system": "gapped_g5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9818935332426285,
+      "n_primes": 13131993
+    },
+    {
+      "system": "gapped_g5.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9956909974091848,
+      "n_primes": 542
+    },
+    {
+      "system": "gapped_g5.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9967377205674799,
+      "n_primes": 4005
+    },
+    {
+      "system": "gapped_g5.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.994616284110924,
+      "n_primes": 29592
+    },
+    {
+      "system": "gapped_g5.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9913735022562781,
+      "n_primes": 218655
+    },
+    {
+      "system": "gapped_g5.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9870152679508788,
+      "n_primes": 1615657
+    },
+    {
+      "system": "gapped_g5.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9815108235022693,
+      "n_primes": 11938176
+    },
+    {
+      "system": "gapped_g5.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9952268331554953,
+      "n_primes": 542
+    },
+    {
+      "system": "gapped_g5.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9965467068806724,
+      "n_primes": 4005
+    },
+    {
+      "system": "gapped_g5.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9945417939452711,
+      "n_primes": 29592
+    },
+    {
+      "system": "gapped_g5.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.991345901801839,
+      "n_primes": 218655
+    },
+    {
+      "system": "gapped_g5.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9870053267956506,
+      "n_primes": 1615656
+    },
+    {
+      "system": "gapped_g5.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9815073079453024,
+      "n_primes": 11938176
+    },
+    {
+      "system": "gapped_g5.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.996104014270974,
+      "n_primes": 542
+    },
+    {
+      "system": "gapped_g5.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9967128912732892,
+      "n_primes": 4004
+    },
+    {
+      "system": "gapped_g5.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9945844605995356,
+      "n_primes": 29591
+    },
+    {
+      "system": "gapped_g5.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9913568133627028,
+      "n_primes": 218655
+    },
+    {
+      "system": "gapped_g5.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9870083198634407,
+      "n_primes": 1615656
+    },
+    {
+      "system": "gapped_g5.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9815081180443395,
+      "n_primes": 11938176
+    },
+    {
+      "system": "gapped_g6_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9934214766067136,
+      "n_primes": 497
+    },
+    {
+      "system": "gapped_g6_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9962469950101,
+      "n_primes": 3671
+    },
+    {
+      "system": "gapped_g6_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9941967546093435,
+      "n_primes": 27126
+    },
+    {
+      "system": "gapped_g6_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9909528727298693,
+      "n_primes": 200434
+    },
+    {
+      "system": "gapped_g6_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.986590939080108,
+      "n_primes": 1481019
+    },
+    {
+      "system": "gapped_g6_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9810871537217288,
+      "n_primes": 10943328
+    },
+    {
+      "system": "gapped_g6_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9926142986970751,
+      "n_primes": 497
+    },
+    {
+      "system": "gapped_g6_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9959893052668608,
+      "n_primes": 3671
+    },
+    {
+      "system": "gapped_g6_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9941020656017561,
+      "n_primes": 27126
+    },
+    {
+      "system": "gapped_g6_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9909193439493242,
+      "n_primes": 200434
+    },
+    {
+      "system": "gapped_g6_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9865790447169769,
+      "n_primes": 1481018
+    },
+    {
+      "system": "gapped_g6_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9810830449409985,
+      "n_primes": 10943328
+    },
+    {
+      "system": "gapped_g6_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9940118443952962,
+      "n_primes": 496
+    },
+    {
+      "system": "gapped_g6_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9962119073733431,
+      "n_primes": 3671
+    },
+    {
+      "system": "gapped_g6_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9941505438978935,
+      "n_primes": 27125
+    },
+    {
+      "system": "gapped_g6_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9909307342704065,
+      "n_primes": 200434
+    },
+    {
+      "system": "gapped_g6_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9865820483336103,
+      "n_primes": 1481018
+    },
+    {
+      "system": "gapped_g6_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9810837581721702,
+      "n_primes": 10943328
+    },
+    {
+      "system": "gapped_g6.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9890995633143909,
+      "n_primes": 459
+    },
+    {
+      "system": "gapped_g6.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9955613435790311,
+      "n_primes": 3389
+    },
+    {
+      "system": "gapped_g6.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9936766803593157,
+      "n_primes": 25039
+    },
+    {
+      "system": "gapped_g6.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9904607180081613,
+      "n_primes": 185016
+    },
+    {
+      "system": "gapped_g6.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9861106916820386,
+      "n_primes": 1367094
+    },
+    {
+      "system": "gapped_g6.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9806184762286472,
+      "n_primes": 10101534
+    },
+    {
+      "system": "gapped_g6.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9875831466955678,
+      "n_primes": 459
+    },
+    {
+      "system": "gapped_g6.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9952120655376316,
+      "n_primes": 3389
+    },
+    {
+      "system": "gapped_g6.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9935569462911056,
+      "n_primes": 25039
+    },
+    {
+      "system": "gapped_g6.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9904192832510182,
+      "n_primes": 185016
+    },
+    {
+      "system": "gapped_g6.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9860967437980893,
+      "n_primes": 1367094
+    },
+    {
+      "system": "gapped_g6.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.980613648491602,
+      "n_primes": 10101534
+    },
+    {
+      "system": "gapped_g6.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9899539790586429,
+      "n_primes": 458
+    },
+    {
+      "system": "gapped_g6.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9955158630475897,
+      "n_primes": 3388
+    },
+    {
+      "system": "gapped_g6.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9936149533303527,
+      "n_primes": 25039
+    },
+    {
+      "system": "gapped_g6.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9904324449742329,
+      "n_primes": 185016
+    },
+    {
+      "system": "gapped_g6.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9860998232009882,
+      "n_primes": 1367094
+    },
+    {
+      "system": "gapped_g6.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9806143791926011,
+      "n_primes": 10101533
+    },
+    {
+      "system": "gapped_g7_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9797329918221536,
+      "n_primes": 426
+    },
+    {
+      "system": "gapped_g7_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9945789507199561,
+      "n_primes": 3147
+    },
+    {
+      "system": "gapped_g7_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9930186785048782,
+      "n_primes": 23251
+    },
+    {
+      "system": "gapped_g7_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9898770473409793,
+      "n_primes": 171801
+    },
+    {
+      "system": "gapped_g7_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9855633352407815,
+      "n_primes": 1269445
+    },
+    {
+      "system": "gapped_g7_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9800975082528853,
+      "n_primes": 9379996
+    },
+    {
+      "system": "gapped_g7_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.976608551387331,
+      "n_primes": 426
+    },
+    {
+      "system": "gapped_g7_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.994082044665945,
+      "n_primes": 3147
+    },
+    {
+      "system": "gapped_g7_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9928654260159655,
+      "n_primes": 23251
+    },
+    {
+      "system": "gapped_g7_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9898270931093947,
+      "n_primes": 171801
+    },
+    {
+      "system": "gapped_g7_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9855469594163854,
+      "n_primes": 1269444
+    },
+    {
+      "system": "gapped_g7_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9800919822396887,
+      "n_primes": 9379996
+    },
+    {
+      "system": "gapped_g7_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9810751659030277,
+      "n_primes": 426
+    },
+    {
+      "system": "gapped_g7_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9944895287643234,
+      "n_primes": 3146
+    },
+    {
+      "system": "gapped_g7_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9929377581793672,
+      "n_primes": 23250
+    },
+    {
+      "system": "gapped_g7_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.989841696934627,
+      "n_primes": 171800
+    },
+    {
+      "system": "gapped_g7_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9855499940692014,
+      "n_primes": 1269444
+    },
+    {
+      "system": "gapped_g7_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9800925477922721,
+      "n_primes": 9379995
+    },
+    {
+      "system": "gapped_g7.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9552529363825416,
+      "n_primes": 398
+    },
+    {
+      "system": "gapped_g7.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9930305905109541,
+      "n_primes": 2937
+    },
+    {
+      "system": "gapped_g7.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9921624788644675,
+      "n_primes": 21701
+    },
+    {
+      "system": "gapped_g7.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9891756228498138,
+      "n_primes": 160347
+    },
+    {
+      "system": "gapped_g7.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9849342020693869,
+      "n_primes": 1184815
+    },
+    {
+      "system": "gapped_g7.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9795150715269844,
+      "n_primes": 8754663
+    },
+    {
+      "system": "gapped_g7.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9496586925918392,
+      "n_primes": 398
+    },
+    {
+      "system": "gapped_g7.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9922877227217783,
+      "n_primes": 2937
+    },
+    {
+      "system": "gapped_g7.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9919674604472949,
+      "n_primes": 21701
+    },
+    {
+      "system": "gapped_g7.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9891156787371316,
+      "n_primes": 160347
+    },
+    {
+      "system": "gapped_g7.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9849145969399823,
+      "n_primes": 1184815
+    },
+    {
+      "system": "gapped_g7.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.979508629032227,
+      "n_primes": 8754663
+    },
+    {
+      "system": "gapped_g7.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9586942752621126,
+      "n_primes": 397
+    },
+    {
+      "system": "gapped_g7.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9929135689770827,
+      "n_primes": 2937
+    },
+    {
+      "system": "gapped_g7.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9920556015327534,
+      "n_primes": 21700
+    },
+    {
+      "system": "gapped_g7.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9891318509439625,
+      "n_primes": 160347
+    },
+    {
+      "system": "gapped_g7.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9849178312920202,
+      "n_primes": 1184815
+    },
+    {
+      "system": "gapped_g7.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.979509266509964,
+      "n_primes": 8754662
+    },
+    {
+      "system": "gapped_g8_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.8861781228993929,
+      "n_primes": 373
+    },
+    {
+      "system": "gapped_g8_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9904606067738011,
+      "n_primes": 2754
+    },
+    {
+      "system": "gapped_g8_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9910164049631656,
+      "n_primes": 20345
+    },
+    {
+      "system": "gapped_g8_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9883204252127525,
+      "n_primes": 150326
+    },
+    {
+      "system": "gapped_g8_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9842037044973722,
+      "n_primes": 1110764
+    },
+    {
+      "system": "gapped_g8_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9788598918337216,
+      "n_primes": 8207496
+    },
+    {
+      "system": "gapped_g8_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.8931858217635851,
+      "n_primes": 373
+    },
+    {
+      "system": "gapped_g8_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9892895371119524,
+      "n_primes": 2753
+    },
+    {
+      "system": "gapped_g8_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9907588579321286,
+      "n_primes": 20344
+    },
+    {
+      "system": "gapped_g8_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9882456888041994,
+      "n_primes": 150326
+    },
+    {
+      "system": "gapped_g8_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9841806969880348,
+      "n_primes": 1110764
+    },
+    {
+      "system": "gapped_g8_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9788525518160806,
+      "n_primes": 8207496
+    },
+    {
+      "system": "gapped_g8_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9123850139851906,
+      "n_primes": 372
+    },
+    {
+      "system": "gapped_g8_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9902292567141818,
+      "n_primes": 2753
+    },
+    {
+      "system": "gapped_g8_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9908706654472721,
+      "n_primes": 20344
+    },
+    {
+      "system": "gapped_g8_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9882645023829139,
+      "n_primes": 150325
+    },
+    {
+      "system": "gapped_g8_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.984184071131621,
+      "n_primes": 1110764
+    },
+    {
+      "system": "gapped_g8_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9788530519787704,
+      "n_primes": 8207496
+    },
+    {
+      "system": "gapped_g8.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.8454203671391578,
+      "n_primes": 351
+    },
+    {
+      "system": "gapped_g8.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9856431910614873,
+      "n_primes": 2592
+    },
+    {
+      "system": "gapped_g8.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9894166059125953,
+      "n_primes": 19148
+    },
+    {
+      "system": "gapped_g8.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9872548987283111,
+      "n_primes": 141483
+    },
+    {
+      "system": "gapped_g8.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9833466419896121,
+      "n_primes": 1045425
+    },
+    {
+      "system": "gapped_g8.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9781180073014482,
+      "n_primes": 7724703
+    },
+    {
+      "system": "gapped_g8.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.8888936236949311,
+      "n_primes": 351
+    },
+    {
+      "system": "gapped_g8.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9836842130191031,
+      "n_primes": 2591
+    },
+    {
+      "system": "gapped_g8.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9890690088847582,
+      "n_primes": 19148
+    },
+    {
+      "system": "gapped_g8.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9871635860349014,
+      "n_primes": 141483
+    },
+    {
+      "system": "gapped_g8.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9833195897503948,
+      "n_primes": 1045425
+    },
+    {
+      "system": "gapped_g8.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9781094266678462,
+      "n_primes": 7724702
+    },
+    {
+      "system": "gapped_g8.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.912355926983,
+      "n_primes": 351
+    },
+    {
+      "system": "gapped_g8.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.985318830380008,
+      "n_primes": 2591
+    },
+    {
+      "system": "gapped_g8.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9892178617850155,
+      "n_primes": 19148
+    },
+    {
+      "system": "gapped_g8.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9871847063828252,
+      "n_primes": 141483
+    },
+    {
+      "system": "gapped_g8.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.98332286243104,
+      "n_primes": 1045425
+    },
+    {
+      "system": "gapped_g8.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9781098102530151,
+      "n_primes": 7724702
+    },
+    {
+      "system": "gapped_g9_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9262595248029982,
+      "n_primes": 331
+    },
+    {
+      "system": "gapped_g9_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9753940159494469,
+      "n_primes": 2448
+    },
+    {
+      "system": "gapped_g9_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9870623947050867,
+      "n_primes": 18084
+    },
+    {
+      "system": "gapped_g9_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9858971623516308,
+      "n_primes": 133623
+    },
+    {
+      "system": "gapped_g9_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9823284136227066,
+      "n_primes": 987346
+    },
+    {
+      "system": "gapped_g9_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9772712003830734,
+      "n_primes": 7295552
+    },
+    {
+      "system": "gapped_g9_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9403986801098585,
+      "n_primes": 331
+    },
+    {
+      "system": "gapped_g9_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9718582386799891,
+      "n_primes": 2448
+    },
+    {
+      "system": "gapped_g9_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9865820963081958,
+      "n_primes": 18084
+    },
+    {
+      "system": "gapped_g9_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9857832227753351,
+      "n_primes": 133623
+    },
+    {
+      "system": "gapped_g9_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9822961023081751,
+      "n_primes": 987346
+    },
+    {
+      "system": "gapped_g9_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9772612497318117,
+      "n_primes": 7295552
+    },
+    {
+      "system": "gapped_g9_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9534647584888853,
+      "n_primes": 331
+    },
+    {
+      "system": "gapped_g9_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9750549755072322,
+      "n_primes": 2447
+    },
+    {
+      "system": "gapped_g9_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9867824988906201,
+      "n_primes": 18084
+    },
+    {
+      "system": "gapped_g9_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.98580640587718,
+      "n_primes": 133623
+    },
+    {
+      "system": "gapped_g9_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.982299648867246,
+      "n_primes": 987346
+    },
+    {
+      "system": "gapped_g9_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9772616123692887,
+      "n_primes": 7295552
+    },
+    {
+      "system": "gapped_g9.5_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9647525224037488,
+      "n_primes": 314
+    },
+    {
+      "system": "gapped_g9.5_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9538533944239361,
+      "n_primes": 2319
+    },
+    {
+      "system": "gapped_g9.5_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9833890207861535,
+      "n_primes": 17132
+    },
+    {
+      "system": "gapped_g9.5_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9841190070972772,
+      "n_primes": 126590
+    },
+    {
+      "system": "gapped_g9.5_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9811006434251924,
+      "n_primes": 935380
+    },
+    {
+      "system": "gapped_g9.5_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9762961655470765,
+      "n_primes": 6911576
+    },
+    {
+      "system": "gapped_g9.5_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9678046996420866,
+      "n_primes": 314
+    },
+    {
+      "system": "gapped_g9.5_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9484021017122762,
+      "n_primes": 2319
+    },
+    {
+      "system": "gapped_g9.5_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9826816239908016,
+      "n_primes": 17132
+    },
+    {
+      "system": "gapped_g9.5_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9839762291007647,
+      "n_primes": 126590
+    },
+    {
+      "system": "gapped_g9.5_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9810624092099911,
+      "n_primes": 935380
+    },
+    {
+      "system": "gapped_g9.5_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9762849140481233,
+      "n_primes": 6911576
+    },
+    {
+      "system": "gapped_g9.5_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.974596093120604,
+      "n_primes": 314
+    },
+    {
+      "system": "gapped_g9.5_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.955138823769951,
+      "n_primes": 2319
+    },
+    {
+      "system": "gapped_g9.5_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.982966406899607,
+      "n_primes": 17132
+    },
+    {
+      "system": "gapped_g9.5_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9840032932095433,
+      "n_primes": 126590
+    },
+    {
+      "system": "gapped_g9.5_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.981065833190331,
+      "n_primes": 935380
+    },
+    {
+      "system": "gapped_g9.5_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9762850149746877,
+      "n_primes": 6911576
+    },
+    {
+      "system": "gapped_g10_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9797994269623289,
+      "n_primes": 298
+    },
+    {
+      "system": "gapped_g10_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9429426451418998,
+      "n_primes": 2203
+    },
+    {
+      "system": "gapped_g10_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9771286968060624,
+      "n_primes": 16276
+    },
+    {
+      "system": "gapped_g10_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9817112665910142,
+      "n_primes": 120261
+    },
+    {
+      "system": "gapped_g10_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9795956950424339,
+      "n_primes": 888611
+    },
+    {
+      "system": "gapped_g10_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9751628602543629,
+      "n_primes": 6565997
+    },
+    {
+      "system": "gapped_g10_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9802159344437416,
+      "n_primes": 298
+    },
+    {
+      "system": "gapped_g10_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9399603627985472,
+      "n_primes": 2203
+    },
+    {
+      "system": "gapped_g10_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9760379039375643,
+      "n_primes": 16276
+    },
+    {
+      "system": "gapped_g10_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.981524258437339,
+      "n_primes": 120261
+    },
+    {
+      "system": "gapped_g10_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9795494657732959,
+      "n_primes": 888611
+    },
+    {
+      "system": "gapped_g10_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9751497285046782,
+      "n_primes": 6565997
+    },
+    {
+      "system": "gapped_g10_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.984087442675394,
+      "n_primes": 298
+    },
+    {
+      "system": "gapped_g10_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.949421523204714,
+      "n_primes": 2203
+    },
+    {
+      "system": "gapped_g10_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.97648221219297,
+      "n_primes": 16275
+    },
+    {
+      "system": "gapped_g10_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9815592509672222,
+      "n_primes": 120260
+    },
+    {
+      "system": "gapped_g10_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9795528211478297,
+      "n_primes": 888611
+    },
+    {
+      "system": "gapped_g10_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9751497160118715,
+      "n_primes": 6565997
+    },
+    {
+      "system": "gapped_g11_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9906074472031863,
+      "n_primes": 271
+    },
+    {
+      "system": "gapped_g11_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.988041899274588,
+      "n_primes": 2003
+    },
+    {
+      "system": "gapped_g11_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9433724034122197,
+      "n_primes": 14796
+    },
+    {
+      "system": "gapped_g11_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9732261266216541,
+      "n_primes": 109328
+    },
+    {
+      "system": "gapped_g11_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9753008055078715,
+      "n_primes": 807829
+    },
+    {
+      "system": "gapped_g11_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9722440538350912,
+      "n_primes": 5969088
+    },
+    {
+      "system": "gapped_g11_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.990007849524611,
+      "n_primes": 271
+    },
+    {
+      "system": "gapped_g11_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9862234509311539,
+      "n_primes": 2003
+    },
+    {
+      "system": "gapped_g11_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9404165497567247,
+      "n_primes": 14796
+    },
+    {
+      "system": "gapped_g11_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9728846569042977,
+      "n_primes": 109328
+    },
+    {
+      "system": "gapped_g11_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9752315287344705,
+      "n_primes": 807828
+    },
+    {
+      "system": "gapped_g11_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9722260072413834,
+      "n_primes": 5969088
+    },
+    {
+      "system": "gapped_g11_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9917165130881261,
+      "n_primes": 271
+    },
+    {
+      "system": "gapped_g11_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9887207749510426,
+      "n_primes": 2002
+    },
+    {
+      "system": "gapped_g11_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9420101469908172,
+      "n_primes": 14796
+    },
+    {
+      "system": "gapped_g11_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9729480480133941,
+      "n_primes": 109328
+    },
+    {
+      "system": "gapped_g11_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9752355320710414,
+      "n_primes": 807828
+    },
+    {
+      "system": "gapped_g11_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9722258266871294,
+      "n_primes": 5969088
+    },
+    {
+      "system": "gapped_g12_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.99434943830253,
+      "n_primes": 249
+    },
+    {
+      "system": "gapped_g12_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9968812915876679,
+      "n_primes": 1836
+    },
+    {
+      "system": "gapped_g12_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9490594017306613,
+      "n_primes": 13563
+    },
+    {
+      "system": "gapped_g12_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.951267373904775,
+      "n_primes": 100217
+    },
+    {
+      "system": "gapped_g12_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9677742251263487,
+      "n_primes": 740510
+    },
+    {
+      "system": "gapped_g12_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9679686986123505,
+      "n_primes": 5471664
+    },
+    {
+      "system": "gapped_g12_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.993711159144338,
+      "n_primes": 249
+    },
+    {
+      "system": "gapped_g12_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9961054889565775,
+      "n_primes": 1836
+    },
+    {
+      "system": "gapped_g12_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9467832530820184,
+      "n_primes": 13563
+    },
+    {
+      "system": "gapped_g12_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9504904899114744,
+      "n_primes": 100217
+    },
+    {
+      "system": "gapped_g12_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9676617252496661,
+      "n_primes": 740509
+    },
+    {
+      "system": "gapped_g12_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.967943595352678,
+      "n_primes": 5471664
+    },
+    {
+      "system": "gapped_g12_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9945991933785633,
+      "n_primes": 248
+    },
+    {
+      "system": "gapped_g12_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9968656157576061,
+      "n_primes": 1836
+    },
+    {
+      "system": "gapped_g12_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.948997600175579,
+      "n_primes": 13563
+    },
+    {
+      "system": "gapped_g12_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9506250929904119,
+      "n_primes": 100217
+    },
+    {
+      "system": "gapped_g12_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9676663024844702,
+      "n_primes": 740509
+    },
+    {
+      "system": "gapped_g12_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9679425214975346,
+      "n_primes": 5471664
+    },
+    {
+      "system": "gapped_g13_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9961058309888898,
+      "n_primes": 230
+    },
+    {
+      "system": "gapped_g13_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9988095511277935,
+      "n_primes": 1695
+    },
+    {
+      "system": "gapped_g13_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9911850290999361,
+      "n_primes": 12520
+    },
+    {
+      "system": "gapped_g13_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.8895505684256363,
+      "n_primes": 92508
+    },
+    {
+      "system": "gapped_g13_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.952217798416427,
+      "n_primes": 683547
+    },
+    {
+      "system": "gapped_g13_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9611999336278106,
+      "n_primes": 5050767
+    },
+    {
+      "system": "gapped_g13_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9955088787069251,
+      "n_primes": 230
+    },
+    {
+      "system": "gapped_g13_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9984230509387664,
+      "n_primes": 1695
+    },
+    {
+      "system": "gapped_g13_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9903643753243319,
+      "n_primes": 12520
+    },
+    {
+      "system": "gapped_g13_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.8878365753210227,
+      "n_primes": 92508
+    },
+    {
+      "system": "gapped_g13_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9520137457390405,
+      "n_primes": 683547
+    },
+    {
+      "system": "gapped_g13_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9611625778780757,
+      "n_primes": 5050767
+    },
+    {
+      "system": "gapped_g13_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9960120115076249,
+      "n_primes": 229
+    },
+    {
+      "system": "gapped_g13_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.998741065838034,
+      "n_primes": 1694
+    },
+    {
+      "system": "gapped_g13_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9908200125311906,
+      "n_primes": 12520
+    },
+    {
+      "system": "gapped_g13_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.8884023612772152,
+      "n_primes": 92508
+    },
+    {
+      "system": "gapped_g13_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9520189032270937,
+      "n_primes": 683547
+    },
+    {
+      "system": "gapped_g13_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9611608492420688,
+      "n_primes": 5050767
+    },
+    {
+      "system": "gapped_g14_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9970785356345175,
+      "n_primes": 213
+    },
+    {
+      "system": "gapped_g14_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9994190102889394,
+      "n_primes": 1574
+    },
+    {
+      "system": "gapped_g14_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9981278871925967,
+      "n_primes": 11626
+    },
+    {
+      "system": "gapped_g14_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9459365925929023,
+      "n_primes": 85901
+    },
+    {
+      "system": "gapped_g14_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9114910295625954,
+      "n_primes": 634723
+    },
+    {
+      "system": "gapped_g14_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9492100300563336,
+      "n_primes": 4689998
+    },
+    {
+      "system": "gapped_g14_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.996527239942401,
+      "n_primes": 213
+    },
+    {
+      "system": "gapped_g14_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.999201850835279,
+      "n_primes": 1574
+    },
+    {
+      "system": "gapped_g14_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9978339977201703,
+      "n_primes": 11626
+    },
+    {
+      "system": "gapped_g14_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9449785208823248,
+      "n_primes": 85901
+    },
+    {
+      "system": "gapped_g14_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9110386865097453,
+      "n_primes": 634722
+    },
+    {
+      "system": "gapped_g14_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9491509673992857,
+      "n_primes": 4689998
+    },
+    {
+      "system": "gapped_g14_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9968169186274075,
+      "n_primes": 213
+    },
+    {
+      "system": "gapped_g14_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9993435297357725,
+      "n_primes": 1573
+    },
+    {
+      "system": "gapped_g14_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.997968237132003,
+      "n_primes": 11625
+    },
+    {
+      "system": "gapped_g14_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9453850317490679,
+      "n_primes": 85900
+    },
+    {
+      "system": "gapped_g14_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9110544175265168,
+      "n_primes": 634722
+    },
+    {
+      "system": "gapped_g14_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9491467147027337,
+      "n_primes": 4689998
+    },
+    {
+      "system": "gapped_g15_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.997683539296501,
+      "n_primes": 199
+    },
+    {
+      "system": "gapped_g15_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9996490405369448,
+      "n_primes": 1469
+    },
+    {
+      "system": "gapped_g15_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9995852919223189,
+      "n_primes": 10851
+    },
+    {
+      "system": "gapped_g15_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9905047679309533,
+      "n_primes": 80174
+    },
+    {
+      "system": "gapped_g15_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.8287680076515208,
+      "n_primes": 592408
+    },
+    {
+      "system": "gapped_g15_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9240870838559457,
+      "n_primes": 4377332
+    },
+    {
+      "system": "gapped_g15_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9971751823944321,
+      "n_primes": 199
+    },
+    {
+      "system": "gapped_g15_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9995157203864236,
+      "n_primes": 1469
+    },
+    {
+      "system": "gapped_g15_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9994723906758801,
+      "n_primes": 10851
+    },
+    {
+      "system": "gapped_g15_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9901941450681311,
+      "n_primes": 80174
+    },
+    {
+      "system": "gapped_g15_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.8279756590579347,
+      "n_primes": 592408
+    },
+    {
+      "system": "gapped_g15_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9239781481848912,
+      "n_primes": 4377332
+    },
+    {
+      "system": "gapped_g15_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9973266823937917,
+      "n_primes": 199
+    },
+    {
+      "system": "gapped_g15_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9995769190783702,
+      "n_primes": 1469
+    },
+    {
+      "system": "gapped_g15_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9995170876332751,
+      "n_primes": 10850
+    },
+    {
+      "system": "gapped_g15_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9902631179269803,
+      "n_primes": 80174
+    },
+    {
+      "system": "gapped_g15_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.8281155049283444,
+      "n_primes": 592408
+    },
+    {
+      "system": "gapped_g15_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9239710834634786,
+      "n_primes": 4377331
+    },
+    {
+      "system": "gapped_g16_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9980898013204601,
+      "n_primes": 187
+    },
+    {
+      "system": "gapped_g16_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997423649364704,
+      "n_primes": 1377
+    },
+    {
+      "system": "gapped_g16_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9999193105009033,
+      "n_primes": 10173
+    },
+    {
+      "system": "gapped_g16_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9981415708024918,
+      "n_primes": 75163
+    },
+    {
+      "system": "gapped_g16_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9422882323659959,
+      "n_primes": 555382
+    },
+    {
+      "system": "gapped_g16_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.85876148778001,
+      "n_primes": 4103748
+    },
+    {
+      "system": "gapped_g16_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9976152468278516,
+      "n_primes": 187
+    },
+    {
+      "system": "gapped_g16_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9996575478807478,
+      "n_primes": 1377
+    },
+    {
+      "system": "gapped_g16_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9998822946643913,
+      "n_primes": 10172
+    },
+    {
+      "system": "gapped_g16_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9980424139563837,
+      "n_primes": 75163
+    },
+    {
+      "system": "gapped_g16_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9419181492440034,
+      "n_primes": 555382
+    },
+    {
+      "system": "gapped_g16_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.8585264121684355,
+      "n_primes": 4103748
+    },
+    {
+      "system": "gapped_g16_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9976727135453586,
+      "n_primes": 186
+    },
+    {
+      "system": "gapped_g16_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9996734135092524,
+      "n_primes": 1377
+    },
+    {
+      "system": "gapped_g16_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9998925760296876,
+      "n_primes": 10172
+    },
+    {
+      "system": "gapped_g16_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9980580378386241,
+      "n_primes": 75163
+    },
+    {
+      "system": "gapped_g16_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9419717698225494,
+      "n_primes": 555382
+    },
+    {
+      "system": "gapped_g16_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.8585120263744144,
+      "n_primes": 4103748
+    },
+    {
+      "system": "gapped_g17_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9983805572363202,
+      "n_primes": 176
+    },
+    {
+      "system": "gapped_g17_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997790890140653,
+      "n_primes": 1296
+    },
+    {
+      "system": "gapped_g17_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9999482660773387,
+      "n_primes": 9574
+    },
+    {
+      "system": "gapped_g17_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.999712778171153,
+      "n_primes": 70742
+    },
+    {
+      "system": "gapped_g17_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9898163485359894,
+      "n_primes": 522713
+    },
+    {
+      "system": "gapped_g17_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.7743092394540589,
+      "n_primes": 3862352
+    },
+    {
+      "system": "gapped_g17_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9979305933304644,
+      "n_primes": 176
+    },
+    {
+      "system": "gapped_g17_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.99972427965857,
+      "n_primes": 1296
+    },
+    {
+      "system": "gapped_g17_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9999489755954042,
+      "n_primes": 9574
+    },
+    {
+      "system": "gapped_g17_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9996875213015702,
+      "n_primes": 70742
+    },
+    {
+      "system": "gapped_g17_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9897063949485442,
+      "n_primes": 522713
+    },
+    {
+      "system": "gapped_g17_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.7739826610355343,
+      "n_primes": 3862351
+    },
+    {
+      "system": "gapped_g17_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9979207818563217,
+      "n_primes": 176
+    },
+    {
+      "system": "gapped_g17_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997119004105963,
+      "n_primes": 1296
+    },
+    {
+      "system": "gapped_g17_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9999433670373803,
+      "n_primes": 9574
+    },
+    {
+      "system": "gapped_g17_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9996888667281328,
+      "n_primes": 70742
+    },
+    {
+      "system": "gapped_g17_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9897097929170062,
+      "n_primes": 522713
+    },
+    {
+      "system": "gapped_g17_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.773993909789784,
+      "n_primes": 3862351
+    },
+    {
+      "system": "gapped_g18_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.998595225063717,
+      "n_primes": 166
+    },
+    {
+      "system": "gapped_g18_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997893402434149,
+      "n_primes": 1224
+    },
+    {
+      "system": "gapped_g18_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9998848809670069,
+      "n_primes": 9042
+    },
+    {
+      "system": "gapped_g18_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9999567276183268,
+      "n_primes": 66812
+    },
+    {
+      "system": "gapped_g18_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9981944134845654,
+      "n_primes": 493673
+    },
+    {
+      "system": "gapped_g18_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9396973028047696,
+      "n_primes": 3647776
+    },
+    {
+      "system": "gapped_g18_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9981658510751917,
+      "n_primes": 166
+    },
+    {
+      "system": "gapped_g18_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997548408368949,
+      "n_primes": 1224
+    },
+    {
+      "system": "gapped_g18_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9999061731515196,
+      "n_primes": 9042
+    },
+    {
+      "system": "gapped_g18_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9999629014635386,
+      "n_primes": 66812
+    },
+    {
+      "system": "gapped_g18_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9981650272802227,
+      "n_primes": 493673
+    },
+    {
+      "system": "gapped_g18_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9395640208638751,
+      "n_primes": 3647776
+    },
+    {
+      "system": "gapped_g18_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9981057269231645,
+      "n_primes": 166
+    },
+    {
+      "system": "gapped_g18_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997238227727451,
+      "n_primes": 1224
+    },
+    {
+      "system": "gapped_g18_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9998922013551589,
+      "n_primes": 9042
+    },
+    {
+      "system": "gapped_g18_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9999596378340168,
+      "n_primes": 66812
+    },
+    {
+      "system": "gapped_g18_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9981636512912045,
+      "n_primes": 493673
+    },
+    {
+      "system": "gapped_g18_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9395587793671513,
+      "n_primes": 3647776
+    },
+    {
+      "system": "gapped_g19_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9987601590361492,
+      "n_primes": 157
+    },
+    {
+      "system": "gapped_g19_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997872471884406,
+      "n_primes": 1160
+    },
+    {
+      "system": "gapped_g19_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9997951446437939,
+      "n_primes": 8566
+    },
+    {
+      "system": "gapped_g19_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.999846762748746,
+      "n_primes": 63295
+    },
+    {
+      "system": "gapped_g19_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9997803442167426,
+      "n_primes": 467690
+    },
+    {
+      "system": "gapped_g19_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9896362939820529,
+      "n_primes": 3455788
+    },
+    {
+      "system": "gapped_g19_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9983500442859096,
+      "n_primes": 157
+    },
+    {
+      "system": "gapped_g19_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997666289264391,
+      "n_primes": 1160
+    },
+    {
+      "system": "gapped_g19_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9998283463943517,
+      "n_primes": 8566
+    },
+    {
+      "system": "gapped_g19_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9998680436424341,
+      "n_primes": 63295
+    },
+    {
+      "system": "gapped_g19_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9997798256767255,
+      "n_primes": 467690
+    },
+    {
+      "system": "gapped_g19_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.989600145100522,
+      "n_primes": 3455788
+    },
+    {
+      "system": "gapped_g19_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9982483984856441,
+      "n_primes": 157
+    },
+    {
+      "system": "gapped_g19_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.999723345292577,
+      "n_primes": 1160
+    },
+    {
+      "system": "gapped_g19_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9998095928527038,
+      "n_primes": 8566
+    },
+    {
+      "system": "gapped_g19_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9998628321246081,
+      "n_primes": 63295
+    },
+    {
+      "system": "gapped_g19_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9997781710919134,
+      "n_primes": 467690
+    },
+    {
+      "system": "gapped_g19_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9895962191930507,
+      "n_primes": 3455788
+    },
+    {
+      "system": "gapped_g20_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.998891459938822,
+      "n_primes": 149
+    },
+    {
+      "system": "gapped_g20_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997795038612494,
+      "n_primes": 1102
+    },
+    {
+      "system": "gapped_g20_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9997021812475532,
+      "n_primes": 8138
+    },
+    {
+      "system": "gapped_g20_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9996421118829869,
+      "n_primes": 60131
+    },
+    {
+      "system": "gapped_g20_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9998380665579496,
+      "n_primes": 444306
+    },
+    {
+      "system": "gapped_g20_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9983905106409847,
+      "n_primes": 3282999
+    },
+    {
+      "system": "gapped_g20_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9984952838812096,
+      "n_primes": 149
+    },
+    {
+      "system": "gapped_g20_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997688025011597,
+      "n_primes": 1102
+    },
+    {
+      "system": "gapped_g20_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9997429066153408,
+      "n_primes": 8138
+    },
+    {
+      "system": "gapped_g20_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9996715757582495,
+      "n_primes": 60131
+    },
+    {
+      "system": "gapped_g20_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9998495851771707,
+      "n_primes": 444306
+    },
+    {
+      "system": "gapped_g20_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9983841207224899,
+      "n_primes": 3282999
+    },
+    {
+      "system": "gapped_g20_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.998361439996844,
+      "n_primes": 149
+    },
+    {
+      "system": "gapped_g20_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.99971653642938,
+      "n_primes": 1102
+    },
+    {
+      "system": "gapped_g20_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9997210945006743,
+      "n_primes": 8138
+    },
+    {
+      "system": "gapped_g20_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9996653733547143,
+      "n_primes": 60130
+    },
+    {
+      "system": "gapped_g20_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9998483152598792,
+      "n_primes": 444306
+    },
+    {
+      "system": "gapped_g20_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.998382540639132,
+      "n_primes": 3282999
+    },
+    {
+      "system": "gapped_g21_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9989986238543909,
+      "n_primes": 142
+    },
+    {
+      "system": "gapped_g21_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997690635708661,
+      "n_primes": 1049
+    },
+    {
+      "system": "gapped_g21_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9996144698592936,
+      "n_primes": 7751
+    },
+    {
+      "system": "gapped_g21_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9994232142682941,
+      "n_primes": 57267
+    },
+    {
+      "system": "gapped_g21_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9995056695533208,
+      "n_primes": 423149
+    },
+    {
+      "system": "gapped_g21_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9997622350514729,
+      "n_primes": 3126666
+    },
+    {
+      "system": "gapped_g21_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9986140779916849,
+      "n_primes": 142
+    },
+    {
+      "system": "gapped_g21_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997657780141256,
+      "n_primes": 1049
+    },
+    {
+      "system": "gapped_g21_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9996603511799527,
+      "n_primes": 7751
+    },
+    {
+      "system": "gapped_g21_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9994571558292782,
+      "n_primes": 57267
+    },
+    {
+      "system": "gapped_g21_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9995227881802955,
+      "n_primes": 423148
+    },
+    {
+      "system": "gapped_g21_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9997663598551927,
+      "n_primes": 3126666
+    },
+    {
+      "system": "gapped_g21_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9984529539604657,
+      "n_primes": 142
+    },
+    {
+      "system": "gapped_g21_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997058470689646,
+      "n_primes": 1049
+    },
+    {
+      "system": "gapped_g21_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9996361884072955,
+      "n_primes": 7750
+    },
+    {
+      "system": "gapped_g21_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.999450673707743,
+      "n_primes": 57267
+    },
+    {
+      "system": "gapped_g21_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9995218903703136,
+      "n_primes": 423148
+    },
+    {
+      "system": "gapped_g21_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9997660446502911,
+      "n_primes": 3126665
+    },
+    {
+      "system": "gapped_g22_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9990861401995994,
+      "n_primes": 136
+    },
+    {
+      "system": "gapped_g22_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.999757050777298,
+      "n_primes": 1002
+    },
+    {
+      "system": "gapped_g22_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9995337370155944,
+      "n_primes": 7398
+    },
+    {
+      "system": "gapped_g22_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9992158204114823,
+      "n_primes": 54664
+    },
+    {
+      "system": "gapped_g22_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9990899914251253,
+      "n_primes": 403915
+    },
+    {
+      "system": "gapped_g22_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9994791534102908,
+      "n_primes": 2984544
+    },
+    {
+      "system": "gapped_g22_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9987126260383893,
+      "n_primes": 136
+    },
+    {
+      "system": "gapped_g22_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997599305932799,
+      "n_primes": 1002
+    },
+    {
+      "system": "gapped_g22_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9995824242224227,
+      "n_primes": 7398
+    },
+    {
+      "system": "gapped_g22_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9992522936493301,
+      "n_primes": 54664
+    },
+    {
+      "system": "gapped_g22_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9991099971911284,
+      "n_primes": 403914
+    },
+    {
+      "system": "gapped_g22_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9994876407370002,
+      "n_primes": 2984544
+    },
+    {
+      "system": "gapped_g22_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9985276648253746,
+      "n_primes": 136
+    },
+    {
+      "system": "gapped_g22_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.999694547024583,
+      "n_primes": 1001
+    },
+    {
+      "system": "gapped_g22_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9995570359463261,
+      "n_primes": 7398
+    },
+    {
+      "system": "gapped_g22_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9992454250652805,
+      "n_primes": 54664
+    },
+    {
+      "system": "gapped_g22_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9991092769787758,
+      "n_primes": 403914
+    },
+    {
+      "system": "gapped_g22_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9994879051698938,
+      "n_primes": 2984544
+    },
+    {
+      "system": "gapped_g23_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9991588732806598,
+      "n_primes": 130
+    },
+    {
+      "system": "gapped_g23_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997473391041874,
+      "n_primes": 958
+    },
+    {
+      "system": "gapped_g23_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9994608119699026,
+      "n_primes": 7077
+    },
+    {
+      "system": "gapped_g23_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9990272380916824,
+      "n_primes": 52288
+    },
+    {
+      "system": "gapped_g23_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9986826496537826,
+      "n_primes": 386353
+    },
+    {
+      "system": "gapped_g23_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9988113551309382,
+      "n_primes": 2854782
+    },
+    {
+      "system": "gapped_g23_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9987945721909508,
+      "n_primes": 130
+    },
+    {
+      "system": "gapped_g23_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997539871567831,
+      "n_primes": 958
+    },
+    {
+      "system": "gapped_g23_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9995117090355364,
+      "n_primes": 7077
+    },
+    {
+      "system": "gapped_g23_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9990651472386225,
+      "n_primes": 52288
+    },
+    {
+      "system": "gapped_g23_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9987042330153799,
+      "n_primes": 386353
+    },
+    {
+      "system": "gapped_g23_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9988217220655967,
+      "n_primes": 2854782
+    },
+    {
+      "system": "gapped_g23_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9985906724878362,
+      "n_primes": 130
+    },
+    {
+      "system": "gapped_g23_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9996826735320918,
+      "n_primes": 958
+    },
+    {
+      "system": "gapped_g23_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9994855879313355,
+      "n_primes": 7077
+    },
+    {
+      "system": "gapped_g23_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9990581404258481,
+      "n_primes": 52287
+    },
+    {
+      "system": "gapped_g23_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9987036449623677,
+      "n_primes": 386353
+    },
+    {
+      "system": "gapped_g23_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.998822262071517,
+      "n_primes": 2854782
+    },
+    {
+      "system": "gapped_g24_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9992202471574537,
+      "n_primes": 125
+    },
+    {
+      "system": "gapped_g24_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997352616441524,
+      "n_primes": 918
+    },
+    {
+      "system": "gapped_g24_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9993951681338684,
+      "n_primes": 6782
+    },
+    {
+      "system": "gapped_g24_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9988579094622331,
+      "n_primes": 50109
+    },
+    {
+      "system": "gapped_g24_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9983103765204661,
+      "n_primes": 370255
+    },
+    {
+      "system": "gapped_g24_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9980972379667908,
+      "n_primes": 2735832
+    },
+    {
+      "system": "gapped_g24_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.998865135978638,
+      "n_primes": 125
+    },
+    {
+      "system": "gapped_g24_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997454298020528,
+      "n_primes": 918
+    },
+    {
+      "system": "gapped_g24_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9994478222393179,
+      "n_primes": 6782
+    },
+    {
+      "system": "gapped_g24_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9988968915920485,
+      "n_primes": 50109
+    },
+    {
+      "system": "gapped_g24_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9983325621457598,
+      "n_primes": 370255
+    },
+    {
+      "system": "gapped_g24_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9981084420187769,
+      "n_primes": 2735832
+    },
+    {
+      "system": "gapped_g24_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.998643426229728,
+      "n_primes": 124
+    },
+    {
+      "system": "gapped_g24_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9996721957133982,
+      "n_primes": 918
+    },
+    {
+      "system": "gapped_g24_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9994209501732301,
+      "n_primes": 6782
+    },
+    {
+      "system": "gapped_g24_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9988903957098458,
+      "n_primes": 50109
+    },
+    {
+      "system": "gapped_g24_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9983321983127262,
+      "n_primes": 370255
+    },
+    {
+      "system": "gapped_g24_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9981093257798989,
+      "n_primes": 2735832
+    },
+    {
+      "system": "gapped_g25_p2",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9992741665462626,
+      "n_primes": 120
+    },
+    {
+      "system": "gapped_g25_p2",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997235392086542,
+      "n_primes": 881
+    },
+    {
+      "system": "gapped_g25_p2",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9993361487589018,
+      "n_primes": 6511
+    },
+    {
+      "system": "gapped_g25_p2",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9987072835762177,
+      "n_primes": 48105
+    },
+    {
+      "system": "gapped_g25_p2",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9979781254224072,
+      "n_primes": 355445
+    },
+    {
+      "system": "gapped_g25_p2",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9974319949694921,
+      "n_primes": 2626399
+    },
+    {
+      "system": "gapped_g25_p3",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9989257667842397,
+      "n_primes": 120
+    },
+    {
+      "system": "gapped_g25_p3",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9997364429972682,
+      "n_primes": 881
+    },
+    {
+      "system": "gapped_g25_p3",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9993895413881329,
+      "n_primes": 6511
+    },
+    {
+      "system": "gapped_g25_p3",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9987465571058033,
+      "n_primes": 48105
+    },
+    {
+      "system": "gapped_g25_p3",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.998000588024729,
+      "n_primes": 355445
+    },
+    {
+      "system": "gapped_g25_p3",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9974435961809843,
+      "n_primes": 2626399
+    },
+    {
+      "system": "gapped_g25_p5",
+      "kind": "defective",
+      "T": 8.0,
+      "degree": 4,
+      "R_d": 0.9986888671822994,
+      "n_primes": 120
+    },
+    {
+      "system": "gapped_g25_p5",
+      "kind": "defective",
+      "T": 10.0,
+      "degree": 4,
+      "R_d": 0.9996586563304589,
+      "n_primes": 881
+    },
+    {
+      "system": "gapped_g25_p5",
+      "kind": "defective",
+      "T": 12.0,
+      "degree": 4,
+      "R_d": 0.9993620708888564,
+      "n_primes": 6510
+    },
+    {
+      "system": "gapped_g25_p5",
+      "kind": "defective",
+      "T": 14.0,
+      "degree": 4,
+      "R_d": 0.9987400245479502,
+      "n_primes": 48104
+    },
+    {
+      "system": "gapped_g25_p5",
+      "kind": "defective",
+      "T": 16.0,
+      "degree": 4,
+      "R_d": 0.9980004270086674,
+      "n_primes": 355445
+    },
+    {
+      "system": "gapped_g25_p5",
+      "kind": "defective",
+      "T": 18.0,
+      "degree": 4,
+      "R_d": 0.9974445903767737,
+      "n_primes": 2626399
+    }
+  ],
+  "scorecard_at_Tmax": {
+    "ordinary_primes": 0.18094809725730626,
+    "gapped_g1.5_p2": 0.9838387530127183,
+    "gapped_g1.5_p3": 0.9838383926567295,
+    "gapped_g1.5_p5": 0.9838392979425187,
+    "gapped_g2_p2": 0.9836214760943798,
+    "gapped_g2_p3": 0.9836208603708326,
+    "gapped_g2_p5": 0.9836217513591384,
+    "gapped_g2.5_p2": 0.9833878356570758,
+    "gapped_g2.5_p3": 0.9833869375510085,
+    "gapped_g2.5_p5": 0.9833878199000478,
+    "gapped_g3_p2": 0.9831359623265266,
+    "gapped_g3_p3": 0.983134704676389,
+    "gapped_g3_p5": 0.9831355969834485,
+    "gapped_g3.5_p2": 0.9828635884941623,
+    "gapped_g3.5_p3": 0.9828619921099556,
+    "gapped_g3.5_p5": 0.9828628124260316,
+    "gapped_g4_p2": 0.9825681520001788,
+    "gapped_g4_p3": 0.98256616484609,
+    "gapped_g4_p5": 0.9825670152395827,
+    "gapped_g4.5_p2": 0.9822467461663968,
+    "gapped_g4.5_p3": 0.9822442465218609,
+    "gapped_g4.5_p5": 0.9822451098863699,
+    "gapped_g5_p2": 0.9818956853589138,
+    "gapped_g5_p3": 0.981892757940879,
+    "gapped_g5_p5": 0.9818935332426285,
+    "gapped_g5.5_p2": 0.9815108235022693,
+    "gapped_g5.5_p3": 0.9815073079453024,
+    "gapped_g5.5_p5": 0.9815081180443395,
+    "gapped_g6_p2": 0.9810871537217288,
+    "gapped_g6_p3": 0.9810830449409985,
+    "gapped_g6_p5": 0.9810837581721702,
+    "gapped_g6.5_p2": 0.9806184762286472,
+    "gapped_g6.5_p3": 0.980613648491602,
+    "gapped_g6.5_p5": 0.9806143791926011,
+    "gapped_g7_p2": 0.9800975082528853,
+    "gapped_g7_p3": 0.9800919822396887,
+    "gapped_g7_p5": 0.9800925477922721,
+    "gapped_g7.5_p2": 0.9795150715269844,
+    "gapped_g7.5_p3": 0.979508629032227,
+    "gapped_g7.5_p5": 0.979509266509964,
+    "gapped_g8_p2": 0.9788598918337216,
+    "gapped_g8_p3": 0.9788525518160806,
+    "gapped_g8_p5": 0.9788530519787704,
+    "gapped_g8.5_p2": 0.9781180073014482,
+    "gapped_g8.5_p3": 0.9781094266678462,
+    "gapped_g8.5_p5": 0.9781098102530151,
+    "gapped_g9_p2": 0.9772712003830734,
+    "gapped_g9_p3": 0.9772612497318117,
+    "gapped_g9_p5": 0.9772616123692887,
+    "gapped_g9.5_p2": 0.9762961655470765,
+    "gapped_g9.5_p3": 0.9762849140481233,
+    "gapped_g9.5_p5": 0.9762850149746877,
+    "gapped_g10_p2": 0.9751628602543629,
+    "gapped_g10_p3": 0.9751497285046782,
+    "gapped_g10_p5": 0.9751497160118715,
+    "gapped_g11_p2": 0.9722440538350912,
+    "gapped_g11_p3": 0.9722260072413834,
+    "gapped_g11_p5": 0.9722258266871294,
+    "gapped_g12_p2": 0.9679686986123505,
+    "gapped_g12_p3": 0.967943595352678,
+    "gapped_g12_p5": 0.9679425214975346,
+    "gapped_g13_p2": 0.9611999336278106,
+    "gapped_g13_p3": 0.9611625778780757,
+    "gapped_g13_p5": 0.9611608492420688,
+    "gapped_g14_p2": 0.9492100300563336,
+    "gapped_g14_p3": 0.9491509673992857,
+    "gapped_g14_p5": 0.9491467147027337,
+    "gapped_g15_p2": 0.9240870838559457,
+    "gapped_g15_p3": 0.9239781481848912,
+    "gapped_g15_p5": 0.9239710834634786,
+    "gapped_g16_p2": 0.85876148778001,
+    "gapped_g16_p3": 0.8585264121684355,
+    "gapped_g16_p5": 0.8585120263744144,
+    "gapped_g17_p2": 0.7743092394540589,
+    "gapped_g17_p3": 0.7739826610355343,
+    "gapped_g17_p5": 0.773993909789784,
+    "gapped_g18_p2": 0.9396973028047696,
+    "gapped_g18_p3": 0.9395640208638751,
+    "gapped_g18_p5": 0.9395587793671513,
+    "gapped_g19_p2": 0.9896362939820529,
+    "gapped_g19_p3": 0.989600145100522,
+    "gapped_g19_p5": 0.9895962191930507,
+    "gapped_g20_p2": 0.9983905106409847,
+    "gapped_g20_p3": 0.9983841207224899,
+    "gapped_g20_p5": 0.998382540639132,
+    "gapped_g21_p2": 0.9997622350514729,
+    "gapped_g21_p3": 0.9997663598551927,
+    "gapped_g21_p5": 0.9997660446502911,
+    "gapped_g22_p2": 0.9994791534102908,
+    "gapped_g22_p3": 0.9994876407370002,
+    "gapped_g22_p5": 0.9994879051698938,
+    "gapped_g23_p2": 0.9988113551309382,
+    "gapped_g23_p3": 0.9988217220655967,
+    "gapped_g23_p5": 0.998822262071517,
+    "gapped_g24_p2": 0.9980972379667908,
+    "gapped_g24_p3": 0.9981084420187769,
+    "gapped_g24_p5": 0.9981093257798989,
+    "gapped_g25_p2": 0.9974319949694921,
+    "gapped_g25_p3": 0.9974435961809843,
+    "gapped_g25_p5": 0.9974445903767737
+  },
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH"
+}

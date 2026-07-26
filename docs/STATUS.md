@@ -15,6 +15,26 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 
 ---
 
+## Overnight marathon (`OVERNIGHT_GOAL.md`)
+
+**Entry:** `experiments/run_overnight_marathon.py`  
+**Artifacts:** `results/overnight_marathon/` (phase stamps + peel / beurling / mc / residual)  
+**Work floors (met):** peel **2048** rows on \(x_{\max}=5\times10^{10}\); Beurling **100** systems; MC **200 000**/T × **8** \(T\); residual multi-\(T\) **96** rows.  
+**Resume:** `PHASE_{A,B,C,D}_*_COMPLETE` + `MARATHON_COMPLETE`.  
+**Compute:** multi-core ProcessPool for MC (86w) and Beurling waves; peel multi-core by \(T\); residual sequential mmap (pool OOM avoided).  
+**RH:** open — **not a proof.**
+
+| Phase | Floor | Result |
+|-------|-------|--------|
+| A peel | ≥2000 rows | 2048 |
+| B Beurling | ≥100 systems | 100 (600 rows) |
+| C MC | ≥200k/T × ≥8 T | 200k × 8 = 1.6M trials |
+| D residual | multi-T large \(x\) | 96 rows on \(5\times10^{10}\) |
+
+Smoke tests must use separate `--out-dir` under `results/overnight_marathon/smoke_*`.
+
+---
+
 ## Marathon legs 1–5 (2026-07-26)
 
 ### 1. Arithmetic zero-peel

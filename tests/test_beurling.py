@@ -15,6 +15,7 @@ from pbss.beurling import (
     build_system_primes,
     default_battery_specs,
     gapped_beurling_primes,
+    marathon_battery_specs,
     thinned_ordinary_primes,
 )
 from pbss.probes import primes_upto, sample_grid
@@ -54,6 +55,18 @@ def test_battery_specs_at_least_two_kinds():
     ordinary = primes_upto(10_000)
     for s in specs:
         p = build_system_primes(s, ordinary, 1e4)
+        assert len(p) >= 1
+
+
+def test_marathon_battery_specs_at_least_100():
+    specs = marathon_battery_specs(100)
+    assert len(specs) >= 100
+    kinds = {s["kind"] for s in specs}
+    assert "rh_like" in kinds and "defective" in kinds
+    ordinary = primes_upto(5_000)
+    # sample a few builders
+    for s in specs[:5] + specs[-3:]:
+        p = build_system_primes(s, ordinary, 5_000)
         assert len(p) >= 1
 
 

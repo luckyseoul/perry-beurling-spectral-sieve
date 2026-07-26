@@ -153,6 +153,48 @@ def default_battery_specs() -> List[dict]:
     ]
 
 
+def marathon_battery_specs(n_systems: int = 100) -> List[dict]:
+    """
+    Expand to ≥ n_systems Beurling constructions for overnight battery.
+
+    Includes one ordinary (rh_like) plus many gapped / thinned / shifted-gap
+    defective systems. Deterministic, offline, no network.
+    """
+    n_systems = max(3, int(n_systems))
+    specs: List[dict] = [
+        {"name": "ordinary_primes", "kind": "rh_like", "builder": "ordinary"}
+    ]
+    # Gapped family: gaps 1.5 .. and p0 shifts
+    g = 1.5
+    while len(specs) < n_systems and g < 80.0:
+        for p0 in (2.0, 3.0, 5.0):
+            if len(specs) >= n_systems:
+                break
+            specs.append(
+                {
+                    "name": f"gapped_g{g:g}_p{p0:g}",
+                    "kind": "defective",
+                    "builder": "gapped",
+                    "gap": float(g),
+                    "p0": float(p0),
+                }
+            )
+        g += 0.5 if g < 10 else (1.0 if g < 30 else 2.0)
+    # Thinned ordinary
+    k = 2
+    while len(specs) < n_systems and k <= 200:
+        specs.append(
+            {
+                "name": f"thinned_every{k}",
+                "kind": "defective",
+                "builder": "thinned",
+                "keep_every": int(k),
+            }
+        )
+        k += 1
+    return specs[:n_systems]
+
+
 def build_system_primes(
     spec: dict,
     ordinary_primes: np.ndarray,

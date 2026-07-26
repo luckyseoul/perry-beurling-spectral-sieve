@@ -101,11 +101,19 @@ def main() -> None:
     ap.add_argument("--degrees", type=str, default="2,4,6,8")
     ap.add_argument("--T-list", type=str, default="10,14,18,22")
     ap.add_argument("--workers", type=int, default=0)
+    ap.add_argument(
+        "--min-mc-per-t",
+        type=int,
+        default=50000,
+        help="refuse to complete if achieved min trials/T is below this",
+    )
     ap.add_argument("--no-plot", action="store_true")
     args = ap.parse_args()
 
-    if args.mc_per_t < 50000:
-        raise SystemExit("mc-per-t must be >= 50000 for stress campaign AC")
+    if args.mc_per_t < int(args.min_mc_per_t):
+        raise SystemExit(
+            f"mc-per-t={args.mc_per_t} must be >= min-mc-per-t={args.min_mc_per_t}"
+        )
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -308,11 +316,12 @@ def main() -> None:
             if p.exists():
                 shutil.copy(p, sc / name)
 
-    if min_n < 50000:
-        raise SystemExit(f"min mc per T {min_n} < 50000")
+    min_req = int(args.min_mc_per_t)
+    if min_n < min_req:
+        raise SystemExit(f"min mc per T {min_n} < required {min_req}")
     print(f"MC_STRESS_COMPLETE elapsed_s={elapsed:.1f} min_n={min_n}", flush=True)
     (out_dir / "MC_STRESS_COMPLETE").write_text(
-        f"elapsed_s={elapsed:.1f}\nmin_mc_per_t={min_n}\n"
+        f"elapsed_s={elapsed:.1f}\nmin_mc_per_t={min_n}\nrequired={min_req}\n"
     )
 
 
