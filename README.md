@@ -23,10 +23,11 @@ PYTHONPATH=src python3 experiments/run_arithmetic_multi_T.py --workers 86
 PYTHONPATH=src python3 experiments/run_overnight_campaign.py --workers 86 --scratch /tmp/pbss_campaign
 ```
 
-**Overnight campaign** (shipped): arithmetic residual to \(x_{\max}=10^9\), detrend/smooth
-ablations, A0/B0/off-critical controls, plots in `results/overnight_*.png`.
-Focus arm (deg1): \(R_4\) soft-plateaus ~0.16–0.19 — **no A0-style decay** at this scale.
-See `results/overnight_campaign.json` and `docs/STATUS.md`.
+**Grand campaign** (shipped): `experiments/run_grand_campaign.py` — arithmetic residual to
+\(x_{\max}=10^{10}\) (checkpointed primes), multi-\((d,\mathrm{detrend},\mathrm{smooth})\),
+**≥2000 MC defect trials/T** (default 20k), CL/off-critical/defect controls, resume,
+plots in `results/grand_campaign/`. Focus deg1: \(R_4\sim0.15\)–\(0.19\) through \(10^{10}\).
+See `docs/STATUS.md`.
 
 ## Core math (shipped)
 

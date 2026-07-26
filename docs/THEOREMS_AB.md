@@ -135,24 +135,18 @@ Shipped builder: `pbss.probes.arithmetic_residual` — \(q_T=( \theta(x)-x)/\sqr
 → `results/overnight_campaign.json` (also earlier mid-scale
 `results/arithmetic_multi_T.json`).
 
-**Overnight scan (d=4, n=4096, detrend=deg1, smooth=1, \(x_{\max}=10^9\)):**
+**Grand campaign** (`experiments/run_grand_campaign.py`,
+`results/grand_campaign/`): \(x_{\max}=10^{10}\), 455M primes checkpointed,
+**20 000 MC defect trials per \(T\)** (14 windows → 280 000 trials), multi-\((d,\mathrm{detrend},\mathrm{smooth})\),
+controls CL / off-critical / defect.
 
-| \(T\) | \(x_{\max}\) | \(R_4\) arith | \(R_4\) crit-line | \(R_4\) defect |
-|------:|-------------:|-------------:|------------------:|---------------:|
-| 8.0 | 3e3 | 0.108 | 0.0062 | 0.250 |
-| 16.0 | 9e6 | 0.193 | 0.0016 | 0.250 |
-| 18.7 | 1.3e8 | 0.180 | 0.0010 | 0.250 |
-| 20.7 | **1e9** | **0.165** | 0.0010 | 0.250 |
+| \(T\) | \(x_{\max}\) | \(R_4\) arith (deg1) | \(R_4\) CL | \(R_4\) defect | MC mean \(R_4\) |
+|------:|-------------:|---------------------:|-----------:|---------------:|----------------:|
+| 10 | 2e4 | 0.144 | ~0.006 | 0.250 | 0.793 |
+| 16 | 9e6 | 0.193 | ~0.002 | 0.250 | 0.793 |
+| 23 | **1e10** | **0.155** | ~0.0005 | 0.250 | 0.795 |
 
-Ablation at \(T=20.7\): raw residual \(R_4\sim 0.97\); deg0 ~0.20; deg1 ~0.17
-(smooth=1). Heavy smooth increases \(R_d\).
-
-**Reading (honest):**
-
-- Arithmetic \(R_d\) (deg1) **rises then soft-plateaus** ~0.16–0.19 through \(x=10^9\).
-- **No** A0-style \(O(T^{-2})\) collapse for the arithmetic residual at this scale.
-- Always **below** defect floor 0.25, **far above** pure critical-line mode.
-- A0 remains proved only for pure modes; full Theorem A stays **open**.
+**Reading:** arithmetic soft-plateau ~0.15–0.19 through \(10^{10}\); MC defects stay high (~0.79) and flat in \(T\). **No** full Theorem A / RH claim.
 
 **Does not prove or disprove RH or full Theorem A.**
 

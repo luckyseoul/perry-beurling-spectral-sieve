@@ -148,18 +148,18 @@ def primes_upto(n: int, segment_size: int = 10_000_000) -> np.ndarray:
                 sieve[p * p :: p] = False
         return np.nonzero(sieve)[0].astype(np.int64)
 
-    # Segmented sieve
+    # Segmented sieve (vectorized marking)
     r = int(n**0.5) + 1
     base = primes_upto(r, segment_size=segment_size)  # recursive small path
     out: list[np.ndarray] = [base]
     seg = int(segment_size)
     low = r + 1
+    base_i = base.astype(np.int64)
     while low <= n:
         high = min(low + seg - 1, n)
         mark = np.ones(high - low + 1, dtype=bool)
-        for p in base:
+        for p in base_i:
             p = int(p)
-            # first multiple of p at or above low
             start = ((low + p - 1) // p) * p
             if start < p * p:
                 start = p * p
@@ -198,12 +198,19 @@ def _detrend(residual: np.ndarray, u: np.ndarray, mode: str) -> np.ndarray:
     raise ValueError(f"unknown detrend mode: {mode}")
 
 
+def prime_log_cumsum(primes: np.ndarray) -> np.ndarray:
+    """θ-prefix csum[i]=∑_{j≤i} log p_j. Compute once; share read-only with workers."""
+    p = np.asarray(primes)
+    return np.cumsum(np.log(p.astype(np.float64, copy=False)))
+
+
 def arithmetic_residual(
     u: np.ndarray,
     *,
     T: Optional[float] = None,
     x_max: Optional[float] = None,
     primes: Optional[np.ndarray] = None,
+    csum: Optional[np.ndarray] = None,
     detrend: str = "deg1",
     smooth: int = 1,
 ) -> Tuple[np.ndarray, float, dict]:
@@ -220,6 +227,8 @@ def arithmetic_residual(
     u : sample grid on [0,1]
     T, x_max : specify one; T = log(x_max)
     primes : optional precomputed primes (must cover ≤ x_max); speeds multi-T
+    csum : optional precomputed cumsum(log p) aligned with primes (pass this in
+           multi-process campaigns so workers do not each allocate multi-GB arrays)
     detrend : 'none' | 'deg0' | 'deg1' (default deg1 removes slow linear bulk)
     smooth : moving-average width in samples (1 = off)
 
@@ -245,24 +254,30 @@ def arithmetic_residual(
 
     x_max_i = int(np.floor(x_max))
     if primes is None:
-        primes = primes_upto(x_max_i)
+        primes_full = primes_upto(x_max_i)
+        hi = primes_full.size
+        csum_full = None
     else:
-        primes = np.asarray(primes, dtype=np.int64)
-        # keep only primes in range
-        primes = primes[primes <= x_max_i]
+        # Assume sorted ascending. Use a *view* prefix only — never boolean-mask
+        # copy of a multi-hundred-million prime table (COW explosion under ProcessPool).
+        primes_full = np.asarray(primes)
+        hi = int(np.searchsorted(primes_full, x_max_i, side="right"))
+        csum_full = csum
+    primes_use = primes_full[:hi]
+    if primes_use.size == 0:
+        raise ValueError("no primes in range")
 
     x = np.exp(u * T)
     x = np.maximum(x, 2.0)
 
-    if primes.size == 0:
-        raise ValueError("no primes in range")
-    logp = np.log(primes.astype(np.float64))
-    csum = np.cumsum(logp)
-    idx = np.searchsorted(primes, x, side="right") - 1
+    if csum_full is not None:
+        csum_use = np.asarray(csum_full)[:hi]
+    else:
+        csum_use = np.cumsum(np.log(primes_use.astype(np.float64, copy=False)))
+    idx = np.searchsorted(primes_use, x, side="right") - 1
     theta = np.zeros_like(x)
     ok = idx >= 0
-    theta[ok] = csum[idx[ok]]
-
+    theta[ok] = csum_use[idx[ok]]
     residual = (theta - x) / np.sqrt(x)
     if smooth > 1:
         kernel = np.ones(smooth, dtype=np.float64) / float(smooth)
@@ -272,12 +287,11 @@ def arithmetic_residual(
     meta = {
         "x_max": x_max,
         "T": T,
-        "n_primes": int(primes.size),
+        "n_primes": int(primes_use.size),
         "detrend": detrend,
         "smooth": int(smooth),
     }
     return residual, T, meta
-
 
 def probe_prime_residual(
     u: np.ndarray,

@@ -4,3 +4,6 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+
+results/prime_checkpoints/
+*.npy
