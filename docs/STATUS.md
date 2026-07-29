@@ -1,6 +1,6 @@
 # Status: Perry–Beurling Spectral Sieve
 
-**Date:** 2026-07-26  
+**Date:** 2026-07-29 (tight stress) / 2026-07-26 (marathon)  
 **Repo:** `luckyseoul/perry-beurling-spectral-sieve` (private)
 
 ## Explicit non-claim
@@ -12,6 +12,51 @@ residuals, arithmetic zero-peel diagnostics, Beurling battery scorecards, extend
 scans, and MC instrument stress. Full Theorems A/B and RH remain open.
 
 Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md)
+
+
+---
+
+## Tight stress session (2026-07-29, Grok Build)
+
+**Entry:** `experiments/run_tight_stress_20260729.py`  
+**Artifacts:** `results/tight_stress_20260729/` (`STRESS_REPORT.md`, `formal_diagnostics.json`, MC/Beurling/off-critical JSON)  
+**Banner:** **NOT AN UNCONDITIONAL PROOF OF RH.**
+
+### Formalization
+
+Locked working definitions: \(R_d\), \(S_d=T^{2(d+1)}R_d\), \(P(q):=S_d\) (not legacy 3.92). Theorems A₀/M3, finite A₀/M5, B₀/M2–M4 **proved** in-repo; full A (arithmetic under RH) and B (converse) **open**.
+
+### MC ablations (192 000 trials)
+
+| Ablation | mid-T mean \(R_4\) |
+|----------|-------------------:|
+| baseline | 0.792 |
+| heavy_defect | 0.970 |
+| light_defect | 0.285 |
+| high_freq | 0.792 |
+| low_freq | 0.794 |
+| high_deg_defect | 0.496 |
+
+- Flat instrument: baseline mean \(R_4\approx0.794\), std across \(T\) \(\approx0.002\).
+- **Failure-mode note:** `high_deg_defect` lowers \(R_d\) when defect mass sits **outside** \(V_d\) (degrees \(>d\)) — classifier must fix defect support relative to projection degree.
+
+### Off-critical \(\sigma\) sweep
+
+Model modes at \(\sigma=0.9\) vs \(1/2\): \(R_4\) ratio grows with \(T\) (~3.9 at \(T=8\) → ~15.9 at \(T=32\)). Directional diagnostic only — **not** a zero-free-region theorem.
+
+### Expanded Beurling (35 systems, \(x_{\max}=10^6\))
+
+- Ordinary \(R_4\approx0.189\); defective min/median/max \(\approx0.993/0.995/0.996\).
+- **Perfect separation** (no failure systems; no thin-margin cases at this scale).
+
+### Rate check
+
+M3 \(O(T^{-2})\) holds for \(d\ge1\). Stronger archive heuristic \(O(T^{-2(d+1)})\) **not** supported as a proved/empirical sharp bound for \(S_d\).
+
+### Still open
+
+Arithmetic soft plateau, full A/B, legacy \(P\approx3.92\), infinite-zero control. RH open.
+
 
 ---
 

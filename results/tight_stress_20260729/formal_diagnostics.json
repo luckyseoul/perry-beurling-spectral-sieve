@@ -1,0 +1,55 @@
+{
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "date": "2026-07-29",
+  "session": "Grok Build tight stress",
+  "definitions": {
+    "log_window": "x = exp(u T), u in [0,1], T = log window length",
+    "basis": "phi_k(u) = sqrt(2k+1) L_k(2u-1) orthonormal on L2[0,1]",
+    "R_d": "||P_d q||^2 / ||q||^2  in [0,1]  (L2 energy ratio)",
+    "S_d": "T^{2(d+1)} R_d  (scaled projection strength)",
+    "P_q_working": "P(q) := S_d (NOT legacy 3.92 normalization \u2014 lost scripts)",
+    "legacy_P_zeta": "~3.92 (undocumented normalization; not reconstructed)",
+    "legacy_threshold": "~29.5 (same caveat)"
+  },
+  "theorems": {
+    "A0_critical_line_mode": {
+      "status": "proved",
+      "lemma": "M3",
+      "statement": "R_d(sin(t T u)) = O(T^{-2}) as T->inf"
+    },
+    "A0_finite_mode": {
+      "status": "proved",
+      "lemma": "M5",
+      "statement": "finite CL superposition R_d = O_d(T^{-2})"
+    },
+    "A_arithmetic_under_RH": {
+      "status": "open_conditional",
+      "statement": "arithmetic residual R_d -> 0 under RH"
+    },
+    "B0_persistent_defect": {
+      "status": "proved",
+      "lemmas": [
+        "M2",
+        "M4"
+      ],
+      "statement": "R_d = eps^2 for orthogonal defect; blocks vanishing"
+    },
+    "B_fast_decay_implies_RH": {
+      "status": "open",
+      "statement": "sufficiently fast R_d decay => no off-critical zeros"
+    }
+  },
+  "measured_not_proved": {
+    "arithmetic_soft_plateau": "R_4 ~ 0.15-0.19 through x=1e10 (deg1 detrend)",
+    "mc_defect_mean": "mean R_d ~ 0.79 flat in T (instrument)",
+    "beurling_separation": "ordinary R_4 << gapped/thinned at T~18",
+    "zero_peel": "stripping CL modes does not collapse arithmetic R_d to A0"
+  },
+  "open_gaps": [
+    "full A for arithmetic residual (infinite zero sum + remainders)",
+    "full B converse",
+    "sharp rate O(T^{-2(d+1)}) unproved (M3 is O(T^{-2}))",
+    "legacy P~3.92 reconstruction",
+    "arithmetic residual match to explicit-formula residual at large T"
+  ]
+}

@@ -1,0 +1,8 @@
+completed 2026-07-29 18:26:42 UTC
+NOT AN UNCONDITIONAL PROOF OF RH
+MC instrument flat: baseline mean R4~0.794, std across T ~0.002
+Ablations: heavy~0.97, light~0.28, high_deg_defect~0.50 (defect mass outside V_d lowers R_d)
+Off-critical sigma=0.9 vs 0.5: R4 ratio grows with T (3.9 at T=8 to 15.9 at T=32)
+Beurling 35 systems: perfect separation ordinary R4~0.189 vs defective min~0.993
+M3 O(T^{-2}) holds for d>=1; archive stronger rate not supported
+RH remains open; full A/B open
