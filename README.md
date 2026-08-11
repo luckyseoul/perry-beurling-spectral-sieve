@@ -152,6 +152,15 @@ docs/               # THEOREMS_AB, PROOFS_LEMMAS, STATUS
   Note: [`docs/JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](docs/JENSEN_MOMENT_HIERARCHY_BLINDNESS.md) · code: `pbss.jensen_blindness`  
   (Not RH; not a new sharp \(\Lambda\) bound beyond optional bookkeeping.)
 
+### Post-Jensen roadmap ranks 2–5 (executed)
+
+| Rank | Deliverable |
+|-----:|-------------|
+| 2 | Plateau / secondary EF: [`docs/ARITHMETIC_PLATEAU_SECONDARY.md`](docs/ARITHMETIC_PLATEAU_SECONDARY.md) · `plateau_secondary_report` |
+| 3 | ANT interface audit (freeze Full A): [`docs/ANT_INTERFACE_AUDIT.md`](docs/ANT_INTERFACE_AUDIT.md) · `ant_interface_audit` |
+| 4 | Zero-proportion feasibility **STOP**: [`docs/ZERO_PROPORTION_FEASIBILITY.md`](docs/ZERO_PROPORTION_FEASIBILITY.md) |
+| 5 | B-RES threshold \(H^*\): [`docs/B_RES_THRESHOLD.md`](docs/B_RES_THRESHOLD.md) · `b_res_threshold_report` |
+
 ### By the same author
 
 - Other number-theory / exploratory archives (e.g. `perry-spirals`, `wieferich-hunts`) may appear under the same GitHub account; they are separate projects and not required to run PBSS.

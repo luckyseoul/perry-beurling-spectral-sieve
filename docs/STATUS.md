@@ -21,7 +21,8 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 **Research history (July PBSS + campaigns):** [`RESEARCH_HISTORY.md`](RESEARCH_HISTORY.md) ·  
 **Earlier record (Nov 2025 – Jun 2026):** [`PROJECT_RECORD_2025-11_to_2026-06.md`](PROJECT_RECORD_2025-11_to_2026-06.md) ·  
 **External ref (Anthropic zeta proportion bound, Aug 2026):** [`related/anthropic-riemann-zeta/`](related/anthropic-riemann-zeta/) ·  
-**Jensen/moment hierarchy blindness (Λ):** [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md)
+**Jensen/moment hierarchy blindness (Λ):** [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md) ·  
+**Post-Jensen ranks 2–5:** plateau secondaries [`ARITHMETIC_PLATEAU_SECONDARY.md`](ARITHMETIC_PLATEAU_SECONDARY.md) · ANT audit [`ANT_INTERFACE_AUDIT.md`](ANT_INTERFACE_AUDIT.md) · zero-proportion feasibility [`ZERO_PROPORTION_FEASIBILITY.md`](ZERO_PROPORTION_FEASIBILITY.md) · B-RES threshold [`B_RES_THRESHOLD.md`](B_RES_THRESHOLD.md)
 
 
 ---

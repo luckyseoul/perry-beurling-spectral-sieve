@@ -70,6 +70,10 @@ remainders), the family \((q_T^{\mathrm{arith}})_{T\to\infty}\) satisfies
 (or a quantified positive lower envelope incompatible with the “sufficiently rapid decay”
 hypothesis of Full B).
 
+**Threshold form \(H^*\) (rank 5):** see [`B_RES_THRESHOLD.md`](B_RES_THRESHOLD.md) and
+`pbss.b_res_threshold` — B-RES = \(H^*\) for arithmetic \(\zeta\); model cancellation
+counterexample shows \(H^*\) is necessary. **Still open / RH-hard.**
+
 **Status:** **Open.** This is the only Full-B gap. It is essentially **RH-hard**: a proof
 of B-RES for the true arithmetic residual would force all zeros onto the line whenever
 \(R_d\to0\).

@@ -86,6 +86,10 @@ from .jensen_blindness import (
     max_zero_ordinal_probed_by_even_moment_order,
     min_even_moment_order_for_zero_ordinal,
 )
+from .plateau_secondary import plateau_secondary_report
+from .ant_audit import ant_interface_audit
+from .zero_proportion_feasibility import zero_proportion_feasibility_report
+from .b_res_threshold import b_res_threshold_report
 from .ef_identify import (
     identify_ef,
     hypothesis_residual,
@@ -165,6 +169,10 @@ __all__ = [
     "jensen_blindness_report",
     "max_zero_ordinal_probed_by_even_moment_order",
     "min_even_moment_order_for_zero_ordinal",
+    "plateau_secondary_report",
+    "ant_interface_audit",
+    "zero_proportion_feasibility_report",
+    "b_res_threshold_report",
     "identify_ef",
     "hypothesis_residual",
     "multi_hypothesis_scan",
