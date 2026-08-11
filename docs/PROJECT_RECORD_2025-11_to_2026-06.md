@@ -6,13 +6,37 @@ Nicholas Perry · Perry Brands LLC · Council Bluffs, Iowa
 
 > **Repo placement note (Aug 2026).** This document covers the **pre-July 2026** arc: the original Spectral Sieve operator framework (killed), Wronskian / OT / Li lines, and the de Bruijn–Newman survivors. The **July 2026 reconstruction** of a projection diagnostic under the name PBSS — model lemmas M1–M6, arithmetic plateau campaigns, open A/B — is a **later branch** documented in [`RESEARCH_HISTORY.md`](RESEARCH_HISTORY.md) and the live code in this repository. Read both for the full lineage; they are not the same phase.
 
+### Document map (six parts)
+
+| Part | Content |
+|------|---------|
+| **I** | Spectral Sieve arc: construction → Beurling/L-function classification → dimension reduction → deflation → autopsy → PSWF final attempt |
+| **II** | Four related lines: Wronskian; Wasserstein / off-line mass; Li’s criterion; de Bruijn–Newman (incl. Jensen blindness, Λ ≤ 0.20) |
+| **III** | Literature position |
+| **IV** | Compute environment |
+| **V** | Publishable inventory |
+| **VI** | Post-mortem |
+
+### Reconstruction flags (Aug 2026)
+
+**A — Dirichlet conductor range (resolved in favor of the primary session).**  
+Later verbal recaps quoted “Dirichlet conductors up to 10⁵.” The original Nov–Dec 2025 session record is **q = 5 to ~10¹⁵** across ~1,150 characters. The encoding anomaly chased to direct zeros sits at **q = 171,450,613** (index 127,348,284; ratio 2.09×), which is past 10⁸ and confirms the sweep went well past 10⁵. This document uses the **larger range** and notes the conflict inline in §4.
+
+**B — Strongest asset is not the sieve.**  
+The **Jensen/moment hierarchy blindness** result is the only output that constrains an *active* research program (Λ / certificate methods) rather than an in-house framework. Established details:
+
+- Central certificate **falsely certifies hyperbolicity down to t = −0.7** (Turán ratio barely moves: ~1.04343 → ~1.04336).
+- **Index argument:** accessible central Jensen shifts **n ≤ 30** (moments to order ~34) only probe the first ~30 zeros, heights **≲ 101**.
+- The binding **Lehmer pair at zero #~6709** (γ ≈ 7005.06 / 7005.10) would need moments to order **~13,400** to reach.
+- **Status:** result established, **unwritten**. The only note actually drafted is the **weighted-measure sensitivity** note (engineering, not the top asset).
+
 ---
 
 ## Executive summary
 
 Five distinct lines of attack on the Riemann Hypothesis were built, tested, and resolved
 over roughly seven months. Four were killed on rigorous mathematical grounds. One
-produced a genuine, narrow, defensible result.
+produced a genuine, narrow, defensible result — and it is **not** the Spectral Sieve.
 
 | Line of work | Period | Disposition |
 |---|---|---|
@@ -24,24 +48,25 @@ produced a genuine, narrow, defensible result.
 
 **What survived, in order of value:**
 
-1. **Jensen/moment hierarchy blindness.** A precise, rigorous demonstration that the
-   central moment/Jensen polynomial hierarchy is structurally blind to the constraint
-   that actually binds Λ, with an explicit index argument. The cleanest publishable
-   thing produced across the whole arc.
-2. **Λ ≤ 0.20.** The published Polymath15 bound of 0.22 updated by feeding
-   Platt–Trudgian's rigorous verification height 3×10¹² into the Ki–Kim–Lee dynamical
-   inequality. Bookkeeping, not new mathematics, but correct and worth stating.
+1. **Jensen/moment hierarchy blindness (top asset).** False hyperbolicity certification
+   down to **t = −0.7**; index argument that shifts **n ≤ 30** only reach heights
+   **≲ 101**, while the binding Lehmer pair (#~6709) needs moments of order **~13,400**.
+   The only result that constrains an active external program (Λ certificates), not a
+   private framework. **Established, unwritten.**
+2. **Λ ≤ 0.20.** Polymath15’s 0.22 updated with Platt–Trudgian height 3×10¹² in the
+   Ki–Kim–Lee dynamical inequality. Bookkeeping, correct, fold into (1).
 3. **Montgomery-blindness theorem.** No 1D spacing statistic can imply RH; the gap is
-   exactly the off-line mass M_σ. A negative result with teeth.
-4. **Gamma-shaped measure sensitivity.** μ(ds) = s^(k−1)e^(−σs) ds gives roughly 53%
-   better sensitivity than unweighted L² for off-line zero detection in Beurling
-   systems. Good engineering, not deep mathematics. Standalone note written.
+   exactly the off-line mass M_σ. Negative result with teeth; outline drafted.
+4. **Gamma-shaped measure sensitivity.** μ(ds) = s^(k−1)e^(−σs) ds ≈ **53%** better
+   sensitivity than flat L² on the Beurling ensemble. Engineering, not deep math.
+   **Only survivor with a written note + reference implementation.**
 
 **The meta-lesson, established across all five:** diagnostic and equivalence strategies
 relocate the difficulty rather than reduce it. Every "new criterion" turned out to be RH
 in disguise, or a detector for something already easy to detect. The only category that
 moves a needle is a statement admitting partial, quantitative, *unconditional* progress —
-which is why Λ was the one target where the work landed anywhere real.
+which is why Λ was the one target where the work landed anywhere real, and why the
+Jensen-blindness *limit* result outranks the sieve.
 
 ---
 
@@ -127,10 +152,13 @@ Separation on the three-way synthetic comparison:
 
 Roughly 3× contrast by peak defect or AUC on this set; 3–17× across the broader sweep.
 
-**Dirichlet L-functions.** ~1,150 characters tested, conductors from q = 5 up to ~10¹⁵.
-99.75% classified RH-like. (Later verbal recaps quoted "up to conductor 10⁵" — the
-primary session record is the larger range, and the anomaly investigated below sits at
-q ≈ 1.7×10⁸, which confirms the sweep went well past 10⁵.)
+**Dirichlet L-functions.** ~1,150 characters tested, conductors from **q = 5 up to ~10¹⁵**.
+99.75% classified RH-like.
+
+> **Reconstruction flag A.** Later verbal recaps said “up to conductor 10⁵.” That is
+> **rejected** in favor of the primary Nov–Dec 2025 session record (~10¹⁵). Independent
+> confirmation: the L′/L encoding anomaly below is at **q = 171,450,613** (≫ 10⁵, past
+> 10⁸).
 
 **Elliptic curve L-functions.** ~130 curves via Frobenius trace encoding, ranks 0–3, CM
 and non-CM. 95–100% RH-like.
@@ -397,6 +425,10 @@ Polymath's effective sum from memory, where subtle constant errors hide.
 
 ### Thread 3 — Jensen hierarchy blindness (the best result of the arc)
 
+> **Reconstruction flag B.** This — not the Spectral Sieve — is the strongest asset of
+> the whole Nov 2025 – Jun 2026 program. It constrains *active* Λ / certificate work.
+> Status: **established, unwritten** (only the weighted-measure note is drafted).
+
 Built the moment/Jensen polynomial hierarchy: moments
 
 $$m_k(t) = \int u^{2k} e^{tu^2}\,\Phi(u)\,du$$
@@ -410,17 +442,24 @@ Then demonstrated the sharp structural failure:
 > The central certificate **falsely certifies hyperbolicity all the way down to
 > t = −0.7**, with the minimum Turán ratio barely moving — 1.04343 → 1.04336.
 
-**The index argument.** Accessible central Jensen shifts (n ≤ 30, moments to order ~34)
-probe only the first ~30 zeros, heights ≲ 101. The Lehmer pair at zero #~6709 that
-actually determines Λ would require moments to order **~13,400** to reach.
+**The index argument.**
+
+| Quantity | Value |
+|----------|------:|
+| Accessible central Jensen shifts | n ≤ 30 |
+| Moments used | order ~34 |
+| Zeros / heights thereby probed | first ~30 zeros, heights ≲ **101** |
+| Binding Lehmer pair | zero **#~6709**, γ ≈ 7005.062866 / 7005.100565 |
+| Moments needed to reach that pair | order **~13,400** |
 
 **Conclusion.** The upper bound on Λ is irreducibly a **local-at-height** phenomenon.
 Bulk and central certificate reformulations cannot capture it — not as a matter of
-computational budget, but structurally.
+computational budget, but structurally. False hyperbolicity at t = −0.7 is the
+demonstration that the hierarchy is *certifying the wrong region*.
 
-This is the cleanest publishable finding across the whole two-year arc: a precise,
-rigorous, defensible statement about the *limits* of certificate methods for Λ. More
-publishable as an honest note than anything pointed at the proof itself.
+This is the cleanest publishable finding across the whole arc: a precise, rigorous,
+defensible statement about the *limits* of certificate methods for Λ. More publishable
+as an honest note than anything pointed at the sieve or at a proof of RH.
 
 ### The updated bound
 
@@ -500,16 +539,16 @@ embarrassingly parallel — but the payoff ceiling in §9 bounds how much it is 
 
 # Part V — Publishable inventory
 
-| Output | Length | Suggested venue | Status |
-|---|---|---|---|
-| Jensen/moment hierarchy blindness for Λ | Note | *Experimental Mathematics* / *J. Number Theory* | Result established, not written up |
-| Montgomery blindness / 1D statistics cannot reach RH | 4–6 pp | *Amer. Math. Monthly*, *Exp. Math.*, *JNT* short comm. | Result established, outline drafted |
-| Gamma-shaped measure sensitivity for Beurling detection | 4–6 pp | *Integers*, *JNT* short comm., *Exp. Math.* | **Note written**, with reference implementation |
-| Λ ≤ 0.20 restatement | Short | Folds into the Jensen-blindness note | Stated, not written up |
+| Priority | Output | Length | Suggested venue | Status |
+|---:|---|---|---|---|
+| **1 (top)** | Jensen/moment hierarchy blindness for Λ (false hyperbolicity to t=−0.7; index n≤30 → height ≲101 vs Lehmer #~6709 needs order ~13400) | Note | *Experimental Mathematics* / *J. Number Theory* | **Established, unwritten** |
+| 2 | Λ ≤ 0.20 restatement | Short | Fold into #1 | Stated, not written up |
+| 3 | Montgomery blindness / 1D statistics cannot reach RH | 4–6 pp | *Amer. Math. Monthly*, *Exp. Math.*, *JNT* short comm. | Established, outline drafted |
+| 4 | Gamma-shaped measure sensitivity for Beurling detection | 4–6 pp | *Integers*, *JNT* short comm., *Exp. Math.* | **Only drafted note** + reference implementation |
 
-The Jensen-blindness result is the strongest of the four and the only one that says
-something new about the *limits* of an active research program rather than about an
-in-house framework.
+**Write-order recommendation:** #1 (+ #2 as a short section), then #3. #4 is already
+drafted but is engineering, not the program’s best result. **Do not** lead a public
+narrative with the killed Spectral Sieve.
 
 ---
 
