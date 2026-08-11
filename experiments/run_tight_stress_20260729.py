@@ -631,7 +631,7 @@ def write_report(
     lines.append("")
     lines.append("---")
     lines.append("")
-    lines.append("*Private research. Nicholas Perry / Perry–Beurling Spectral Sieve.*")
+    lines.append("*Independent research. Nicholas Perry / Perry–Beurling Spectral Sieve.*")
     text = "\n".join(lines) + "\n"
     (out_dir / "STRESS_REPORT.md").write_text(text)
     return text

@@ -1,7 +1,7 @@
 # Status: Perry–Beurling Spectral Sieve
 
 **Date:** 2026-07-29 (tight stress) / 2026-07-26 (marathon)  
-**Repo:** `luckyseoul/perry-beurling-spectral-sieve` (private)
+**Repo:** `luckyseoul/perry-beurling-spectral-sieve`
 
 ## Explicit non-claim
 
@@ -15,7 +15,10 @@ external ANT inputs. Full Theorems A/B and **RH remain open**.
 
 Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) ·  
 **Conditional A package:** [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) ·  
-**RH close-out roadmap (not a proof):** [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md)
+**RH close-out roadmap (not a proof):** [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) ·  
+**Research history (July PBSS + campaigns):** [`RESEARCH_HISTORY.md`](RESEARCH_HISTORY.md) ·  
+**Earlier record (Nov 2025 – Jun 2026):** [`PROJECT_RECORD_2025-11_to_2026-06.md`](PROJECT_RECORD_2025-11_to_2026-06.md) ·  
+**External ref (Anthropic zeta proportion bound, Aug 2026):** [`related/anthropic-riemann-zeta/`](related/anthropic-riemann-zeta/)
 
 
 ---

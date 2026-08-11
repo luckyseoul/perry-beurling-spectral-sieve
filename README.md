@@ -5,17 +5,48 @@ diagnostic for density residuals on logarithmic windows (not the pharmaceutical
 society, IEEE WLAN “personal basic service set,” actuarial IAA section, or other
 public expansions of the same acronym).
 
-Private research archive and **runnable reconstruction** of the **Perry–Beurling Spectral Sieve** (spectral diagnostic / P(q) framework) for testing consistency with the Riemann Hypothesis on Beurling generalized prime systems.
+Open research archive and **runnable reconstruction** of the **Perry–Beurling Spectral Sieve** (spectral diagnostic / P(q) framework) for testing consistency with the Riemann Hypothesis on Beurling generalized prime systems.
 
 **Author:** Nicholas Perry  
 **Status:** Independent research. Reconstruction of core projection diagnostic (2026-07).  
-**Not a proof of RH** — see [`docs/STATUS.md`](docs/STATUS.md).
+**License:** MIT — see [`LICENSE`](LICENSE).  
+**Not a proof of RH** — see [`docs/STATUS.md`](docs/STATUS.md).  
+**Research history** (July 2026 PBSS reconstruction): [`docs/RESEARCH_HISTORY.md`](docs/RESEARCH_HISTORY.md).  
+**Earlier project record** (Nov 2025 – Jun 2026; sieve killed; Λ / Jensen survivors): [`docs/PROJECT_RECORD_2025-11_to_2026-06.md`](docs/PROJECT_RECORD_2025-11_to_2026-06.md).
 
 ## Overview
 
 A spectral approach combining Beurling’s theory of generalized primes / Beurling zeta functions with a projection-based diagnostic. Analyze density perturbations \(q\) associated with prime systems and test whether their low-degree polynomial energy is consistent with all non-trivial zeros on \(\mathrm{Re}(s)=1/2\).
 
 The framework is a **classifier / diagnostic**, not a full proof of RH.
+
+## At a glance
+
+<p align="center">
+  <img src="docs/figures/pipeline.png" alt="PBSS pipeline: residual → Legendre projection → R_d scorecard" width="720"/>
+</p>
+
+<p align="center"><em>Pipeline — density residual on a log-window, projected onto low-degree shifted Legendre modes.</em></p>
+
+<p align="center">
+  <img src="docs/figures/scorecard_Rd.png" alt="R_d diagnostic scorecard: RH-like vs defective" width="640"/>
+</p>
+
+<p align="center"><em>Diagnostic scorecard — low <code>R<sub>d</sub></code> for high-frequency / critical-line-like probes; high <code>R<sub>d</sub></code> for defective controls.</em></p>
+
+| Residual waveforms | Mode energy spectrum |
+|:------------------:|:--------------------:|
+| <img src="docs/figures/residuals_waveforms.png" alt="Four residual waveforms with R4 labels" width="420"/> | <img src="docs/figures/mode_spectrum.png" alt="Legendre mode energy: RH-like vs defective" width="420"/> |
+
+| Grand campaign \(R_d\) vs \(T\) | Arithmetic soft plateau |
+|:------------------------------:|:-----------------------:|
+| <img src="docs/figures/grand_Rd_vs_T.png" alt="Grand campaign R_d versus T" width="420"/> | <img src="docs/figures/grand_arith_focus_linear.png" alt="Arithmetic residual R4 soft plateau" width="420"/> |
+
+| Beurling battery | Status map |
+|:----------------:|:----------:|
+| <img src="docs/figures/beurling_battery_Rd_vs_T.png" alt="Beurling ordinary vs defective R_d vs T" width="420"/> | <img src="docs/figures/status_map.png" alt="Theorem A/B status map" width="420"/> |
+
+More figures (including paper renders): [`docs/figures/`](docs/figures/) · [`docs/paper/figures/`](docs/paper/figures/).
 
 ## Quick start
 
@@ -104,10 +135,19 @@ docs/               # THEOREMS_AB, PROOFS_LEMMAS, STATUS
 - Large \(d\) or \(T\) is expensive.  
 - Converse (low energy ⇒ RH) is essentially as hard as RH.
 
-## Related private repos
+## Related work
 
-- `perry-spirals`, `wieferich-hunts`, other archives under the same account.
+### External (zeta / RH — reference only)
+
+- **Anthropic (Aug 2026):** improved lower bound on the fraction of \(\zeta\) zeros on the critical line (~41.6% → ~67.2%).  
+  Blog: [anthropic.com/research/riemann-zeta](https://www.anthropic.com/research/riemann-zeta) ·  
+  Local PDFs + notes: [`docs/related/anthropic-riemann-zeta/`](docs/related/anthropic-riemann-zeta/)  
+  (Third-party; not part of PBSS; different theorem class — see that README.)
+
+### By the same author
+
+- Other number-theory / exploratory archives (e.g. `perry-spirals`, `wieferich-hunts`) may appear under the same GitHub account; they are separate projects and not required to run PBSS.
 
 ---
 
-*Private research. Not for public distribution without explicit permission.*
+*Independent research. MIT licensed. Not a proof of the Riemann Hypothesis.*

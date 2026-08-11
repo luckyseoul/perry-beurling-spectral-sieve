@@ -1,24 +1,30 @@
+# Python
 __pycache__/
 *.py[cod]
 .pytest_cache/
 *.egg-info/
 .venv/
 venv/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/
 
-results/prime_checkpoints/
+# Large binary / regenerable data
 *.npy
-results/open_plateau/beurling/beurling_full_rows.json
-results/open_plateau/beurling/*_fast.json
-
-# open-plateau large local dumps (compact beurling.json is committed)
-results/open_plateau/beurling/beurling_full_rows.json
-results/open_plateau/beurling/beurling_n*_fast.json
-results/open_plateau/beurling/beurling_n20k_w86.json
-results/open_plateau/beurling/ordinary_le_*.npy
+*.npz
+results/prime_checkpoints/
+results/visuals/
 results/beurling_battery_smoke/
 results/mc_stress_smoke/
 results/overnight_marathon/smoke_*/
-results/open_plateau/beurling/beurling_n100k_compact.json
-results/open_plateau/beurling/beurling_n20k_w86.json
+results/**/smoke_*/
+
+# open-plateau large local dumps (compact beurling.json is committed)
 results/open_plateau/beurling/beurling_full_rows.json
+results/open_plateau/beurling/*_fast.json
+results/open_plateau/beurling/beurling_n*_fast.json
+results/open_plateau/beurling/beurling_n20k_w86.json
+results/open_plateau/beurling/beurling_n100k_compact.json
+results/open_plateau/beurling/ordinary_le_*.npy
 **/beurling_full_rows.json

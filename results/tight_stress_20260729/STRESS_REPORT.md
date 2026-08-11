@@ -109,4 +109,4 @@ Model off-critical modes vs CL: measured R_d ratios. This is a *diagnostic probe
 
 ---
 
-*Private research. Nicholas Perry / Perry–Beurling Spectral Sieve.*
+*Independent research. Nicholas Perry / Perry–Beurling Spectral Sieve.*
