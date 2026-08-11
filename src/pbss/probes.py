@@ -524,7 +524,8 @@ def arithmetic_zero_peel(
     sample grid (minimizes ‖q_raw - α m‖); else α = mode_scale.
 
     **Not a proof of RH.** Peeling model modes from the prime residual is a
-    diagnostic; full Theorem A remains open.
+    finite-T diagnostic; Full A is closed *conditionally* under RH + cited ANT
+    (see docs/THEOREM_A_PACKAGE.md), not by peel numerics alone.
     """
     q_raw, T_out, meta = arithmetic_residual(
         u,

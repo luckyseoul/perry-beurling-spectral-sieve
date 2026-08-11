@@ -335,7 +335,8 @@ def remainder_diagnostic_from_q(
         "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
         "note": (
             "External residual (e.g. arithmetic). Peeling model modes is a "
-            "diagnostic; full Theorem A remains open."
+            "finite-T diagnostic; Full A is closed_conditional under RH+cited ANT "
+            "(docs/THEOREM_A_PACKAGE.md), not by peel alone. RH open."
         ),
     }
 

@@ -124,7 +124,11 @@ classical statement), one still needs:
    (or an equivalent bulk residual after endpoint removal).
 4. **Bridge** from diagnostic \(R_d\) to classical zero-free / \(\psi\)-error language.
 
-Until (1)–(4) exist in writing with proofs, **full Theorem A remains open**.
+**Disposition (2026-08-11):** items (1)–(3) are **cited ANT-1…3** in
+[`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md); triangle continuity is **proved M7**.
+This scaffold note no longer leaves Full A open — **Full A is closed conditionally**.
+Item (4) classical bridge is Full B / **B-RES** (sole residual), not a Full-A gap.
+**Unconditional RH remains open.**
 
 ---
 
@@ -134,7 +138,7 @@ Until (1)–(4) exist in writing with proofs, **full Theorem A remains open**.
 |----------------------|----------------------|
 | Taper lowers \(R_d\) | Formal \(W_\alpha\) + \(E_{\mathrm{end}}\) estimator |
 | Peel does not kill arithmetic plateau | Remainder path + M5 on finite block + tail majorant labels |
-| Dense multi-\(T\) no decay | Arithmetic still open; model CL/EF decay verified |
+| Dense multi-\(T\) no decay | Finite-\(T\) arithmetic plateau (measured); Full A closed conditional at \(T\to\infty\) under RH+ANT; model CL/EF decay verified |
 
 Pointer: [`RESEARCH_PLATEAU.md`](RESEARCH_PLATEAU.md) · status: [`STATUS.md`](STATUS.md) ·
 definitions: [`THEOREMS_AB.md`](THEOREMS_AB.md).

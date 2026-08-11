@@ -130,9 +130,9 @@ at the **same order** as pure-mode M3. Proof: `docs/PROOFS_LEMMAS.md` (M5);
 code: `lemmas.bound_R_d_finite_mode_sum`, `probes.finite_cl_superposition`,
 `probes.explicit_formula_residual`.
 
-This is the bridge from pure A₀ to truncated explicit-formula residuals. It does
-**not** prove full Theorem A for infinite zero sums or for the arithmetic prime
-residual.
+This is the bridge from pure A₀ to truncated explicit-formula residuals. Infinite
+zero sums and the arithmetic residual are handled in Full A by **cited ANT-1…3 + M7**
+(package closed conditionally), not by M5 alone.
 
 ### Scaffolding toward full A (2026-07-26)
 
@@ -151,7 +151,8 @@ Shipped (not full A):
    `results/arithmetic_weights/`.
 
 Writeup: [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md). Campaign:
-`results/theorem_a_scaffold/`. **Full arithmetic A still open.**
+`results/theorem_a_scaffold/`. Historical scaffolding path only — **Full A is closed
+conditionally** in [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) (scaffold is not sole support).
 
 ### Full Theorem A (**closed conditionally**)
 

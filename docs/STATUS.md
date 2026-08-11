@@ -64,7 +64,10 @@ M3 \(O(T^{-2})\) holds for \(d\ge1\). Stronger archive heuristic \(O(T^{-2(d+1)}
 
 ### Still open
 
-Arithmetic soft plateau, full A/B, legacy \(P\approx3.92\), infinite-zero control. RH open.
+Arithmetic soft plateau (finite-\(T\) numerics), **B-RES** (sole Full-B residual step),
+legacy \(P\approx3.92\), independent re-derivation of classical ANT constants in-repo.
+**Full A** is **closed conditionally** (RH + cited ANT); Full B is **package complete**
+(only B-RES open). **Unconditional RH open.**
 
 
 ---
@@ -153,7 +156,9 @@ This STATUS + theorem pointers. Paper: `docs/paper/`. **No RH proof claim.**
 **Entry:** `experiments/run_theorem_a_scaffold.py`  
 **Artifacts:** `results/theorem_a_scaffold/` (`PHASE_{WEIGHT,REMAINDER,ARITHMETIC}_COMPLETE`, `SCAFFOLD_COMPLETE`)  
 **What it is:** formal weight class for endpoint control + truncated zero-sum remainder path with multi-\((T,N)\) numerics.  
-**What it is not:** full Theorem A or RH. Tail majorants are scaffolding labels, not sharp ANT bounds.
+**What it is not:** an unconditional RH proof. Tail majorants here are **diagnostic
+scaffolding** only; Full A’s required tail step is **cited ANT-1** (see package), not
+this scaffold alone.
 
 ### Lemma M6 + infinite-tail note
 
@@ -172,7 +177,8 @@ tail majorant controls vs true \(\psi\)/\(\theta\) remainder.
 | `pbss.theorem_a_chain` | Checkable multi-\(T\) model chain (not arithmetic A₀) |
 | `results/theorem_a_model_chain/` | Optional model-chain JSON |
 
-**Status:** Conditional A **package complete**. Full arithmetic A **open**. RH **open**.
+**Status:** Full A **closed conditionally** (`closed_conditional`). Full B **package
+complete** (sole residual **B-RES**). Unconditional RH **open**.
 
 ### EF identification attack (headway + sharp block)
 

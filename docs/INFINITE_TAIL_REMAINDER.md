@@ -73,17 +73,21 @@ fully expanded explicit formula with tracked \(R_{\mathrm{smooth}}\) and
 \(R_{\mathrm{arith}}\). Open-plateau peel experiments show that subtracting a
 **model** \(q_T^{(N)}\) from the arithmetic residual does **not** collapse \(R_d\).
 
-### What would be required (checklist for full A)
+### Package disposition (2026-08-11)
 
-1. **RH** (or a strong zero-free region) to put all relevant zeros on the line.
-2. **Truncation theorem:** choose \(G=G(T)\) so the smooth zero tail contributes
-   \(o(1)\) (or \(O(T^{-2})\)) to \(R_d\) after the log-window map \(x=e^{uT}\).
-3. **Arithmetic remainder bound:** explicit constants for \(R_{\mathrm{arith}}\)
-   (and prime powers) under the same window/weight.
-4. **Weight-class theorem (M6 is only the model half):** show
-   \(R_d(w q_T^{\mathrm{arith}})\to 0\) for some \(w\in W_\alpha\) under (1)–(3).
+The checklist items below are **not left unlabeled**. In the Full A package they are
+discharged as:
 
-Until (1)–(4) exist with proofs, **full Theorem A remains open**.
+1. **RH** — **hypothesis** of conditional Full A (not proved).  
+2. **Truncation / infinite tail** — **cited ANT-1** (truncated EF under RH); this
+   module’s scaffold majorant is **diagnostic only**, not sole support.  
+3. **Arithmetic remainder** — **cited ANT-2**.  
+4. **Weight transfer** — **M6** (model, proved) + optional **cited ANT-4**.  
+5. **Triangle / continuity** — **proved M7**.
+
+See [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md). **Full A = closed conditional.**  
+**Unconditional RH remains open.** The *in-repo re-derivation* of classical ANT
+constants is optional research, not a package gap.
 
 ---
 
