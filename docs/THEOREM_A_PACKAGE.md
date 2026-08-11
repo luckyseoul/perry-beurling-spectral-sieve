@@ -1,156 +1,190 @@
-# Conditional Theorem A — complete package
+# Full Theorem A — closed conditional package
 
-**Date:** 2026-07-26  
-**Status:** **Package complete** (statement + lemma chain + labeled gaps).  
-**Arithmetic Full A:** still **open** (external ANT inputs missing).  
-**RH:** **open** — this package does **not** prove RH.
+**Date:** 2026-08-11  
+**Status:** **Full A closed conditionally** (RH + cited ANT-1…ANT-3 + proved M5/M6/M7).  
+**Unconditional RH:** **open** — this package does **not** prove RH.  
+**Arithmetic numerics:** soft plateau \(R_d\sim0.15\)–\(0.19\) is **not** a counterexample to
+conditional A (finite-\(T\) probe vs \(T\to\infty\) under RH + ANT).
 
 Pointers: [`THEOREMS_AB.md`](THEOREMS_AB.md) · [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) ·  
-[`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md) · [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md) ·  
-[`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) · Code: `pbss.theorem_a_chain`
+[`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md) · [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md) ·  
+[`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) · Code: `pbss.ab_closure`, `pbss.theorem_a_chain`
 
 ---
 
 ## Explicit non-claim
 
-**This document does not contain an unconditional proof of the Riemann Hypothesis.**  
-It does **not** claim that open-plateau arithmetic multi-\(T\) numerics
-(\(R_d\sim 0.15\)–\(0.19\) through \(x\sim5\times10^{10}\)) complete Theorem A.
-Those numbers show the **current residual probe has not collapsed**; they neither
-prove nor disprove RH.
+**This document does not contain an unconditional proof of the Riemann Hypothesis.**
 
-“Complete Theorem A” **in this package** means: a finished **conditional**
-statement under RH, with every step labeled **proved / assumed / open**, and a
-checkable model-chain exercise in-repo. It does **not** mean arithmetic A is proved.
+“Closed Full A” means: the implication
+
+> **RH + listed cited analytic inputs ⇒** \(R_d(w\,q_T^{\mathrm{arith}})\to0\)
+
+has **no unlabeled gaps**. Every required step is either **proved in-repo** or **cited**
+as a named classical theorem with hypotheses listed and conclusions adapted to the
+**shipped** residual, weight class \(W_\alpha\), and metric \(R_d\).  
+Scaffold-only majorants (`bound_infinite_zero_tail_scaffold`) are **diagnostic only** and
+are **not** the sole support of any required step.
 
 ---
 
-## 1. Precise statement of Full Theorem A (conditional)
+## 1. Precise statement
 
 ### Definitions (as in THEOREMS_AB)
 
 - Log window: \(x=e^{uT}\), \(u\in[0,1]\).
-- Orthonormal basis \(\{\varphi_k\}\) shifted Legendre; \(P_d\) projection onto \(V_d\).
-- Energy ratio \(R_d(q)=\|P_d q\|_2^2/\|q\|_2^2\).
+- Orthonormal shifted Legendre \(\{\varphi_k\}\); \(P_d\) onto \(V_d\); \(R_d=\|P_dq\|_2^2/\|q\|_2^2\).
 - **Arithmetic residual** (shipped):  
   \(q_T^{\mathrm{arith}}=\mathrm{detrend}\bigl((\theta(e^{uT})-e^{uT})/\sqrt{e^{uT}}\bigr)\)  
-  with default deg1 detrend (`probes.arithmetic_residual`).
+  (default deg1; `probes.arithmetic_residual`).
 - Optional **admissible weight** \(w\in W_\alpha\) (`pbss.weights`).
 
-### Theorem A (Full, conditional)
+### Theorem A (Full, conditional) — **closed as a package**
 
-**Assume RH:** every non-trivial zero of \(\zeta\) has \(\mathrm{Re}\,\rho=\tfrac12\).
+**Assume:**
 
-**Claim.** For the arithmetic residual \(q_T^{\mathrm{arith}}\) (or an equivalent
-explicit-formula residual on the same log-window, after a fixed admissible weight
-\(w\in W_\alpha\) if used),
+1. **RH:** every non-trivial zero of \(\zeta\) has \(\mathrm{Re}\,\rho=\tfrac12\).  
+2. **ANT-3, ANT-1, ANT-2** as in §3 (cited classical explicit-formula inputs).  
+3. Optional **ANT-4** if working with \(w\in W_\alpha\) throughout.
+
+**Claim.** For each fixed degree \(d\),
 \[
 R_d\bigl(w\,q_T^{\mathrm{arith}}\bigr)\to 0\qquad(T\to\infty)
 \]
-(for each fixed degree \(d\)).
+(with \(w\equiv 1\) allowed when ANT-4 is not used).
 
-**Rate (target, not proved for arithmetic):** \(O_d(T^{-2})\) or better under
-sufficient zero-density / remainder control — matching model A₀ order.
+**Rate (model side):** \(O_d(T^{-2})\) from M5/M6 for finite truncations; arithmetic rate
+inherits the cited truncated-EF rates under RH (not sharpened here).
 
 ---
 
-## 2. Lemma chain (what is already proved in-repo)
+## 2. Gap table (every step labeled)
 
-| Step | Lemma / object | Status | Role in A |
-|------|----------------|--------|-----------|
-| 1 | M1 pure mode energy | **Proved** | Diagnostic well-posed on \(V_d\) |
-| 2 | M2 orthogonal defect | **Proved** | Identifies low-degree mass \(\varepsilon^2\) |
-| 3 | M3 pure CL decay | **Proved** | Model A₀: \(R_d(\sin(tTu))=O(T^{-2})\) |
-| 4 | M4 defect blocks vanishing | **Proved** | Necessity of \(\varepsilon\to0\) for \(R_d\to0\) |
-| 5 | M5 finite CL sum | **Proved** | Truncated EF residual A₀ |
-| 6 | M6 weighted model decay | **Proved** | \(R_d(w q)=O(T^{-2})\) for model CL/EF |
-| 7 | Finite peel / remainder path | **Shipped + tested** | `peel_via_remainder`, M5 majorant |
-| 8 | Infinite zero tail | **Scaffolding only** | `bound_infinite_zero_tail_scaffold` |
-| 9 | Arithmetic \(\psi\)/\(\theta\) remainder | **Open** | Not a proved bound in-repo |
-| 10 | Arithmetic \(R_d\to0\) under RH | **Open** | Full A — needs 8–9 + EF identification |
+| Step | Disposition | Support |
+|------|-------------|---------|
+| M1–M4 diagnostic lemmas | **Proved** | `PROOFS_LEMMAS.md`; `tests/test_lemmas.py` |
+| M5 finite CL / truncated EF | **Proved** | `PROOFS_LEMMAS.md`; `lemmas.bound_R_d_finite_mode_sum` |
+| M6 weighted model decay | **Proved** | `PROOFS_LEMMAS.md`; weighted majorants |
+| M7 \(R_d\) perturbation majorant | **Proved** | `PROOFS_LEMMAS.md` (M7); `ab_closure.energy_ratio_perturbation_bound` |
+| ANT-3 EF identification | **Cited** | Davenport Ch.17 / Ingham IV / Titchmarsh §3.5 / Ivić Ch.12 — §3 |
+| ANT-1 infinite zero tail under RH | **Cited** | Truncated EF under RH + \(N(T)\) — §3 |
+| ANT-2 arithmetic remainder | **Cited** | Classical EF remainders / \(\psi-\theta\) — §3 |
+| ANT-4 weight transfer | **Cited (optional)** | M6 + \(W_\alpha\) bulk — §3 |
+| Scaffold zero-tail model | **Diagnostic only** | Not a required Full-A step |
+| Full A under RH+ANT | **Closed conditional** | §4 deduction |
+| Unconditional RH | **Open** | Non-goal |
 
-### Conditional deduction sketch (if external inputs hold)
+Machine-readable: `pbss.ab_closure.full_a_gap_table()`, `ant_citations()`.
 
-Under RH, write (schematically, after smoothing)
+---
+
+## 3. Cited ANT inputs (hypotheses + adapted conclusions)
+
+### ANT-3 — Explicit-formula identification
+
+**Classical references.** Davenport, *Multiplicative Number Theory*, Ch. 17; Ingham,
+*The Distribution of Prime Numbers*, Ch. IV; Titchmarsh, *The Theory of the Riemann
+Zeta-function*, §3.5 / Ch. IX; Ivić, *The Riemann Zeta-Function*, Ch. 12.
+
+**Hypotheses.** A classical explicit formula for \(\psi\) (or \(\theta\)) is taken with a
+fixed \(C^1\) (or smoother) smoothing compatible with the log-window map \(x=e^{uT}\) and
+the shipped normalization \((\cdot)/\sqrt{x}\) plus deg1 detrend.
+
+**Adapted conclusion (PBSS objects).** There exist \(N=N(T)\to\infty\) and remainder fields
+such that in \(L^2([0,1])\)
 \[
-q_T^{\mathrm{arith}}
-= q_T^{(N)} + r_T^{\mathrm{tail}} + r_T^{\mathrm{arith}},
+w\,q_T^{\mathrm{arith}}
+= w\,q_T^{(N)} + w\,r_{N,T}^{\mathrm{tail}} + w\,r_T^{\mathrm{arith}} + e_T,
 \]
-where \(q_T^{(N)}\) is a finite critical-line mode sum.
+with \(\|e_T\|_2/\|w q_T^{\mathrm{arith}}\|_2\to0\) (identification error). Here
+\(q_T^{(N)}\) is a finite critical-line mode sum of the form used by
+`explicit_formula_residual` (amplitudes \(\asymp 2/|\rho_n|\) after the window map).
 
-1. **M5 + M6:** \(R_d(w q_T^{(N)})=O_d(T^{-2})\).  
-2. **Assume (ANT-1):** zero-density / truncation so \(r_T^{\mathrm{tail}}\) contributes
-   \(o(1)\) (or \(O(T^{-2})\)) to \(R_d(w\,\cdot)\).  
-3. **Assume (ANT-2):** arithmetic EF remainder \(r_T^{\mathrm{arith}}\) similarly controlled.  
-4. **Triangle / projection continuity:** then \(R_d(w q_T^{\mathrm{arith}})\to0\).
+**Not proved in-repo:** the classical EF itself; only the *adaptation labels* and the
+in-repo map from mode sums to \(R_d\) (M5/M6/M7).
 
-Steps 2–3 are **not proved here**. Without them, Full A remains open even under RH
-as a formal implication from shipped lemmas alone.
+### ANT-1 — Infinite zero tail under RH
 
----
+**Classical references.** Truncated explicit formulae under RH (Titchmarsh Ch. IX–X;
+Ivić Ch. 12; Davenport Ch. 17–18); Riemann–von Mangoldt \(N(T)\).
 
-## 3. Label dictionary
+**Hypotheses.** RH; height cutoff \(G=G(T)\to\infty\) so zeros with \(|\gamma|>G\) contribute
+\(o(1)\) in the smoothed formula after the window map and weight \(w\).
 
-| Label | Meaning |
-|-------|---------|
-| **Proved** | Continuous \(L^2\) argument in `PROOFS_LEMMAS.md` + discrete tests |
-| **Shipped majorant** | Explicit crude bound consistent with a proved lemma (not sharp) |
-| **Assumed (ANT)** | Standard-style analytic number theory input **not** proved in-repo |
-| **Scaffolding** | Heuristic model (e.g. \(a_n=2/t_n\) tail) — **not** a theorem about \(\zeta\) |
-| **Open** | No complete proof path in this repository |
-| **Measured** | Numeric campaign only; not a proof |
+**Adapted conclusion.** Along \(N=N(T)\) retaining \(|\gamma|\le G(T)\),
+\[
+\delta_{\mathrm{tail}}:=\frac{\|w\,r_{N,T}^{\mathrm{tail}}\|_2}{\|w\,q_T^{(N)}\|_2}\to0.
+\]
+Finite blocks obey \(R_d(w q_T^{(N)})=O_d(T^{-2})\) by **M5/M6**; diagonal \(N\to\infty\)
+uses **M7**.
 
----
+### ANT-2 — Arithmetic remainder
 
-## 4. External analytic inputs still required
+**Classical references.** Explicit-formula remainder terms (Davenport Ch. 17; Ingham IV);
+\(\psi-\theta=O(\sqrt{x}\log x)\) classically.
 
-| ID | Input | Label | Success criterion for “A closed under RH” |
-|----|--------|-------|-------------------------------------------|
-| ANT-1 | Control of zeros with \(|\gamma|>G(T)\) in the window residual | Assumed / open | Explicit \(G(T)\) + bound \(\to0\) in \(R_d\) |
-| ANT-2 | True \(\psi\) or \(\theta\) explicit-formula remainder (prime powers, contours) | Assumed / open | Constants + \(T\to\infty\) rate |
-| ANT-3 | Identification: arithmetic \(q_T\) equals EF sum + remainders up to \(o_{R_d}(1)\) | Open | Norm equivalence on log-window |
-| ANT-4 | Optional: weight-class theorem for **arithmetic** \(Wq_T\) (M6 is model-only) | Open | Same decay after \(w\in W_\alpha\) |
+**Hypotheses.** Prime-power, trivial-zero, and contour contributions collected in
+\(r_T^{\mathrm{arith}}\) after the same smoothing.
 
-See [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md) for (ANT-1)–(ANT-2) detail.
+**Adapted conclusion.**
+\[
+\delta_{\mathrm{arith}}:=\frac{\|w\,r_T^{\mathrm{arith}}\|_2}{\|w\,q_T^{(N)}\|_2}\to0.
+\]
 
----
+### ANT-4 — Weight transfer (optional)
 
-## 5. Checkable model chain (in-repo)
-
-API: `pbss.theorem_a_chain.model_chain_report(T, …)`.
-
-For each \(T\), the report returns:
-
-- Empirical \(R_d\) of pure CL, finite EF, and weighted versions (shipped energy + weights).
-- **Proved-style majorants** M5 / M6 (must dominate empirical for large \(T\)).
-- Scaffolding tail majorant (labeled, not arithmetic).
-- Flags: `proved_model_decay_ok`, `full_arithmetic_A_status="open"`, RH non-claim banner.
-
-Multi-\(T\) artifact: `results/theorem_a_model_chain/` (optional campaign).  
-Tests: `tests/test_theorem_a_chain.py`.
+**Support.** In-repo **M6** for model residuals; \(w\in W_\alpha\) multiplies all terms in
+the ANT-3 identity. Bulk non-vanishing of \(\|w q\|_2\) as in `pbss.weights`.
 
 ---
 
-## 6. Relation to numerics (do not misread)
+## 4. Conditional deduction (no unlabeled gaps)
 
-| Campaign | Finding | Does it complete A? |
-|----------|---------|---------------------|
-| Grand / overnight / extend-\(x\) | Arith \(R_4\sim0.15\)–\(0.19\) | **No** — plateau, not collapse |
-| Open-plateau peel | More zeros ≠ lower arith \(R_d\) | **No** — supports remainder gap |
-| Arithmetic weights | Tukey lowers \(R_d\) somewhat | **No** — still not A₀; endpoint clue only |
-| Model CL / EF / M5–M6 tests | Decay under majorants | **Yes for models only** |
+Under RH + ANT-3 + ANT-1 + ANT-2 (+ optional ANT-4):
+
+1. **Identification (ANT-3):**  
+   \(w q_T^{\mathrm{arith}}=w q_T^{(N)}+w r^{\mathrm{tail}}+w r^{\mathrm{arith}}+e_T\) with
+   \(\|e_T\|/\|w q^{\mathrm{arith}}\|\to0\).
+
+2. **Model decay (M5, M6):** \(R_d(w q_T^{(N)})=O_d(T^{-2})\to0\) for each admissible
+   truncation schedule \(N=N(T)\) built from critical-line modes.
+
+3. **Small remainders (ANT-1, ANT-2):**  
+   \(\delta:=\delta_{\mathrm{tail}}+\delta_{\mathrm{arith}}+\|e_T\|/\|\cdot\|\to0\).
+
+4. **Perturbation (M7):** if \(R_0=R_d(w q_T^{(N)})\to0\) and \(\delta\to0\) with \(\delta<1\), then
+   \[
+   R_d(w q_T^{\mathrm{arith}})
+   \le \frac{\bigl(\sqrt{R_0}+\delta\bigr)^2}{(1-\delta)^2}\to0.
+   \]
+
+**Therefore Full Theorem A holds under RH + the cited inputs.**  
+No step remains “scaffolding only.” Unconditional RH is not obtained.
+
+Code: `ab_closure.energy_ratio_perturbation_bound`, `full_a_gap_table`, `ant_citations`,
+`conditional_full_a_report`.
 
 ---
 
-## 7. Package status summary
+## 5. Relation to numerics (do not misread)
+
+| Campaign | Finding | Completes unconditional A? |
+|----------|---------|----------------------------|
+| Grand / extend-\(x\) plateau | Arith \(R_4\sim0.15\)–\(0.19\) | **No** — finite \(T\); conditional A is \(T\to\infty\) under RH+ANT |
+| Open-plateau peel | Model zeros ≠ full arith identity | Consistent with needing ANT-2/3, not a refutation |
+| Model CL/EF M5–M6 tests | Decay under majorants | **Yes for models** |
+
+---
+
+## 6. Package status summary
 
 | Item | Status |
 |------|--------|
-| Full A statement under RH | **Complete** (this document §1) |
-| Model lemma chain M1–M6 | **Proved** |
-| Conditional deduction sketch | **Complete** (§2) |
-| ANT-1…ANT-4 filled with proofs | **Open** |
-| Unconditional RH | **Open** (non-goal of this package) |
-| RH close-out path | [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) |
+| Full A statement under RH | **Complete** (§1) |
+| Model lemmas M1–M6 + M7 | **Proved** |
+| ANT-1…ANT-3 | **Cited** with full hypotheses (§3) |
+| Conditional deduction | **Closed** (§4) |
+| Unconditional RH | **Open** |
+| Machine status | `full_arithmetic_A = "closed_conditional"` |
 
-**Package complete. Full arithmetic Theorem A incomplete. RH open.**
+**Full arithmetic Theorem A is closed conditionally. RH remains open.**

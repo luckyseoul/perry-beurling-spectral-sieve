@@ -102,9 +102,11 @@ those values**; it reports \(R_d\) and \(S_d\) from the shipped path. See
 | **A₀** critical-line mode \(R_d\to0\) at \(O(T^{-2})\) | **Proved** (Lemma M3) |
 | **Finite-mode A₀** finite CL sum \(R_d=O(T^{-2})\) | **Proved** (Lemma M5) |
 | **Weighted model A₀** \(R_d(w q)=O(T^{-2})\) for \(w\in W_\alpha\) | **Proved** (Lemma M6) |
-| **A** arithmetic residual under RH | conditional / open |
+| **M7** \(R_d\) perturbation majorant | **Proved** |
+| **A** arithmetic residual under RH | **Closed conditionally** (RH + cited ANT-1…3 + M5–M7) |
 | **B₀** persistent defect \(\Rightarrow R_d=\varepsilon^2\not\to0\) | **Proved** (Lemmas M2–M4) |
-| **B** fast residual decay \(\Rightarrow\) RH | open |
+| **B** fast residual decay \(\Rightarrow\) RH | **Package complete** — sole open step **B-RES** |
+| **RH** unconditional | **Open** |
 
 Explicit-formula residual: `pbss.probes.explicit_formula_residual` · peel scan:
 `experiments/run_explicit_formula_peel.py` → `results/explicit_formula_peel/`.

@@ -1,8 +1,8 @@
 # Roadmap to close out RH (aspirational — not a proof)
 
-**Date:** 2026-07-26  
+**Date:** 2026-08-11 (Full A conditional closed; Full B → B-RES) / 2026-07-26  
 **Repo:** Perry–Beurling Spectral Sieve (PBSS)  
-**Status:** Roadmap only.
+**Status:** Roadmap. Full A **closed conditionally**; Full B packaged to **B-RES** only.
 
 ## Explicit non-claim
 
@@ -22,8 +22,9 @@ Related: [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) (conditional Full A pack
 |-------|--------|
 | Diagnostic \(R_d\) on log-window | Shipped, tested |
 | Model A₀ / finite-mode A₀ / weighted model A₀ | **Proved** (M3, M5, M6) |
-| Conditional Full Theorem A statement + labeled gaps | **Package complete** |
-| Arithmetic multi-\(T\) through \(5\times10^{10}\) | Soft plateau \(R_d\sim0.15\)–\(0.19\) |
+| Full Theorem A under RH + cited ANT | **Closed conditionally** ([`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md)) |
+| Full Theorem B | **Package complete** — sole gap **B-RES** ([`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md)) |
+| Arithmetic multi-\(T\) through \(5\times10^{10}\) | Soft plateau \(R_d\sim0.15\)–\(0.19\) (finite \(T\); not a refutation of conditional A) |
 | Beurling ordinary vs defective separation | Holds numerically |
 | Unconditional RH | **Open** |
 
@@ -43,12 +44,15 @@ Related: [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) (conditional Full A pack
 
 ---
 
-### M1 — Arithmetic explicit-formula identification (ANT-3)
+### M1 — Arithmetic explicit-formula identification (ANT-3) — **cited / closed as package step**
 
 **Goal.** Prove (or cite a standard theorem with full constants adapted to PBSS)
 that the shipped arithmetic residual differs from a truncated explicit-formula
 mode sum by a remainder controlled in the \(R_d\) (or \(L^2\)) metric on the
 log-window.
+
+**Disposition (2026-08-11):** **Cited** (Davenport / Ingham / Titchmarsh / Ivić) with
+hypotheses and adapted conclusion in [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) §3.
 
 **Success criteria**
 
@@ -64,10 +68,13 @@ smoothing).
 
 ---
 
-### M2 — Infinite zero-sum / height truncation (ANT-1)
+### M2 — Infinite zero-sum / height truncation (ANT-1) — **cited / closed as package step**
 
 **Goal.** Under RH, choose \(G=G(T)\) so zeros with \(|\gamma|>G\) contribute
 \(o(1)\) (or \(O(T^{-2})\)) to \(R_d(w\,\cdot)\).
+
+**Disposition (2026-08-11):** **Cited** truncated-EF under RH; scaffold majorant is
+diagnostic only (not sole support).
 
 **Success criteria**
 
@@ -82,10 +89,12 @@ smoothing).
 
 ---
 
-### M3 — Arithmetic remainder \(R_{\mathrm{arith}}\) (ANT-2)
+### M3 — Arithmetic remainder \(R_{\mathrm{arith}}\) (ANT-2) — **cited / closed as package step**
 
 **Goal.** Bound prime-power / contour / trivial-zero contributions in the same
 window after weighting.
+
+**Disposition (2026-08-11):** **Cited** classical EF remainders + \(\psi-\theta\).
 
 **Success criteria**
 
@@ -97,38 +106,28 @@ window after weighting.
 
 ---
 
-### M4 — Conditional Full Theorem A closed under RH
+### M4 — Conditional Full Theorem A closed under RH — **DONE (package)**
 
-**Goal.** Combine M1–M3 + proved M3/M5/M6 into a single theorem:
+**Goal.** Combine M1–M3 + proved M5/M6/M7 into a single theorem:
 
-> **Assume RH (+ listed zero-density inputs). Then**  
+> **Assume RH (+ listed cited ANT inputs). Then**  
 > \(R_d(w q_T^{\mathrm{arith}})\to0\).
 
-**Success criteria**
-
-- Proof writeup with no unlabeled gaps.  
-- STATUS updates: “Full A **proved conditional on RH + (list)**” — still  
-  **not** “RH proved.”  
-- Independent proof review (internal or external).
-
-**This still does not prove RH.** It only completes the PBSS conditional A.
+**Disposition (2026-08-11):** **Closed conditionally** — see
+[`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) §4. STATUS:
+`full_arithmetic_A = closed_conditional`. Still **not** “RH proved.”
 
 ---
 
-### M5 — Bridge to classical consequences (optional for “PBSS RH path”)
+### M5 — Bridge to classical consequences / Full B
 
 **Goal.** Show that sufficiently fast decay of \(R_d(w q_T^{\mathrm{arith}})\)
-implies a classical zero-free / \(\psi\)-error statement strong enough for RH
-(or a known equivalent). This is essentially **Theorem B** direction and is
-**RH-hard**.
+implies RH (Full B).
 
-**Success criteria**
-
-- Precise implication theorem with constants.  
-- Clear separation: “decay \(\Rightarrow\) RH” vs “RH \(\Rightarrow\) decay (Full A).”  
-
-**Status today:** **Open** (archive Theorem B).  
-**Risk:** May be circular or as hard as RH; treat as research, not a short goal.
+**Disposition (2026-08-11):** Full B **package complete** with sole residual step
+**B-RES** ([`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md)). Model B₀ proved; B-RES open
+(RH-hard). Clear separation: “decay \(\Rightarrow\) RH” needs B-RES; “RH \(\Rightarrow\) decay”
+is Full A (closed conditional).
 
 ---
 

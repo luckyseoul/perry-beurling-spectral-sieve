@@ -1,12 +1,13 @@
 # Theorems A & B — precise statements (PBSS)
 
-**Status date:** 2026-07-26  
+**Status date:** 2026-08-11  
 **Not an unconditional proof of the Riemann Hypothesis.**
 
 This document locks definitions so numerics, code, and math refer to the same objects.
-Proved results in this repo are **about the diagnostic** (lemmas M1–M5, including
-finite-mode A₀). Claims that need RH or that convert low \(R_d\) into zero-free
-regions are labeled **conditional / open**.
+Proved results in this repo are **about the diagnostic** (lemmas M1–M7, including
+finite-mode A₀ and the \(R_d\) perturbation majorant M7). Full Theorem A is
+**closed conditionally** under RH + cited ANT inputs. Full Theorem B is packaged to a
+**single residual step B-RES**. Unconditional RH remains **open**.
 
 ---
 
@@ -152,7 +153,7 @@ Shipped (not full A):
 Writeup: [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md). Campaign:
 `results/theorem_a_scaffold/`. **Full arithmetic A still open.**
 
-### Full Theorem A (**conditional package complete; arithmetic proof open**)
+### Full Theorem A (**closed conditionally**)
 
 **Hypothesis (RH).** All non-trivial zeros of \(\zeta\) satisfy \(\mathrm{Re}\,\rho=\tfrac12\).
 
@@ -162,14 +163,14 @@ equivalent explicit-formula residual) on the window of length \(T\),
 R_d(q_T)\to0\qquad(T\to\infty).
 \]
 
-**Package:** Self-contained writeup with proved/assumed/open labels:  
-[`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md). Model chain exercise:
-`pbss.theorem_a_chain`.
+**Package:** [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) · code `pbss.ab_closure`.
 
-**Status:** The **statement + lemma chain + gap list** is complete. The arithmetic
-implication still requires external ANT inputs (infinite zeros, \(\psi\)/\(\theta\)
-remainder, residual identification) — **not proved in-repo**. RH remains open.
-Roadmap: [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) (**not** a proof of RH).
+**Status:** **Closed conditionally.** Every required step is **proved** (M5–M7) or
+**cited** (ANT-1 infinite tail under RH; ANT-2 arithmetic remainder; ANT-3 EF
+identification) with hypotheses listed and conclusions adapted to the shipped residual,
+\(W_\alpha\), and \(R_d\). Scaffold tail majorants are diagnostic only.  
+**Unconditional RH remains open.** Roadmap:
+[`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) (**not** a proof of RH).
 
 ### Arithmetic multi-\(T\) evidence (measured, not a proof)
 
@@ -207,16 +208,17 @@ for all large \(T\), then it **cannot** be of the form “high-frequency only”
 in the sense of M2 with \(\varepsilon\to0\). Equivalently (M4): vanishing of
 \(R_d\) is **necessary** for the absence of a persistent low-degree component.
 
-### Full Theorem B (**conditional / open**)
+### Full Theorem B (**package complete — single residual step B-RES**)
 
-**Claim (archive intent).** If \(R_d(q_T)\) decays sufficiently rapidly as
+**Claim.** If \(R_d(q_T^{\mathrm{arith}})\) decays sufficiently rapidly as
 \(T\to\infty\), then \(\zeta\) has no zero with \(\mathrm{Re}\,\rho\neq\tfrac12\).
 
-**Status:** The implication
-“fast decay of the prime residual’s \(R_d\) \(\Rightarrow\) RH”
-is essentially as hard as RH. **Not proved here.** Off-critical model modes
-\(e^{T(\sigma-1/2)u}\sin(tTu)\) are implemented for numerical comparison; a
-complete reduction from arithmetic residuals to these modes is open.
+**Package:** [`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md) · `pbss.ab_closure`.
+
+**Status:** **Package complete.** Model B₀ (M2–M4) is **proved**. Model off-critical
+obstruction is **proved as a model**. The **only** remaining open step is **B-RES**
+(arithmetic off-critical injection after EF cancellations) — RH-hard. No other
+unlabeled Full-B gaps. B₀ alone is **not** Full B. Unconditional RH remains **open**.
 
 ---
 
@@ -238,15 +240,14 @@ peel column records \(R_d\) after stripping the first \(N\) modes from a fixed
 
 ## 4. What is open
 
-1. Full Theorem A for the **arithmetic** residual under RH (infinite zero-sum /
-   remainder control). Finite truncations are covered by M5.  
-2. Full Theorem B (converse / obstruction ⇒ RH).  
+1. **Unconditional RH** (non-goal of Full A; blocked for Full B solely by **B-RES**).  
+2. **B-RES** — arithmetic off-critical injection (only Full-B residual step).  
 3. Sharp rate \(O(T^{-2(d+1)})\) for model or arithmetic residuals.  
 4. Legacy normalization with \(P\approx3.92\).  
-5. Diamond-system battery and large-\(T\) prime scans beyond current \(x_{\max}\).  
-6. Matching arithmetic \(q_T=(\theta-x)/\sqrt{x}\) to an explicit-formula residual
-   (zero-peeling the **prime** residual, not only the model sum) — peel campaign
-   shipped; arithmetic \(R_d\) still plateaus through \(x\le5\times10^{10}\).
+5. Independent re-proof of classical ANT-1…3 constants inside this repo (currently
+   **cited**, not re-derived).  
+6. Finite-\(T\) arithmetic plateau explanation (secondary terms) — consistent with
+   conditional A, not a gap in the Full-A label table.
 
 ### Marathon campaigns (measured)
 

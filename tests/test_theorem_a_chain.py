@@ -16,18 +16,20 @@ from pbss.theorem_a_chain import (  # noqa: E402
 )
 
 
-def test_package_status_does_not_claim_rh_or_full_a():
+def test_package_status_does_not_claim_rh():
     s = package_status()
     assert s["conditional_theorem_a_package"] == "complete"
-    assert s["full_arithmetic_A"] == "open"
+    assert s["full_arithmetic_A"] == "closed_conditional"
     assert s["rh"] == "open"
     assert "NOT AN UNCONDITIONAL PROOF OF RH" in s["banner"]
+    # Full B packaged; not RH
+    assert s.get("full_B") == "package_complete_single_residual"
 
 
 def test_model_chain_report_fields_and_labels():
     row = model_chain_report(20.0, degree=4, n_zeros=8, n_points=2048)
     assert row["T"] == 20.0
-    assert row["full_arithmetic_A_status"] == "open"
+    assert row["full_arithmetic_A_status"] == "closed_conditional"
     assert row["rh_status"] == "open"
     emp = row["empirical"]
     assert 0.0 <= emp["R_d_cl"] <= 1.0 + 1e-9

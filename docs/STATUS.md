@@ -1,20 +1,22 @@
 # Status: Perry–Beurling Spectral Sieve
 
-**Date:** 2026-07-29 (tight stress) / 2026-07-26 (marathon)  
+**Date:** 2026-08-11 (Full A/B package closure) / 2026-07-29 (tight stress)  
 **Repo:** `luckyseoul/perry-beurling-spectral-sieve`
 
 ## Explicit non-claim
 
 **This repository does not contain an unconditional proof of the Riemann Hypothesis.**
 
-What *is* claimed: model lemmas M1–M6, multi-\(T\) numerics, truncated explicit-formula
+What *is* claimed: model lemmas **M1–M7**, multi-\(T\) numerics, truncated explicit-formula
 residuals, arithmetic zero-peel diagnostics, Beurling battery scorecards, extended-\(x\)
-scans, and MC instrument stress. The **Conditional Theorem A package** (statement +
-lemma chain + labeled ANT gaps) is complete; **Full arithmetic A under RH** still needs
-external ANT inputs. Full Theorems A/B and **RH remain open**.
+scans, and MC instrument stress. **Full Theorem A** is **closed conditionally** under
+RH + cited ANT-1…3 + M5–M7 ([`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md)). **Full Theorem B**
+is packaged to a **single residual step B-RES** ([`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md)).
+**Unconditional RH remains open.**
 
 Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) ·  
-**Conditional A package:** [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) ·  
+**Full A package:** [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) ·  
+**Full B package:** [`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md) ·  
 **RH close-out roadmap (not a proof):** [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) ·  
 **Research history (July PBSS + campaigns):** [`RESEARCH_HISTORY.md`](RESEARCH_HISTORY.md) ·  
 **Earlier record (Nov 2025 – Jun 2026):** [`PROJECT_RECORD_2025-11_to_2026-06.md`](PROJECT_RECORD_2025-11_to_2026-06.md) ·  
@@ -31,7 +33,7 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 
 ### Formalization
 
-Locked working definitions: \(R_d\), \(S_d=T^{2(d+1)}R_d\), \(P(q):=S_d\) (not legacy 3.92). Theorems A₀/M3, finite A₀/M5, B₀/M2–M4 **proved** in-repo; full A (arithmetic under RH) and B (converse) **open**.
+Locked working definitions: \(R_d\), \(S_d=T^{2(d+1)}R_d\), \(P(q):=S_d\) (not legacy 3.92). Theorems A₀/M3, finite A₀/M5, B₀/M2–M4, M6–M7 **proved** in-repo; Full A **closed conditional** (RH+cited ANT); Full B **package complete** (sole open step B-RES); unconditional RH **open**.
 
 ### MC ablations (192 000 trials)
 

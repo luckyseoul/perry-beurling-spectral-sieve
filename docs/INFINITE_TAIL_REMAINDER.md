@@ -6,9 +6,10 @@
 
 ## Explicit non-claim
 
-**Not a proof of RH. Not full Theorem A for the arithmetic residual.**  
-This note separates what the **shipped majorants control** from what a true
-analytic-number-theory remainder would require.
+**Not a proof of RH.** Full Theorem A is **closed conditionally** under RH + cited
+ANT-1…3 ([`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md)); this note documents the
+**diagnostic scaffold** for infinite tails. The scaffold is **not** the sole support
+for Full A — ANT-1 (cited truncated EF under RH) is.
 
 ---
 

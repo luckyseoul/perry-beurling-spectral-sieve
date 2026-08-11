@@ -70,6 +70,16 @@ from .remainder import (
     truncated_mode_sum,
 )
 from .theorem_a_chain import model_chain_report, multi_T_model_chain, package_status
+from .ab_closure import (
+    ant_citations,
+    conditional_full_a_report,
+    energy_ratio_perturbation_bound,
+    full_a_gap_table,
+    full_b_gap_table,
+    off_critical_model_obstruction,
+    package_status as full_ab_package_status,
+    verify_m7_on_grid,
+)
 from .ef_identify import (
     identify_ef,
     hypothesis_residual,
@@ -137,6 +147,14 @@ __all__ = [
     "model_chain_report",
     "multi_T_model_chain",
     "package_status",
+    "full_ab_package_status",
+    "ant_citations",
+    "conditional_full_a_report",
+    "energy_ratio_perturbation_bound",
+    "full_a_gap_table",
+    "full_b_gap_table",
+    "off_critical_model_obstruction",
+    "verify_m7_on_grid",
     "identify_ef",
     "hypothesis_residual",
     "multi_hypothesis_scan",

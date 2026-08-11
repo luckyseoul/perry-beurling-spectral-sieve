@@ -175,3 +175,39 @@ estimate modewise and sum (as in M5) to get \(O_d(T^{-2})\). □
 **Code.** `lemmas.bound_R_d_weighted_sine_order`,
 `lemmas.bound_R_d_weighted_finite_mode_sum`, weights in `pbss.weights`.
 
+
+---
+
+## Lemma M7 (\(R_d\) perturbation majorant)
+
+**Statement.** Let \(q_0,r\in L^2([0,1])\) with \(\|q_0\|_2>0\) and
+\(\delta:=\|r\|_2/\|q_0\|_2<1\). Set \(q=q_0+r\) and \(R_0=R_d(q_0)\). Then
+\[
+R_d(q)
+\le
+\frac{\bigl(\sqrt{R_0}+\delta\bigr)^2}{(1-\delta)^2}.
+\]
+In particular, if \(R_0\to0\) and \(\delta\to0\), then \(R_d(q)\to0\).
+
+**Proof.** Orthogonal projection \(P_d\) is a contraction on \(L^2\), so
+\[
+\|P_d q\|_2
+\le \|P_d q_0\|_2 + \|P_d r\|_2
+\le \|P_d q_0\|_2 + \|r\|_2
+= \sqrt{R_0}\,\|q_0\|_2 + \|r\|_2
+= \bigl(\sqrt{R_0}+\delta\bigr)\,\|q_0\|_2.
+\]
+Also \(\|q\|_2\ge\|q_0\|_2-\|r\|_2=(1-\delta)\|q_0\|_2\). Therefore
+\[
+R_d(q)
+=\frac{\|P_d q\|_2^2}{\|q\|_2^2}
+\le
+\frac{(\sqrt{R_0}+\delta)^2\|q_0\|_2^2}{(1-\delta)^2\|q_0\|_2^2}
+=\frac{(\sqrt{R_0}+\delta)^2}{(1-\delta)^2}.
+\]
+The limit claim is immediate. □
+
+**Code:** `pbss.ab_closure.energy_ratio_perturbation_bound`, discrete check
+`verify_m7_on_grid`. **Role:** closes the triangle step in Full Theorem A under
+small identification/tail/arithmetic remainders (ANT-1…3).
+

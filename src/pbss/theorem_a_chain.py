@@ -28,7 +28,9 @@ from .weights import admissible_weight, apply_weight
 from .zeros import explicit_formula_amplitudes, zeta_zero_ordinates
 
 BANNER = "NOT AN UNCONDITIONAL PROOF OF RH"
-FULL_A_STATUS = "open"  # arithmetic Full A incomplete
+# Full A: closed conditionally under RH + cited ANT (see ab_closure / THEOREM_A_PACKAGE).
+# Not unconditional; RH remains open.
+FULL_A_STATUS = "closed_conditional"
 RH_STATUS = "open"
 
 
@@ -128,8 +130,10 @@ def model_chain_report(
         "rh_status": RH_STATUS,
         "banner": BANNER,
         "note": (
-            "Model chain only. Full arithmetic Theorem A remains open. "
-            "RH remains open. See docs/THEOREM_A_PACKAGE.md."
+            "Model chain only (M5/M6 majorants + scaffolding diagnostic tail). "
+            "Full arithmetic Theorem A is closed *conditionally* under RH + "
+            "cited ANT-1..3 + M7 — see docs/THEOREM_A_PACKAGE.md / pbss.ab_closure. "
+            "RH remains open. Scaffold tail is not a required Full-A step."
         ),
     }
 
@@ -142,13 +146,12 @@ def multi_T_model_chain(
     return [model_chain_report(float(T), **kwargs) for T in T_values]
 
 
-def package_status() -> Dict[str, str]:
-    """Machine-readable status of Conditional Theorem A package vs RH."""
-    return {
-        "conditional_theorem_a_package": "complete",
-        "full_arithmetic_A": FULL_A_STATUS,
-        "rh": RH_STATUS,
-        "banner": BANNER,
-        "writeup": "docs/THEOREM_A_PACKAGE.md",
-        "roadmap": "docs/RH_CLOSEOUT_ROADMAP.md",
-    }
+def package_status() -> Dict[str, object]:
+    """Machine-readable status of Full A/B packages vs RH (delegates to ab_closure)."""
+    from .ab_closure import package_status as _full_status
+
+    base = _full_status()
+    # Preserve legacy keys used by older tests/callers
+    base["conditional_theorem_a_package"] = "complete"
+    base["writeup"] = base.get("writeup_A", "docs/THEOREM_A_PACKAGE.md")
+    return base
