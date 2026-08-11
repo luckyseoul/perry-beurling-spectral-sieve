@@ -188,7 +188,7 @@ M2 infinite zeros under RH ──────────────┤
 | Milestone | Completing it means… | RH status after |
 |-----------|----------------------|-----------------|
 | M0–M3 | Engineering / conditional ANT packages | Still open |
-| M4 | Full A under RH (+ listed inputs) | Still open |
+| M4 | Full A under RH (+ listed cited ANT) | **Closed conditionally** |
 | M5 | Possible equivalence fragment | Still open unless equivalence is full RH |
 | M6 | Review quality | Still open |
 | M7 | Actual RH proof accepted | Closed only if M7 succeeds |

@@ -62,7 +62,7 @@ def main() -> None:
             {
                 "status": "completed",
                 "n_rows": len(rows),
-                "full_arithmetic_A": "open",
+                "full_arithmetic_A": "closed_conditional",
                 "rh": "open",
                 "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
             },

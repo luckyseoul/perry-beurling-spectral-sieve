@@ -167,7 +167,7 @@ tail majorant controls vs true \(\psi\)/\(\theta\) remainder.
 
 | Artifact | Role |
 |----------|------|
-| [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) | Full A under RH stated; M1–M6 chain; ANT-1…4 open; RH non-claim |
+| [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) | Full A **closed conditional**; M1–M7; ANT-1…3 **cited**; RH non-claim |
 | [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) | Ordered milestones M0–M7; **RH not closed** |
 | `pbss.theorem_a_chain` | Checkable multi-\(T\) model chain (not arithmetic A₀) |
 | `results/theorem_a_model_chain/` | Optional model-chain JSON |

@@ -154,4 +154,4 @@ PYTHONPATH=src python3 experiments/run_theorem_a_scaffold.py \
   --T-list 15,25 --n-strips 0,5,10 --n-zeros 10 --workers 4 --n-points 1024
 ```
 
-**RH remains open. Full Theorem A remains open.**
+**RH remains open.** Full Theorem A is **closed conditionally** — see [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md). This scaffold note is historical path documentation.

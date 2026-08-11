@@ -92,7 +92,7 @@ Model off-critical modes vs CL: measured R_d ratios. This is a *diagnostic probe
 ### Degrades / remains weak
 
 1. **Arithmetic soft plateau** (prior campaigns): $R_4\sim0.15$–$0.19$ through $10^{10}$–$5\times10^{10}$ —
-   does **not** approach A₀ levels; zero-peel does not close the gap. Full A open.
+   does **not** approach A₀ levels; zero-peel does not collapse finite-T R_d. Full A closed_conditional (T→∞ under RH+ANT); RH open.
 2. **Theorem B:** off-critical model probes give a directional diagnostic only;
    no reduction from arithmetic residual to off-critical envelopes is proved.
 3. **Sharp rate** $O(T^{-2(d+1)})$: not supported as a proved bound; $T^{2(d+1)}R_d$ often grows.

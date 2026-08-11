@@ -614,7 +614,7 @@ def write_report(
     lines.append("### Degrades / remains weak")
     lines.append("")
     lines.append("1. **Arithmetic soft plateau** (prior campaigns): $R_4\\sim0.15$–$0.19$ through $10^{10}$–$5\\times10^{10}$ —")
-    lines.append("   does **not** approach A₀ levels; zero-peel does not close the gap. Full A open.")
+    lines.append("   does **not** approach A₀ levels; zero-peel does not collapse finite-T R_d. Full A closed_conditional (T→∞ under RH+ANT); RH open.")
     lines.append("2. **Theorem B:** off-critical model probes give a directional diagnostic only;")
     lines.append("   no reduction from arithmetic residual to off-critical envelopes is proved.")
     lines.append("3. **Sharp rate** $O(T^{-2(d+1)})$: not supported as a proved bound; $T^{2(d+1)}R_d$ often grows.")

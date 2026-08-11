@@ -112,4 +112,4 @@ print(bound_infinite_zero_tail_scaffold(30.0, n_kept=20, N_eff=5000, d=4))
 "
 ```
 
-**RH remains open. Full Theorem A remains open.**
+**RH remains open.** Full Theorem A is **closed conditionally** (RH + cited ANT); this note is diagnostic scaffolding only.

@@ -316,7 +316,7 @@ def main() -> None:
         "elapsed_s": elapsed,
         "phases": wanted,
         "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
-        "note": "Scaffolding for Theorem A — weight class + truncation remainder. Full A open.",
+        "note": "Scaffolding for Theorem A — weight class + truncation remainder. Full A closed_conditional under RH+ANT; RH open.",
     }
     (out / "SCAFFOLD_COMPLETE").write_text(json.dumps(final, indent=2) + "\n")
     (out / "scaffold_summary.json").write_text(json.dumps(final, indent=2) + "\n")

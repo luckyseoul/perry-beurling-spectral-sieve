@@ -218,7 +218,7 @@ def main() -> None:
         "not_an_RH_proof": True,
         "note": (
             "Arithmetic residual uses θ(x)-x over √x on u=log(x)/T with detrend. "
-            "A0 pure-mode decay is separate (proved). Full Theorem A under RH remains open."
+            "A0 pure-mode decay is separate (proved). Full Theorem A is closed conditionally under RH+cited ANT; RH open."
         ),
     }
 
