@@ -146,6 +146,12 @@ docs/               # THEOREMS_AB, PROOFS_LEMMAS, STATUS
   Local PDFs + notes: [`docs/related/anthropic-riemann-zeta/`](docs/related/anthropic-riemann-zeta/)  
   (Third-party; not part of PBSS; different theorem class — see that README.)
 
+### Jensen / de Bruijn–Newman (same author, pre-PBSS survivor)
+
+- **Jensen/moment hierarchy blindness for \(\Lambda\):** central certificates falsely look hyperbolic down to \(t=-0.7\) while the binding Lehmer pair needs moment order \(\sim 13400\).  
+  Note: [`docs/JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](docs/JENSEN_MOMENT_HIERARCHY_BLINDNESS.md) · code: `pbss.jensen_blindness`  
+  (Not RH; not a new sharp \(\Lambda\) bound beyond optional bookkeeping.)
+
 ### By the same author
 
 - Other number-theory / exploratory archives (e.g. `perry-spirals`, `wieferich-hunts`) may appear under the same GitHub account; they are separate projects and not required to run PBSS.

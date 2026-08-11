@@ -28,7 +28,7 @@ The **Jensen/moment hierarchy blindness** result is the only output that constra
 - Central certificate **falsely certifies hyperbolicity down to t = −0.7** (Turán ratio barely moves: ~1.04343 → ~1.04336).
 - **Index argument:** accessible central Jensen shifts **n ≤ 30** (moments to order ~34) only probe the first ~30 zeros, heights **≲ 101**.
 - The binding **Lehmer pair at zero #~6709** (γ ≈ 7005.06 / 7005.10) would need moments to order **~13,400** to reach.
-- **Status:** result established, **unwritten**. The only note actually drafted is the **weighted-measure sensitivity** note (engineering, not the top asset).
+- **Status:** **written** — [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md) (`pbss.jensen_blindness`). Weighted-measure sensitivity remains a separate engineering note.
 
 ---
 
@@ -52,7 +52,7 @@ produced a genuine, narrow, defensible result — and it is **not** the Spectral
    down to **t = −0.7**; index argument that shifts **n ≤ 30** only reach heights
    **≲ 101**, while the binding Lehmer pair (#~6709) needs moments of order **~13,400**.
    The only result that constrains an active external program (Λ certificates), not a
-   private framework. **Established, unwritten.**
+   private framework. **Written:** [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md).
 2. **Λ ≤ 0.20.** Polymath15’s 0.22 updated with Platt–Trudgian height 3×10¹² in the
    Ki–Kim–Lee dynamical inequality. Bookkeeping, correct, fold into (1).
 3. **Montgomery-blindness theorem.** No 1D spacing statistic can imply RH; the gap is
@@ -427,7 +427,8 @@ Polymath's effective sum from memory, where subtle constant errors hide.
 
 > **Reconstruction flag B.** This — not the Spectral Sieve — is the strongest asset of
 > the whole Nov 2025 – Jun 2026 program. It constrains *active* Λ / certificate work.
-> Status: **established, unwritten** (only the weighted-measure note is drafted).
+> Status: **written** — see [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md)
+> and `pbss.jensen_blindness` (index argument checkable; \(t=-0.7\) ratios historical).
 
 Built the moment/Jensen polynomial hierarchy: moments
 
@@ -541,7 +542,7 @@ embarrassingly parallel — but the payoff ceiling in §9 bounds how much it is 
 
 | Priority | Output | Length | Suggested venue | Status |
 |---:|---|---|---|---|
-| **1 (top)** | Jensen/moment hierarchy blindness for Λ (false hyperbolicity to t=−0.7; index n≤30 → height ≲101 vs Lehmer #~6709 needs order ~13400) | Note | *Experimental Mathematics* / *J. Number Theory* | **Established, unwritten** |
+| **1 (top)** | Jensen/moment hierarchy blindness for Λ (false hyperbolicity to t=−0.7; index n≤30 → height ≲101 vs Lehmer #~6709 needs order ~13400) | Note | *Experimental Mathematics* / *J. Number Theory* | **Written:** [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md) |
 | 2 | Λ ≤ 0.20 restatement | Short | Fold into #1 | Stated, not written up |
 | 3 | Montgomery blindness / 1D statistics cannot reach RH | 4–6 pp | *Amer. Math. Monthly*, *Exp. Math.*, *JNT* short comm. | Established, outline drafted |
 | 4 | Gamma-shaped measure sensitivity for Beurling detection | 4–6 pp | *Integers*, *JNT* short comm., *Exp. Math.* | **Only drafted note** + reference implementation |

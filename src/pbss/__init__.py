@@ -80,6 +80,12 @@ from .ab_closure import (
     package_status as full_ab_package_status,
     verify_m7_on_grid,
 )
+from .jensen_blindness import (
+    index_argument_report,
+    jensen_blindness_report,
+    max_zero_ordinal_probed_by_even_moment_order,
+    min_even_moment_order_for_zero_ordinal,
+)
 from .ef_identify import (
     identify_ef,
     hypothesis_residual,
@@ -155,6 +161,10 @@ __all__ = [
     "full_b_gap_table",
     "off_critical_model_obstruction",
     "verify_m7_on_grid",
+    "index_argument_report",
+    "jensen_blindness_report",
+    "max_zero_ordinal_probed_by_even_moment_order",
+    "min_even_moment_order_for_zero_ordinal",
     "identify_ef",
     "hypothesis_residual",
     "multi_hypothesis_scan",
