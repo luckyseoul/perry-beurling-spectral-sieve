@@ -11,8 +11,7 @@ Open research archive and **runnable reconstruction** of the **Perry–Beurling 
 **Status:** Independent research. Reconstruction of core projection diagnostic (2026-07).  
 **License:** MIT — see [`LICENSE`](LICENSE).  
 **Not a proof of RH** — see [`docs/STATUS.md`](docs/STATUS.md).  
-**Research history** (July 2026 PBSS reconstruction): [`docs/RESEARCH_HISTORY.md`](docs/RESEARCH_HISTORY.md).  
-**Earlier project record** (Nov 2025 – Jun 2026; sieve killed; Λ / Jensen survivors): [`docs/PROJECT_RECORD_2025-11_to_2026-06.md`](docs/PROJECT_RECORD_2025-11_to_2026-06.md).
+**Docs index:** [`docs/README.md`](docs/README.md).
 
 ## Overview
 
@@ -46,7 +45,7 @@ The framework is a **classifier / diagnostic**, not a full proof of RH.
 |:----------------:|:----------:|
 | <img src="docs/figures/beurling_battery_Rd_vs_T.png" alt="Beurling ordinary vs defective R_d vs T" width="420"/> | <img src="docs/figures/status_map.png" alt="Theorem A/B status map" width="420"/> |
 
-More figures (including paper renders): [`docs/figures/`](docs/figures/) · [`docs/paper/figures/`](docs/paper/figures/).
+More figures: [`docs/figures/`](docs/figures/) (canonical; paper uses the same files).
 
 ## Quick start
 
@@ -122,11 +121,15 @@ Details: [`docs/THEOREMS_AB.md`](docs/THEOREMS_AB.md) · Proofs: [`docs/PROOFS_L
 ## Repository layout
 
 ```
-src/pbss/           # library: basis, projection, probes, lemmas
-tests/              # pytest driving real projection API
-experiments/        # multi-T, arithmetic, overnight campaign
-results/            # JSON/TXT/plots from campaigns
-docs/               # THEOREMS_AB, PROOFS_LEMMAS, STATUS
+src/pbss/           # installable library
+tests/              # pytest (real shipped paths)
+experiments/        # campaign entry scripts
+results/            # campaign JSON/TXT/plots (large primes gitignored)
+docs/               # index: docs/README.md
+docs/figures/       # canonical images (README + paper)
+docs/paper/         # status note TeX/PDF only
+docs/goals/         # optional agent goal files
+docs/related/       # third-party reference PDFs
 ```
 
 ## Limitations

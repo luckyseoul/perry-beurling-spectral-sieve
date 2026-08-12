@@ -10,17 +10,18 @@ build/
 .mypy_cache/
 .ruff_cache/
 
-# Large binary / regenerable data
+# Large / regenerable data (do not commit)
 *.npy
 *.npz
 results/prime_checkpoints/
 results/visuals/
-results/beurling_battery_smoke/
-results/mc_stress_smoke/
-results/overnight_marathon/smoke_*/
-results/**/smoke_*/
+results/**/smoke*/
+results/*_smoke/
+results/extend_x_scan/*.bin
+results/extend_x_scan/*csum*
+results/extend_x_scan/*mmap*
 
-# open-plateau large local dumps (compact beurling.json is committed)
+# open-plateau heavy dumps (compact summaries may still be tracked)
 results/open_plateau/beurling/beurling_full_rows.json
 results/open_plateau/beurling/*_fast.json
 results/open_plateau/beurling/beurling_n*_fast.json
@@ -28,3 +29,7 @@ results/open_plateau/beurling/beurling_n20k_w86.json
 results/open_plateau/beurling/beurling_n100k_compact.json
 results/open_plateau/beurling/ordinary_le_*.npy
 **/beurling_full_rows.json
+
+# Editor / OS
+.DS_Store
+*~

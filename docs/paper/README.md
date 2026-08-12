@@ -1,21 +1,19 @@
 # PBSS status note (short paper)
 
 - **Source:** `pbss_status_note.tex`
-- **PDF:** `pbss_status_note.pdf` (5 pages)
+- **PDF:** `pbss_status_note.pdf`
 - **JPEGs:** `page1.jpg` … `page5.jpg` (page renders)
-- **Figures:** `figures/` (pipeline, status map, grand campaign plots)
+- **Figures:** shared from [`../figures/`](../figures/) (not duplicated here)
 
 Build:
 ```bash
-tectonic -X compile pbss_status_note.tex
-pdftoppm -jpeg -r 200 pbss_status_note.pdf page
+cd docs/paper
+tectonic pbss_status_note.tex
+pdftoppm -jpeg -r 150 pbss_status_note.pdf page
+# rename page-1.jpg → page1.jpg etc. if needed
 ```
 
 Independent research note — not a proof of RH.
 
-## Status note contents (2026-07-26 refresh)
-
-`pbss_status_note.tex` covers lemmas M1–M6, grand campaign to \(10^{10}\), open-plateau
-through \(5\times 10^{10}\), and Theorem-A scaffolding (weight class + remainder).
-Rebuild PDF with `pdflatex pbss_status_note.tex` when TeX is available.
+`pbss_status_note.tex` covers lemmas M1–M6+, campaigns, and Theorem-A scaffolding.
 **Not a proof of RH.**

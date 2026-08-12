@@ -52,7 +52,7 @@ produced a genuine, narrow, defensible result — and it is **not** the Spectral
    down to **t = −0.7**; index argument that shifts **n ≤ 30** only reach heights
    **≲ 101**, while the binding Lehmer pair (#~6709) needs moments of order **~13,400**.
    The only result that constrains an active external program (Λ certificates), not a
-   private framework. **Written:** [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md).
+   in-house framework. **Written:** [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md).
 2. **Λ ≤ 0.20.** Polymath15’s 0.22 updated with Platt–Trudgian height 3×10¹² in the
    Ki–Kim–Lee dynamical inequality. Bookkeeping, correct, fold into (1).
 3. **Montgomery-blindness theorem.** No 1D spacing statistic can imply RH; the gap is

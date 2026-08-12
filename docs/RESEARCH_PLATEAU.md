@@ -3,7 +3,7 @@
 **Date:** 2026-07-26  
 **Campaign entry:** `experiments/run_open_plateau.py`  
 **Artifacts:** `results/open_plateau/` (per-class JSON + `PHASE_*_COMPLETE` resume stamps)  
-**Related goal:** `OPEN_GOAL.md`
+**Related goal:** [`goals/OPEN_GOAL.md`](goals/OPEN_GOAL.md)
 
 ## Explicit non-claim
 
@@ -210,6 +210,6 @@ This is a **research judgment from numerics**, not a proof that RH is true or fa
 
 - Status board: [`STATUS.md`](STATUS.md)
 - **Theorem-A scaffolding (weight class + truncation remainder):** [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md)
-- Overnight floors: `OVERNIGHT_GOAL.md`, `results/overnight_marathon/`
-- Open goal: `OPEN_GOAL.md`
+- Overnight floors: [`goals/OVERNIGHT_GOAL.md`](goals/OVERNIGHT_GOAL.md), `results/overnight_marathon/`
+- Open goal: [`goals/OPEN_GOAL.md`](goals/OPEN_GOAL.md)
 - Lemmas / theorems: `THEOREMS_AB.md`, `PROOFS_LEMMAS.md`

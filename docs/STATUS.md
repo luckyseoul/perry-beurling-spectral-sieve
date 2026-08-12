@@ -74,7 +74,7 @@ legacy \(P\approx3.92\), independent re-derivation of classical ANT constants in
 
 ---
 
-## Overnight marathon (`OVERNIGHT_GOAL.md`)
+## Overnight marathon ([`goals/OVERNIGHT_GOAL.md`](goals/OVERNIGHT_GOAL.md))
 
 **Entry:** `experiments/run_overnight_marathon.py`  
 **Artifacts:** `results/overnight_marathon/` (phase stamps + peel / beurling / mc / residual)  
@@ -140,7 +140,7 @@ This STATUS + theorem pointers. Paper: `docs/paper/`. **No RH proof claim.**
 
 ---
 
-## Open-plateau campaign (`OPEN_GOAL.md`)
+## Open-plateau campaign ([`goals/OPEN_GOAL.md`](goals/OPEN_GOAL.md))
 
 **Entry:** `experiments/run_open_plateau.py`  
 **Artifacts:** `results/open_plateau/` (per-class JSON + `PHASE_*_COMPLETE` resume stamps)  
