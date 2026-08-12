@@ -2,7 +2,7 @@
 
 **NOT AN UNCONDITIONAL PROOF OF THE RIEMANN HYPOTHESIS.**
 
-Session: Grok Build long-horizon formalization + stress.
+Session: research session long-horizon formalization + stress.
 
 ## 1. Formalized diagnostics
 

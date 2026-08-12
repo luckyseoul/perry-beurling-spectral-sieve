@@ -1,8 +1,9 @@
-# Agent / overnight goals
+# Campaign goal notes
 
-Harness-oriented goal files (not theorem statements).
+Research briefs that drove multi-core campaigns (plateau, overnight marathon).  
+They are **not** product docs and not theorem statements.
 
-- [`OPEN_GOAL.md`](OPEN_GOAL.md) — open plateau research bars  
-- [`OVERNIGHT_GOAL.md`](OVERNIGHT_GOAL.md) — multi-phase marathon floors  
+- [`OPEN_GOAL.md`](OPEN_GOAL.md) — open-plateau research bars  
+- [`OVERNIGHT_GOAL.md`](OVERNIGHT_GOAL.md) — marathon work floors  
 
-Live scientific status lives in [`../STATUS.md`](../STATUS.md).
+Live status: [`../STATUS.md`](../STATUS.md).

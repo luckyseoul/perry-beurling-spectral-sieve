@@ -35,12 +35,12 @@
 | [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md) | Historical A scaffold path |
 | [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) | Aspirational milestones (RH not closed) |
 
-## Agent goals (optional harness)
+## Campaign briefs
 
 | Doc | Role |
-|-----|------|
-| [`goals/OPEN_GOAL.md`](goals/OPEN_GOAL.md) | Plateau research goal |
-| [`goals/OVERNIGHT_GOAL.md`](goals/OVERNIGHT_GOAL.md) | Marathon campaign goal |
+|------|------|
+| [`goals/OPEN_GOAL.md`](goals/OPEN_GOAL.md) | Open-plateau research bars |
+| [`goals/OVERNIGHT_GOAL.md`](goals/OVERNIGHT_GOAL.md) | Marathon work floors |
 
 ## Assets
 

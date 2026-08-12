@@ -6,7 +6,7 @@ Compares:
   (A) RH-consistent probes: high-frequency synthetic + prime residual
   (B) Defective control: low-degree contaminated oscillation
 
-Writes JSON + text under results/ and optional SCRATCH path.
+Writes JSON + text under results/ and optional extra output path.
 """
 from __future__ import annotations
 
@@ -118,7 +118,7 @@ def main() -> None:
         "--scratch",
         type=str,
         default="",
-        help="optional directory for SCRATCH copies of results",
+        help="optional directory for extra copies of results",
     )
     args = ap.parse_args()
 

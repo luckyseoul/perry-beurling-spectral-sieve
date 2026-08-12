@@ -128,7 +128,7 @@ results/            # campaign JSON/TXT/plots (large primes gitignored)
 docs/               # index: docs/README.md
 docs/figures/       # canonical images (README + paper)
 docs/paper/         # status note TeX/PDF only
-docs/goals/         # optional agent goal files
+docs/goals/         # campaign briefs (plateau / marathon)
 docs/related/       # third-party reference PDFs
 ```
 

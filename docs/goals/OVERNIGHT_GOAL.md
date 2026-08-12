@@ -1,8 +1,5 @@
 # Overnight marathon goal
 
-**Activate with something like:**  
-`/goal do OVERNIGHT_GOAL.md multi-core GPU resume RH open`
-
 ## One sentence
 Resume-capable multi-phase PBSS marathon on real compute: dense arithmetic zero-peel on existing 5e10 primes, large Beurling battery, large MC stress, GPU residual multi-T ablations; update STATUS; RH stays open. Finish when the **work floors** below are met with durable artifacts—not when a clock hits a number.
 

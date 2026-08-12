@@ -1,7 +1,7 @@
 {
   "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
   "date": "2026-07-29",
-  "session": "Grok Build tight stress",
+  "session": "research session tight stress",
   "definitions": {
     "log_window": "x = exp(u T), u in [0,1], T = log window length",
     "basis": "phi_k(u) = sqrt(2k+1) L_k(2u-1) orthonormal on L2[0,1]",

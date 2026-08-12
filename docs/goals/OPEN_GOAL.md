@@ -1,8 +1,5 @@
 # Open-ended goal: Why does arithmetic \(R_d\) plateau?
 
-**Activate (type roughly):**  
-`/goal open OPEN_GOAL.md multi-core resume RH open`
-
 ## Intent
 Not a checklist of trial counts. **Stay in research mode** until there is a defensible written answer (with multi-T evidence) to:
 

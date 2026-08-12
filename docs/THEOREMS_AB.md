@@ -260,7 +260,7 @@ See `docs/STATUS.md` marathon section: arithmetic zero-peel, extend-\(x\) to
 
 ## 5. Numerical support (multi-\(T\))
 
-See `results/multi_T_scan.json` and `{SCRATCH}/multi_T_scan.*`.
+See `results/multi_T_scan.json` .
 
 Expected qualitative picture (must match the run):
 

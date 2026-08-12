@@ -41,7 +41,7 @@ def formal_diagnostics() -> Dict[str, Any]:
     return {
         "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
         "date": "2026-07-29",
-        "session": "Grok Build tight stress",
+        "session": "research session tight stress",
         "definitions": {
             "log_window": "x = exp(u T), u in [0,1], T = log window length",
             "basis": "phi_k(u) = sqrt(2k+1) L_k(2u-1) orthonormal on L2[0,1]",
@@ -526,7 +526,7 @@ def write_report(
     lines.append("")
     lines.append("**NOT AN UNCONDITIONAL PROOF OF THE RIEMANN HYPOTHESIS.**")
     lines.append("")
-    lines.append("Session: Grok Build long-horizon formalization + stress.")
+    lines.append("Session: research session long-horizon formalization + stress.")
     lines.append("")
     lines.append("## 1. Formalized diagnostics")
     lines.append("")

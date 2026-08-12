@@ -27,7 +27,7 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 
 ---
 
-## Tight stress session (2026-07-29, Grok Build)
+## Tight stress session (2026-07-29, research session)
 
 **Entry:** `experiments/run_tight_stress_20260729.py`  
 **Artifacts:** `results/tight_stress_20260729/` (`STRESS_REPORT.md`, `formal_diagnostics.json`, MC/Beurling/off-critical JSON)  
