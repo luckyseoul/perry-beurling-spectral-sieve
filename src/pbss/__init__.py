@@ -90,6 +90,11 @@ from .plateau_secondary import plateau_secondary_report
 from .ant_audit import ant_interface_audit
 from .zero_proportion_feasibility import zero_proportion_feasibility_report
 from .b_res_threshold import b_res_threshold_report
+from .measure_sensitivity import (
+    confirm_sensitivity_claim,
+    gamma_weight,
+    sensitivity_experiment,
+)
 from .ef_identify import (
     identify_ef,
     hypothesis_residual,
@@ -173,6 +178,9 @@ __all__ = [
     "ant_interface_audit",
     "zero_proportion_feasibility_report",
     "b_res_threshold_report",
+    "confirm_sensitivity_claim",
+    "gamma_weight",
+    "sensitivity_experiment",
     "identify_ef",
     "hypothesis_residual",
     "multi_hypothesis_scan",
@@ -184,4 +192,4 @@ __all__ = [
     "M_ENRICHMENTS",
 ]
 
-__version__ = "0.9.1"
+__version__ = "1.0.0"

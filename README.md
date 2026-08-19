@@ -47,16 +47,27 @@ The framework is a **classifier / diagnostic**, not a full proof of RH.
 
 More figures: [`docs/figures/`](docs/figures/) (canonical; paper uses the same files).
 
-## Quick start
+## Quick start (tool)
 
 ```bash
-pip install -r requirements.txt
+pip install -e ".[dev]"
+pbss version
+pbss diagnose --demo
+pbss project --input path/to/q.npy --degree 4 --T 20
+pbss sensitivity --confirm-53
+pbss scorecard --x-max 1e6
+```
+
+Or without install: `PYTHONPATH=src python3 -m pbss …`
+
+Tool guide: [`docs/TOOL.md`](docs/TOOL.md) · Sensitivity (≥53% gain): [`docs/MEASURE_SENSITIVITY.md`](docs/MEASURE_SENSITIVITY.md)
+
+### Research campaigns (optional)
+
+```bash
 PYTHONPATH=src python3 -m pytest tests/ -v
 PYTHONPATH=src python3 experiments/run_diagnostic.py
 PYTHONPATH=src python3 experiments/run_multi_T.py --workers 86
-PYTHONPATH=src python3 experiments/run_arithmetic_multi_T.py --workers 86
-PYTHONPATH=src python3 experiments/run_overnight_campaign.py --workers 86 --scratch /tmp/pbss_campaign
-PYTHONPATH=src python3 experiments/run_explicit_formula_peel.py
 ```
 
 **Grand campaign** (shipped): `experiments/run_grand_campaign.py` — arithmetic residual to

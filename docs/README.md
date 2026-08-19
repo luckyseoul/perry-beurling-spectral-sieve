@@ -6,6 +6,8 @@
 
 | Doc | Role |
 |-----|------|
+| [`TOOL.md`](TOOL.md) | **CLI / library usage** for general math |
+| [`MEASURE_SENSITIVITY.md`](MEASURE_SENSITIVITY.md) | Gamma-weight ≥53% sensitivity confirmation |
 | [`STATUS.md`](STATUS.md) | Current claims, campaigns, non-claims |
 | [`THEOREMS_AB.md`](THEOREMS_AB.md) | Locked definitions; Full A/B disposition |
 | [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) | Full A closed conditionally |

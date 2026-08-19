@@ -545,7 +545,7 @@ embarrassingly parallel — but the payoff ceiling in §9 bounds how much it is 
 | **1 (top)** | Jensen/moment hierarchy blindness for Λ (false hyperbolicity to t=−0.7; index n≤30 → height ≲101 vs Lehmer #~6709 needs order ~13400) | Note | *Experimental Mathematics* / *J. Number Theory* | **Written:** [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md) |
 | 2 | Λ ≤ 0.20 restatement | Short | Fold into #1 | Stated, not written up |
 | 3 | Montgomery blindness / 1D statistics cannot reach RH | 4–6 pp | *Amer. Math. Monthly*, *Exp. Math.*, *JNT* short comm. | Established, outline drafted |
-| 4 | Gamma-shaped measure sensitivity for Beurling detection | 4–6 pp | *Integers*, *JNT* short comm., *Exp. Math.* | **Only drafted note** + reference implementation |
+| 4 | Gamma-shaped measure sensitivity for Beurling detection | 4–6 pp | *Integers*, *JNT* short comm., *Exp. Math.* | **Reproduced in-repo:** [`MEASURE_SENSITIVITY.md`](MEASURE_SENSITIVITY.md) · `pbss sensitivity --confirm-53` (≥53% gain confirmed) |
 
 **Write-order recommendation:** #1 (+ #2 as a short section), then #3. #4 is already
 drafted but is engineering, not the program’s best result. **Do not** lead a public
