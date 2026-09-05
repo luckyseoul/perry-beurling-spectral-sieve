@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "pytest_command": "python3 -m pytest -n 86 tests/test_off_critical_exact.py -q",
+  "pytest_result": "26 passed in 14.59s",
+  "independent_host": "NUKA",
+  "independent_workers": 14,
+  "independent_precision_digits": 80,
+  "source_and_evidence_sha256": {
+    "src/pbss/off_critical_exact.py": "26146b9eaa7250ec9e75d4511887cbb8304ba436cf5295016dae92f602a0936c",
+    "tests/test_off_critical_exact.py": "999f4b7166bea02cec99db91eb37c666e40a4d307cef80ed8d28957fd61c791a",
+    "experiments/check_off_critical_exact.py": "6ea75f5bd1d80b9a3ac369ff956f35e5ff058a698effd84343abcd2d15b5bb35",
+    "docs/OFF_CRITICAL_PHASE_OBSTRUCTION.md": "d490f5f63f8c14c8916a4200a2af15b28d2e99f6f461e06fe380a685ac724ace",
+    "results/off_critical_phase_obstruction_20260905/exact_checks.json": "f9dc2d1d8ad7294a439ceb581badde84efdab7e36d6d94608ef930db0375fa83"
+  },
+  "scope": "Exact continuous model identities and numerical corroboration; not an interval certificate or arithmetic RH proof."
+}
