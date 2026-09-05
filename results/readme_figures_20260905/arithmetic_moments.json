@@ -1,0 +1,3260 @@
+{
+  "status": "finite_ordinary_prime_windows_evaluated",
+  "timestamp_utc": "2026-09-05T13:40:08.757586+00:00",
+  "host": "soulkiller",
+  "python": "3.14.4 (main, Jun 18 2026, 14:25:02) [GCC 15.2.0]",
+  "source_git_head": "2b53a5b85686dd290ed8600406cfc815c7005986",
+  "source_sha256": {
+    "experiments/plot_arithmetic_moments.py": "ab454985a4859137a9795a613db1c8303604dabd9902e865f09a7f5cb40c8756",
+    "src/pbss/arithmetic_moments.py": "35b27a6d629fb9f666081b328a823f494f93674e2647efa2d3dd5aa4bb93ec75",
+    "src/pbss/basis.py": "59eccd2b0e76d84e3dc7261102705dee8b2b67f7e2c543ab335d99d35db00789",
+    "src/pbss/probes.py": "6e9d8bf8beeb2d555bb902862ed47147917b49c21ad6e5df95317fe6cf15a503"
+  },
+  "versions": {
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.9"
+  },
+  "backend": "ProcessPool_analytic_prime_intervals_longdouble",
+  "requested_worker_budget": 86,
+  "workers": 36,
+  "worker_selection": "minimum_of_worker_budget_and_36_independent_windows",
+  "gpu_used": false,
+  "cpu_reason": "The frozen evaluator uses extended-precision longdouble analytic identities; each window is independent.",
+  "window_count": 36,
+  "degree": 4,
+  "window_spacing": "uniform_in_T_using_numpy_longdouble_linspace",
+  "endpoint_T_decimals": [
+    "6.9314718055994530943e-01",
+    "1.151292546497022842e+01"
+  ],
+  "max_prime_limit": 100000,
+  "residual": "Q(y)=exp(-y/2)*(theta(exp(y))-exp(y))",
+  "integration": "analytic_prime_interval_identities_without_sampled_residual_interpolation",
+  "affine_detrending": "continuous_orthogonal_projection_onto_span(1,u)_removed_exactly",
+  "figure_interpretation": "Markers are finite-window evaluations; connecting segments only guide the eye.",
+  "certified_interval_result": false,
+  "figures": [
+    {
+      "path": "docs/figures/continuous_arithmetic_moments.png",
+      "sha256": "9a3df972d50b5f71da5c4f04b5f6d7bf98a74fc7dadb9fafdc813b11e0ab277a"
+    },
+    {
+      "path": "docs/figures/continuous_arithmetic_moments.svg",
+      "sha256": "242b9b31a04c93e7703245b814d8dd79e5a805241550e97b7d0e36482d93e094"
+    }
+  ],
+  "rows": [
+    {
+      "window_index": 0,
+      "T_decimal": "6.9314718055994530943e-01",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1951677046092311123e+00",
+        "-1.1933446637213392669e-01",
+        "-5.33474259088413498e-03",
+        "-1.5618453410416559268e-04",
+        "-3.408800151111918142e-06"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.7828651412206661122e-01",
+        "-2.1258250865560687243e+00",
+        "-5.2335146445238182825e+00",
+        "-8.764472338878474387e+00",
+        "-1.2589150190430764384e+01"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.5721306978128564164e-01",
+        "-3.0669173101717917428e+00",
+        "-7.5503656240742788087e+00",
+        "-1.2644460779308469355e+01",
+        "-1.816230454874081309e+01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-5.33474259088413498e-03",
+        "-1.5618453410416559268e-04",
+        "-3.408800151111918142e-06"
+      ],
+      "l2_norm_sq_decimal": "1.4426950408889634074e+00",
+      "affine_detrended_l2_norm_sq_decimal": "2.8483883743128632268e-05",
+      "projection_energy_decimal": "1.4426950408889598837e+00",
+      "affine_detrended_projection_energy_decimal": "2.8483883739604978653e-05",
+      "energy_ratio": 0.9999999999999976,
+      "affine_detrended_energy_ratio": 0.9999999998762931,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.3090234152980985891e-17",
+        "4.5461239124673393973e-17",
+        "1.7802745928557953182e-16",
+        "7.8337121050187828123e-16",
+        "3.680009473975586805e-15"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "3.5693936309955327763e+01",
+        "3.1800134022336675566e+03",
+        "4.8083143355772399707e+05",
+        "1.03665803012832593864e+08"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "4.0885764039865551795e-70",
+        "2.0915488416654885761e-69",
+        "1.150813133692383944e-68",
+        "6.493005725266561052e-68",
+        "3.692275003835826016e-67"
+      ],
+      "norm_roundoff_indicator_decimal": "2.0481403673848247762e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 2,
+        "n_primes": 1,
+        "n_positive_intervals": 1,
+        "endpoint_x_decimal": "2e+00",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.0272579333207873155e-55",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "6.262163930779729556e-17",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 1,
+      "T_decimal": "1.002283702971667684e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1581772834771252886e+00",
+        "-2.1181392786090776935e-02",
+        "6.575917166732556995e-02",
+        "-2.4070560204561096727e-02",
+        "-5.913451230472080944e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.4684746197286222904e-01",
+        "-3.8546321814765664583e+00",
+        "-2.7217561246133402705e+00",
+        "-3.726765753483703848e+00",
+        "-2.827940560464146053e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "1.4651287009603634946e-01",
+        "-3.845849403764602844e+00",
+        "-2.7155546044933329835e+00",
+        "-3.7182743193710804765e+00",
+        "-2.8214970991542557292e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "6.575917166732556995e-02",
+        "-2.4070560204561096727e-02",
+        "-5.913451230472080944e-02"
+      ],
+      "l2_norm_sq_decimal": "1.3567249975996814315e+00",
+      "affine_detrended_l2_norm_sq_decimal": "1.490172623686934309e-02",
+      "projection_energy_decimal": "1.3502238224352634596e+00",
+      "affine_detrended_projection_energy_decimal": "8.400551072451371144e-03",
+      "energy_ratio": 0.995208185022079,
+      "affine_detrended_energy_ratio": 0.5637300631430884,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.2504583553938128371e-17",
+        "3.0801016026680067682e-17",
+        "8.906317784729024464e-17",
+        "2.9400805378760289806e-16",
+        "1.0545814174621485903e-15"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.3617604968628737115e+02",
+        "1.2865513141901174435e+02",
+        "1.1687718575126200994e+03",
+        "1.7112025893361063986e+03"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.8275279728930367978e-70",
+        "1.15136912003545670354e-69",
+        "4.9265708355591211853e-69",
+        "2.1676523503919934991e-68",
+        "9.6222124905704975075e-68"
+      ],
+      "norm_roundoff_indicator_decimal": "1.9245715833480788542e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 3,
+        "n_primes": 1,
+        "n_positive_intervals": 2,
+        "endpoint_x_decimal": "2.7244966704740950162e+00",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "7.104185552234517258e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "4.9515581893849960733e-17",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 2,
+      "T_decimal": "1.3114202253833900586e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1165779523152643658e+00",
+        "4.9242645381432523186e-02",
+        "9.602984666640813319e-02",
+        "-1.4456651725269973358e-02",
+        "-6.24395542403780737e-03"
+      ],
+      "coefficient_signs": [
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.1026860832506660847e-01",
+        "-3.010995254871925749e+00",
+        "-2.3430962330594688628e+00",
+        "-4.236600643333367161e+00",
+        "-5.076141415361832179e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "8.4083351919351317956e-02",
+        "-2.2959804924403004792e+00",
+        "-1.7866860581431639811e+00",
+        "-3.2305439258379660386e+00",
+        "-3.8707207019609876325e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "9.602984666640813319e-02",
+        "-1.4456651725269973358e-02",
+        "-6.24395542403780737e-03"
+      ],
+      "l2_norm_sq_decimal": "1.2749184282022412338e+00",
+      "affine_detrended_l2_norm_sq_decimal": "2.5747266481530932061e-02",
+      "projection_energy_decimal": "1.2586408749299272813e+00",
+      "affine_detrended_projection_energy_decimal": "9.4697132092169797025e-03",
+      "energy_ratio": 0.9872324747119179,
+      "affine_detrended_energy_ratio": 0.36779489644113517,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.2806777785261187806e-17",
+        "2.4316412046345268723e-17",
+        "5.897242647368616391e-17",
+        "1.5649970384782055393e-16",
+        "4.673201908345120158e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "4.3438734236386291027e+01",
+        "5.635009945980029264e+01",
+        "1.01923700324814899726e+03",
+        "7.1360304884487835864e+03"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.1610046517373521017e-70",
+        "7.607624967598552859e-70",
+        "2.7531255346842438543e-69",
+        "1.0263572318640395312e-68",
+        "3.8642978296060603975e-68"
+      ],
+      "norm_roundoff_indicator_decimal": "1.9002769137129308504e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 4,
+        "n_primes": 2,
+        "n_positive_intervals": 3,
+        "endpoint_x_decimal": "3.7114410537122147432e+00",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "5.4295406358486399334e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "4.999710947827036362e-17",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 3,
+      "T_decimal": "1.6205567477951124333e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1316939083670210033e+00",
+        "7.848849187407045097e-03",
+        "4.345712810360919162e-04",
+        "-9.8325020719750024746e-02",
+        "-2.1329178062248436791e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.23715544247535773764e-01",
+        "-4.847388358265011482e+00",
+        "-7.7411505736965793216e+00",
+        "-2.3194767499371055032e+00",
+        "-3.8476792815944423068e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "7.634138354973372033e-02",
+        "-2.991187050290119503e+00",
+        "-4.77684634260971634e+00",
+        "-1.4312838801189316788e+00",
+        "-2.3742946902843699544e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "4.345712810360919162e-04",
+        "-9.8325020719750024746e-02",
+        "-2.1329178062248436791e-02"
+      ],
+      "l2_norm_sq_decimal": "1.3090154813549576481e+00",
+      "affine_detrended_l2_norm_sq_decimal": "2.8222774686367656704e-02",
+      "projection_energy_decimal": "1.2909156390571386643e+00",
+      "affine_detrended_projection_energy_decimal": "1.0122932388548673005e-02",
+      "energy_ratio": 0.9861729348845563,
+      "affine_detrended_energy_ratio": 0.35867955936445595,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.4054561317877751348e-17",
+        "2.375709632196576515e-17",
+        "4.9842899264393806882e-17",
+        "1.09577323774030645194e-16",
+        "2.706208517890391564e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "2.4256282280569606162e+02",
+        "9.894554914108217498e+03",
+        "1.0118904535930918239e+02",
+        "1.1882555182257192188e+03"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "1.7487785804980359385e-70",
+        "5.559820755040228565e-70",
+        "1.7809539859795111853e-69",
+        "5.8820128429436676637e-69",
+        "1.9640103422058957963e-68"
+      ],
+      "norm_roundoff_indicator_decimal": "2.113466905327608946e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 6,
+        "n_primes": 3,
+        "n_positive_intervals": 4,
+        "endpoint_x_decimal": "5.055904396749897957e+00",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "4.393832740102218195e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "5.3318523642025757017e-17",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 4,
+      "T_decimal": "1.9296932702068348078e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1154179501210556655e+00",
+        "2.482244960248911609e-02",
+        "3.3191743500657370372e-03",
+        "-6.509926873357224052e-02",
+        "2.1583442046894691676e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.0922917783383417201e-01",
+        "-3.6960068093742626885e+00",
+        "-5.7080392167213967374e+00",
+        "-2.7318419628019443325e+00",
+        "-3.8358288301615230842e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "5.6604424920923524107e-02",
+        "-1.9153338338471300068e+00",
+        "-2.9580033805629527208e+00",
+        "-1.41568714830473081e+00",
+        "-1.9877919923254841996e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "3.3191743500657370372e-03",
+        "-6.509926873357224052e-02",
+        "2.1583442046894691676e-02"
+      ],
+      "l2_norm_sq_decimal": "1.2739818495255375377e+00",
+      "affine_detrended_l2_norm_sq_decimal": "2.9208492069011600961e-02",
+      "projection_energy_decimal": "1.249488134135129589e+00",
+      "affine_detrended_projection_energy_decimal": "4.71477667860365233e-03",
+      "energy_ratio": 0.9807738898324728,
+      "affine_detrended_energy_ratio": 0.1614180104698297,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.3520620035919528755e-17",
+        "2.092855240828298527e-17",
+        "3.9429199498092992796e-17",
+        "7.86369798553611529e-17",
+        "1.74425444681307241e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "6.8194071786749137845e+01",
+        "1.01762935615898210484e+03",
+        "1.0859460261448403873e+02",
+        "7.5091996880598602765e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "1.4686245595508146236e-70",
+        "4.3286459700860523977e-70",
+        "1.2623600083594271412e-69",
+        "3.79627456255846983e-69",
+        "1.1552709185700279434e-68"
+      ],
+      "norm_roundoff_indicator_decimal": "2.0450266158564444023e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 7,
+        "n_primes": 3,
+        "n_positive_intervals": 4,
+        "endpoint_x_decimal": "6.887397347590217442e+00",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "3.689941508109637861e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "5.1651546603041826837e-17",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 5,
+      "T_decimal": "2.2388297926185571824e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.0979620970764478966e+00",
+        "4.1693894414185157343e-02",
+        "7.051204058349248296e-03",
+        "-4.6931126204447550202e-02",
+        "2.4941453138905201874e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "9.345582252470592839e-02",
+        "-3.177400577823401217e+00",
+        "-4.9545568883223082488e+00",
+        "-3.0590741519259769796e+00",
+        "-3.6912240750344571093e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "4.1743156551172693655e-02",
+        "-1.4192238232219888771e+00",
+        "-2.2130118621154358243e+00",
+        "-1.3663719153692581457e+00",
+        "-1.6487292098776144099e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "7.051204058349248296e-03",
+        "-4.6931126204447550202e-02",
+        "2.4941453138905201874e-02"
+      ],
+      "l2_norm_sq_decimal": "1.2393221514680360108e+00",
+      "affine_detrended_l2_norm_sq_decimal": "3.2063004020103595855e-02",
+      "projection_energy_decimal": "1.2101334736181028835e+00",
+      "affine_detrended_projection_energy_decimal": "2.8743261701704685764e-03",
+      "energy_ratio": 0.9764478688488237,
+      "affine_detrended_energy_ratio": 0.08964619061795513,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.4535307931167232339e-17",
+        "2.1246937950835583349e-17",
+        "3.5875168821856475553e-17",
+        "6.260566423115658597e-17",
+        "1.2573847091002459735e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "3.655798702686899085e+01",
+        "3.941464738126618484e+02",
+        "1.1133504616538209687e+02",
+        "4.4844692403588492977e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "1.26583759889636461805e-70",
+        "3.5185179321410379575e-70",
+        "9.5200597505865566565e-70",
+        "2.6550483188230432379e-69",
+        "7.4991948837769431423e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "2.2091417344841882593e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 10,
+        "n_primes": 4,
+        "n_positive_intervals": 5,
+        "endpoint_x_decimal": "9.3823455708708303515e+00",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "3.1804361899837939735e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "5.5781586875448246903e-17",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 6,
+      "T_decimal": "2.5479663150302795571e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1293763589094350829e+00",
+        "-1.447223653501339314e-02",
+        "-5.317974433032436102e-02",
+        "-6.933971960495966715e-02",
+        "2.6892973110897123716e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.21665585603862283835e-01",
+        "-4.235523186701718214e+00",
+        "-2.9340777008071697166e+00",
+        "-2.6687373825038472315e+00",
+        "-3.6158902491421507704e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "4.7750076163160121165e-02",
+        "-1.6623152204629455808e+00",
+        "-1.1515370841047801229e+00",
+        "-1.0473990047518082882e+00",
+        "-1.4191279640599095614e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-5.317974433032436102e-02",
+        "-6.933971960495966715e-02",
+        "2.6892973110897123716e-02"
+      ],
+      "l2_norm_sq_decimal": "1.3170321914052145846e+00",
+      "affine_detrended_l2_norm_sq_decimal": "4.1331785711356079746e-02",
+      "projection_energy_decimal": "1.2840597196185350346e+00",
+      "affine_detrended_projection_energy_decimal": "8.35931392467652976e-03",
+      "energy_ratio": 0.9749645665444977,
+      "affine_detrended_energy_ratio": 0.2022490386225866,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.6368813152258495723e-17",
+        "2.3860713305114181883e-17",
+        "3.6315429413113888146e-17",
+        "5.9318354553139880666e-17",
+        "1.0473852625198930956e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.0535107705685922385e+02",
+        "4.696996573007280494e+01",
+        "6.527702848251860067e+01",
+        "3.2473469835704714423e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "1.1122576428590034259e-70",
+        "2.9502647916282178582e-70",
+        "7.506314827141718645e-70",
+        "1.96681702111888764e-69",
+        "5.222923461359776411e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "2.6392147626759306399e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 13,
+        "n_primes": 5,
+        "n_positive_intervals": 6,
+        "endpoint_x_decimal": "1.2781084634537474785e+01",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "2.7945643718669337948e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "6.405588459558395831e-17",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 7,
+      "T_decimal": "2.8571028374420019316e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1349184110368224523e+00",
+        "-2.1744726604334499112e-02",
+        "-4.7316186989238975173e-02",
+        "-3.3955909740105478247e-02",
+        "5.0437438193679190516e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.2656076380049286792e-01",
+        "-3.8283840058175291488e+00",
+        "-3.0509028223823922304e+00",
+        "-3.3826923682526780217e+00",
+        "-2.987021558356850352e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "4.4296887792041892802e-02",
+        "-1.3399531706199020722e+00",
+        "-1.0678309448300788938e+00",
+        "-1.1839589124769630739e+00",
+        "-1.0454721892443907243e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-4.7316186989238975173e-02",
+        "-3.3955909740105478247e-02",
+        "5.0437438193679190516e-02"
+      ],
+      "l2_norm_sq_decimal": "1.3320721438874247981e+00",
+      "affine_detrended_l2_norm_sq_decimal": "4.355951104198166631e-02",
+      "projection_energy_decimal": "1.2944483933744631579e+00",
+      "affine_detrended_projection_energy_decimal": "5.935760529020026126e-03",
+      "energy_ratio": 0.9717554708387166,
+      "affine_detrended_energy_ratio": 0.136267841099026,
+      "coefficient_roundoff_indicators_decimal": [
+        "2.0790148027144244293e-17",
+        "3.077016476392190104e-17",
+        "4.36596752420914484e-17",
+        "6.310337715783469704e-17",
+        "9.8210855436889359614e-17"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "6.725073856403572052e+01",
+        "4.7890601257658551707e+01",
+        "1.11342151145834115135e+02",
+        "1.3577586862398962174e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "9.919121462834810231e-71",
+        "2.5322615946821569381e-70",
+        "6.119108778542765077e-70",
+        "1.5209529371135359287e-69",
+        "3.8335760385377220857e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "3.5489755269689246185e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 18,
+        "n_primes": 7,
+        "n_positive_intervals": 8,
+        "endpoint_x_decimal": "1.7411011265922482784e+01",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "2.4921944675522174183e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "8.4018176438786612926e-17",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 8,
+      "T_decimal": "3.1662393598537243063e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1286438160351191314e+00",
+        "-8.0598812343392310935e-03",
+        "-1.8476933612449208863e-02",
+        "1.0249746164047169155e-02",
+        "6.820257735493877915e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.210167491513418385e-01",
+        "-4.820856457765807946e+00",
+        "-3.9912321565987870103e+00",
+        "-4.580502338187567753e+00",
+        "-2.6852729237186527377e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.822097302110875087e-02",
+        "-1.5225811790769111544e+00",
+        "-1.2605592006736901224e+00",
+        "-1.4466696347300730787e+00",
+        "-8.480953644144921739e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-1.8476933612449208863e-02",
+        "1.0249746164047169155e-02",
+        "6.820257735493877915e-02"
+      ],
+      "l2_norm_sq_decimal": "1.3180064436838235779e+00",
+      "affine_detrended_l2_norm_sq_decimal": "4.410461852399608739e-02",
+      "projection_energy_decimal": "1.2789998710898301535e+00",
+      "affine_detrended_projection_energy_decimal": "5.098045930002662986e-03",
+      "energy_ratio": 0.970404869580933,
+      "affine_detrended_energy_ratio": 0.11558984298274701,
+      "coefficient_roundoff_indicators_decimal": [
+        "2.6228778126322734454e-17",
+        "3.940590347995655846e-17",
+        "5.3032271431294193897e-17",
+        "7.226735547565255771e-17",
+        "1.0122638148510654041e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.7073865342584310215e+02",
+        "1.0738011437690039742e+02",
+        "3.182609990485105435e+02",
+        "8.139731784388163207e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "8.950665712685241224e-71",
+        "2.2132887926741278669e-70",
+        "5.1185289962360746176e-70",
+        "1.2158316211006250929e-69",
+        "2.9299345323251366524e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "4.7243729661956625722e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 24,
+        "n_primes": 9,
+        "n_positive_intervals": 10,
+        "endpoint_x_decimal": "2.3718121111796381249e+01",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "2.248868476270111934e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.07084839934779901397e-16",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 9,
+      "T_decimal": "3.475375882265446681e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1452125606657676255e+00",
+        "-3.3127111098453761995e-02",
+        "-4.030265441100947503e-02",
+        "-8.6788070541009000955e-03",
+        "2.7536237340477301389e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.3559026227961967034e-01",
+        "-3.4074032654324263043e+00",
+        "-3.2113379459204370618e+00",
+        "-4.7468711959185839596e+00",
+        "-3.5922524202707085568e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.9014560402379918676e-02",
+        "-9.804416503032437521e-01",
+        "-9.240260779582510224e-01",
+        "-1.3658583579812105607e+00",
+        "-1.0336298984526171984e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-4.030265441100947503e-02",
+        "-8.6788070541009000955e-03",
+        "2.7536237340477301389e-02"
+      ],
+      "l2_norm_sq_decimal": "1.3599830027935441488e+00",
+      "affine_detrended_l2_norm_sq_decimal": "4.7373788197170356453e-02",
+      "projection_energy_decimal": "1.3150670846077004619e+00",
+      "affine_detrended_projection_energy_decimal": "2.4578700113266694825e-03",
+      "energy_ratio": 0.9669731768017822,
+      "affine_detrended_energy_ratio": 0.051882488288607635,
+      "coefficient_roundoff_indicators_decimal": [
+        "3.3028500167843843644e-17",
+        "5.067673184379096308e-17",
+        "6.668854830827295776e-17",
+        "8.5967434684042004827e-17",
+        "1.1274835892749740438e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "4.0937926655672911246e+01",
+        "4.64570455969012124e+01",
+        "3.3342526235052942538e+02",
+        "1.7243900213749222546e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "8.154499264673383739e-71",
+        "1.9626881342555502311e-70",
+        "4.3700695469460492667e-70",
+        "9.978061865650748571e-70",
+        "2.312100461361925855e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "6.4049052539503592885e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 33,
+        "n_primes": 11,
+        "n_positive_intervals": 12,
+        "endpoint_x_decimal": "3.2309970999495290726e+01",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "2.0488304361654209014e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.4305590649562758645e-16",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 10,
+      "T_decimal": "3.7845124046771690554e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1669945255859966731e+00",
+        "-6.246405509802975741e-02",
+        "-5.9293301149004925014e-02",
+        "-1.4956806431152642511e-02",
+        "1.8182723227966888883e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.5443166227884597159e-01",
+        "-2.773164006115346578e+00",
+        "-2.8252589448063311513e+00",
+        "-4.202588803078025169e+00",
+        "-4.007283408933152572e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "4.080622436010207332e-02",
+        "-7.3276652566604713975e-01",
+        "-7.465318230466560526e-01",
+        "-1.1104703469551764779e+00",
+        "-1.0588638589163209763e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-5.9293301149004925014e-02",
+        "-1.4956806431152642511e-02",
+        "1.8182723227966888883e-02"
+      ],
+      "l2_norm_sq_decimal": "1.4155133627824066361e+00",
+      "affine_detrended_l2_norm_sq_decimal": "4.973538185543149521e-02",
+      "projection_energy_decimal": "1.3698479939707255453e+00",
+      "affine_detrended_projection_energy_decimal": "4.070013043750404447e-03",
+      "energy_ratio": 0.9677393587285401,
+      "affine_detrended_energy_ratio": 0.08183335267397625,
+      "coefficient_roundoff_indicators_decimal": [
+        "4.616708813002821405e-17",
+        "7.2880321534957141396e-17",
+        "9.454590572014161663e-17",
+        "1.1722879379919010267e-16",
+        "1.4467433738118677759e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "2.1464207960249411536e+01",
+        "2.9933823455042822208e+01",
+        "1.7484260445511573713e+02",
+        "2.2516278642684287237e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "7.488401951430434033e-71",
+        "1.761088358111959324e-70",
+        "3.7934547593846273505e-70",
+        "8.364855160239137389e-70",
+        "1.8723465932965133716e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "9.748612242476506528e-17",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 45,
+        "n_primes": 14,
+        "n_positive_intervals": 15,
+        "endpoint_x_decimal": "4.4014204205619743736e+01",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.8814724654887469275e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "2.1434440148458678825e-16",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 11,
+      "T_decimal": "4.09364892708889143e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1798050571401958056e+00",
+        "-7.4732326464692793445e-02",
+        "-5.670928688768546231e-02",
+        "-2.4058192137676628927e-03",
+        "2.0799987858872270587e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.6534921901619644593e-01",
+        "-2.5938425299215085286e+00",
+        "-2.8698172917542636954e+00",
+        "-6.0298648040002206924e+00",
+        "-3.8728028759830990342e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "4.0391646172203856585e-02",
+        "-6.3362603294026552083e-01",
+        "-7.0104137967568002065e-01",
+        "-1.4729804415075297331e+00",
+        "-9.4605154104828373325e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-5.670928688768546231e-02",
+        "-2.4058192137676628927e-03",
+        "2.0799987858872270587e-02"
+      ],
+      "l2_norm_sq_decimal": "1.4471111068345705841e+00",
+      "affine_detrended_l2_norm_sq_decimal": "4.958621336216447139e-02",
+      "projection_energy_decimal": "1.4011792641527344946e+00",
+      "affine_detrended_projection_energy_decimal": "3.6543706803283818271e-03",
+      "energy_ratio": 0.968259629502597,
+      "affine_detrended_energy_ratio": 0.07369731287279054,
+      "coefficient_roundoff_indicators_decimal": [
+        "6.1602949789896156585e-17",
+        "9.925291477712134045e-17",
+        "1.2797670791370110816e-16",
+        "1.5561534212679654984e-16",
+        "1.8609854625304792808e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.7770678527885854798e+01",
+        "2.9964987621126171606e+01",
+        "1.0031150371151817564e+03",
+        "1.7612150235601149408e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "6.9229068200898533308e-71",
+        "1.5957002165234677695e-70",
+        "3.33828977057783631e-70",
+        "7.1364529907934667184e-70",
+        "1.5488389241349396224e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "1.3912594185898486568e-16",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 60,
+        "n_primes": 17,
+        "n_positive_intervals": 18,
+        "endpoint_x_decimal": "5.9958276405888950984e+01",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.7393909471773524788e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "2.993196877121232893e-16",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 12,
+      "T_decimal": "4.402785449500613805e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1869989846633936123e+00",
+        "-7.587644285565285472e-02",
+        "-3.9723824135745869707e-02",
+        "2.4091391822063732053e-02",
+        "3.868679471481985053e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.7142826024670483723e-01",
+        "-2.5786490135638032355e+00",
+        "-3.2258041671045386875e+00",
+        "-3.7259006880980562594e+00",
+        "-3.252256959015099555e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.8936319339873601515e-02",
+        "-5.8568582165553550865e-01",
+        "-7.32673486842386497e-01",
+        "-8.4625988044015789167e-01",
+        "-7.386816814759817536e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-3.9723824135745869707e-02",
+        "2.4091391822063732053e-02",
+        "3.868679471481985053e-02"
+      ],
+      "l2_norm_sq_decimal": "1.463634906378484305e+00",
+      "affine_detrended_l2_norm_sq_decimal": "4.891108220612980781e-02",
+      "projection_energy_decimal": "1.4183788696215529758e+00",
+      "affine_detrended_projection_energy_decimal": "3.65504544919847848e-03",
+      "energy_ratio": 0.9690796956538091,
+      "affine_detrended_energy_ratio": 0.07472837002041242,
+      "coefficient_roundoff_indicators_decimal": [
+        "9.5386946226091390643e-17",
+        "1.5743473007390582615e-16",
+        "2.0250144553808706178e-16",
+        "2.4312636784652895878e-16",
+        "2.8338550504224114012e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.7244292784506360551e+01",
+        "4.0719085115038164233e+01",
+        "9.349365741389983593e+01",
+        "8.515442609434131886e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "6.436822870760522228e-71",
+        "1.4577672297885743355e-70",
+        "2.97158965721042817e-70",
+        "6.178334226401999488e-70",
+        "1.3042007001924420633e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "2.2979656352638940779e-16",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 82,
+        "n_primes": 22,
+        "n_positive_intervals": 23,
+        "endpoint_x_decimal": "8.167806221760496772e+01",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.6172616100356054652e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "4.801361547673095141e-16",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 13,
+      "T_decimal": "4.7119219719123361795e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.1931663112012886977e+00",
+        "-7.602026484346240325e-02",
+        "-2.5964215384949147593e-02",
+        "3.826184210597504163e-02",
+        "3.6595342817235843566e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.7661053926832491908e-01",
+        "-2.5767553315615097053e+00",
+        "-3.6510360203227086562e+00",
+        "-3.263302169083190597e+00",
+        "-3.3078342921019177883e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.748163495089614833e-02",
+        "-5.4685865914620230996e-01",
+        "-7.748506961886157118e-01",
+        "-6.925628625719321023e-01",
+        "-7.0201380918865924737e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-2.5964215384949147593e-02",
+        "3.826184210597504163e-02",
+        "3.6595342817235843566e-02"
+      ],
+      "l2_norm_sq_decimal": "1.4795673236332100867e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.0142396780649414063e-02",
+      "projection_energy_decimal": "1.4329022550103702823e+00",
+      "affine_detrended_projection_energy_decimal": "3.4773281578096096692e-03",
+      "energy_ratio": 0.968460327639401,
+      "affine_detrended_energy_ratio": 0.06934906149423545,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.5842112890367449939e-16",
+        "2.6622997667166618224e-16",
+        "3.4261217046406451576e-16",
+        "4.0823543044392630076e-16",
+        "4.691606423140045882e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.6867935125473137274e+01",
+        "5.9728233199842184507e+01",
+        "5.5116680726917702805e+01",
+        "8.179092198103306185e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "6.01452024149190496e-71",
+        "1.3411076707633233036e-70",
+        "2.6709950123784039077e-70",
+        "5.4156577664497641566e-70",
+        "1.11484076504895881836e-69"
+      ],
+      "norm_roundoff_indicator_decimal": "4.0429825945186524205e-16",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 112,
+        "n_primes": 29,
+        "n_positive_intervals": 30,
+        "endpoint_x_decimal": "1.11265804281320356064e+02",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.5111574272973070014e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "8.228215141042453219e-16",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 14,
+      "T_decimal": "5.021058494324058554e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2009169074233043605e+00",
+        "-8.030890149436964138e-02",
+        "-2.24998800254542252e-02",
+        "3.341037119063135639e-02",
+        "1.1006423466364942085e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.8308535454559309243e-01",
+        "-2.5218748111922167398e+00",
+        "-3.7942453019880132796e+00",
+        "-3.398888912509629414e+00",
+        "-4.5092762251293678727e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.6463497637511646187e-02",
+        "-5.022595960678436226e-01",
+        "-7.5566642099014214593e-01",
+        "-6.769267707898296999e-01",
+        "-8.9807283269589005694e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-2.24998800254542252e-02",
+        "3.341037119063135639e-02",
+        "1.1006423466364942085e-02"
+      ],
+      "l2_norm_sq_decimal": "1.5012045192028160574e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.255358100843031518e-02",
+      "projection_energy_decimal": "1.4503945770561622948e+00",
+      "affine_detrended_projection_energy_decimal": "1.7436388617765526118e-03",
+      "energy_ratio": 0.9661538840999258,
+      "affine_detrended_energy_ratio": 0.03317830732594319,
+      "coefficient_roundoff_indicators_decimal": [
+        "2.3677693388760148627e-16",
+        "4.0161125785353844803e-16",
+        "5.1713042194444508175e-16",
+        "6.1416102880697126176e-16",
+        "7.0164751245153801506e-16"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.5733598410252064423e+01",
+        "6.674576321824942207e+01",
+        "5.9752869144095107586e+01",
+        "2.5153385737560069231e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "5.6442182676090010935e-71",
+        "1.2412419915332577329e-70",
+        "2.4208902996769713323e-70",
+        "4.797859950366724551e-70",
+        "9.6531348775264634335e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "6.3454688037898281523e-16",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 152,
+        "n_primes": 36,
+        "n_positive_intervals": 37,
+        "endpoint_x_decimal": "1.5157165665103980827e+02",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.4181184889102282136e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.267751644657903368e-15",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 15,
+      "T_decimal": "5.3301950167357809284e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2081554667926125062e+00",
+        "-8.273633616077659139e-02",
+        "-1.5033480663899396204e-02",
+        "3.8030028101366313153e-02",
+        "8.614511331904518756e-03"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.8909478890779150612e-01",
+        "-2.4920964002832405233e+00",
+        "-4.1974755209302529683e+00",
+        "-3.2693792181159647993e+00",
+        "-4.7543071335472644177e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.547614830490637958e-02",
+        "-4.6754319353392137843e-01",
+        "-7.874900463774762591e-01",
+        "-6.133695311054748839e-01",
+        "-8.9195744595078791766e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-1.5033480663899396204e-02",
+        "3.8030028101366313153e-02",
+        "8.614511331904518756e-03"
+      ],
+      "l2_norm_sq_decimal": "1.5183534542299292788e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.186852096774483049e-02",
+      "projection_energy_decimal": "1.4682314316459345082e+00",
+      "affine_detrended_projection_energy_decimal": "1.7464983837500598614e-03",
+      "energy_ratio": 0.9669892260959649,
+      "affine_detrended_energy_ratio": 0.03367164421048644,
+      "coefficient_roundoff_indicators_decimal": [
+        "3.807852952297435667e-16",
+        "6.5076783726199437433e-16",
+        "8.386069932343231027e-16",
+        "9.939098235972514946e-16",
+        "1.1313509835896816598e-15"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.5106247096932841537e+01",
+        "9.754684961687170946e+01",
+        "4.981102162067744705e+01",
+        "2.9800305680891412427e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "5.3168692679001871277e-71",
+        "1.1548501003866294789e-70",
+        "2.2100861878226393631e-70",
+        "4.2897878660806485676e-70",
+        "8.4518343458894296884e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "1.0660317482401977376e-15",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 207,
+        "n_primes": 46,
+        "n_positive_intervals": 47,
+        "endpoint_x_decimal": "2.0647823694200033832e+02",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.3358715511053246597e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "2.0938117135449647861e-15",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 16,
+      "T_decimal": "5.639331539147503303e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2175805594017215214e+00",
+        "-8.9075063909656552604e-02",
+        "-1.3749725062176064368e-02",
+        "3.4676725985240460166e-02",
+        "-1.0089058980166615113e-03"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "1.9686574167203401485e-01",
+        "-2.418275850009085181e+00",
+        "-4.2867364505475733993e+00",
+        "-3.3616865379496482784e+00",
+        "-6.8988888045796543285e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.4909410859322197664e-02",
+        "-4.2882313856203167836e-01",
+        "-7.601497483858873368e-01",
+        "-5.9611436472802835167e-01",
+        "-1.2233522283072858778e+00"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-1.3749725062176064368e-02",
+        "3.4676725985240460166e-02",
+        "-1.0089058980166615113e-03"
+      ],
+      "l2_norm_sq_decimal": "1.5418148403851256424e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.1378054741607132787e-02",
+      "projection_energy_decimal": "1.4918293337989704458e+00",
+      "affine_detrended_projection_energy_decimal": "1.3925481554519363461e-03",
+      "energy_ratio": 0.9675800846658932,
+      "affine_detrended_energy_ratio": 0.027103948611044214,
+      "coefficient_roundoff_indicators_decimal": [
+        "6.4609754433067593736e-16",
+        "1.1100311605943302567e-15",
+        "1.4314621258467365524e-15",
+        "1.6946909782714905211e-15",
+        "1.9252599191404590498e-15"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.3922259542881921498e+01",
+        "1.0538452373450610531e+02",
+        "5.2107857887950216096e+01",
+        "2.379409560745532719e+03"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "5.0254094620372935526e-71",
+        "1.0794224140955053761e-70",
+        "2.030383492759041801e-70",
+        "3.8663878455896253395e-70",
+        "7.472054275221723008e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "1.8858499353481708918e-15",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 282,
+        "n_primes": 60,
+        "n_positive_intervals": 61,
+        "endpoint_x_decimal": "2.8127463453692060397e+02",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.2626418282506400733e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "3.6569537473999172537e-15",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 17,
+      "T_decimal": "5.9484680615592256774e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.225594866377871039e+00",
+        "-9.3636013127085995856e-02",
+        "-1.23501519114109385765e-02",
+        "2.9274300724786507416e-02",
+        "-1.3618804909421759632e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.0342633133506407426e-01",
+        "-2.3683402138667974102e+00",
+        "-4.394086915464697276e+00",
+        "-3.5310452562127956203e+00",
+        "-4.29630372738067386e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.419810432364354191e-02",
+        "-3.9814288138684278423e-01",
+        "-7.386921926774049858e-01",
+        "-5.9360581912366024957e-01",
+        "-7.2225381105173441445e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-1.23501519114109385765e-02",
+        "2.9274300724786507416e-02",
+        "-1.3618804909421759632e-02"
+      ],
+      "l2_norm_sq_decimal": "1.5625479991777354779e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.1697519731608089894e-02",
+      "projection_energy_decimal": "1.5120454622284484413e+00",
+      "affine_detrended_projection_energy_decimal": "1.1949827823210533156e-03",
+      "energy_ratio": 0.967679369225225,
+      "affine_detrended_energy_ratio": 0.023114895811731477,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.0329082351880353238e-15",
+        "1.779759734924744999e-15",
+        "2.2960258913735962788e-15",
+        "2.7171167606557308366e-15",
+        "3.0840659301277280444e-15"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.3138722888315788836e+01",
+        "1.15890220140797923276e+02",
+        "5.9235027783537785594e+01",
+        "1.6656501762848393718e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "4.764243462873811998e-71",
+        "1.0130289262420632368e-70",
+        "1.8756549005963333092e-70",
+        "3.5094110642340542765e-70",
+        "6.66227863479476328e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "3.1277930695928935633e-15",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 384,
+        "n_primes": 76,
+        "n_positive_intervals": 77,
+        "endpoint_x_decimal": "3.8316590264232903995e+02",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.1970234707512693395e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "5.9929463423696040847e-15",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 18,
+      "T_decimal": "6.2576045839709480527e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.229773479232305297e+00",
+        "-9.123739927122944524e-02",
+        "-1.4831154144661192135e-03",
+        "3.7340290541041800833e-02",
+        "-6.1242730374888050803e-03"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.0682998919842889338e-01",
+        "-2.3942903862331701226e+00",
+        "-6.5136103938605381357e+00",
+        "-3.2876823599389551778e+00",
+        "-5.0954952173522253347e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.305258208999501961e-02",
+        "-3.8262091413801067448e-01",
+        "-1.0409111516162841381e+00",
+        "-5.253899181102713757e-01",
+        "-8.142884627776733296e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "-1.4831154144661192135e-03",
+        "3.7340290541041800833e-02",
+        "-6.1242730374888050803e-03"
+      ],
+      "l2_norm_sq_decimal": "1.571825165271583759e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.1158092022676791984e-02",
+      "projection_energy_decimal": "1.5221010768981667223e+00",
+      "affine_detrended_projection_energy_decimal": "1.4340036492597551466e-03",
+      "energy_ratio": 0.9683653821862398,
+      "affine_detrended_energy_ratio": 0.028030827432424688,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.7220707926064487616e-15",
+        "2.9731937120841182336e-15",
+        "3.836656692465893387e-15",
+        "4.5396305252996667156e-15",
+        "5.1502314924322211114e-15"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.3320646495690355277e+01",
+        "9.4649252237044676e+02",
+        "4.4576877120019456856e+01",
+        "3.5170349564579251353e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "4.528881570591864366e-71",
+        "9.541624529303336416e-71",
+        "1.741241550002706456e-70",
+        "3.2053072125079060842e-70",
+        "5.985098989639600937e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "5.3773212752585165235e-15",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 522,
+        "n_primes": 98,
+        "n_positive_intervals": 99,
+        "endpoint_x_decimal": "5.2196711299411335805e+02",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.1378884346479757496e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.01553681791147037965e-14",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 19,
+      "T_decimal": "6.566741106382670427e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2361086194955347904e+00",
+        "-9.29084747541350894e-02",
+        "3.0662757725810395006e-03",
+        "3.736567161764906003e-02",
+        "-7.6098393523003865803e-03"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1196823502504746068e-01",
+        "-2.3761404128436566026e+00",
+        "-5.787291557182369115e+00",
+        "-3.287002867249204304e+00",
+        "-4.8783132174101562608e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.2279060738213183748e-02",
+        "-3.6184469196358619772e-01",
+        "-8.813034446503913001e-01",
+        "-5.0055313800240100724e-01",
+        "-7.4288191636923006184e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "3.0662757725810395006e-03",
+        "3.736567161764906003e-02",
+        "-7.6098393523003865803e-03"
+      ],
+      "l2_norm_sq_decimal": "1.5886507538103485933e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.2054249938052023845e-02",
+      "projection_energy_decimal": "1.5380600089898158909e+00",
+      "affine_detrended_projection_energy_decimal": "1.4635051175193215405e-03",
+      "energy_ratio": 0.9681548983002137,
+      "affine_detrended_energy_ratio": 0.028114997704529195,
+      "coefficient_roundoff_indicators_decimal": [
+        "2.9077006812812038339e-15",
+        "5.0265838558318691926e-15",
+        "6.4874620480629911156e-15",
+        "7.675887373693615775e-15",
+        "8.706083562383407499e-15"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.3011924213088743618e+01",
+        "4.5165689206393795796e+02",
+        "4.338817476830071225e+01",
+        "2.724426440870095665e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "4.3156795154984315135e-71",
+        "9.016298136746396919e-71",
+        "1.6235457527776895334e-70",
+        "2.9438411921797142356e-70",
+        "5.412839062785288897e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "9.365498765775087682e-15",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 712,
+        "n_primes": 127,
+        "n_positive_intervals": 128,
+        "endpoint_x_decimal": "7.110488307247187902e+02",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.0843210915959265453e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.7487990994402753887e-14",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 20,
+      "T_decimal": "6.8758776287943928016e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2405720486564173571e+00",
+        "-9.217880215679042273e-02",
+        "8.5526785617686458025e-03",
+        "3.6176254069885123378e-02",
+        "-1.2783381456276948745e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1557260279880634528e-01",
+        "-2.3840250863848540042e+00",
+        "-4.7615107630178475926e+00",
+        "-3.3193523403098318266e+00",
+        "-4.359609275337395939e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "3.1352012708318742647e-02",
+        "-3.4672302433091232575e-01",
+        "-6.9249498319718126354e-01",
+        "-4.8275325994884563295e-01",
+        "-6.340440465491245232e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "8.5526785617686458025e-03",
+        "3.6176254069885123378e-02",
+        "-1.2783381456276948745e-02"
+      ],
+      "l2_norm_sq_decimal": "1.5984686159124428237e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.0952676437801758383e-02",
+      "projection_energy_decimal": "1.5490612239852075676e+00",
+      "affine_detrended_projection_energy_decimal": "1.5452845105665023077e-03",
+      "energy_ratio": 0.9690907963813651,
+      "affine_detrended_energy_ratio": 0.03032783788017182,
+      "coefficient_roundoff_indicators_decimal": [
+        "4.8094438104285330056e-15",
+        "8.320308997256021977e-15",
+        "1.0739589398768184155e-14",
+        "1.2706870825719488098e-14",
+        "1.441042115420740855e-14"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.3000152525189879222e+01",
+        "1.5972822653690835434e+02",
+        "4.366471716132487944e+01",
+        "1.565277689947465961e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "4.121648407138142482e-71",
+        "8.544747617032026053e-71",
+        "1.5197504916277510979e-70",
+        "2.717162737559866211e-70",
+        "4.9246774209324117786e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "1.5915668041672885897e-14",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 969,
+        "n_primes": 163,
+        "n_positive_intervals": 164,
+        "endpoint_x_decimal": "9.6862508592699736865e+02",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "1.0355704782880481289e-56",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "2.9382503397158240902e-14",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 21,
+      "T_decimal": "7.185014151206115176e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2402568232445898628e+00",
+        "-8.3820430668711155104e-02",
+        "2.2450031521344599854e-02",
+        "4.4145219115161844065e-02",
+        "-7.343636259630367828e-03"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1531847369131782762e-01",
+        "-2.4790784984799053867e+00",
+        "-3.7964632607260576807e+00",
+        "-3.120270645107964846e+00",
+        "-4.913921155807978619e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.9967717412939723836e-02",
+        "-3.4503460206320594607e-01",
+        "-5.283863303301584881e-01",
+        "-4.3427480857280975694e-01",
+        "-6.839125229813362784e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "2.2450031521344599854e-02",
+        "4.4145219115161844065e-02",
+        "-7.343636259630367828e-03"
+      ],
+      "l2_norm_sq_decimal": "1.5967741762521297527e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.151132404987971769e-02",
+      "projection_energy_decimal": "1.5477695854817988097e+00",
+      "affine_detrended_projection_energy_decimal": "2.5067332795487746945e-03",
+      "energy_ratio": 0.969310255952816,
+      "affine_detrended_energy_ratio": 0.048663732213938854,
+      "coefficient_roundoff_indicators_decimal": [
+        "8.4466577551744413385e-15",
+        "1.4619999510670496174e-14",
+        "1.8872375142646479156e-14",
+        "2.2329621871666672248e-14",
+        "2.5321231687989137877e-14"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.4119382607023150787e+01",
+        "5.9655927263333418855e+01",
+        "3.486580463234448686e+01",
+        "2.614698977994820184e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "3.9443137452470988597e-71",
+        "8.119224113253700818e-71",
+        "1.4276222788286440125e-70",
+        "2.5191671752730581542e-70",
+        "4.504712889723134645e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "2.857777963579682582e-14",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 1320,
+        "n_primes": 215,
+        "n_positive_intervals": 216,
+        "endpoint_x_decimal": "1.3195079107728942598e+03",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "9.9101487274112348474e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "5.198073877545218307e-14",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 22,
+      "T_decimal": "7.4941506736178375506e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2400131682302745579e+00",
+        "-7.64052413614188011e-02",
+        "3.3460348686868149015e-02",
+        "4.770942786508847145e-02",
+        "-6.802402441562813551e-03"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1512199910110257358e-01",
+        "-2.571703980955770863e+00",
+        "-3.3973941624715366155e+00",
+        "-3.0426262514545837153e+00",
+        "-4.9904794289660808376e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.8705320785504221273e-02",
+        "-3.431614992755767886e-01",
+        "-4.5333945238539327652e-01",
+        "-4.0600014384094857667e-01",
+        "-6.659166123433307903e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "3.3460348686868149015e-02",
+        "4.770942786508847145e-02",
+        "-6.802402441562813551e-03"
+      ],
+      "l2_norm_sq_decimal": "1.5971827007779715507e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.371228248599169609e-02",
+      "projection_energy_decimal": "1.5469124754124177137e+00",
+      "affine_detrended_projection_energy_decimal": "3.442057120437859094e-03",
+      "energy_ratio": 0.968525688801245,
+      "affine_detrended_energy_ratio": 0.0640832405760369,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.4199267419233259271e-14",
+        "2.4583672660678441788e-14",
+        "3.173535527840372347e-14",
+        "3.75492564619896845e-14",
+        "4.257832373583887356e-14"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.5309288208635512191e+01",
+        "3.9302820925049167664e+01",
+        "3.1562958018514032764e+01",
+        "2.7175775415950330005e+02"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "3.7816093258124938392e-71",
+        "7.733385116843758335e-71",
+        "1.3453701187745298441e-70",
+        "2.3450477033667553663e-70",
+        "4.1406359900569395022e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "4.908907156843521163e-14",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 1798,
+        "n_primes": 278,
+        "n_positive_intervals": 279,
+        "endpoint_x_decimal": "1.7974974547824898305e+03",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "9.501351380306936132e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "8.806027161295840574e-14",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 23,
+      "T_decimal": "7.803287196029559925e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2436685376704424734e+00",
+        "-7.6507168731935675605e-02",
+        "3.3394353026154779114e-02",
+        "3.7786620328231346018e-02",
+        "-2.0643630244530002318e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1806550999522234411e-01",
+        "-2.570370833625861082e+00",
+        "-3.3993684643668175952e+00",
+        "-3.2758001985856693159e+00",
+        "-3.8803484698941347983e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.7945339511043197283e-02",
+        "-3.293959031693345564e-01",
+        "-4.356328786791894363e-01",
+        "-4.1979746692553492095e-01",
+        "-4.9727100546402028193e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "3.3394353026154779114e-02",
+        "3.7786620328231346018e-02",
+        "-2.0643630244530002318e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6056101024203530173e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.3045323961639351887e-02",
+      "projection_energy_decimal": "1.5555339494182518984e+00",
+      "affine_detrended_projection_energy_decimal": "2.9691709595382330925e-03",
+      "energy_ratio": 0.9688117601361534,
+      "affine_detrended_energy_ratio": 0.055974226148292366,
+      "coefficient_roundoff_indicators_decimal": [
+        "2.4379435815489116792e-14",
+        "4.221612384598697086e-14",
+        "5.449873722655798822e-14",
+        "6.448315119269659568e-14",
+        "7.311815241766994541e-14"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.5223831854072340664e+01",
+        "3.9145916618204413984e+01",
+        "3.9346743096660006557e+01",
+        "8.693117834472459741e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "3.6317963653595919233e-71",
+        "7.381991589564186772e-71",
+        "1.2715429711659539605e-70",
+        "2.1909763175731077087e-70",
+        "3.8227994111896364386e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "8.6253226039747663987e-14",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 2449,
+        "n_primes": 363,
+        "n_positive_intervals": 364,
+        "endpoint_x_decimal": "2.448637915370276851e+03",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "9.1249440214422762047e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.53352772840093623e-13",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 24,
+      "T_decimal": "8.1124237184412823e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2456523665311884407e+00",
+        "-7.415777631228232245e-02",
+        "3.5975301558329022124e-02",
+        "3.1886852392534552152e-02",
+        "-2.777373532895063754e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1965938186395460806e-01",
+        "-2.6015603431756832912e+00",
+        "-3.3249226438024475346e+00",
+        "-3.44556150485303e+00",
+        "-3.5836644772041368688e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.7076911843820686157e-02",
+        "-3.2068841981981015252e-01",
+        "-4.0985564354142201788e-01",
+        "-4.2472652125166099514e-01",
+        "-4.4175016019660036474e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "3.5975301558329022124e-02",
+        "3.1886852392534552152e-02",
+        "-2.777373532895063754e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6112783201918090538e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.412912615947632041e-02",
+      "projection_energy_decimal": "1.5602315680841713311e+00",
+      "affine_detrended_projection_energy_decimal": "3.0823740518385978388e-03",
+      "energy_ratio": 0.9683190970374621,
+      "affine_detrended_energy_ratio": 0.05694483304159106,
+      "coefficient_roundoff_indicators_decimal": [
+        "4.1077214335556426614e-14",
+        "7.1137420028203382255e-14",
+        "9.1835967246678235475e-14",
+        "1.0866102666620669425e-13",
+        "1.2321091931919399045e-13"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.5616971488252033183e+01",
+        "3.6092730083508118094e+01",
+        "4.5905708695527177813e+01",
+        "6.2861248832068318048e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "3.4934011166076546322e-71",
+        "7.0606796811204761964e-71",
+        "1.20495410519758159006e-70",
+        "2.0538728011897968162e-70",
+        "3.5435568125049328645e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "1.4846524131384406826e-13",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 3336,
+        "n_primes": 470,
+        "n_positive_intervals": 471,
+        "endpoint_x_decimal": "3.3356529238114740674e+03",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "8.777223838190765777e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "2.6135188557280227028e-13",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 25,
+      "T_decimal": "8.421560240853004675e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2449266646455204005e+00",
+        "-6.74835879518752764e-02",
+        "4.3828529346539638384e-02",
+        "3.3265728545121721495e-02",
+        "-2.4749713979022949632e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1907662428258773817e-01",
+        "-2.6958708521210279756e+00",
+        "-3.1274703186954703217e+00",
+        "-3.4032275847768984755e+00",
+        "-3.698941346437326631e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.6013781059220667798e-02",
+        "-3.201153675827613709e-01",
+        "-3.7136471499949687278e-01",
+        "-4.0410891657199517706e-01",
+        "-4.392228091528402487e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "4.3828529346539638384e-02",
+        "3.3265728545121721495e-02",
+        "-2.4749713979022949632e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6084530328148675301e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.4056597826589030346e-02",
+      "projection_energy_decimal": "1.5580365320106401562e+00",
+      "affine_detrended_projection_energy_decimal": "3.6400970223616564328e-03",
+      "energy_ratio": 0.9686552856840364,
+      "affine_detrended_energy_ratio": 0.06733862597196577,
+      "coefficient_roundoff_indicators_decimal": [
+        "7.0776395506352811074e-14",
+        "1.2257781667137011031e-13",
+        "1.5824522250879898377e-13",
+        "1.872373847981371077e-13",
+        "2.1230789316778817382e-13"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.7008924721247255232e+01",
+        "2.9297665681915262447e+01",
+        "4.3109383096019211527e+01",
+        "6.824253053249923348e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "3.3651662240590580517e-71",
+        "6.765786551533813099e-71",
+        "1.1446245405465012053e-70",
+        "1.9312350424345814703e-70",
+        "3.2967851292197856232e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "2.604346873357753219e-13",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 4544,
+        "n_primes": 615,
+        "n_positive_intervals": 616,
+        "endpoint_x_decimal": "4.543987642390770615e+03",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "8.4550317055969683897e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "4.5320151306706982476e-13",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 26,
+      "T_decimal": "8.730696763264727049e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2474275408644502471e+00",
+        "-6.693617203801471452e-02",
+        "4.3053301882300855542e-02",
+        "2.464536491866061681e-02",
+        "-3.257847014496346575e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.2108346348123571683e-01",
+        "-2.7040157698054758707e+00",
+        "-3.145316352273736047e+00",
+        "-3.7031664319285100139e+00",
+        "-3.424103633787251662e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.5322545207556208668e-02",
+        "-3.0971362803286108081e-01",
+        "-3.6025948873954329727e-01",
+        "-4.241547418655003836e-01",
+        "-3.9219133668626626274e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "4.3053301882300855542e-02",
+        "2.464536491866061681e-02",
+        "-3.257847014496346575e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6138553777876019513e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.3299456953369557256e-02",
+      "projection_energy_decimal": "1.5640782583661611478e+00",
+      "affine_detrended_projection_energy_decimal": "3.5223375319287536834e-03",
+      "energy_ratio": 0.969156393995056,
+      "affine_detrended_energy_ratio": 0.06608580524582763,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.2164982948055989046e-13",
+        "2.1069310625017368694e-13",
+        "2.720015497029660469e-13",
+        "3.2183556392805427205e-13",
+        "3.6492767823440303116e-13"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.7093864125036919146e+01",
+        "2.9666281523424388303e+01",
+        "5.7382474686864465577e+01",
+        "5.054957664273081149e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "3.2460124139965952374e-71",
+        "6.49421597327564325e-71",
+        "1.089740236867260291e-70",
+        "1.8210127424718585285e-70",
+        "3.0775345512710721858e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "4.5657079775803142706e-13",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 6191,
+        "n_primes": 804,
+        "n_positive_intervals": 805,
+        "endpoint_x_decimal": "6.1900396011845436366e+03",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "8.1556559319076620294e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "7.882754730434311598e-13",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 27,
+      "T_decimal": "9.039833285676449424e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2474463341446773477e+00",
+        "-6.256388813427188968e-02",
+        "4.665747890389441173e-02",
+        "2.1527233946293644113e-02",
+        "-3.3785704359132765593e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.2109852899650340727e-01",
+        "-2.7715670341924570116e+00",
+        "-3.0649220450553120816e+00",
+        "-3.8384364502535715184e+00",
+        "-3.3877175139155297125e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.4458252935574866208e-02",
+        "-3.0659492787151118896e-01",
+        "-3.3904630187280764724e-01",
+        "-4.2461363268010112105e-01",
+        "-3.747544237661267111e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "4.665747890389441173e-02",
+        "2.1527233946293644113e-02",
+        "-3.3785704359132765593e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6131612932113324184e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.3124696541860721473e-02",
+      "projection_energy_decimal": "1.5638184126275602292e+00",
+      "affine_detrended_projection_energy_decimal": "3.7818159580885322574e-03",
+      "energy_ratio": 0.9694123081235448,
+      "affine_detrended_energy_ratio": 0.07118753055104175,
+      "coefficient_roundoff_indicators_decimal": [
+        "2.1065375120378229089e-13",
+        "3.6485234763415593606e-13",
+        "4.710202445677999801e-13",
+        "5.573175717684947778e-13",
+        "6.319390202456098593e-13"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "1.8176713468801129925e+01",
+        "2.7119427140324175174e+01",
+        "6.464870757227514975e+01",
+        "4.754166226226768501e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "3.1350080450379149701e-71",
+        "6.243333548872421691e-71",
+        "1.0396193214689698712e-70",
+        "1.7215122687950070017e-70",
+        "2.8817687056657152758e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "8.0435519243452576234e-13",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 8433,
+        "n_primes": 1055,
+        "n_positive_intervals": 1056,
+        "endpoint_x_decimal": "8.432371141765042059e+03",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "7.876755753873260632e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.375566854786311648e-12",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 28,
+      "T_decimal": "9.348969808088171798e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2449297791710270637e+00",
+        "-5.4197038425152006623e-02",
+        "5.5058033292423437608e-02",
+        "2.46254312602915595e-02",
+        "-2.737291499330777183e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1907912605373554846e-01",
+        "-2.9151290136318047657e+00",
+        "-2.8993674992586340228e+00",
+        "-3.7039755789690504838e+00",
+        "-3.5982012583741713276e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.343350449845301011e-02",
+        "-3.1181285996985558617e-01",
+        "-3.1012695075239990247e-01",
+        "-3.961907734223926409e-01",
+        "-3.8487676527324132857e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "5.5058033292423437608e-02",
+        "2.46254312602915595e-02",
+        "-2.737291499330777183e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6067016658331341623e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.3914191792254548794e-02",
+      "projection_energy_decimal": "1.5571745494108954192e+00",
+      "affine_detrended_projection_energy_decimal": "4.3870753700158058e-03",
+      "energy_ratio": 0.9691746654183264,
+      "affine_detrended_energy_ratio": 0.08137143902518937,
+      "coefficient_roundoff_indicators_decimal": [
+        "3.6437904390857446165e-13",
+        "6.311122993855461415e-13",
+        "8.1476035430878371096e-13",
+        "9.640362551532301006e-13",
+        "1.093114514455918618e-12"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "2.0786049877682294946e+01",
+        "2.2714347122440321518e+01",
+        "5.5420166489157749685e+01",
+        "5.7056203554157989513e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "3.0313446998062995677e-71",
+        "6.010884232623515346e-71",
+        "9.93686738595773901e-71",
+        "1.6313241646948685234e-70",
+        "2.7061694766025408669e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "1.4121323470967065155e-12",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 11487,
+        "n_primes": 1384,
+        "n_positive_intervals": 1385,
+        "endpoint_x_decimal": "1.1486983549970350071e+04",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "7.616300010446611248e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "2.3877938275127786356e-12",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 29,
+      "T_decimal": "9.658106330499894174e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2469003801459656126e+00",
+        "-5.399848024170016093e-02",
+        "5.2571643912698671672e-02",
+        "1.536960487671808178e-02",
+        "-3.4379633944202505717e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.2066077589321413493e-01",
+        "-2.9187993764861224842e+00",
+        "-2.9455783937114448283e+00",
+        "-4.1753634291974626425e+00",
+        "-3.3702909264313393148e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.2847209208742781378e-02",
+        "-3.0221238787449219068e-01",
+        "-3.0498508640450892204e-01",
+        "-4.323169870279684423e-01",
+        "-3.4895980755441696823e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "5.2571643912698671672e-02",
+        "1.536960487671808178e-02",
+        "-3.4379633944202505717e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6113824362769556526e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.370604240038881439e-02",
+      "projection_energy_decimal": "1.5618583556044542229e+00",
+      "affine_detrended_projection_energy_decimal": "4.181961727887384682e-03",
+      "energy_ratio": 0.96926609130299,
+      "affine_detrended_energy_ratio": 0.07786762049435816,
+      "coefficient_roundoff_indicators_decimal": [
+        "6.37001736989745074e-13",
+        "1.1033085982311561039e-12",
+        "1.424363160962959264e-12",
+        "1.6853279059235884156e-12",
+        "1.9109822706133310909e-12"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "2.0824510217897430562e+01",
+        "2.374948008413756441e+01",
+        "8.790363203350832622e+01",
+        "4.4696966208674077728e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.9343174641700542363e-71",
+        "5.7949268303824217837e-71",
+        "9.514544476023140866e-71",
+        "1.549267343705931681e-70",
+        "2.5479887522865454173e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "2.512852863491977171e-12",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 15649,
+        "n_primes": 1825,
+        "n_positive_intervals": 1826,
+        "endpoint_x_decimal": "1.5648124217842459522e+04",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "7.372517594069759784e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "4.2205622545884502142e-12",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 30,
+      "T_decimal": "9.967242852911616548e+00",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2461664107837229848e+00",
+        "-4.9623360545444307517e-02",
+        "5.4833972119932542687e-02",
+        "1.16069282928960069805e-02",
+        "-3.5667634602655306716e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.2007196745365023632e-01",
+        "-3.003293577388132905e+00",
+        "-2.903445347909043269e+00",
+        "-4.4561530925335763455e+00",
+        "-3.3335115951643752123e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.2079522963500696874e-02",
+        "-3.0131638425071735203e-01",
+        "-2.9129874637908446453e-01",
+        "-4.470798151799673826e-01",
+        "-3.344467115287147471e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "5.4833972119932542687e-02",
+        "1.16069282928960069805e-02",
+        "-3.5667634602655306716e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6097056511770250713e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.4312449899615294984e-02",
+      "projection_energy_decimal": "1.5598068667184042798e+00",
+      "affine_detrended_projection_energy_decimal": "4.413665440994503384e-03",
+      "energy_ratio": 0.9690012988261956,
+      "affine_detrended_energy_ratio": 0.08126434084914601,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.0987848375369138044e-12",
+        "1.9031403397772948412e-12",
+        "2.456941505631986389e-12",
+        "2.9070910301402312032e-12",
+        "3.2963313140171355637e-12"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "2.2536797504763330704e+01",
+        "2.2636296055781354192e+01",
+        "1.15243462007489372696e+02",
+        "4.232556477137050607e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.8433088763477426503e-71",
+        "5.5937815518853700145e-71",
+        "9.1250581731878990516e-71",
+        "1.474345790240075862e-70",
+        "2.4049346548369261076e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "4.401090539560674035e-12",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 21317,
+        "n_primes": 2392,
+        "n_positive_intervals": 2393,
+        "endpoint_x_decimal": "2.1316631165338416627e+04",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "7.14385712255489224e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "7.328508492493274309e-12",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 31,
+      "T_decimal": "1.02763793753233389225e+01",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2427086443598602671e+00",
+        "-4.0911896071273194477e-02",
+        "6.237498374443475653e-02",
+        "1.44681093708282253115e-02",
+        "-2.9209384221986276305e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1729338791719805589e-01",
+        "-3.1963344007358778834e+00",
+        "-2.7745909855207526982e+00",
+        "-4.235808405422086957e+00",
+        "-3.5332652438732934882e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.1144936361437227977e-02",
+        "-3.1103701838910628085e-01",
+        "-2.699969399906912427e-01",
+        "-4.121887924450833421e-01",
+        "-3.4382393981655838062e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "6.237498374443475653e-02",
+        "1.44681093708282253115e-02",
+        "-2.9209384221986276305e-02"
+      ],
+      "l2_norm_sq_decimal": "1.6009118826199978334e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.491332461312950909e-02",
+      "projection_energy_decimal": "1.5509517109193806928e+00",
+      "affine_detrended_projection_energy_decimal": "4.9531529125123684496e-03",
+      "energy_ratio": 0.9687926785708817,
+      "affine_detrended_energy_ratio": 0.09019947248519157,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.9253172985666126776e-12",
+        "3.3347365137729431961e-12",
+        "4.3051242157003585025e-12",
+        "5.0938902826461288185e-12",
+        "5.7759284790846491436e-12"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "2.7089150411328454568e+01",
+        "1.9685695470159115649e+01",
+        "9.122386267607983905e+01",
+        "5.0611565578149922785e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.7577757730947433977e-71",
+        "5.4059876907131763398e-71",
+        "8.7648322480607166866e-71",
+        "1.4057143300113516302e-70",
+        "2.2750833956669278473e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "7.8090271235015645244e-12",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 29039,
+        "n_primes": 3159,
+        "n_positive_intervals": 3160,
+        "endpoint_x_decimal": "2.9038545317844422058e+04",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "6.9289538899264893613e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.2867104810983288775e-11",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 32,
+      "T_decimal": "1.0585515897735061297e+01",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2418908390522727446e+00",
+        "-3.7114898647458091272e-02",
+        "6.335330962702831475e-02",
+        "1.0071622816156487626e-02",
+        "-3.0528789195767098485e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1663508838636343022e-01",
+        "-3.293736809186715265e+00",
+        "-2.7590281300590609455e+00",
+        "-4.59803343169464036e+00",
+        "-3.4890851325119138114e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "2.0465236695050067128e-02",
+        "-3.111550576284583728e-01",
+        "-2.6064182007883042255e-01",
+        "-4.3437027312749701722e-01",
+        "-3.2960936115153903933e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "6.335330962702831475e-02",
+        "1.0071622816156487626e-02",
+        "-3.0528789195767098485e-02"
+      ],
+      "l2_norm_sq_decimal": "1.5985565544993820057e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.4886182675812912945e-02",
+      "projection_energy_decimal": "1.548717458220177721e+00",
+      "affine_detrended_projection_energy_decimal": "5.0470863966086284085e-03",
+      "energy_ratio": 0.9688224378806465,
+      "affine_detrended_energy_ratio": 0.09195550046574406,
+      "coefficient_roundoff_indicators_decimal": [
+        "3.353541924342754788e-12",
+        "5.808494095171364617e-12",
+        "7.498731512168587534e-12",
+        "8.872617373699821257e-12",
+        "1.0060602174854087287e-11"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "2.9731535060090198454e+01",
+        "1.927108650956959816e+01",
+        "1.3001858080473180473e+02",
+        "4.7772469278761790633e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.6772384407321119022e-71",
+        "5.2302692303201960517e-71",
+        "8.430781209661982802e-71",
+        "1.3426518787112067595e-70",
+        "2.1568103742221596606e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "1.37948598376483128376e-11",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 39558,
+        "n_primes": 4161,
+        "n_positive_intervals": 4162,
+        "endpoint_x_decimal": "3.955771001693912454e+04",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "6.7266026082150930984e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "2.2555489165359595033e-11",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 33,
+      "T_decimal": "1.08946524201467836715e+01",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2412197752111562556e+00",
+        "-3.3948257583065232984e-02",
+        "6.3190341328918988843e-02",
+        "4.5415444391632154295e-03",
+        "-3.319559111940150668e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1609458579771595033e-01",
+        "-3.3829177493264556873e+00",
+        "-2.7616038165826391818e+00",
+        "-5.394488139940910326e+00",
+        "-3.405338209486465659e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "1.9834922443060786292e-02",
+        "-3.1051176475080951968e-01",
+        "-2.5348250775543622974e-01",
+        "-4.9515009124708086628e-01",
+        "-3.1256969733051708787e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "6.3190341328918988843e-02",
+        "4.5415444391632154295e-03",
+        "-3.319559111940150668e-02"
+      ],
+      "l2_norm_sq_decimal": "1.5964650299455594581e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.468601537740004696e-02",
+      "projection_energy_decimal": "1.5468946067010840809e+00",
+      "affine_detrended_projection_energy_decimal": "5.1155921329246697415e-03",
+      "energy_ratio": 0.9689498847048559,
+      "affine_detrended_energy_ratio": 0.09354479564146079,
+      "coefficient_roundoff_indicators_decimal": [
+        "5.8576403139183699085e-12",
+        "1.01457197049452386714e-11",
+        "1.3098065677603215885e-11",
+        "1.5497838908532254127e-11",
+        "1.7572897179398004468e-11"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "3.239101953628091447e+01",
+        "1.9211889616762606823e+01",
+        "2.866261358206158038e+02",
+        "4.3398783839048541814e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.6012716132173194215e-71",
+        "5.065506703261365275e-71",
+        "8.120230154617330142e-71",
+        "1.2845400068540500366e-70",
+        "2.0487358693643250116e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "2.4428933168239668905e-11",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 53888,
+        "n_primes": 5489,
+        "n_positive_intervals": 5490,
+        "endpoint_x_decimal": "5.3887424616365200784e+04",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "6.5357347899720931964e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "3.965903016747692374e-11",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 34,
+      "T_decimal": "1.1203788942558506046e+01",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2382689834861218802e+00",
+        "-2.7204772167799944983e-02",
+        "6.7314558729632056005e-02",
+        "4.229122015908047945e-03",
+        "-3.013121521819298544e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.1371442326804440064e-01",
+        "-3.6043628737236847858e+00",
+        "-2.6983787398776013392e+00",
+        "-5.4657608687188205744e+00",
+        "-3.5021935941543230989e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "1.9075191826957105015e-02",
+        "-3.2170927997690303222e-01",
+        "-2.4084519564873179858e-01",
+        "-4.8784932461166616085e-01",
+        "-3.1259010787421700735e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "6.7314558729632056005e-02",
+        "4.229122015908047945e-03",
+        "-3.013121521819298544e-02"
+      ],
+      "l2_norm_sq_decimal": "1.5896471323630908717e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.5596957270635387497e-02",
+      "projection_energy_decimal": "1.5395072005129710703e+00",
+      "affine_detrended_projection_energy_decimal": "5.457025420515585948e-03",
+      "energy_ratio": 0.9684584516718598,
+      "affine_detrended_energy_ratio": 0.09815331069201912,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.0252465354002746179e-11",
+        "1.7757779942279493097e-11",
+        "2.2925193167704094051e-11",
+        "2.7125452959238102262e-11",
+        "3.0757372148536415475e-11"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "4.0152849333515887417e+01",
+        "1.7867224453928001782e+01",
+        "3.0456862737941986072e+02",
+        "4.703684470219784235e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.5294969605099918951e-71",
+        "4.9107140211660516793e-71",
+        "7.830849653303921399e-71",
+        "1.2308456860978545425e-70",
+        "1.9496818981714780337e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "4.326710650930308137e-11",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 73409,
+        "n_primes": 7249,
+        "n_positive_intervals": 7250,
+        "endpoint_x_decimal": "7.340805447385538823e+04",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "6.3553998751735381246e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "6.9623918928629690356e-11",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    },
+    {
+      "window_index": 35,
+      "T_decimal": "1.151292546497022842e+01",
+      "degree": 4,
+      "coefficients_decimal": [
+        "-1.2357431317848237526e+00",
+        "-2.145833492092987859e-02",
+        "7.009705081631379902e-02",
+        "2.918049023385401464e-03",
+        "-2.769376110773638098e-02"
+      ],
+      "coefficient_signs": [
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "log_abs_coefficients_decimal": [
+        "2.116725152569139378e-01",
+        "-3.8416421346812675425e+00",
+        "-2.6578745569205603062e+00",
+        "-5.836840028684969687e+00",
+        "-3.586548121924742471e+00"
+      ],
+      "log_abs_over_T_decimal": [
+        "1.838564106933192131e-02",
+        "-3.3368079610782069343e-01",
+        "-2.3086005073232994951e-01",
+        "-5.0698148324198008926e-01",
+        "-3.115236116864773797e-01"
+      ],
+      "affine_detrended_coefficients_decimal": [
+        "0e+00",
+        "0e+00",
+        "7.009705081631379902e-02",
+        "2.918049023385401464e-03",
+        "-2.769376110773638098e-02"
+      ],
+      "l2_norm_sq_decimal": "1.582916079950161836e+00",
+      "affine_detrended_l2_norm_sq_decimal": "5.539453205921875298e-02",
+      "projection_energy_decimal": "1.5332106038384832147e+00",
+      "affine_detrended_projection_energy_decimal": "5.6890559475401317167e-03",
+      "energy_ratio": 0.968598792607348,
+      "affine_detrended_energy_ratio": 0.1027006770534378,
+      "coefficient_roundoff_indicators_decimal": [
+        "1.8013002493874931538e-11",
+        "3.1199424543567549305e-11",
+        "4.0278281712381871664e-11",
+        "4.765790421521638655e-11",
+        "5.4038983435023944813e-11"
+      ],
+      "coefficient_cancellation_indicators_decimal": [
+        "1e+00",
+        "5.06166559681045359e+01",
+        "1.7019863833421576495e+01",
+        "4.37263386093128224e+02",
+        "5.044129327721293686e+01"
+      ],
+      "kernel_series_tail_estimates_decimal": [
+        "2.4615767871185885634e-71",
+        "4.7650192841015945037e-71",
+        "7.560602510274718708e-71",
+        "1.1811073666159204322e-70",
+        "1.8586376948573693895e-70"
+      ],
+      "norm_roundoff_indicator_decimal": "7.689631772689354978e-11",
+      "metadata": {
+        "object": "exact_continuous_theta_sqrt_residual",
+        "evaluation": "prime_interval_analytic_identities_in_longdouble",
+        "certified_interval_result": false,
+        "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+        "prime_prefix_status": "generated_by_complete_finite_sieve",
+        "prime_limit": 100000,
+        "n_primes": 9592,
+        "n_positive_intervals": 9593,
+        "endpoint_x_decimal": "1.0000000000000000003e+05",
+        "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+        "working_precision_bits": 64,
+        "working_dtype": "float128",
+        "exponential_series_order": 40,
+        "norm_series_tail_estimate_decimal": "6.1847493987221019316e-57",
+        "moments_below_roundoff_indicator": [],
+        "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+        "affine_norm_subtraction_indicator_decimal": "1.2275418135854355122e-10",
+        "RH_proved": false,
+        "B_ABS_growth_bound_proved": false
+      }
+    }
+  ],
+  "figure_render": {
+    "timestamp_utc": "2026-09-05T13:42:28.685042+00:00",
+    "host": "soulkiller",
+    "matplotlib_version": "3.10.9",
+    "reused_window_reports": true,
+    "window_reports_sha256": "8265c240039d21c2f3a568a46f7b7b4fbed9c23bc085896e20e08a3d71851d3b"
+  }
+}

@@ -26,6 +26,33 @@ ratios decay exponentially.
 ## At a glance
 
 <p align="center">
+  <img src="docs/figures/continuous_arithmetic_moments.png" alt="Signed absolute arithmetic moment c2 and continuous affine-detrended R4 across 36 finite logarithmic windows, with endpoints from 2 to 100000" width="1000"/>
+</p>
+
+The new continuous evaluator integrates the ordinary-prime residual between
+prime jumps. These 36 finite windows show the signed absolute moment beside
+its normalized projection diagnostic; the plotted segments connect evaluated
+points. They establish no all-window growth law.
+[Integral derivation](docs/EXACT_ARITHMETIC_MOMENTS.md) ·
+[Decimal data and provenance](results/readme_figures_20260905/arithmetic_moments.json) ·
+[SVG](docs/figures/continuous_arithmetic_moments.svg).
+
+<p align="center">
+  <img src="docs/figures/unattained_spectrum.png" alt="Genuine Laplace poles approach the unattained real-part boundary one quarter, while the proved normalized rate factor decays faster than any inverse power" width="1000"/>
+</p>
+
+The new analytic counterexample has genuine Laplace poles and arithmetic
+residue coefficients, yet every fixed-degree normalized ratio decays faster
+than every inverse power. The right panel illustrates the proved rate factor,
+with its degree-dependent constant omitted; it is not a measured ratio.
+No prime realization is asserted.
+[Proof](docs/UNATTAINED_SPECTRUM_OBSTRUCTION.md) ·
+[Formula data](results/readme_figures_20260905/unattained_spectrum.json) ·
+[SVG](docs/figures/unattained_spectrum.svg).
+
+### Pipeline and earlier campaigns
+
+<p align="center">
   <img src="docs/figures/pipeline.png" alt="PBSS pipeline: residual → Legendre projection → R_d scorecard" width="720"/>
 </p>
 

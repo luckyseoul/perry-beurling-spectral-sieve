@@ -1,0 +1,26 @@
+{
+  "base_commit": "2b53a5b85686dd290ed8600406cfc815c7005986",
+  "status": "figures_generated_visually_inspected_and_embedded_in_readme",
+  "arithmetic_windows": 36,
+  "arithmetic_workers": 36,
+  "arithmetic_rerender_reused_verified_rows": true,
+  "analytic_curve_role": "proved_rate_factor_with_degree_constant_omitted_not_measured_Rd",
+  "generators_completed_successfully": true,
+  "pngs_visually_inspected": true,
+  "unchanged_previously_tested_python_files": 75,
+  "previous_suite_passed": 373,
+  "source_artifact_and_figure_sha256": {
+    "README.md": "865f2ebbedd7be005981a98056c6ffd22892def4df58cfaf7c6b73a6ae32ac1d",
+    "docs/figures/README.md": "a4d8c3da525382ad2f6d106c87992251e96049fdf571921a8ec99f9678d7ed13",
+    "docs/figures/continuous_arithmetic_moments.png": "9a3df972d50b5f71da5c4f04b5f6d7bf98a74fc7dadb9fafdc813b11e0ab277a",
+    "docs/figures/continuous_arithmetic_moments.svg": "242b9b31a04c93e7703245b814d8dd79e5a805241550e97b7d0e36482d93e094",
+    "docs/figures/unattained_spectrum.png": "57a41d92087d07bafc87785f12cd3fbc16c8cc9f838d7c5f3c2804e1aea99f75",
+    "docs/figures/unattained_spectrum.svg": "ff0fe8f897dc17b04f6c22ee9c96f4019d137c945a156b6cf3cdbf8f3ac5163f",
+    "experiments/plot_arithmetic_moments.py": "ab454985a4859137a9795a613db1c8303604dabd9902e865f09a7f5cb40c8756",
+    "experiments/plot_unattained_spectrum.py": "d6fb54536421aad81d4b4f45a9289be2a170fe9bcf650100cb5d4a38913cce53",
+    "results/readme_figures_20260905/README.md": "ee19f4a0b1f472be4f238361d6426e3587d5129632ac6c567b321ef49bea422a",
+    "results/readme_figures_20260905/arithmetic_moments.json": "1751064462bac0ddc4ed0fbc282dcc6fe4660464204e69115c3284fd2888fb47",
+    "results/readme_figures_20260905/unattained_spectrum.json": "8a97e77820a6abd1e9fece8474aac1f77c409848681f71b72bf75eb24b5cb0ab"
+  },
+  "RH_proved": false
+}
