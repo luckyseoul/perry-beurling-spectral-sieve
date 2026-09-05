@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "base_commit": "8f36de49256c347c9e4af86ed54bef5be0d847a3",
+  "pytest_command": "python3 -m pytest -n 2 tests/test_ab_closure.py::test_package_status_distinguishes_conditional_equivalence_and_unconditional_claims tests/test_ab_closure.py::test_full_b_does_not_equate_absolute_converse_with_normalized_converse -q",
+  "pytest_result": "2 passed in 1.28s",
+  "workers": 2,
+  "worker_reason": "Only two independent registry contract tests; analytic proofs required no computational campaign.",
+  "proof_review": "Independent derivation and cold review by root and two agents; primary sources checked directly; no formal verification or external peer review.",
+  "local_links": "all staged Markdown local links resolve in index",
+  "sha256": {
+    "README.md": "6f1fbfeb575221b039ca630e89ba18c5578507130c8b4fc9cf9c7db48f5531a8",
+    "docs/ATTAINED_BOUNDARY_CONVERSE.md": "ff073842a878f3635437d8bd41659d97b1b8e421fa6e648d571294209faac490",
+    "docs/BEURLING_NORMALIZED_COUNTEREXAMPLE.md": "e4207dcd62759c25efe9ddebbcde5331da81dcb263a6d9eeff57f1c70161fe73",
+    "docs/README.md": "941a9ebad1728e709f7cd7525ee134fab1a278be2522da050eb77b2f033c8593",
+    "docs/SIGNED_BOUNDARY_MILESTONE_20260905.md": "78a71baf9473bb30947f79db440396b589ef556ac0986f8f713795f84d28b36c",
+    "docs/SIGNED_MOMENT_OSCILLATION.md": "9d30771d8f7c684c042ba749065eeef043c316a846afcd67b2dda0f6c431c109",
+    "docs/STATUS.md": "90ebd9cbd0c4b7d498a7d8c49ef3ab69668b1174b0be116d09a0d86c00ebba2d",
+    "docs/THEOREM_B_PACKAGE.md": "f43f8a5e3c0f38471a4cfec64820bc6ec3ce76d233413a141571607a3f756fd6",
+    "results/signed_boundary_milestone_20260905/status_reports.json": "672070fcc6c7f34bdcc2a9289a9452f418ccce6159ad08bc4029d6f33517a5cb",
+    "src/pbss/ab_closure.py": "67be0e203cc4ca20cc9f02e466368b5651da4820cbc4644deb574448b723892a",
+    "tests/test_ab_closure.py": "f4b2379b91186c372c99141ca3accc57e019aaa31b1e1343834bc87cda35ad51"
+  },
+  "rh_proved": false,
+  "ordinary_normalized_converse_closed": false,
+  "remaining_target": "Unconditional one-sided subexponential c2 bound; alternatively the normalized converse with an unattained rightmost zero-real-part supremum."
+}

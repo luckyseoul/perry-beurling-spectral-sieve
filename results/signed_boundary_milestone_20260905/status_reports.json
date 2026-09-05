@@ -1,0 +1,101 @@
+{
+  "package": {
+    "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+    "rh": "open",
+    "full_arithmetic_A": "proved_conditional_continuous",
+    "full_B": "open_normalized_converse",
+    "full_B_residual_step_id": "B-RES",
+    "full_B_residual_step": "The positive-floor B-RES formulation is RH-equivalent and open; continuous normalized recurrence gives liminf R_d=0 unconditionally.",
+    "continuous_scope": {
+      "residual": "Q(y)=exp(-y/2)*(theta(exp(y))-exp(y))",
+      "window": "q_T(u)=(I-P_1)Q(Tu), u in [0,1]",
+      "measure": "continuous Lebesgue du",
+      "detrend": "continuous orthogonal affine projection P_1",
+      "degree": "fixed integer d>=2",
+      "weight": "none beyond Lebesgue measure",
+      "sampled_transfer_proved": false,
+      "weighted_transfer_proved": false
+    },
+    "absolute_moment_converse": "proved_rh_equivalence",
+    "absolute_moment_growth_bound": "open_unconditional",
+    "signed_moment_oscillation": "proved_arithmetic",
+    "one_sided_moment_bound": "rh_equivalent_open",
+    "normalized_attained_boundary_converse": "proved_conditional",
+    "normalized_unattained_boundary_case": "open",
+    "beurling_normalized_converse": "refuted_by_discrete_counterexample",
+    "normalized_recurrence": "proved_unconditional_continuous",
+    "normalized_b_res_floor": "rh_equivalent_open",
+    "normalized_full_limit": "open_unconditional",
+    "normalized_rate": "proved_only_under_rh",
+    "rh_claimed": false,
+    "evidence_kind": "theorem_registry",
+    "model_A0": "proved",
+    "model_B0": "proved",
+    "conditional_deduction_A": "RH + exact explicit formula + positive mean-square theorem imply R_d((I-P_1)Q(Tu))=O_d(T^-2), fixed d>=2, continuous unweighted residual.",
+    "writeup_A": "docs/CONTINUOUS_THEOREM_A.md",
+    "writeup_B": "docs/THEOREM_B_PACKAGE.md",
+    "writeup_absolute_moments": "docs/ABSOLUTE_MOMENT_CONVERSE.md",
+    "writeup_signed_moments": "docs/SIGNED_MOMENT_OSCILLATION.md",
+    "writeup_attained_boundary": "docs/ATTAINED_BOUNDARY_CONVERSE.md",
+    "writeup_normalized_recurrence": "docs/NORMALIZED_RECURRENCE_THEOREM.md",
+    "roadmap": "docs/RH_CLOSEOUT_ROADMAP.md",
+    "note": "Continuous A is proved under RH. B-ABS is an equivalence and either one-sided moment bound remains unproved. Normalized recurrence proves only liminf zero. The normalized converse is proved when the rightmost off-line boundary is attained; its unattained case and RH remain open."
+  },
+  "B": [
+    {
+      "step": "B0 / M2-M4 persistent orthogonal low-degree defect",
+      "disposition": "proved_model",
+      "support": "docs/PROOFS_LEMMAS.md M2-M4; this is not an arithmetic converse"
+    },
+    {
+      "step": "Pure off-critical mode",
+      "disposition": "phase_dependent_model",
+      "support": "docs/OFF_CRITICAL_PHASE_OBSTRUCTION.md; empirical ratios are not a uniform positive floor"
+    },
+    {
+      "step": "B-ABS absolute Legendre moment converse",
+      "disposition": "proved_rh_equivalence",
+      "support": "docs/ABSOLUTE_MOMENT_CONVERSE.md; equivalent absolute growth bound is unproved unconditionally"
+    },
+    {
+      "step": "Signed absolute-moment oscillation from each off-line zero",
+      "disposition": "proved_arithmetic",
+      "support": "docs/SIGNED_MOMENT_OSCILLATION.md; either one-sided subexponential bound is RH-equivalent and open"
+    },
+    {
+      "step": "Normalized converse with an attained rightmost off-line zero",
+      "disposition": "proved_conditional",
+      "support": "docs/ATTAINED_BOUNDARY_CONVERSE.md; limsup T*R_d>0 without a gap or finite dominant block"
+    },
+    {
+      "step": "Normalized converse with an unattained rightmost real-part supremum",
+      "disposition": "open",
+      "support": "docs/ATTAINED_BOUNDARY_CONVERSE.md section 4; the energy little-o estimate does not close this case"
+    },
+    {
+      "step": "Normalized recurrence: liminf R_d=0",
+      "disposition": "proved_unconditional_continuous",
+      "support": "docs/NORMALIZED_RECURRENCE_THEOREM.md; no full limit or rate"
+    },
+    {
+      "step": "B-RES positive-floor formulation",
+      "disposition": "rh_equivalent_open",
+      "support": "By normalized recurrence, the off-zero implies positive-floor assertion is equivalent to RH"
+    },
+    {
+      "step": "Full B: normalized fast decay implies RH",
+      "disposition": "open_normalized_converse",
+      "support": "The attained-boundary case is proved; the unattained-boundary case remains open"
+    },
+    {
+      "step": "Normalized converse for general positive discrete Beurling primes",
+      "disposition": "refuted_by_discrete_counterexample",
+      "support": "docs/BEURLING_NORMALIZED_COUNTEREXAMPLE.md; does not settle ordinary zeta"
+    },
+    {
+      "step": "Unconditional RH",
+      "disposition": "open",
+      "support": "An RH-equivalent condition is not an unconditional proof of that condition"
+    }
+  ]
+}

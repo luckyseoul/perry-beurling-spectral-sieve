@@ -35,6 +35,13 @@ def test_package_status_distinguishes_conditional_equivalence_and_unconditional_
     assert s["rh_claimed"] is False
     assert s["absolute_moment_converse"] == "proved_rh_equivalence"
     assert s["absolute_moment_growth_bound"] == "open_unconditional"
+    assert s["signed_moment_oscillation"] == "proved_arithmetic"
+    assert s["one_sided_moment_bound"] == "rh_equivalent_open"
+    assert s["normalized_attained_boundary_converse"] == "proved_conditional"
+    assert s["normalized_unattained_boundary_case"] == "open"
+    assert s["beurling_normalized_converse"] == "refuted_by_discrete_counterexample"
+    for key in ("writeup_signed_moments", "writeup_attained_boundary"):
+        assert (ROOT / s[key]).is_file()
     assert s["normalized_recurrence"] == "proved_unconditional_continuous"
     assert s["normalized_full_limit"] == "open_unconditional"
     assert s["normalized_rate"] == "proved_only_under_rh"
@@ -75,6 +82,10 @@ def test_full_b_does_not_equate_absolute_converse_with_normalized_converse():
     assert len(residual) == 1
     assert residual[0]["disposition"] == "rh_equivalent_open"
     assert next(r for r in rows if "B-ABS" in r["step"])["disposition"] == "proved_rh_equivalence"
+    assert next(r for r in rows if r["step"].startswith("Signed"))["disposition"] == "proved_arithmetic"
+    assert next(r for r in rows if "an attained" in r["step"])["disposition"] == "proved_conditional"
+    assert next(r for r in rows if "an unattained" in r["step"])["disposition"] == "open"
+    assert next(r for r in rows if "Beurling primes" in r["step"])["disposition"] == "refuted_by_discrete_counterexample"
     assert next(r for r in rows if "Full B:" in r["step"])["disposition"] == "open_normalized_converse"
     assert next(r for r in rows if "recurrence" in r["step"])["disposition"] == "proved_unconditional_continuous"
 

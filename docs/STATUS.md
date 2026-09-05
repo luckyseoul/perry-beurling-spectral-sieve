@@ -30,6 +30,21 @@ arrays and optional weights need separate transfer estimates.
 The integrated proof/status package passed 332 tests; its evidence and next
 target are in the [arithmetic review checkpoint](ARITHMETIC_PROOF_REVIEW_20260905.md).
 
+**Successor proof milestone (2026-09-05):**
+[signed moment oscillation](SIGNED_MOMENT_OSCILLATION.md) shows that either
+one-sided subexponential moment bound would imply RH. The
+[normalized converse is proved when a rightmost off-critical zero is attained](ATTAINED_BOUNDARY_CONVERSE.md):
+then limsup T R_d>0. No finite dominant block or gap is assumed. The remaining
+normalized case has a supremum of zero real parts approached only at unbounded
+heights. Neither one-sided bound has been proved unconditionally.
+
+A separate [discrete Beurling construction](BEURLING_NORMALIZED_COUNTEREXAMPLE.md)
+has genuine zeta zeros at 11/20 ± i gamma while every fixed-degree continuous
+detrended ratio is O(exp(-T/10)/T). Thus the normalized converse is false for
+general positive Beurling prime systems. This does not settle the ordinary-prime
+case. Proofs, source checks, and the revised target are recorded in
+[the successor checkpoint](SIGNED_BOUNDARY_MILESTONE_20260905.md).
+
 **Diagnostic review (2026-09-05):** the sampled projection now uses weighted
 QR, the CLI and Beurling scorecard have validated input/error paths, and the
 control experiment checks separation on two grids with fixed preprocessing.

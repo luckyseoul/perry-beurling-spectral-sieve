@@ -19,6 +19,10 @@
 | [`NORMALIZED_RECURRENCE_THEOREM.md`](NORMALIZED_RECURRENCE_THEOREM.md) | Unconditional continuous \(\liminf R_d=0\) |
 | [`OFF_CRITICAL_PHASE_OBSTRUCTION.md`](OFF_CRITICAL_PHASE_OBSTRUCTION.md) | Exact vanishing model and sharp phase troughs |
 | [`WEIL_TRANSFER_OBSTRUCTION.md`](WEIL_TRANSFER_OBSTRUCTION.md) | Why an indefinite-form restriction does not give coercivity |
+| [`SIGNED_MOMENT_OSCILLATION.md`](SIGNED_MOMENT_OSCILLATION.md) | Each off-line zero forces both signs of exponential moment excursions |
+| [`ATTAINED_BOUNDARY_CONVERSE.md`](ATTAINED_BOUNDARY_CONVERSE.md) | Normalized converse when the rightmost real part is attained |
+| [`BEURLING_NORMALIZED_COUNTEREXAMPLE.md`](BEURLING_NORMALIZED_COUNTEREXAMPLE.md) | Discrete positive primes with off-line zeta zeros and exponentially small ratios |
+| [`SIGNED_BOUNDARY_MILESTONE_20260905.md`](SIGNED_BOUNDARY_MILESTONE_20260905.md) | Successor proof checkpoint and remaining one-sided bound |
 | [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) | M1–M7 proofs |
 
 ## History (do not confuse with live theorem status)

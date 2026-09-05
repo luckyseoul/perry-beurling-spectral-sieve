@@ -18,6 +18,10 @@ Open research archive and **runnable reconstruction** of the **Perry–Beurling 
 A spectral approach combining Beurling’s theory of generalized primes / Beurling zeta functions with a projection-based diagnostic. Analyze density perturbations \(q\) associated with prime systems and test whether their low-degree polynomial energy is consistent with all non-trivial zeros on \(\mathrm{Re}(s)=1/2\).
 
 The framework is a **classifier / diagnostic**, not a full proof of RH.
+Its finite control separation is not a universal zero-location criterion:
+a [positive discrete Beurling system](docs/BEURLING_NORMALIZED_COUNTEREXAMPLE.md)
+can have off-critical zeta zeros while all fixed-degree continuous detrended
+ratios decay exponentially.
 
 ## At a glance
 
@@ -127,6 +131,8 @@ those values**; it reports \(R_d\) and \(S_d\) from the shipped path. See
 | **B₀** persistent defect \(\Rightarrow R_d=\varepsilon^2\not\to0\) | **Proved** (Lemmas M2–M4) |
 | **Arithmetic recurrence** \(\liminf R_d=0\) | **Proved unconditionally**, for that continuous residual |
 | **B-ABS** subexponential absolute moment \(\Leftrightarrow\) RH | **Proved equivalence**; unconditional growth bound remains open |
+| **Signed moments** either one-sided subexponential bound \(\Leftrightarrow\) RH | **Proved equivalence**; bound remains open |
+| **Normalized converse with an attained rightmost off-critical zero** | **Proved:** \(\limsup T R_d>0\) |
 | **B** specified normalized decay \(\Rightarrow\) RH | **Open**; the positive-floor B-RES formulation is RH-equivalent |
 | **RH** unconditional | **Open** |
 
@@ -139,6 +145,10 @@ array with its continuous limit. The proof package now includes
 The [exact off-critical model](docs/OFF_CRITICAL_PHASE_OBSTRUCTION.md) also has
 \(R_d\to0\), with phase-dependent troughs. Its formerly claimed positive
 floor was incorrect.
+The [attained-boundary theorem](docs/ATTAINED_BOUNDARY_CONVERSE.md) now isolates
+the remaining normalized case: a supremum of zero real parts that no zero
+attains. The [signed criterion](docs/SIGNED_MOMENT_OSCILLATION.md) reduces the
+absolute target to either one-sided bound, still unproved unconditionally.
 
 Explicit-formula residual: `pbss.probes.explicit_formula_residual` · peel scan:
 `experiments/run_explicit_formula_peel.py` → `results/explicit_formula_peel/`.

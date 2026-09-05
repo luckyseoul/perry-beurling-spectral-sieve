@@ -3,12 +3,17 @@
 Continuous A: RH implies R_d=O(T^-2) for the exact theta residual with the
 continuous orthogonal affine detrend, fixed d>=2, and no additional weight.
 B-ABS: one absolute Legendre moment has subexponential growth iff RH.
+Signed moments: every off-line zero forces both signs of exponential excursions;
+either one-sided subexponential bound is RH-equivalent and unproved.
 Normalized recurrence: liminf R_d=0 unconditionally for that continuous detrend.
+An attained rightmost off-line zero implies limsup T*R_d>0. The case of an
+unattained rightmost real-part supremum remains open.
 The positive-floor version of B-RES is consequently RH-equivalent and open.
 
 The sampled functions below check model calculations, not these limit theorems.
-See CONTINUOUS_THEOREM_A.md, ABSOLUTE_MOMENT_CONVERSE.md, and
-NORMALIZED_RECURRENCE_THEOREM.md for the actual proofs and hypotheses.
+See CONTINUOUS_THEOREM_A.md, ABSOLUTE_MOMENT_CONVERSE.md,
+SIGNED_MOMENT_OSCILLATION.md, NORMALIZED_RECURRENCE_THEOREM.md, and
+ATTAINED_BOUNDARY_CONVERSE.md for the actual proofs and hypotheses.
 """
 from __future__ import annotations
 
@@ -320,6 +325,21 @@ def full_b_gap_table() -> List[Dict[str, str]]:
             "support": "docs/ABSOLUTE_MOMENT_CONVERSE.md; equivalent absolute growth bound is unproved unconditionally",
         },
         {
+            "step": "Signed absolute-moment oscillation from each off-line zero",
+            "disposition": "proved_arithmetic",
+            "support": "docs/SIGNED_MOMENT_OSCILLATION.md; either one-sided subexponential bound is RH-equivalent and open",
+        },
+        {
+            "step": "Normalized converse with an attained rightmost off-line zero",
+            "disposition": "proved_conditional",
+            "support": "docs/ATTAINED_BOUNDARY_CONVERSE.md; limsup T*R_d>0 without a gap or finite dominant block",
+        },
+        {
+            "step": "Normalized converse with an unattained rightmost real-part supremum",
+            "disposition": "open",
+            "support": "docs/ATTAINED_BOUNDARY_CONVERSE.md section 4; the energy little-o estimate does not close this case",
+        },
+        {
             "step": "Normalized recurrence: liminf R_d=0",
             "disposition": "proved_unconditional_continuous",
             "support": "docs/NORMALIZED_RECURRENCE_THEOREM.md; no full limit or rate",
@@ -332,7 +352,12 @@ def full_b_gap_table() -> List[Dict[str, str]]:
         {
             "step": "Full B: normalized fast decay implies RH",
             "disposition": FULL_B_STATUS,
-            "support": "Absolute-moment and recurrence theorems do not establish this normalized implication",
+            "support": "The attained-boundary case is proved; the unattained-boundary case remains open",
+        },
+        {
+            "step": "Normalized converse for general positive discrete Beurling primes",
+            "disposition": "refuted_by_discrete_counterexample",
+            "support": "docs/BEURLING_NORMALIZED_COUNTEREXAMPLE.md; does not settle ordinary zeta",
         },
         {
             "step": "Unconditional RH",
@@ -441,6 +466,11 @@ def package_status() -> Dict[str, Any]:
         "continuous_scope": dict(CONTINUOUS_SCOPE),
         "absolute_moment_converse": "proved_rh_equivalence",
         "absolute_moment_growth_bound": "open_unconditional",
+        "signed_moment_oscillation": "proved_arithmetic",
+        "one_sided_moment_bound": "rh_equivalent_open",
+        "normalized_attained_boundary_converse": "proved_conditional",
+        "normalized_unattained_boundary_case": "open",
+        "beurling_normalized_converse": "refuted_by_discrete_counterexample",
         "normalized_recurrence": "proved_unconditional_continuous",
         "normalized_b_res_floor": "rh_equivalent_open",
         "normalized_full_limit": "open_unconditional",
@@ -456,12 +486,15 @@ def package_status() -> Dict[str, Any]:
         "writeup_A": "docs/CONTINUOUS_THEOREM_A.md",
         "writeup_B": "docs/THEOREM_B_PACKAGE.md",
         "writeup_absolute_moments": "docs/ABSOLUTE_MOMENT_CONVERSE.md",
+        "writeup_signed_moments": "docs/SIGNED_MOMENT_OSCILLATION.md",
+        "writeup_attained_boundary": "docs/ATTAINED_BOUNDARY_CONVERSE.md",
         "writeup_normalized_recurrence": "docs/NORMALIZED_RECURRENCE_THEOREM.md",
         "roadmap": "docs/RH_CLOSEOUT_ROADMAP.md",
         "note": (
             "Continuous A is proved under RH. B-ABS is an equivalence and "
-            "normalized recurrence proves only liminf zero. Neither establishes "
-            "a normalized fast-decay converse or the equivalent absolute bound. RH remains open."
+            "either one-sided moment bound remains unproved. Normalized recurrence "
+            "proves only liminf zero. The normalized converse is proved when the "
+            "rightmost off-line boundary is attained; its unattained case and RH remain open."
         ),
     }
 
