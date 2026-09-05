@@ -103,7 +103,7 @@ polynomial defect.” Converting that into RH is **not** included in M4.
 
 ## Lemma M5 (finite critical-line superposition — finite-mode A₀)
 
-**Statement.** Let \(N<\infty\), amplitudes \(a_n\in\mathbb{R}\), ordinates \(t_n>0\),
+**Statement.** Let \(N<\infty\), amplitudes \(a_n\in\mathbb{R}\), distinct ordinates \(t_n>0\),
 phases \(\phi_n\in\mathbb{R}\), and
 \[
 q_T(u)=\sum_{n=1}^{N}a_n\sin(t_n T u+\phi_n)
@@ -114,6 +114,8 @@ R_d(q_T)=O_d(T^{-2})\qquad(T\to\infty)
 \]
 at the **same order** as pure-mode M3 (not a weaker rate). Code:
 `bound_R_d_finite_mode_sum`, `finite_cl_superposition`, tests `test_M5_*`.
+The family must be nonzero. Repeated frequencies must first be combined,
+including their phases; nonzero input amplitudes alone do not exclude cancellation.
 
 **Proof.** Fix \(k\le d\). Linearity and the M3 integration-by-parts bound give
 \[
@@ -139,13 +141,14 @@ R_d(q_T)=\frac{\|P_d q_T\|_2^2}{\|q_T\|_2^2}=O_d(T^{-2}).
 **Remark.** This is the finite-mode extension of model theorem A₀ needed for
 truncated explicit-formula residuals. It does **not** control infinite zero sums
 or the arithmetic residual \(q_T=(\theta-x)/\sqrt{x}\); full Theorem A and RH
-remain open.
+are not established by this lemma alone.
 
 ---
 
 ## Lemma M6 (admissible weight preserves model-mode decay)
 
-**Statement.** Let \(w\in L^\infty([0,1])\) with \(\|w\|_\infty\le W<\infty\), and suppose
+**Statement.** Let \(w\) be fixed and absolutely continuous on \([0,1]\), with
+\(\|w\|_\infty\le W<\infty\) and \(\|w'\|_1\le V<\infty\), and suppose
 for the family \(q_\omega(u)=\sin(\omega u)\) one has \(\|w q_\omega\|_2^2\ge c_w>0\) for
 large \(\omega\) (true for Hanning/Tukey with a positive bulk). Then
 \[
@@ -153,18 +156,22 @@ R_d(w q_\omega)=O_d(\omega^{-2})\qquad(\omega\to\infty).
 \]
 The same bound holds for finite critical-line superpositions (weighted finite-mode A₀).
 
-**Proof.** For each \(k\le d\),
+**Proof.** Integrate by parts with the product \(w\varphi_k\). For each \(k\le d\),
 \[
 |\langle w q_\omega,\varphi_k\rangle|
-\le W\,|\langle q_\omega,\varphi_k\rangle|
-\le W\frac{C_k}{\omega}
+\le \frac{|(w\varphi_k)(0)|+|(w\varphi_k)(1)|+
+\|(w\varphi_k)'\|_1}{\omega}
+\le\frac{\sqrt{2k+1}\,[2(k+1)W+V]}{\omega}.
 \]
-by the M3 integration-by-parts bound on \(\langle q_\omega,\varphi_k\rangle\). Hence
+For the last inequality use \(\|\varphi_k\|_\infty=\sqrt{2k+1}\) and
+\(\|\varphi_k'\|_1\le2k\sqrt{2k+1}\): a degree-\(k\) polynomial has at most
+\(k\) monotone pieces, each varying by at most twice its supremum norm.
+Write the numerator constant as \(C_k(W,V)\). Hence
 \[
 \|P_d(w q_\omega)\|_2^2
 =\sum_{k=0}^d|\langle w q_\omega,\varphi_k\rangle|^2
-\le W^2\sum_{k=0}^d\frac{C_k^2}{\omega^2}
-=O_d(W^2\omega^{-2}).
+\le\sum_{k=0}^d\frac{C_k(W,V)^2}{\omega^2}
+=O_{d,w}(\omega^{-2}).
 \]
 Dividing by \(\|w q_\omega\|_2^2\ge c_w\) yields \(R_d(w q_\omega)=O_d(\omega^{-2})\).
 For a finite sum \(q_T^{(N)}=\sum_{n=1}^N a_n\sin(t_n T u+\phi_n)\), apply the same
@@ -174,6 +181,23 @@ estimate modewise and sum (as in M5) to get \(O_d(T^{-2})\). □
 
 **Code.** `lemmas.bound_R_d_weighted_sine_order`,
 `lemmas.bound_R_d_weighted_finite_mode_sum`, weights in `pbss.weights`.
+
+**Diagnostic correction (2026-09-05).** The earlier inequality
+\(|\langle wq,\varphi_k\rangle|\le\|w\|_\infty|\langle q,\varphi_k\rangle|\)
+is false: multiplication can remove cancellation. For example, with
+\(q=\sin(2\pi m u)\), \(w=(1+q)/2\), and \(k=0\), the unweighted coefficient
+is zero while the weighted coefficient is \(1/4\). Boundedness of \(w\) alone
+does not establish the claimed rate. The corrected statement above covers the
+fixed Hann/Tukey weights used by the diagnostic and makes the required regularity explicit.
+
+The code now uses \(C_k(1,0)=2(k+1)\sqrt{2k+1}\) for M3/M5, replacing the
+incorrect degree-independent coefficient constant 2. For default M5 denominators,
+it certifies the quarter-amplitude floor from phase-uniform diagonal and cross-term
+bounds at the supplied \(T\); otherwise it returns the contraction bound 1.
+User-supplied norm floors remain hypotheses. Weighted defaults assume
+\(V\le2\) (Hann/Tukey) and the stated positive norm floor; the norm floor is
+not certified by the supremum/variation bounds alone. These are continuous
+model majorants, not finite-sample quadrature error bounds.
 
 
 ---
@@ -210,4 +234,3 @@ The limit claim is immediate. □
 **Code:** `pbss.ab_closure.energy_ratio_perturbation_bound`, discrete check
 `verify_m7_on_grid`. **Role:** closes the triangle step in Full Theorem A under
 small identification/tail/arithmetic remainders (ANT-1…3).
-

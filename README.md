@@ -92,11 +92,21 @@ See `docs/STATUS.md`.
    \[
    P(q)\;:=\;S_d(q)=T^{2(d+1)}\,R_d(q),
    \]
-   with \(T\) the logarithmic window length (so \(S_d\) is \(O(1)\) under the
-   RH decay heuristic \(R_d=O(T^{-2(d+1)})\)).
+   with \(T\) the logarithmic window length. This is a scaling convention;
+   generic model-mode decay is \(O(T^{-2})\), so \(S_d\) need not remain bounded.
+   The archive's sharper \(O(T^{-2(d+1)})\) heuristic is not a general RH criterion.
 
-- **Low** \(R_d\) / controlled \(S_d\): high-frequency content — RH-like signature.  
-- **High** \(R_d\): low-degree mass — defective / non-RH-like control.
+- **Low** \(R_d\): little energy in the selected polynomial subspace.
+- **High** \(R_d\): substantial energy in that subspace.
+
+For sampled data, the shipped implementation fits the polynomial by weighted
+least squares using trapezoid weights. Legendre polynomials are continuously
+orthonormal, but their sampled Gram matrix need not be the identity. The energy
+is therefore \(c^T G c\), with \(G=\Phi^T W\Phi\), rather than \(\sum c_k^2\).
+This keeps the sampled energy fraction in \([0,1]\), including on nonuniform
+grids. A low value can also hide an out-of-subspace defect or undersampling;
+neither outcome classifies RH. See [`docs/TOOL.md`](docs/TOOL.md) for the input
+contract and control/refinement checks.
 
 ### Legacy numbers
 

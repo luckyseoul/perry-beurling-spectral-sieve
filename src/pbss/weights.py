@@ -14,8 +14,9 @@ A continuous weight w:[0,1]→[0,1] is in W_α if:
   (W1) w(u) ≥ 0, ∫_0^1 w(u)^2 du > 0
   (W2) w vanishes near endpoints: w(u)=0 for u ∈ [0,α) ∪ (1-α,1]
        (or w(0)=w(1)=0 with |w(u)| ≤ C min(u,1-u)^β for some β>0)
-  (W3) w is C^1 on (α,1-α) (or Lipschitz), so integration-by-parts for CL modes
-       still yields O(T^{-2}) after reweighting (Lemma M3 style on the bulk).
+  (W3) w is fixed and absolutely continuous on [0,1], with finite ‖w'‖₁,
+       so integration-by-parts for CL modes yields O(T^{-2}) after reweighting
+       when the weighted norm has a positive lower bound (Lemma M6).
 
 Shipped members: ``tukey`` (cosine taper of half-width α), ``hanning`` (α=0.5
 full cosine bell), ``raised_cosine`` alias of tukey.
@@ -25,7 +26,9 @@ Endpoint contribution estimator
 Split q = q_end + q_bulk with q_end = q·1_{u∉[α,1-α]}, q_bulk = q·1_{[α,1-α]}.
 Then
   E_end = ‖P_d q_end‖² / ‖q‖²
-is a checkable upper contribution of endpoint mass to low-degree energy.
+is the endpoint-only projected energy. Projection mixes the disjoint supports:
+R_d(q) = E_end + E_bulk + 2 Re⟨P_d q_end,P_d q_bulk⟩ / ‖q‖².
+The cross term can have either sign, so E_end is not an additive attribution.
 For admissible w with support in [α,1-α], applying w kills E_end on the sample.
 """
 from __future__ import annotations
@@ -34,10 +37,18 @@ from typing import Dict, Optional, Tuple
 
 import numpy as np
 
-from .projection import _trapezoid_weights, energy_ratio, project_coefficients
+from .basis import orthonormal_legendre_design
+from .projection import _finite_energy, _trapezoid_weights, _validate_grid, energy_ratio, project_coefficients
 
 
 WEIGHT_NAMES = ("tukey", "hanning", "raised_cosine", "flat", "none")
+
+
+def _alpha(alpha: float) -> float:
+    a = float(alpha)
+    if not np.isfinite(a) or not 0.0 <= a <= 0.5:
+        raise ValueError("alpha must be finite and in [0, 0.5]")
+    return a
 
 
 def tukey_weight(u: np.ndarray, alpha: float = 0.1) -> np.ndarray:
@@ -47,10 +58,8 @@ def tukey_weight(u: np.ndarray, alpha: float = 0.1) -> np.ndarray:
     ``alpha`` is the fraction of the interval spent tapering at *each* end
     (so total taper length 2α). For α≥0.5 this coincides with a full Hanning.
     """
-    u = np.asarray(u, dtype=np.float64).ravel()
-    a = float(alpha)
-    if a < 0 or a > 0.5:
-        raise ValueError("alpha must be in [0, 0.5]")
+    u = _validate_grid(u)
+    a = _alpha(alpha)
     w = np.ones_like(u)
     if a == 0.0:
         return w
@@ -71,7 +80,7 @@ def tukey_weight(u: np.ndarray, alpha: float = 0.1) -> np.ndarray:
 
 def hanning_weight(u: np.ndarray) -> np.ndarray:
     """Full-period Hanning / Hann window (member of W_{1/2})."""
-    u = np.asarray(u, dtype=np.float64).ravel()
+    u = _validate_grid(u)
     return 0.5 * (1.0 - np.cos(2.0 * np.pi * u))
 
 
@@ -82,7 +91,7 @@ def admissible_weight(
     alpha: float = 0.1,
 ) -> np.ndarray:
     """
-    Build a weight from the admissible family.
+    Build an endpoint taper, or the flat/none comparison baseline.
 
     Parameters
     ----------
@@ -91,7 +100,7 @@ def admissible_weight(
     """
     name = (name or "tukey").lower().strip()
     if name in ("none", "flat", "raw", "one"):
-        return np.ones(np.asarray(u).shape[0], dtype=np.float64)
+        return np.ones(_validate_grid(u).size, dtype=np.float64)
     if name in ("hanning", "hann"):
         return hanning_weight(u)
     if name in ("tukey", "raised_cosine", "cosine_taper"):
@@ -107,53 +116,64 @@ def is_admissible_weight(
     tol: float = 1e-9,
 ) -> Dict[str, object]:
     """
-    Check discrete sample of w against W_α membership (W1–W2 discrete form).
+    Check necessary sampled conditions for endpoint-vanishing W_α weights.
 
-    Returns a dict with ok flag and diagnostics. Not a continuous C¹ check.
+    ``ok`` requires values in [0,1], positive mass, and sampled endpoints
+    at 0 and 1 with zero weight. ``strict_support_ok`` additionally checks
+    the hard support condition; Hann/Tukey generally satisfy only the taper
+    alternative. Neither flag proves regularity between sample points.
     """
-    w = np.asarray(w, dtype=np.float64).ravel()
-    u = np.asarray(u, dtype=np.float64).ravel()
-    if w.shape != u.shape:
-        raise ValueError("w and u must match")
-    a = float(alpha)
+    w = np.asarray(w, dtype=np.float64)
+    u = _validate_grid(u)
+    if w.ndim != 1 or w.shape != u.shape:
+        raise ValueError("w and u must be matching 1D arrays")
+    a = _alpha(alpha)
+    tol = float(tol)
+    if not np.isfinite(tol) or tol < 0.0:
+        raise ValueError("tol must be finite and nonnegative")
     wt = _trapezoid_weights(u)
-    mass = float(np.sum(wt * w * w))
+    finite = bool(np.all(np.isfinite(w)))
+    mass = float(np.sum(wt * w * w)) if finite else 0.0
     nonneg = bool(np.all(w >= -tol))
+    bounded = bool(np.all(w <= 1.0 + tol))
     end_mask = (u < a - 1e-15) | (u > 1.0 - a + 1e-15)
-    end_ok = True
-    max_end = 0.0
-    if a > 0 and np.any(end_mask):
-        max_end = float(np.max(np.abs(w[end_mask])))
-        # Tukey has smooth taper, not hard zero in (0,a); allow small values
-        # Hard vanishing required only for "strict" class — report max_end
-        end_ok = max_end <= 1.0 + tol  # always true for unit weights; report metric
-    ok = nonneg and mass > tol
+    max_end = float(np.max(np.abs(w[end_mask]))) if finite and np.any(end_mask) else None
+    endpoints_sampled = bool(abs(u[0]) <= tol and abs(u[-1] - 1.0) <= tol)
+    endpoints_zero = bool(finite and endpoints_sampled and abs(w[0]) <= tol and abs(w[-1]) <= tol)
+    ok = finite and nonneg and bounded and mass > 0.0 and endpoints_zero
+    strict_support_ok = bool(ok and (max_end is None or max_end <= tol))
     return {
         "ok": ok,
+        "finite": finite,
         "nonneg": nonneg,
+        "bounded_by_one": bounded,
+        "endpoints_sampled": endpoints_sampled,
+        "endpoints_zero": endpoints_zero,
+        "strict_support_ok": strict_support_ok,
+        "continuous_regularity_verified": False,
         "l2_mass": mass,
         "alpha": a,
         "max_abs_in_end_zones": max_end,
         "end_zone_fraction": float(np.mean(end_mask)) if end_mask.size else 0.0,
-        "note": "Discrete W_α check; not a proof of continuous admissibility.",
+        "note": "Necessary sampled conditions only; not a proof of continuous admissibility or M6 regularity.",
     }
 
 
 def apply_weight(q: np.ndarray, w: np.ndarray) -> np.ndarray:
     """Pointwise weight application: (W q)(u) = w(u) q(u)."""
-    q = np.asarray(q, dtype=np.float64).ravel()
-    w = np.asarray(w, dtype=np.float64).ravel()
-    if q.shape != w.shape:
-        raise ValueError("q and w must match")
+    q = np.asarray(q)
+    w = np.asarray(w, dtype=np.float64)
+    if q.ndim != 1 or w.ndim != 1 or q.shape != w.shape:
+        raise ValueError("q and w must be matching 1D arrays")
+    if not np.all(np.isfinite(q)) or not np.all(np.isfinite(w)):
+        raise ValueError("q and w must be finite")
     return q * w
 
 
 def endpoint_mask(u: np.ndarray, alpha: float = 0.1) -> np.ndarray:
     """Boolean mask: True on endpoint zones [0,α) ∪ (1-α,1]."""
-    u = np.asarray(u, dtype=np.float64).ravel()
-    a = float(alpha)
-    if a < 0 or a > 0.5:
-        raise ValueError("alpha in [0,0.5]")
+    u = _validate_grid(u)
+    a = _alpha(alpha)
     return (u < a) | (u > 1.0 - a)
 
 
@@ -169,45 +189,50 @@ def endpoint_contribution(
 
       E_end = ‖P_d (q · 1_end)‖² / ‖q‖²
       E_bulk = ‖P_d (q · 1_bulk)‖² / ‖q‖²
-      R_d = energy_ratio(q)
+      E_cross = 2 Re⟨P_d q_end,P_d q_bulk⟩ / ‖q‖²
+      R_d = E_end + E_bulk + E_cross
       R_d_bulk = energy_ratio(q_bulk)  (bulk-only residual)
 
-    E_end is the quantity taper kills. **Numeric diagnostic**, not a theorem
-    that arithmetic R_d → 0.
+    E_cross can be negative. A hard support mask removes q_end; a smooth
+    taper attenuates it and can also change the bulk. These energies alone
+    do not predict the change in the normalized ratio under tapering.
+    A zero residual has no energy ratio. If the requested absolute l2
+    cannot be represented in float64, rescale q before requesting this report.
     """
-    q = np.asarray(q, dtype=np.float64).ravel()
-    u = np.asarray(u, dtype=np.float64).ravel()
-    if q.shape != u.shape:
-        raise ValueError("q and u must match")
-    if degree < 0:
-        raise ValueError("degree >= 0")
-    wts = _trapezoid_weights(u)
-    l2 = float(np.sum(wts * q * q))
-    if l2 <= 1e-30:
-        return {
-            "E_end": 0.0,
-            "E_bulk": 0.0,
-            "R_d": 0.0,
-            "R_d_bulk": 0.0,
-            "R_d_end": 0.0,
-            "l2": l2,
-            "alpha": float(alpha),
-            "degree": int(degree),
-        }
+    q = np.asarray(q)
+    u = _validate_grid(u)
+    if q.ndim != 1 or q.shape != u.shape or not np.all(np.isfinite(q)):
+        raise ValueError("q must be a finite 1D array matching u")
     end = endpoint_mask(u, alpha)
+    wts = _trapezoid_weights(u)
+    # Validate the projection space even for a zero residual.
+    project_coefficients(q, u, degree, weights=wts)
+    scale = float(np.max(np.abs(q)))
+    if scale == 0.0:
+        raise ValueError("||q||^2 is zero; cannot form energy ratio")
+    # Ratios use a scaled residual to preserve amplitude invariance.
+    q_scaled = q / scale
+    l2_scaled = float(np.sum(wts * np.abs(q_scaled) ** 2))
+    l2 = _finite_energy(np.longdouble(scale)**2 * np.longdouble(l2_scaled), "L2 norm squared")
     bulk = ~end
-    q_end = np.where(end, q, 0.0)
-    q_bulk = np.where(bulk, q, 0.0)
+    q_end = np.where(end, q_scaled, 0.0)
+    q_bulk = np.where(bulk, q_scaled, 0.0)
     c_end = project_coefficients(q_end, u, degree, weights=wts)
     c_bulk = project_coefficients(q_bulk, u, degree, weights=wts)
-    e_end = float(np.dot(c_end, c_end))
-    e_bulk = float(np.dot(c_bulk, c_bulk))
-    r_full = energy_ratio(q, u, degree, weights=wts)
-    r_bulk = energy_ratio(q_bulk, u, degree, weights=wts) if float(np.sum(wts * q_bulk * q_bulk)) > 1e-30 else 0.0
-    r_end = energy_ratio(q_end, u, degree, weights=wts) if float(np.sum(wts * q_end * q_end)) > 1e-30 else 0.0
+    Phi = orthonormal_legendre_design(degree, u)
+    p_end, p_bulk = Phi @ c_end, Phi @ c_bulk
+    e_end = float(np.sum(wts * np.abs(p_end) ** 2)) / l2_scaled
+    e_bulk = float(np.sum(wts * np.abs(p_bulk) ** 2)) / l2_scaled
+    e_cross = float(2.0 * np.real(np.sum(wts * np.conj(p_end) * p_bulk))) / l2_scaled
+    r_full = energy_ratio(q_scaled, u, degree, weights=wts)
+    r_bulk = energy_ratio(q_bulk, u, degree, weights=wts) if np.any(q_bulk) else 0.0
+    r_end = energy_ratio(q_end, u, degree, weights=wts) if np.any(q_end) else 0.0
     return {
-        "E_end": e_end / l2,
-        "E_bulk": e_bulk / l2,
+        "E_end": e_end,
+        "E_bulk": e_bulk,
+        "E_cross": e_cross,
+        "projection_triangle_upper": (np.sqrt(e_end) + np.sqrt(e_bulk)) ** 2,
+        "decomposition_error": abs(float(r_full) - e_end - e_bulk - e_cross),
         "R_d": float(r_full),
         "R_d_bulk": float(r_bulk),
         "R_d_end": float(r_end),
@@ -261,6 +286,9 @@ def bulk_vs_weighted_report(
         "R_d_weighted": r_w,
         "E_end": end["E_end"],
         "E_bulk": end["E_bulk"],
+        "E_cross": end["E_cross"],
+        "projection_triangle_upper": end["projection_triangle_upper"],
+        "decomposition_error": end["decomposition_error"],
         "alpha": float(alpha),
         "weight_name": weight_name,
         "weight_admissible_ok": adm["ok"],

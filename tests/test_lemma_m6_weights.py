@@ -73,3 +73,25 @@ def test_weighted_cl_order_T_stable_scaling():
     o1 = weighted_cl_R_d_order_T(20.0, d=4)
     o2 = weighted_cl_R_d_order_T(40.0, d=4)
     assert o1 == pytest.approx(o2, rel=1e-12)
+
+
+def test_weight_variation_is_needed_when_weight_removes_cancellation():
+    u = sample_grid(20001)
+    waves = 25
+    omega = 2.0 * np.pi * waves
+    q = np.sin(omega * u)
+    w = (1.0 + q) / 2.0
+    # <q,1>=0 but <wq,1>=1/4; ||wq||²=7/32 gives R0=2/7.
+    r = energy_ratio(w * q, u, degree=0)
+    assert r == pytest.approx(2.0 / 7.0, rel=1e-10)
+    maj = bound_R_d_weighted_sine_order(
+        omega, 0, w_linf=1.0, w_variation=2.0 * waves, wq_l2_floor=7.0 / 32.0
+    )
+    assert r <= maj
+    assert r > (2.0 / omega)**2 / (7.0 / 32.0)
+
+
+@pytest.mark.parametrize("variation", [-1.0, float("nan"), float("inf")])
+def test_weighted_bound_rejects_invalid_variation(variation):
+    with pytest.raises(ValueError, match="variation"):
+        bound_R_d_weighted_sine_order(20.0, 4, w_variation=variation)

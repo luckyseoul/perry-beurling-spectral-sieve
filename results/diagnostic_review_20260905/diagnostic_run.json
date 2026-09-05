@@ -1,0 +1,156 @@
+{
+  "schema_version": 2,
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "degree": 4,
+  "n_points": 4096,
+  "x_max": 100000.0,
+  "compute": {
+    "backend": "numpy",
+    "workers": 4,
+    "jobs": 4
+  },
+  "definitions": {
+    "energy_ratio": "R_d = ||P_d q||_W^2 / ||q||_W^2",
+    "scaled_strength_P": "P := S_d = T^{2(d+1)} R_d (scaling convention only)",
+    "basis": "shifted Legendre on [0,1]; weighted discrete least-squares fit",
+    "coeffs": "Legendre expansion of the fitted polynomial; energy is c^T G c",
+    "quadrature": "composite trapezoid",
+    "note": "Generic model-mode decay is O(T^-2), not O(T^-2(d+1)); no universal RH threshold."
+  },
+  "probe_parameters": {
+    "waves": 48,
+    "synthetic_T": 20.0,
+    "critical_ordinate": 14.134725,
+    "defect_degree": 1,
+    "defect_weight": 2.5,
+    "prime_detrend": "deg1",
+    "prime_smooth_samples": 1
+  },
+  "separation": {
+    "status": "passed",
+    "classifier_ok": true,
+    "minimum_separation": 0.5,
+    "energy_ratio_defective_minus_hf": 0.9244782543033696,
+    "energy_ratio_defective_minus_critical": 0.9243567771944287,
+    "defect_in_subspace": true,
+    "sampling": {
+      "max_cycles": 48.0,
+      "points_per_cycle": 85.3125,
+      "nyquist_resolved": true
+    },
+    "warnings": [],
+    "scope": "Separation of the specified synthetic controls only; no RH conclusion or guarantee for arbitrary defects."
+  },
+  "refined_separation": {
+    "status": "passed",
+    "classifier_ok": true,
+    "minimum_separation": 0.5,
+    "energy_ratio_defective_minus_hf": 0.9244774783695963,
+    "energy_ratio_defective_minus_critical": 0.9243560021430295,
+    "defect_in_subspace": true,
+    "sampling": {
+      "max_cycles": 48.0,
+      "points_per_cycle": 170.625,
+      "nyquist_resolved": true
+    },
+    "warnings": [],
+    "scope": "Separation of the specified synthetic controls only; no RH conclusion or guarantee for arbitrary defects."
+  },
+  "grid_refinement": {
+    "stable": true,
+    "absolute_tolerance": 0.001,
+    "relative_tolerance": 0.01,
+    "note": "One refinement is a sensitivity check, not a certified continuum error bound."
+  },
+  "status": "passed",
+  "rh_like_high_frequency": {
+    "name": "high_frequency",
+    "T": 20.0,
+    "energy": 0.0004389579892683076,
+    "l2_norm_sq": 0.5000000000000001,
+    "energy_ratio": 0.000877915978536615,
+    "P_scaled_strength": 8989859620.214937,
+    "coeffs": [
+      3.519591399116866e-17,
+      -0.011480813784400395,
+      -9.077328084769383e-17,
+      -0.01752564175536872,
+      -5.59016596210781e-17
+    ],
+    "refinement": {
+      "n_points": 8191,
+      "energy_ratio": 0.0008785131170435652,
+      "absolute_change": 5.971385069502341e-07,
+      "tolerance": 0.0010087851311704357,
+      "stable": true
+    }
+  },
+  "rh_like_critical_line_mode": {
+    "name": "critical_line",
+    "T": 20.0,
+    "energy": 0.000499782598060774,
+    "l2_norm_sq": 0.5000861065811494,
+    "energy_ratio": 0.0009993930874775741,
+    "P_scaled_strength": 10233785215.770359,
+    "coeffs": [
+      4.2162430011338244e-06,
+      -0.01224380384628649,
+      1.2272916036011823e-06,
+      -0.018704822230306263,
+      -2.4027987003824722e-05
+    ],
+    "refinement": {
+      "n_points": 8191,
+      "energy_ratio": 0.000999989343610333,
+      "absolute_change": 5.962561327589426e-07,
+      "tolerance": 0.0010099998934361035,
+      "stable": true
+    }
+  },
+  "rh_like_prime_residual": {
+    "name": "prime_residual",
+    "T": 11.512925464970229,
+    "energy": 0.010285147594511495,
+    "l2_norm_sq": 0.057958888547741595,
+    "energy_ratio": 0.17745591491181661,
+    "P_scaled_strength": 7260180365.532608,
+    "coeffs": [
+      -6.34672614518878e-05,
+      -1.9918569414711e-05,
+      0.0982346377050112,
+      -0.02354740414895388,
+      -0.008978584064082579
+    ],
+    "refinement": {
+      "n_points": 8191,
+      "energy_ratio": 0.177810159486414,
+      "absolute_change": 0.00035424457459737324,
+      "tolerance": 0.00277810159486414,
+      "stable": true
+    },
+    "x_max": 100000.0,
+    "note": "Prime Chebyshev residual with degree-1 detrending and no smoothing; staircase and slow components remain."
+  },
+  "defective_control": {
+    "name": "defective",
+    "T": 20.0,
+    "energy": 6.193035571767174,
+    "l2_norm_sq": 6.692596613777903,
+    "energy_ratio": 0.9253561702819062,
+    "P_scaled_strength": 9475647183686.719,
+    "coeffs": [
+      1.1831881442810083e-15,
+      2.4885191862156004,
+      8.982566397870736e-17,
+      -0.01752564175536942,
+      -7.317806136881455e-16
+    ],
+    "refinement": {
+      "n_points": 8191,
+      "energy_ratio": 0.9253559914866398,
+      "absolute_change": 1.78795266370102e-07,
+      "tolerance": 0.010253559914866397,
+      "stable": true
+    }
+  }
+}

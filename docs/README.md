@@ -7,6 +7,7 @@
 | Doc | Role |
 |-----|------|
 | [`TOOL.md`](TOOL.md) | **CLI / library usage** for general math |
+| [`DIAGNOSTIC_REVIEW_20260905.md`](DIAGNOSTIC_REVIEW_20260905.md) | Numerical and methodology corrections, validation, replay |
 | [`MEASURE_SENSITIVITY.md`](MEASURE_SENSITIVITY.md) | Gamma-weight ≥53% sensitivity confirmation |
 | [`STATUS.md`](STATUS.md) | Current claims, campaigns, non-claims |
 | [`THEOREMS_AB.md`](THEOREMS_AB.md) | Locked definitions; Full A/B disposition |

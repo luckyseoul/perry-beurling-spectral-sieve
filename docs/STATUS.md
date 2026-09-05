@@ -1,6 +1,6 @@
 # Status: Perry–Beurling Spectral Sieve
 
-**Date:** 2026-08-11 (Full A/B package closure) / 2026-07-29 (tight stress)  
+**Date:** 2026-09-05 (diagnostic review); 2026-08-11 (Full A/B package closure); 2026-07-29 (tight stress)
 **Repo:** `luckyseoul/perry-beurling-spectral-sieve`
 
 ## Explicit non-claim
@@ -13,6 +13,14 @@ scans, and MC instrument stress. **Full Theorem A** is **closed conditionally** 
 RH + cited ANT-1…3 + M5–M7 ([`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md)). **Full Theorem B**
 is packaged to a **single residual step B-RES** ([`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md)).
 **Unconditional RH remains open.**
+
+**Diagnostic review (2026-09-05):** the sampled projection now uses weighted
+QR, the CLI and Beurling scorecard have validated input/error paths, and the
+control experiment checks separation on two grids with fixed preprocessing.
+M3/M5 coefficient constants and M6's regularity/variation hypotheses were
+corrected; these are model bounds, not new arithmetic closure. Validation:
+264 tests passed, and CPU/V100/Nuka AMD projection parity passed. See the
+[review and replay record](DIAGNOSTIC_REVIEW_20260905.md).
 
 Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) ·  
 **Full A package:** [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) ·  

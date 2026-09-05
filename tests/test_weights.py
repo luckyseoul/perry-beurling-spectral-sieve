@@ -106,3 +106,60 @@ def test_apply_weight_matches_multiply():
     q = probe_critical_line_mode(u, T=20.0)
     w = tukey_weight(u, 0.2)
     assert np.allclose(apply_weight(q, w), q * w)
+
+
+def test_discrete_admissibility_rejects_flat_and_out_of_range_weights():
+    u = sample_grid(101)
+    assert not is_admissible_weight(np.ones_like(u), u)["ok"]
+    assert not is_admissible_weight(2.0 * hanning_weight(u), u)["ok"]
+    assert not is_admissible_weight(np.full_like(u, np.inf), u)["ok"]
+    taper = is_admissible_weight(tukey_weight(u), u)
+    assert taper["ok"]
+    assert not taper["strict_support_ok"]
+    assert not taper["continuous_regularity_verified"]
+
+
+def test_discrete_admissibility_does_not_infer_unsampled_endpoints():
+    u = np.linspace(0.1, 0.9, 81)
+    report = is_admissible_weight(hanning_weight(u), u)
+    assert not report["endpoints_sampled"]
+    assert not report["ok"]
+
+
+def test_endpoint_projected_energy_includes_cancellation_cross_term():
+    # A coarse nonuniform grid also exercises the finite-grid Gram correction.
+    u = np.array([0.0, 0.04, 0.2, 0.37, 0.8, 0.96, 1.0])
+    q = np.array([3.0, 3.0, -2.0, -2.0, -2.0, 3.0, 3.0])
+    stats = endpoint_contribution(q, u, degree=0, alpha=0.1)
+    assert stats["E_cross"] < 0.0
+    assert stats["R_d"] == pytest.approx(stats["E_end"] + stats["E_bulk"] + stats["E_cross"], abs=1e-12)
+    assert stats["decomposition_error"] < 1e-12
+    assert stats["R_d"] <= stats["projection_triangle_upper"] + 1e-12
+    tiny = endpoint_contribution(1e-100 * q, u, degree=0, alpha=0.1)
+    for key in ("E_end", "E_bulk", "E_cross", "R_d"):
+        assert tiny[key] == pytest.approx(stats[key], rel=1e-12, abs=1e-12)
+
+
+def test_endpoint_report_rejects_undefined_zero_residual_ratio():
+    u = sample_grid(32)
+    with pytest.raises(ValueError, match="zero"):
+        endpoint_contribution(np.zeros_like(u), u)
+
+
+@pytest.mark.parametrize("amplitude,reason", [(1e-200, "underflows"), (1e200, "exceeds")])
+def test_endpoint_report_rejects_unrepresentable_absolute_energy(amplitude, reason):
+    u = sample_grid(32)
+    q = amplitude * (1.0 + u)
+    # R remains well defined; the report also requests absolute L2 energy.
+    assert energy_ratio(q, u, degree=1) == pytest.approx(1.0)
+    with pytest.raises(ValueError, match=reason):
+        endpoint_contribution(q, u, degree=1)
+
+
+@pytest.mark.parametrize("alpha", [-0.1, 0.6, float("nan"), float("inf")])
+def test_weight_validation_rejects_invalid_alpha(alpha):
+    u = sample_grid(32)
+    with pytest.raises(ValueError):
+        tukey_weight(u, alpha=alpha)
+    with pytest.raises(ValueError):
+        is_admissible_weight(hanning_weight(u), u, alpha=alpha)

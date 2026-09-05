@@ -1,0 +1,79 @@
+{
+  "device": "AMD Radeon RX 9070 XT",
+  "cupy_version": "13.5.1",
+  "environment": {
+    "CUDA_PATH": null,
+    "CUPY_ACCELERATORS": "(default)"
+  },
+  "cuda_runtime_version": 70253211,
+  "is_hip": true,
+  "node": "nuka",
+  "python_executable": "/home/nick/.venvs/rocm72/bin/python",
+  "source_sha256": {
+    "src/pbss/gpu_residual.py": "0449c56d16fea791cfa812f4a8f52c8f3a252a37c7b435743e23cee934c21574",
+    "src/pbss/__init__.py": "07e0484dfa6c5c7acc087c3c1e89fc497dd8ba376646329590202676a34c919e",
+    "src/pbss/projection.py": "1b6779af9e0a1df2036da5292c6f8860a114aa03e6237a3a89467cd02046c973",
+    "src/pbss/probes.py": "6e9d8bf8beeb2d555bb902862ed47147917b49c21ad6e5df95317fe6cf15a503",
+    "src/pbss/projection_backend.py": "9a247c6b19e9ca9ef12fc7960111ed118eec8efcf00709c7852352a2e8bcec5c",
+    "src/pbss/__main__.py": "71b41897918d6171c203f4c7068e9e957b6f20a02fc7850fca417123a7b2a921",
+    "src/pbss/remainder.py": "c4e843e3c088289c81dc7ac2fd4d8a633ec9064bcd63474bb318a51e36680772",
+    "src/pbss/zero_proportion_feasibility.py": "3933d1c8f8c2533f085234712d65cfbd2db78891e047fa32667d04378da19097",
+    "src/pbss/zeros.py": "9d0c83e84a6e0d12ee9ac85419f577ed9c13e97cd7690a04bc5f798a6324d87f",
+    "src/pbss/hstar_anticancellation.py": "89459fdbca02eff1ee2ed70defb9758ff8790f66260c3bdc3e36a5674e7e953e",
+    "src/pbss/plateau_secondary.py": "dae2e8d38c4460bd01967e93630dfd9cf480e367b82acd1c3c8280a73b4c5bd1",
+    "src/pbss/cli.py": "3b3ebb6608beaa027f0b35664ba3f283d9d8dd970ae905c4528092afa6f34d8e",
+    "src/pbss/b_res_threshold.py": "f0abedfb5a95578b22d5e961967bb4e3795b5672773839960df6a5ca01930ca2",
+    "src/pbss/diagnostic.py": "07533b53cae549a772f82ed576b83b0cfda85ffdeb5bda79160587fb147b4b32",
+    "src/pbss/basis.py": "59eccd2b0e76d84e3dc7261102705dee8b2b67f7e2c543ab335d99d35db00789",
+    "src/pbss/primes_io.py": "8ac4dea74d3f2eeda86ae18125f8ad39d4d54c33baee48c303664a620af2b06b",
+    "src/pbss/beurling.py": "25656718242ef81a06ff0b931cc4a6d844e77397b1c12bec4d3ad4bcf1a402dd",
+    "src/pbss/theorem_a_chain.py": "0acc2558d170c4ea57effddb5aa00564513dcc44cb537739ee8d1c8e40e277c0",
+    "src/pbss/measure_sensitivity.py": "0579af442c964b4b4534e991bb85b9fe7b4c727482b68e85a19b095997317c42",
+    "src/pbss/ab_closure.py": "4b9547071193fb72fd3dea80ea7d6b998736d6213a9941ae42195ddd9570ec4f",
+    "src/pbss/weights.py": "99f127253e0a83a0e93e5b74857d34218344cf3c8761d6b3c9ccc2af315669f7",
+    "src/pbss/ef_identify.py": "ae413b6c2c2436272cefe4fc8d2fd27eb56e850b38a71e7463f93f946b6d15f0",
+    "src/pbss/ant_audit.py": "5073f3e67bae8ff5fc2c19ed70b628e776d7f4e73502fc16166a04d4a411f768",
+    "src/pbss/lemmas.py": "573ec75afe60d033980762052e988e75992eb840d695b968c3303cba0a735b86",
+    "src/pbss/jensen_blindness.py": "c7d0a6ce3d1a261d782ce91a2008a3daa99d2ee068afe5f83a52a1ea61904512"
+  },
+  "environment_reference": "https://docs.cupy.dev/en/stable/reference/environment.html",
+  "note": "CUDA events span host orchestration and GPU operations; elapsed time is not a kernel-only benchmark.",
+  "rows": [
+    {
+      "n_points": 8192,
+      "degree": 4,
+      "grid_power": 1.0,
+      "custom_weights": false,
+      "cpu_Rd": 0.06823447671653966,
+      "gpu_Rd": 0.0682344767165398,
+      "absolute_error": 1.3877787807814457e-16,
+      "backend": "cupy",
+      "wall_seconds": 6.259449038072489,
+      "cuda_event_elapsed_ms": 6259.16259765625
+    },
+    {
+      "n_points": 16384,
+      "degree": 8,
+      "grid_power": 1.7,
+      "custom_weights": true,
+      "cpu_Rd": 0.07789941252083234,
+      "gpu_Rd": 0.077899412520832,
+      "absolute_error": 3.3306690738754696e-16,
+      "backend": "cupy",
+      "wall_seconds": 0.023654774064198136,
+      "cuda_event_elapsed_ms": 23.195480346679688
+    },
+    {
+      "n_points": 65536,
+      "degree": 12,
+      "grid_power": 1.0,
+      "custom_weights": true,
+      "cpu_Rd": 0.08427899498609115,
+      "gpu_Rd": 0.08427899498609158,
+      "absolute_error": 4.3021142204224816e-16,
+      "backend": "cupy",
+      "wall_seconds": 0.06895980192348361,
+      "cuda_event_elapsed_ms": 65.48493194580078
+    }
+  ]
+}

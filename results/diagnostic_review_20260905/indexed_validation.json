@@ -1,0 +1,9 @@
+{
+  "scope": "Exact staged diagnostic-only source, excluding pre-existing uncommitted H* changes",
+  "command": "python3 -m pytest -n 86 --dist loadscope -q",
+  "passed": 253,
+  "failed": 0,
+  "exit_code": 0,
+  "pytest_seconds": 14.35,
+  "source_snapshot": "/tmp/pbss-diagnostic-index-20260905"
+}

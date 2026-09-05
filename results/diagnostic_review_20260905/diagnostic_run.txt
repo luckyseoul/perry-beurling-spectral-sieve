@@ -1,0 +1,19 @@
+Perry–Beurling Spectral Sieve — diagnostic run
+NOT AN UNCONDITIONAL PROOF OF RH
+degree d=4, n_points=4096
+Energy measures polynomial content; it does not classify RH.
+
+high_frequency: R_d=8.779160e-04  S_d=8.989860e+09
+  finer n=8191: R_d=8.785131e-04, change=5.971e-07, stable=True
+critical_line: R_d=9.993931e-04  S_d=1.023379e+10
+  finer n=8191: R_d=9.999893e-04, change=5.963e-07, stable=True
+prime_residual: R_d=1.774559e-01  S_d=7.260180e+09
+  finer n=8191: R_d=1.778102e-01, change=3.542e-04, stable=True
+defective: R_d=9.253562e-01  S_d=9.475647e+12
+  finer n=8191: R_d=9.253560e-01, change=1.788e-07, stable=True
+
+Synthetic control check: passed
+Finer-grid control check: passed
+Both separations must reach 0.5.
+Grid refinement stable: True
+Overall diagnostic status: passed

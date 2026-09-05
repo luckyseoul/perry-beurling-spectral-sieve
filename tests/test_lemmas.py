@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from pbss.lemmas import (
     bound_R_d_finite_mode_sum,
+    bound_R_d_sine_order,
     continuous_R_d_orthogonal_defect,
     continuous_R_d_pure_mode,
     finite_mode_R_d_order_T,
@@ -140,3 +141,32 @@ def test_M5_single_mode_recovers_M3_scale():
     r_m3 = energy_ratio(probe_critical_line_mode(u, T=40.0), u, degree=4)
     assert r40 < r5
     assert r40 == pytest.approx(r_m3, rel=0.05, abs=1e-4)
+
+
+def test_M3_majorant_covers_higher_normalized_legendre_modes():
+    # At odd multiples of pi, the degree 2/4 coefficients can exceed 2/omega.
+    # This case violates the old degree-independent coefficient majorant.
+    u = sample_grid(20001)
+    omega = 21.0 * np.pi
+    r = energy_ratio(np.sin(omega * u), u, degree=4)
+    old_bound = 16.0 * 5 / omega**2
+    assert r > old_bound
+    assert r <= bound_R_d_sine_order(omega, 4)
+
+
+def test_R0_continuous_small_frequency_limit_is_linear_mode():
+    assert predicted_R_d_critical_scaling(0.0) == pytest.approx(0.75)
+    assert predicted_R_d_critical_scaling(1e-10) == pytest.approx(0.75)
+
+
+def test_finite_mode_floor_does_not_assume_distinct_frequency_cancellation_away():
+    with pytest.raises(ValueError, match="distinct"):
+        bound_R_d_finite_mode_sum(20.0, [1.0, -1.0], [2.0, 2.0], 4)
+    # Very close frequencies do not yet have a certified asymptotic norm floor.
+    assert bound_R_d_finite_mode_sum(20.0, [1.0, -1.0], [2.0, 2.00001], 4) == 1.0
+
+
+@pytest.mark.parametrize("omega,d", [(float("nan"), 2), (float("inf"), 2), (2.0, -1), (2.0, 1.5)])
+def test_majorant_rejects_invalid_parameters(omega, d):
+    with pytest.raises(ValueError):
+        bound_R_d_sine_order(omega, d)
