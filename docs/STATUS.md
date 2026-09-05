@@ -45,6 +45,14 @@ general positive Beurling prime systems. This does not settle the ordinary-prime
 case. Proofs, source checks, and the revised target are recorded in
 [the successor checkpoint](SIGNED_BOUNDARY_MILESTONE_20260905.md).
 
+**Numerical successor (2026-09-05):** `pbss moments` evaluates signed absolute
+theta moments and continuous norms using complete prime intervals, retaining
+their amplitudes and precision provenance. The full suite passed **373 tests**;
+15 independent Nuka cases at 80 digits agreed within `2.015e-16` for the
+coefficients. See the [numerical checkpoint](ARITHMETIC_MOMENTS_MILESTONE_20260905.md)
+and [integral derivation](EXACT_ARITHMETIC_MOMENTS.md). These finite checks do not
+establish the all-window growth bound.
+
 **Diagnostic review (2026-09-05):** the sampled projection now uses weighted
 QR, the CLI and Beurling scorecard have validated input/error paths, and the
 control experiment checks separation on two grids with fixed preprocessing.

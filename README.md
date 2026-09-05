@@ -60,11 +60,18 @@ pbss diagnose --demo
 pbss project --input path/to/q.npy --degree 4 --T 20
 pbss sensitivity --confirm-53
 pbss scorecard --x-max 1e6
+pbss moments --T 10 --degree 4 --json-out results/moments.json
 ```
 
 Or without install: `PYTHONPATH=src python3 -m pbss …`
 
 Tool guide: [`docs/TOOL.md`](docs/TOOL.md) · Sensitivity (≥53% gain): [`docs/MEASURE_SENSITIVITY.md`](docs/MEASURE_SENSITIVITY.md)
+
+`pbss moments` evaluates signed absolute arithmetic moments and the continuous
+norm from complete prime intervals. Its decimal output preserves the amplitude
+needed for the [absolute-moment target](docs/ABSOLUTE_MOMENT_CONVERSE.md).
+See the [integral identities and precision contract](docs/EXACT_ARITHMETIC_MOMENTS.md);
+finite evaluations do not establish an asymptotic growth bound.
 
 ### Research campaigns (optional)
 

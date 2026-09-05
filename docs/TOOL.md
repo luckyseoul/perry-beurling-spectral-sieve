@@ -29,6 +29,7 @@ PYTHONPATH=src python3 -m pbss version
 | `pbss sensitivity` | Flat vs Gamma-weight Fisher \(d'\) |
 | `pbss sensitivity --confirm-53` | Confirm ≥53% relative gain claim |
 | `pbss scorecard --x-max 1e6` | Ordinary vs gapped/thinned Beurling systems |
+| `pbss moments --T 10 -d 4` | Signed absolute ordinary-prime moments and continuous norms |
 
 ## Library API (general use)
 
@@ -45,7 +46,41 @@ rep = confirm_sensitivity_claim()   # Gamma weight discriminability
 print(rep["verdict"], rep["noisy"]["relative_gain_percent"])
 ```
 
-## Numerical contract
+## Continuous arithmetic moments
+
+```bash
+pbss moments --T 10 --degree 4 --json-out results/moments.json
+```
+
+This command integrates the actual residual
+\(Q(y)=e^{-y/2}(\theta(e^y)-e^y)\) on \([0,T]\) using analytic formulas
+between consecutive prime jumps. It reports signed absolute Legendre moments,
+the full continuous norm, and the norm and energy ratio after orthogonal affine
+detrending. Decimal strings in JSON preserve the working `longdouble` values;
+metadata record the platform precision and numerical error indicators.
+
+```python
+from pbss import arithmetic_moments
+
+result = arithmetic_moments("10", degree=4)
+print(result.coeffs[2], result.l2_norm_sq)
+report = result.to_dict()
+```
+
+The degree range is 0 through 32. The default finite-prime limit is 1,000,000;
+larger windows require an explicit `--max-prime-limit`. This limit controls the
+complete sieve, so raising it increases memory and work. A supplied library prime
+table must contain the complete ordinary-prime prefix for the window.
+
+When affine norm subtraction cannot be resolved in working precision, its norm
+and ratio are `null` in JSON; valid absolute moments remain available. The
+calculation is a numerical evaluation of continuous integral identities, with
+roundoff indicators rather than certified intervals. It does not prove the
+all-window bound in the RH-equivalent absolute-moment criterion. The
+[derivation and independent precision checks](EXACT_ARITHMETIC_MOMENTS.md)
+explain these limits.
+
+## Sampled projection contract
 
 Inputs must be finite, real, one-dimensional arrays with matching lengths.
 The grid must be strictly increasing in \([0,1]\). With no grid file, the CLI

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "pbss_version": "1.0.0",
+  "command": "moments",
+  "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+  "T_decimal": "1e+01",
+  "degree": 4,
+  "coefficients_decimal": [
+    "-1.246241134750614715e+00",
+    "-4.9426807733044794785e-02",
+    "5.476066123266131636e-02",
+    "1.0951202145242566139e-02",
+    "-3.594279885130833105e-02"
+  ],
+  "coefficient_signs": [
+    -1,
+    -1,
+    1,
+    1,
+    -1
+  ],
+  "log_abs_coefficients_decimal": [
+    "2.2013192872848107353e-01",
+    "-3.0072623353177390377e+00",
+    "-2.904783203531408231e+00",
+    "-4.5143060437918952083e+00",
+    "-3.3258265249964294448e+00"
+  ],
+  "log_abs_over_T_decimal": [
+    "2.2013192872848107354e-02",
+    "-3.0072623353177390377e-01",
+    "-2.904783203531408231e-01",
+    "-4.5143060437918952084e-01",
+    "-3.3258265249964294447e-01"
+  ],
+  "affine_detrended_coefficients_decimal": [
+    "0e+00",
+    "0e+00",
+    "5.476066123266131636e-02",
+    "1.0951202145242566139e-02",
+    "-3.594279885130833105e-02"
+  ],
+  "l2_norm_sq_decimal": "1.6097615914374053387e+00",
+  "affine_detrended_l2_norm_sq_decimal": "5.420161617022613817e-02",
+  "projection_energy_decimal": "1.5599705189035090733e+00",
+  "affine_detrended_projection_energy_decimal": "4.410543636329872865e-03",
+  "energy_ratio": 0.9690692877760636,
+  "affine_detrended_energy_ratio": 0.08137291741408735,
+  "coefficient_roundoff_indicators_decimal": [
+    "1.1685722133993183878e-12",
+    "2.0240156152767587553e-12",
+    "2.6129908153585436972e-12",
+    "3.0917310582948921566e-12",
+    "3.505693409192230764e-12"
+  ],
+  "coefficient_cancellation_indicators_decimal": [
+    "1e+00",
+    "2.2618887927335337538e+01",
+    "2.265794378690796347e+01",
+    "1.2204765224902837427e+02",
+    "4.192113431055931915e+01"
+  ],
+  "kernel_series_tail_estimates_decimal": [
+    "2.8339950076397197222e-71",
+    "5.573273559543135175e-71",
+    "9.085559057530887468e-71",
+    "1.4667889589651979769e-70",
+    "2.3905804240895792378e-70"
+  ],
+  "norm_roundoff_indicator_decimal": "4.68838994423658239e-12",
+  "metadata": {
+    "object": "exact_continuous_theta_sqrt_residual",
+    "evaluation": "prime_interval_analytic_identities_in_longdouble",
+    "certified_interval_result": false,
+    "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+    "prime_prefix_status": "generated_by_complete_finite_sieve",
+    "prime_limit": 22027,
+    "n_primes": 2466,
+    "n_positive_intervals": 2467,
+    "endpoint_x_decimal": "2.2026465794806716517e+04",
+    "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+    "working_precision_bits": 64,
+    "working_dtype": "float128",
+    "exponential_series_order": 40,
+    "norm_series_tail_estimate_decimal": "7.1204558847006996025e-57",
+    "moments_below_roundoff_indicator": [],
+    "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+    "affine_norm_subtraction_indicator_decimal": "7.801116728096119909e-12",
+    "RH_proved": false,
+    "B_ABS_growth_bound_proved": false
+  }
+}

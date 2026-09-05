@@ -216,3 +216,37 @@ def test_unwritable_report_path_is_a_clean_error(tmp_path, capsys):
         main(["project", "-i", str(samples), "--json-out", str(tmp_path)])
     assert caught.value.code == 2
     assert "Traceback" not in capsys.readouterr().err
+
+
+def test_moments_cli_retains_signed_absolute_integrals_and_strict_json(tmp_path, capsys):
+    output = tmp_path / 'moments' / 'result.json'
+    # Before the first prime, Q(y)=-exp(y/2). This gives an independent
+    # closed-form degree-zero moment and full continuous norm.
+    T = 0.4
+    assert main(['moments', '--T', str(T), '-d', '2', '--json-out', str(output)]) == 0
+    report = json.loads(output.read_text())
+    assert report['command'] == 'moments'
+    assert report['metadata']['n_primes'] == 0
+    assert float(report['coefficients_decimal'][0]) == pytest.approx(-2 * np.expm1(T / 2) / T)
+    assert float(report['l2_norm_sq_decimal']) == pytest.approx(np.expm1(T) / T)
+    assert report['coefficient_signs'][0] == -1
+    assert [float(v) for v in report['affine_detrended_coefficients_decimal'][:2]] == [0.0, 0.0]
+    assert report['metadata']['certified_interval_result'] is False
+    assert report['metadata']['B_ABS_growth_bound_proved'] is False
+    assert report['metadata']['RH_proved'] is False
+    text = capsys.readouterr().out
+    assert 'c_2=' in text and 'l2_norm_sq=' in text
+    assert 'no all-window growth bound' in text
+
+
+@pytest.mark.parametrize('arguments', [
+    ['--T', 'nan'], ['--T', '-1'], ['--T', '100'],
+    ['--degree', '33'], ['--max-prime-limit', '1'],
+])
+def test_moments_cli_rejects_unresolved_or_out_of_scope_requests(arguments, tmp_path, capsys):
+    output = tmp_path / 'not_created.json'
+    with pytest.raises(SystemExit) as caught:
+        main(['moments', *arguments, '--json-out', str(output)])
+    assert caught.value.code == 2
+    assert not output.exists()
+    assert 'Traceback' not in capsys.readouterr().err

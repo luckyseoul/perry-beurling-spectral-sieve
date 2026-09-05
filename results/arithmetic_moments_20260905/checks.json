@@ -1,0 +1,1711 @@
+{
+  "status": "finite_prime_integral_identities_numerically_corroborated",
+  "certified_interval_result": false,
+  "RH_proved": false,
+  "B_ABS_growth_bound_proved": false,
+  "timestamp_utc": "2026-09-05T13:26:32.189761+00:00",
+  "host": "NUKA",
+  "python": "3.12.14 (main, Aug 14 2026, 15:34:45) [Clang 22.1.3 ]",
+  "workers": 14,
+  "backend": "ProcessPool_mpmath",
+  "digits": 80,
+  "versions": {
+    "mpmath": "1.3.0",
+    "numpy": "2.5.2",
+    "scipy": "1.18.1"
+  },
+  "source_sha256": {
+    "src/pbss/arithmetic_moments.py": "35b27a6d629fb9f666081b328a823f494f93674e2647efa2d3dd5aa4bb93ec75",
+    "experiments/check_arithmetic_moments.py": "07e67d20814a33d3112ab24f8dc53970582f9a0faf06646ffa641dd1ec04c014",
+    "docs/EXACT_ARITHMETIC_MOMENTS.md": "81f2221e0f0bf698ee359f9c02e04c4b5fe4128976ed6a1719f7b6c1fef6252f"
+  },
+  "independent_direct_quadrature": {
+    "x": 30,
+    "degree": 4,
+    "n_intervals": 11,
+    "max_coefficient_error_decimal": "9.3427923166080430398833911278806828139171596197188505051537595299359186372155845e-78",
+    "norm_error_decimal": "8.4337583545844185794788592410160152061679691058948060400622104200865154327758077e-81"
+  },
+  "rows": [
+    {
+      "x_nominal": 2,
+      "degree": 2,
+      "interval_result": {
+        "T_decimal": "6.9314718055994530943e-01",
+        "degree": 2,
+        "coefficients_decimal": [
+          "-1.1951677046092311123e+00",
+          "-1.1933446637213392669e-01",
+          "-5.33474259088413498e-03"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          -1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.7828651412206661122e-01",
+          "-2.1258250865560687243e+00",
+          "-5.2335146445238182825e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "2.5721306978128564164e-01",
+          "-3.0669173101717917428e+00",
+          "-7.5503656240742788087e+00"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-5.33474259088413498e-03"
+        ],
+        "l2_norm_sq_decimal": "1.4426950408889634074e+00",
+        "affine_detrended_l2_norm_sq_decimal": "2.8483883743128632268e-05",
+        "projection_energy_decimal": "1.4426950164837312719e+00",
+        "affine_detrended_projection_energy_decimal": "2.8459478510993173169e-05",
+        "energy_ratio": 0.9999999830835822,
+        "affine_detrended_energy_ratio": 0.999143191555072,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.10169486780660386856e-17",
+          "3.8072155262069973225e-17",
+          "1.4859865104721933052e-16"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "3.5693936309955327763e+01",
+          "3.1800134022336675566e+03"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "4.0885764039865551795e-70",
+          "2.0915488416654885761e-69",
+          "1.150813133692383944e-68"
+        ],
+        "norm_roundoff_indicator_decimal": "2.0481403673848247762e-17",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 2,
+          "n_primes": 1,
+          "n_positive_intervals": 1,
+          "endpoint_x_decimal": "2e+00",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.0272579333207873155e-55",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "5.590224686424433068e-17",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.1951677046092311122682736652911346114647216817828241322271801598238358164011635",
+        "-0.11933446637213392638460298394552681707983651075701388168629532173046629692915304",
+        "-0.0053347425908841353987851571215896633560272325306420958621814940433395648933124302"
+      ],
+      "reference_l2_norm_sq_decimal": "1.4426950408889634073490795771844677895209951382754470036130250273315554547632775",
+      "reference_affine_l2_norm_sq_decimal": "0.000028483883743128758175817260777083827658790614040507022297061281850461503839167765",
+      "coefficient_absolute_errors_decimal": [
+        "0.000000000000000000031726334708865388535278318217175867772819840176164183598836534059247204487855654",
+        "0.00000000000000000030539701605447318292016348924298611831370467826953370307084696364309880396540011",
+        "0.00000000000000000041878515712158966335602723253064209586218149404333956489331243019353657524671947"
+      ],
+      "max_coefficient_absolute_error": 4.1878515712158967e-19,
+      "norm_absolute_error": 5.092042281553221e-20,
+      "affine_norm_absolute_error": 1.2590781726077708e-19,
+      "reference_precision_comparison_decimal": "2.0070174216736173422353720805602468432021649640860181262799053188217414195932727e-39"
+    },
+    {
+      "x_nominal": 2,
+      "degree": 4,
+      "interval_result": {
+        "T_decimal": "6.9314718055994530943e-01",
+        "degree": 4,
+        "coefficients_decimal": [
+          "-1.1951677046092311123e+00",
+          "-1.1933446637213392669e-01",
+          "-5.33474259088413498e-03",
+          "-1.5618453410416559268e-04",
+          "-3.408800151111918142e-06"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.7828651412206661122e-01",
+          "-2.1258250865560687243e+00",
+          "-5.2335146445238182825e+00",
+          "-8.764472338878474387e+00",
+          "-1.2589150190430764384e+01"
+        ],
+        "log_abs_over_T_decimal": [
+          "2.5721306978128564164e-01",
+          "-3.0669173101717917428e+00",
+          "-7.5503656240742788087e+00",
+          "-1.2644460779308469355e+01",
+          "-1.816230454874081309e+01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-5.33474259088413498e-03",
+          "-1.5618453410416559268e-04",
+          "-3.408800151111918142e-06"
+        ],
+        "l2_norm_sq_decimal": "1.4426950408889634074e+00",
+        "affine_detrended_l2_norm_sq_decimal": "2.8483883743128632268e-05",
+        "projection_energy_decimal": "1.4426950408889598837e+00",
+        "affine_detrended_projection_energy_decimal": "2.8483883739604978653e-05",
+        "energy_ratio": 0.9999999999999976,
+        "affine_detrended_energy_ratio": 0.9999999998762931,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.3090234152980985891e-17",
+          "4.5461239124673393973e-17",
+          "1.7802745928557953182e-16",
+          "7.8337121050187828123e-16",
+          "3.680009473975586805e-15"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "3.5693936309955327763e+01",
+          "3.1800134022336675566e+03",
+          "4.8083143355772399707e+05",
+          "1.03665803012832593864e+08"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "4.0885764039865551795e-70",
+          "2.0915488416654885761e-69",
+          "1.150813133692383944e-68",
+          "6.493005725266561052e-68",
+          "3.692275003835826016e-67"
+        ],
+        "norm_roundoff_indicator_decimal": "2.0481403673848247762e-17",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 2,
+          "n_primes": 1,
+          "n_positive_intervals": 1,
+          "endpoint_x_decimal": "2e+00",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.0272579333207873155e-55",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "6.262163930779729556e-17",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.1951677046092311122682736652911346114647216817828241322271801598238358164011635",
+        "-0.11933446637213392638460298394552681707983651075701388168629532173046629692915304",
+        "-0.0053347425908841353987851571215896633560272325306420958621814940433395648933124302",
+        "-0.00015618453410416506172333181241651107983017227274260838511683980133592920421037222",
+        "-0.0000034088001511110576282674680547533659122870845475522402646335192615201656751760817"
+      ],
+      "reference_l2_norm_sq_decimal": "1.4426950408889634073490795771844677895209951382754470036130250273315554547632775",
+      "reference_affine_l2_norm_sq_decimal": "0.000028483883743128758175817260777083827658790614040507022297061281850461503839167765",
+      "coefficient_absolute_errors_decimal": [
+        "0.000000000000000000031726334708865388535278318217175867772819840176164183598836534059247204487855654",
+        "0.00000000000000000030539701605447318292016348924298611831370467826953370307084696364309880396540011",
+        "0.00000000000000000041878515712158966335602723253064209586218149404333956489331243019353657524671947",
+        "0.00000000000000000053095666818758348892016982772725739161488316019866407079578962778062512572237089",
+        "0.00000000000000000086051373253194524663408771291545244775973536648073847983432482391828418839422127"
+      ],
+      "max_coefficient_absolute_error": 8.605137325319452e-19,
+      "norm_absolute_error": 5.092042281553221e-20,
+      "affine_norm_absolute_error": 1.2590781726077708e-19,
+      "reference_precision_comparison_decimal": "1.676864890371996112203959656612220648458916524725169317433497429458971993735342e-35"
+    },
+    {
+      "x_nominal": 2,
+      "degree": 6,
+      "interval_result": {
+        "T_decimal": "6.9314718055994530943e-01",
+        "degree": 6,
+        "coefficients_decimal": [
+          "-1.1951677046092311123e+00",
+          "-1.1933446637213392669e-01",
+          "-5.33474259088413498e-03",
+          "-1.5618453410416559268e-04",
+          "-3.408800151111918142e-06",
+          "-5.9355127118854156265e-08",
+          "-8.599811418541492003e-10"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.7828651412206661122e-01",
+          "-2.1258250865560687243e+00",
+          "-5.2335146445238182825e+00",
+          "-8.764472338878474387e+00",
+          "-1.2589150190430764384e+01",
+          "-1.6639727331772679784e+01",
+          "-2.0874110654997989275e+01"
+        ],
+        "log_abs_over_T_decimal": [
+          "2.5721306978128564164e-01",
+          "-3.0669173101717917428e+00",
+          "-7.5503656240742788087e+00",
+          "-1.2644460779308469355e+01",
+          "-1.816230454874081309e+01",
+          "-2.400605210329298824e+01",
+          "-3.011497592493307087e+01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-5.33474259088413498e-03",
+          "-1.5618453410416559268e-04",
+          "-3.408800151111918142e-06",
+          "-5.9355127118854156265e-08",
+          "-8.599811418541492003e-10"
+        ],
+        "l2_norm_sq_decimal": "1.4426950408889634074e+00",
+        "affine_detrended_l2_norm_sq_decimal": "2.8483883743128632268e-05",
+        "projection_energy_decimal": "1.4426950408889634075e+00",
+        "affine_detrended_projection_energy_decimal": "2.8483883743128749335e-05",
+        "energy_ratio": 1.0,
+        "affine_detrended_energy_ratio": 1.0,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.5163519627895933095e-17",
+          "5.2850322987276814722e-17",
+          "2.0745626752393973312e-16",
+          "9.136462259869267347e-16",
+          "4.2930191256531056214e-15",
+          "2.0989836305641095338e-14",
+          "1.0542844152573507708e-13"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "3.5693936309955327763e+01",
+          "3.1800134022336675566e+03",
+          "4.8083143355772399707e+05",
+          "1.03665803012832593864e+08",
+          "2.9119094990378158106e+10",
+          "1.0095571315725692705e+13"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "4.0885764039865551795e-70",
+          "2.0915488416654885761e-69",
+          "1.150813133692383944e-68",
+          "6.493005725266561052e-68",
+          "3.692275003835826016e-67",
+          "2.1070393123642310642e-66",
+          "1.2047734890557116396e-65"
+        ],
+        "norm_roundoff_indicator_decimal": "2.0481403673848247762e-17",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 2,
+          "n_primes": 1,
+          "n_positive_intervals": 1,
+          "endpoint_x_decimal": "2e+00",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.0272579333207873155e-55",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "6.9341031751350260437e-17",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.1951677046092311122682736652911346114647216817828241322271801598238358164011635",
+        "-0.11933446637213392638460298394552681707983651075701388168629532173046629692915304",
+        "-0.0053347425908841353987851571215896633560272325306420958621814940433395648933124302",
+        "-0.00015618453410416506172333181241651107983017227274260838511683980133592920421037222",
+        "-0.0000034088001511110576282674680547533659122870845475522402646335192615201656751760817",
+        "-0.000000059355127162311970879587821999995834573245067030465720090332162108315461327858643",
+        "-0.0000000008599809403782827069688445352557575381416278836889045650870140363573211403035712"
+      ],
+      "reference_l2_norm_sq_decimal": "1.4426950408889634073490795771844677895209951382754470036130250273315554547632775",
+      "reference_affine_l2_norm_sq_decimal": "0.000028483883743128758175817260777083827658790614040507022297061281850461503839167765",
+      "coefficient_absolute_errors_decimal": [
+        "0.000000000000000000031726334708865388535278318217175867772819840176164183598836534059247204487855654",
+        "0.00000000000000000030539701605447318292016348924298611831370467826953370307084696364309880396540011",
+        "0.00000000000000000041878515712158966335602723253064209586218149404333956489331243019353657524671947",
+        "0.00000000000000000053095666818758348892016982772725739161488316019866407079578962778062512572237089",
+        "0.00000000000000000086051373253194524663408771291545244775973536648073847983432482391828418839422127",
+        "0.000000000000000043457814614587821999995834573245067030465720090332162108315461327858643432118392",
+        "0.00000000000000020147586649333115546474424246185837211631109543491298596364267885969642879642247"
+      ],
+      "max_coefficient_absolute_error": 2.0147586649333115e-16,
+      "norm_absolute_error": 5.092042281553221e-20,
+      "affine_norm_absolute_error": 1.2590781726077708e-19,
+      "reference_precision_comparison_decimal": "8.62829985872738852071283816177499052361124481496833453236718199490625100950548e-32"
+    },
+    {
+      "x_nominal": 10,
+      "degree": 2,
+      "interval_result": {
+        "T_decimal": "2.302585092994045684e+00",
+        "degree": 2,
+        "coefficients_decimal": [
+          "-1.1061662313696147431e+00",
+          "2.5566367940846336375e-02",
+          "-1.4723037950893531197e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          1,
+          -1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.0090019141715141069e-01",
+          "-3.6664775435364441423e+00",
+          "-4.2183418044418242625e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "4.3820396355450708713e-02",
+          "-1.5923309651800674556e+00",
+          "-1.8320025684508905073e+00"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-1.4723037950893531197e-02"
+        ],
+        "l2_norm_sq_decimal": "1.2588874946029744921e+00",
+        "affine_detrended_l2_norm_sq_decimal": "3.4630124010831701014e-02",
+        "projection_energy_decimal": "1.2244741384386462423e+00",
+        "affine_detrended_projection_energy_decimal": "2.1676784650345118995e-04",
+        "energy_ratio": 0.9726636762126377,
+        "affine_detrended_energy_ratio": 0.006259516900247022,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.2615768894654241031e-17",
+          "1.8511629994416286891e-17",
+          "3.0324499076856325826e-17"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "5.988004879736940379e+01",
+          "1.8455978236447487907e+02"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "1.2307883594193135476e-70",
+          "3.3853961043525634055e-70",
+          "9.035691971699419204e-70"
+        ],
+        "norm_roundoff_indicator_decimal": "2.2350545265976156171e-17",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 10,
+          "n_primes": 4,
+          "n_positive_intervals": 5,
+          "endpoint_x_decimal": "1e+01",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "3.0923744435571536553e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "5.1207370621279648232e-17",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.1061662313696147432676139485515468445436860937663754197525286889286736081704072",
+        "0.025566367940846336282148888623266237284078917836912225000802903427932822501546307",
+        "-0.014723037950893531205528215672483501475347554030481735773165216398620942497674434"
+      ],
+      "reference_l2_norm_sq_decimal": "1.258887494602974492179307445698614894455261179598388901574124592474543066208756",
+      "reference_affine_l2_norm_sq_decimal": "0.034630124010831700744772599027334268314609280870188313192226906346765284992916084",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000016761394855154684454368609376637541975252868892867360817040722815739368598829701",
+        "0.00000000000000000009285111137673376271592108216308777499919709657206717749845369337160427459450014",
+        "0.000000000000000000008528215672483501475347554030481735773165216398620942497674434108407942311304204"
+      ],
+      "max_coefficient_absolute_error": 1.6761394855154684e-19,
+      "norm_absolute_error": 7.93074456986149e-20,
+      "affine_norm_absolute_error": 2.6922740097266575e-19,
+      "reference_precision_comparison_decimal": "1.0181410557295794153569211343629074548038401677061303929548998875809958122827031e-39"
+    },
+    {
+      "x_nominal": 10,
+      "degree": 4,
+      "interval_result": {
+        "T_decimal": "2.302585092994045684e+00",
+        "degree": 4,
+        "coefficients_decimal": [
+          "-1.1061662313696147431e+00",
+          "2.5566367940846336375e-02",
+          "-1.4723037950893531197e-02",
+          "-6.6148155072099336645e-02",
+          "6.344663293463598369e-03"
+        ],
+        "coefficient_signs": [
+          -1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.0090019141715141069e-01",
+          "-3.6664775435364441423e+00",
+          "-4.2183418044418242625e+00",
+          "-2.7158582788766330214e+00",
+          "-5.0601412456598563027e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "4.3820396355450708713e-02",
+          "-1.5923309651800674556e+00",
+          "-1.8320025684508905073e+00",
+          "-1.1794822641473845551e+00",
+          "-2.1975914206411226238e+00"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-1.4723037950893531197e-02",
+          "-6.6148155072099336645e-02",
+          "6.344663293463598369e-03"
+        ],
+        "l2_norm_sq_decimal": "1.2588874946029744921e+00",
+        "affine_detrended_l2_norm_sq_decimal": "3.4630124010831701014e-02",
+        "projection_energy_decimal": "1.2288899716103961679e+00",
+        "affine_detrended_projection_energy_decimal": "4.6326010182533767415e-03",
+        "energy_ratio": 0.9761714028289408,
+        "affine_detrended_energy_ratio": 0.13377373459027694,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.453466142454390415e-17",
+          "2.1167344808915181158e-17",
+          "3.503822966320257152e-17",
+          "6.121321978409997217e-17",
+          "1.1927066285316415088e-16"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "5.988004879736940379e+01",
+          "1.8455978236447487907e+02",
+          "7.729872344008596888e+01",
+          "1.6688530103812190061e+03"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "1.2307883594193135476e-70",
+          "3.3853961043525634055e-70",
+          "9.035691971699419204e-70",
+          "2.4854291065128225212e-69",
+          "6.9249688947829470687e-69"
+        ],
+        "norm_roundoff_indicator_decimal": "2.2350545265976156171e-17",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 10,
+          "n_primes": 4,
+          "n_positive_intervals": 5,
+          "endpoint_x_decimal": "1e+01",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "3.0923744435571536553e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "5.5588392821849227583e-17",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.1061662313696147432676139485515468445436860937663754197525286889286736081704072",
+        "0.025566367940846336282148888623266237284078917836912225000802903427932822501546307",
+        "-0.014723037950893531205528215672483501475347554030481735773165216398620942497674434",
+        "-0.066148155072099336225364259522021601490613860867057850702289348834954391865855444",
+        "0.0063446632934635974219111883949585664682996764985185551086118013648341185120646271"
+      ],
+      "reference_l2_norm_sq_decimal": "1.258887494602974492179307445698614894455261179598388901574124592474543066208756",
+      "reference_affine_l2_norm_sq_decimal": "0.034630124010831700744772599027334268314609280870188313192226906346765284992916084",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000016761394855154684454368609376637541975252868892867360817040722815739368598829701",
+        "0.00000000000000000009285111137673376271592108216308777499919709657206717749845369337160427459450014",
+        "0.000000000000000000008528215672483501475347554030481735773165216398620942497674434108407942311304204",
+        "0.00000000000000000041963574047797839850938613913294214929771065116504560813414455604556957197245643",
+        "0.0000000000000000009470888116050414335317003235014814448913881986351658814879353729067514674411125"
+      ],
+      "max_coefficient_absolute_error": 9.470888116050415e-19,
+      "norm_absolute_error": 7.93074456986149e-20,
+      "affine_norm_absolute_error": 2.6922740097266575e-19,
+      "reference_precision_comparison_decimal": "4.1360046846241416242968236966754214065032578869217614039875593197328461355450608e-38"
+    },
+    {
+      "x_nominal": 10,
+      "degree": 6,
+      "interval_result": {
+        "T_decimal": "2.302585092994045684e+00",
+        "degree": 6,
+        "coefficients_decimal": [
+          "-1.1061662313696147431e+00",
+          "2.5566367940846336375e-02",
+          "-1.4723037950893531197e-02",
+          "-6.6148155072099336645e-02",
+          "6.344663293463598369e-03",
+          "-4.848858335595800686e-02",
+          "-5.817169395437273156e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.0090019141715141069e-01",
+          "-3.6664775435364441423e+00",
+          "-4.2183418044418242625e+00",
+          "-2.7158582788766330214e+00",
+          "-5.0601412456598563027e+00",
+          "-3.0264269034709011172e+00",
+          "-2.8443564007275330325e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "4.3820396355450708713e-02",
+          "-1.5923309651800674556e+00",
+          "-1.8320025684508905073e+00",
+          "-1.1794822641473845551e+00",
+          "-2.1975914206411226238e+00",
+          "-1.3143605040609577311e+00",
+          "-1.2352882894021620982e+00"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-1.4723037950893531197e-02",
+          "-6.6148155072099336645e-02",
+          "6.344663293463598369e-03",
+          "-4.848858335595800686e-02",
+          "-5.817169395437273156e-02"
+        ],
+        "l2_norm_sq_decimal": "1.2588874946029744921e+00",
+        "affine_detrended_l2_norm_sq_decimal": "3.4630124010831701014e-02",
+        "projection_energy_decimal": "1.2346250603037850607e+00",
+        "affine_detrended_projection_energy_decimal": "1.0367689711642269596e-02",
+        "energy_ratio": 0.9807270829178891,
+        "affine_detrended_energy_ratio": 0.2993835571711911,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.6453553954433567269e-17",
+          "2.3823059623414075425e-17",
+          "3.975196024954881721e-17",
+          "7.008315225488643209e-17",
+          "1.3763845353942187998e-16",
+          "3.0151540384874851133e-16",
+          "6.986655719147233755e-16"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "5.988004879736940379e+01",
+          "1.8455978236447487907e+02",
+          "7.729872344008596888e+01",
+          "1.6688530103812190061e+03",
+          "4.9506601743753049985e+02",
+          "9.736537620376304041e+02"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "1.2307883594193135476e-70",
+          "3.3853961043525634055e-70",
+          "9.035691971699419204e-70",
+          "2.4854291065128225212e-69",
+          "6.9249688947829470687e-69",
+          "1.9399527434450606073e-68",
+          "5.4492520412787295254e-68"
+        ],
+        "norm_roundoff_indicator_decimal": "2.2350545265976156171e-17",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 10,
+          "n_primes": 4,
+          "n_positive_intervals": 5,
+          "endpoint_x_decimal": "1e+01",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "3.0923744435571536553e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "5.9969415022418806926e-17",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.1061662313696147432676139485515468445436860937663754197525286889286736081704072",
+        "0.025566367940846336282148888623266237284078917836912225000802903427932822501546307",
+        "-0.014723037950893531205528215672483501475347554030481735773165216398620942497674434",
+        "-0.066148155072099336225364259522021601490613860867057850702289348834954391865855444",
+        "0.0063446632934635974219111883949585664682996764985185551086118013648341185120646271",
+        "-0.048488583355958006739703813596754606806411411555515764133485995955567699937737935",
+        "-0.058171693954372730249425836379052773519961084408502041959424855110308934500144902"
+      ],
+      "reference_l2_norm_sq_decimal": "1.258887494602974492179307445698614894455261179598388901574124592474543066208756",
+      "reference_affine_l2_norm_sq_decimal": "0.034630124010831700744772599027334268314609280870188313192226906346765284992916084",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000016761394855154684454368609376637541975252868892867360817040722815739368598829701",
+        "0.00000000000000000009285111137673376271592108216308777499919709657206717749845369337160427459450014",
+        "0.000000000000000000008528215672483501475347554030481735773165216398620942497674434108407942311304204",
+        "0.00000000000000000041963574047797839850938613913294214929771065116504560813414455604556957197245643",
+        "0.0000000000000000009470888116050414335317003235014814448913881986351658814879353729067514674411125",
+        "0.00000000000000000012029618640324539319358858844448423586651400404443230006226206502476727068103295",
+        "0.0000000000000000013105741636209472264800389155914979580405751448896910654998550984292434207414761"
+      ],
+      "max_coefficient_absolute_error": 1.3105741636209471e-18,
+      "norm_absolute_error": 7.93074456986149e-20,
+      "affine_norm_absolute_error": 2.6922740097266575e-19,
+      "reference_precision_comparison_decimal": "1.6836206006540580419435591799828445913495544801959034952344214673258440169981453e-35"
+    },
+    {
+      "x_nominal": 100,
+      "degree": 2,
+      "interval_result": {
+        "T_decimal": "4.605170185988091368e+00",
+        "degree": 2,
+        "coefficients_decimal": [
+          "-1.1944458423354840688e+00",
+          "-8.197632401064378865e-02",
+          "-3.85083958885487998e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          -1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.7768234756414960041e-01",
+          "-2.5013248049863858345e+00",
+          "-3.2568789864360593001e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "3.8583231539362935047e-02",
+          "-5.4315578012665742487e-01",
+          "-7.072222860179181552e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-3.85083958885487998e-02"
+        ],
+        "l2_norm_sq_decimal": "1.4821070042736988086e+00",
+        "affine_detrended_l2_norm_sq_decimal": "4.868601630287668905e-02",
+        "projection_energy_decimal": "1.4349038845247313217e+00",
+        "affine_detrended_projection_energy_decimal": "1.4828965539092021085e-03",
+        "energy_ratio": 0.9681513415611316,
+        "affine_detrended_energy_ratio": 0.03045836703262129,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.1680659385349891688e-16",
+          "1.9562709467997837477e-16",
+          "2.5173864577895574103e-16"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.58311936843564137365e+01",
+          "4.10685819473454745e+01"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "6.1539419677964714092e-71",
+          "1.37929602930541394255e-70",
+          "2.768409037217286895e-70"
+        ],
+        "norm_roundoff_indicator_decimal": "2.9726973710158667795e-16",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 101,
+          "n_primes": 25,
+          "n_positive_intervals": 26,
+          "endpoint_x_decimal": "1.0000000000000000001e+02",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.5461873496805254829e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "6.083816180704428516e-16",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.194445842335484068816224076951084181440666524491583878412571829025689213326787",
+        "-0.081976324010643788622387741475498588403514470170963845785276519207738567784850154",
+        "-0.03850839588854879979680126538921191053349780834247433705449269185340389144517153"
+      ],
+      "reference_l2_norm_sq_decimal": "1.4821070042736988086890730980193213462019260259437033190290289667904045222074148",
+      "reference_affine_l2_norm_sq_decimal": "0.04868601630287668913745608334692580681344654700524592609521564177941129171671048",
+      "coefficient_absolute_errors_decimal": [
+        "0.000000000000000000016224076951084181440666524491583878412571829025689213326787028320675047314876389",
+        "0.000000000000000000027612258524501411596485529829036154214723480792261432215149846385185489228994509",
+        "0.0000000000000000000031987346107880894665021916575256629455073081465961085548284703578104330667504913"
+      ],
+      "max_coefficient_absolute_error": 2.761225852450141e-20,
+      "norm_absolute_error": 8.907309801932135e-20,
+      "affine_norm_absolute_error": 8.745608334692581e-20,
+      "reference_precision_comparison_decimal": "9.1373791379405950038210941591271296848602113232116443444225543708867450409438674e-40"
+    },
+    {
+      "x_nominal": 100,
+      "degree": 4,
+      "interval_result": {
+        "T_decimal": "4.605170185988091368e+00",
+        "degree": 4,
+        "coefficients_decimal": [
+          "-1.1944458423354840688e+00",
+          "-8.197632401064378865e-02",
+          "-3.85083958885487998e-02",
+          "2.4009091074677207251e-02",
+          "2.5684225431413523853e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.7768234756414960041e-01",
+          "-2.5013248049863858345e+00",
+          "-3.2568789864360593001e+00",
+          "-3.7293227255806044272e+00",
+          "-3.6618782719741705387e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "3.8583231539362935047e-02",
+          "-5.4315578012665742487e-01",
+          "-7.072222860179181552e-01",
+          "-8.0981214047802579556e-01",
+          "-7.9516676345989874064e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-3.85083958885487998e-02",
+          "2.4009091074677207251e-02",
+          "2.5684225431413523853e-02"
+        ],
+        "l2_norm_sq_decimal": "1.4821070042736988086e+00",
+        "affine_detrended_l2_norm_sq_decimal": "4.868601630287668905e-02",
+        "projection_energy_decimal": "1.4361400004149751356e+00",
+        "affine_detrended_projection_energy_decimal": "2.7190124441530160585e-03",
+        "energy_ratio": 0.9689853676379799,
+        "affine_detrended_energy_ratio": 0.05584791384938921,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.1887862709698117308e-16",
+          "1.978783894259925202e-16",
+          "2.544820853034860493e-16",
+          "3.041847792932252467e-16",
+          "3.5167053789400437685e-16"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.58311936843564137365e+01",
+          "4.10685819473454745e+01",
+          "9.0253992868142112554e+01",
+          "1.2094128632743833874e+02"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "6.1539419677964714092e-71",
+          "1.37929602930541394255e-70",
+          "2.768409037217286895e-70",
+          "5.6604778091004703286e-70",
+          "1.175073951690398305e-69"
+        ],
+        "norm_roundoff_indicator_decimal": "2.9726973710158667795e-16",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 101,
+          "n_primes": 25,
+          "n_positive_intervals": 26,
+          "endpoint_x_decimal": "1.0000000000000000001e+02",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.5461873496805254829e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "6.137005867912448601e-16",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.194445842335484068816224076951084181440666524491583878412571829025689213326787",
+        "-0.081976324010643788622387741475498588403514470170963845785276519207738567784850154",
+        "-0.03850839588854879979680126538921191053349780834247433705449269185340389144517153",
+        "0.02400909107467720743572771608765382871114209294478851047473440973666792798197395",
+        "0.025684225431413523659431857066070817165683000305402360081827557218827090256305085"
+      ],
+      "reference_l2_norm_sq_decimal": "1.4821070042736988086890730980193213462019260259437033190290289667904045222074148",
+      "reference_affine_l2_norm_sq_decimal": "0.04868601630287668913745608334692580681344654700524592609521564177941129171671048",
+      "coefficient_absolute_errors_decimal": [
+        "0.000000000000000000016224076951084181440666524491583878412571829025689213326787028320675047314876389",
+        "0.000000000000000000027612258524501411596485529829036154214723480792261432215149846385185489228994509",
+        "0.0000000000000000000031987346107880894665021916575256629455073081465961085548284703578104330667504913",
+        "0.00000000000000000018472771608765382871114209294478851047473440973666792798197394998442200782493459",
+        "0.00000000000000000019356814293392918283431699969459763991817244278117290974369491467152335129867959"
+      ],
+      "max_coefficient_absolute_error": 1.9356814293392919e-19,
+      "norm_absolute_error": 8.907309801932135e-20,
+      "affine_norm_absolute_error": 8.745608334692581e-20,
+      "reference_precision_comparison_decimal": "3.981160253107853135995652290107196889933325961566068732032284052410248251907023e-38"
+    },
+    {
+      "x_nominal": 100,
+      "degree": 6,
+      "interval_result": {
+        "T_decimal": "4.605170185988091368e+00",
+        "degree": 6,
+        "coefficients_decimal": [
+          "-1.1944458423354840688e+00",
+          "-8.197632401064378865e-02",
+          "-3.85083958885487998e-02",
+          "2.4009091074677207251e-02",
+          "2.5684225431413523853e-02",
+          "-3.1376356805325707035e-02",
+          "1.7747691976650774335e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        "log_abs_coefficients_decimal": [
+          "1.7768234756414960041e-01",
+          "-2.5013248049863858345e+00",
+          "-3.2568789864360593001e+00",
+          "-3.7293227255806044272e+00",
+          "-3.6618782719741705387e+00",
+          "-3.4617006376739605281e+00",
+          "-4.0314998009997419855e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "3.8583231539362935047e-02",
+          "-5.4315578012665742487e-01",
+          "-7.072222860179181552e-01",
+          "-8.0981214047802579556e-01",
+          "-7.9516676345989874064e-01",
+          "-7.5169874247138458126e-01",
+          "-8.7542905868412289506e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "-3.85083958885487998e-02",
+          "2.4009091074677207251e-02",
+          "2.5684225431413523853e-02",
+          "-3.1376356805325707035e-02",
+          "1.7747691976650774335e-02"
+        ],
+        "l2_norm_sq_decimal": "1.4821070042736988086e+00",
+        "affine_detrended_l2_norm_sq_decimal": "4.868601630287668905e-02",
+        "projection_energy_decimal": "1.4374394567518483188e+00",
+        "affine_detrended_projection_energy_decimal": "4.0184687810261991365e-03",
+        "energy_ratio": 0.9698621304716526,
+        "affine_detrended_energy_ratio": 0.08253845942184351,
+        "coefficient_roundoff_indicators_decimal": [
+          "1.209506603404634293e-16",
+          "2.0012968417200666564e-16",
+          "2.5722552482801635755e-16",
+          "3.0794377992937596599e-16",
+          "3.5705908039162795508e-16",
+          "4.1057722141376963008e-16",
+          "4.781788787160445791e-16"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.58311936843564137365e+01",
+          "4.10685819473454745e+01",
+          "9.0253992868142112554e+01",
+          "1.2094128632743833874e+02",
+          "1.510067917042812637e+02",
+          "4.379389718162148226e+02"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "6.1539419677964714092e-71",
+          "1.37929602930541394255e-70",
+          "2.768409037217286895e-70",
+          "5.6604778091004703286e-70",
+          "1.175073951690398305e-69",
+          "2.4587292908490740151e-69",
+          "5.165583942065547776e-69"
+        ],
+        "norm_roundoff_indicator_decimal": "2.9726973710158667795e-16",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 101,
+          "n_primes": 25,
+          "n_positive_intervals": 26,
+          "endpoint_x_decimal": "1.0000000000000000001e+02",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.5461873496805254829e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "6.1901955551204686863e-16",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.194445842335484068816224076951084181440666524491583878412571829025689213326787",
+        "-0.081976324010643788622387741475498588403514470170963845785276519207738567784850154",
+        "-0.03850839588854879979680126538921191053349780834247433705449269185340389144517153",
+        "0.02400909107467720743572771608765382871114209294478851047473440973666792798197395",
+        "0.025684225431413523659431857066070817165683000305402360081827557218827090256305085",
+        "-0.031376356805325706916191369864111150366356934304112217063120296654046417927998417",
+        "0.017747691976650774922665592073494015465438853272146906068711239779350734738940078"
+      ],
+      "reference_l2_norm_sq_decimal": "1.4821070042736988086890730980193213462019260259437033190290289667904045222074148",
+      "reference_affine_l2_norm_sq_decimal": "0.04868601630287668913745608334692580681344654700524592609521564177941129171671048",
+      "coefficient_absolute_errors_decimal": [
+        "0.000000000000000000016224076951084181440666524491583878412571829025689213326787028320675047314876389",
+        "0.000000000000000000027612258524501411596485529829036154214723480792261432215149846385185489228994509",
+        "0.0000000000000000000031987346107880894665021916575256629455073081465961085548284703578104330667504913",
+        "0.00000000000000000018472771608765382871114209294478851047473440973666792798197394998442200782493459",
+        "0.00000000000000000019356814293392918283431699969459763991817244278117290974369491467152335129867959",
+        "0.00000000000000000011880863013588884963364306569588778293687970334595358207200158255284841203113966",
+        "0.00000000000000000058766559207349401546543885327214690606871123977935073473894007806950663031734805"
+      ],
+      "max_coefficient_absolute_error": 5.87665592073494e-19,
+      "norm_absolute_error": 8.907309801932135e-20,
+      "affine_norm_absolute_error": 8.745608334692581e-20,
+      "reference_precision_comparison_decimal": "3.1779497005847482204466579428370542912417639996720916087246860977974132426378079e-36"
+    },
+    {
+      "x_nominal": 1000,
+      "degree": 2,
+      "interval_result": {
+        "T_decimal": "6.9077552789821370523e+00",
+        "degree": 2,
+        "coefficients_decimal": [
+          "-1.2414305430598866825e+00",
+          "-9.280957628217459087e-02",
+          "8.175982591384048164e-03"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          1
+        ],
+        "log_abs_coefficients_decimal": [
+          "2.1626437841626206162e-01",
+          "-2.3772054518181352533e+00",
+          "-4.8065543747569045487e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "3.1307475392806443023e-02",
+          "-3.441357366916475751e-01",
+          "-6.9582001397495279527e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "8.175982591384048164e-03"
+        ],
+        "l2_norm_sq_decimal": "1.6005073121763658139e+00",
+        "affine_detrended_l2_norm_sq_decimal": "5.0743901484723867075e-02",
+        "projection_energy_decimal": "1.5498302573829765619e+00",
+        "affine_detrended_projection_energy_decimal": "6.684669133461501549e-05",
+        "energy_ratio": 0.9683368801830222,
+        "affine_detrended_energy_ratio": 0.001317334485105344,
+        "coefficient_roundoff_indicators_decimal": [
+          "5.1137204137769265704e-15",
+          "8.84896828031723598e-15",
+          "1.1422389691791746642e-14"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.2913003699929542144e+01",
+          "1.6696701413865993525e+02"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "4.1026279785309809394e-71",
+          "8.498857942480480658e-71",
+          "1.5097444892228548547e-70"
+        ],
+        "norm_roundoff_indicator_decimal": "1.6981264276136276236e-14",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 1001,
+          "n_primes": 168,
+          "n_positive_intervals": 169,
+          "endpoint_x_decimal": "1.0000000000000000003e+03",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.0307915664536836552e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "3.1320459690060604646e-14",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.2414305430598866818549238488009858967389277199897771897705165613066006382868692",
+        "-0.092809576282174589950763099818175471498883828657299469287996331954765784811262538",
+        "0.0081759825913840487785258602189190696301082428503470388010567777595632349787988936"
+      ],
+      "reference_l2_norm_sq_decimal": "1.6005073121763658120605910131093687078208276107426048404156364083077737437584791",
+      "reference_affine_l2_norm_sq_decimal": "0.050743901484723866927521009209437820051268402399680896111616713939747003665481498",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000064507615119901410326107228001022281022948343869339936171313076851097071343575014",
+        "0.0000000000000000009192369001818245285011161713427005307120036680452342151887374617691586913991194",
+        "0.0000000000000000006145258602189190696301082428503470388010567777595632349787988936104391241821435"
+      ],
+      "max_coefficient_absolute_error": 9.192369001818244e-19,
+      "norm_absolute_error": 1.839408986890631e-18,
+      "affine_norm_absolute_error": 1.4747899079056217e-19,
+      "reference_precision_comparison_decimal": "4.9116788555776460484704121951690169674664345248605497410561688217838456879216266e-40"
+    },
+    {
+      "x_nominal": 1000,
+      "degree": 4,
+      "interval_result": {
+        "T_decimal": "6.9077552789821370523e+00",
+        "degree": 4,
+        "coefficients_decimal": [
+          "-1.2414305430598866825e+00",
+          "-9.280957628217459087e-02",
+          "8.175982591384048164e-03",
+          "3.49831828170880676e-02",
+          "-1.437804613416152681e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        "log_abs_coefficients_decimal": [
+          "2.1626437841626206162e-01",
+          "-2.3772054518181352533e+00",
+          "-4.8065543747569045487e+00",
+          "-3.352887823905826732e+00",
+          "-4.242052809762263319e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "3.1307475392806443023e-02",
+          "-3.441357366916475751e-01",
+          "-6.9582001397495279527e-01",
+          "-4.8538022678763415607e-01",
+          "-6.1410004240731194496e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "8.175982591384048164e-03",
+          "3.49831828170880676e-02",
+          "-1.437804613416152681e-02"
+        ],
+        "l2_norm_sq_decimal": "1.6005073121763658139e+00",
+        "affine_detrended_l2_norm_sq_decimal": "5.0743901484723867075e-02",
+        "projection_energy_decimal": "1.551260808673626445e+00",
+        "affine_detrended_projection_energy_decimal": "1.4973979819844980665e-03",
+        "energy_ratio": 0.9692306913388767,
+        "affine_detrended_energy_ratio": 0.029508924977620813,
+        "coefficient_roundoff_indicators_decimal": [
+          "5.1158739524837671922e-15",
+          "8.8510472603642415084e-15",
+          "1.1424757796464056613e-14",
+          "1.351756564341128543e-14",
+          "1.5329624744320347229e-14"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.2913003699929542144e+01",
+          "1.6696701413865993525e+02",
+          "4.510033435730108377e+01",
+          "1.3876619359607567566e+02"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "4.1026279785309809394e-71",
+          "8.498857942480480658e-71",
+          "1.5097444892228548547e-70",
+          "2.6955103336909156339e-70",
+          "4.8784523414908278156e-70"
+        ],
+        "norm_roundoff_indicator_decimal": "1.6981264276136276236e-14",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 1001,
+          "n_primes": 168,
+          "n_positive_intervals": 169,
+          "endpoint_x_decimal": "1.0000000000000000003e+03",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.0307915664536836552e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "3.132619252602779528e-14",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.2414305430598866818549238488009858967389277199897771897705165613066006382868692",
+        "-0.092809576282174589950763099818175471498883828657299469287996331954765784811262538",
+        "0.0081759825913840487785258602189190696301082428503470388010567777595632349787988936",
+        "0.034983182817088067804680074019410147071836092532435820005587149900009577295678362",
+        "-0.014378046134161526949583826657506564964103141799042902390421487832431254002131722"
+      ],
+      "reference_l2_norm_sq_decimal": "1.6005073121763658120605910131093687078208276107426048404156364083077737437584791",
+      "reference_affine_l2_norm_sq_decimal": "0.050743901484723866927521009209437820051268402399680896111616713939747003665481498",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000064507615119901410326107228001022281022948343869339936171313076851097071343575014",
+        "0.0000000000000000009192369001818245285011161713427005307120036680452342151887374617691586913991194",
+        "0.0000000000000000006145258602189190696301082428503470388010567777595632349787988936104391241821435",
+        "0.00000000000000000020468007401941014707183609253243582000558714990000957729567836160237706490589093",
+        "0.00000000000000000013958382665750656496410314179904290239042148783243125400213172232229135445884973"
+      ],
+      "max_coefficient_absolute_error": 9.192369001818244e-19,
+      "norm_absolute_error": 1.839408986890631e-18,
+      "affine_norm_absolute_error": 1.4747899079056217e-19,
+      "reference_precision_comparison_decimal": "4.495263195904555217951115846786717449685855062389171425006344145213100909303083e-38"
+    },
+    {
+      "x_nominal": 1000,
+      "degree": 6,
+      "interval_result": {
+        "T_decimal": "6.9077552789821370523e+00",
+        "degree": 6,
+        "coefficients_decimal": [
+          "-1.2414305430598866825e+00",
+          "-9.280957628217459087e-02",
+          "8.175982591384048164e-03",
+          "3.49831828170880676e-02",
+          "-1.437804613416152681e-02",
+          "-1.11090378803031823235e-02",
+          "2.9478471069844147807e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        "log_abs_coefficients_decimal": [
+          "2.1626437841626206162e-01",
+          "-2.3772054518181352533e+00",
+          "-4.8065543747569045487e+00",
+          "-3.352887823905826732e+00",
+          "-4.242052809762263319e+00",
+          "-4.499996278513202647e+00",
+          "-3.5240950763083860899e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "3.1307475392806443023e-02",
+          "-3.441357366916475751e-01",
+          "-6.9582001397495279527e-01",
+          "-4.8538022678763415607e-01",
+          "-6.1410004240731194496e-01",
+          "-6.514411841144842194e-01",
+          "-5.101650151143837504e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "8.175982591384048164e-03",
+          "3.49831828170880676e-02",
+          "-1.437804613416152681e-02",
+          "-1.11090378803031823235e-02",
+          "2.9478471069844147807e-02"
+        ],
+        "l2_norm_sq_decimal": "1.6005073121763658139e+00",
+        "affine_detrended_l2_norm_sq_decimal": "5.0743901484723867075e-02",
+        "projection_energy_decimal": "1.5522531996528680944e+00",
+        "affine_detrended_projection_energy_decimal": "2.489788961226147465e-03",
+        "energy_ratio": 0.96985073910229,
+        "affine_detrended_energy_ratio": 0.04906577713532104,
+        "coefficient_roundoff_indicators_decimal": [
+          "5.118027491190607814e-15",
+          "8.853126240411247037e-15",
+          "1.14271259011363665836e-14",
+          "1.3520302608999365574e-14",
+          "1.5333085841585710036e-14",
+          "1.6955858478512354005e-14",
+          "1.8441502473191794908e-14"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.2913003699929542144e+01",
+          "1.6696701413865993525e+02",
+          "4.510033435730108377e+01",
+          "1.3876619359607567566e+02",
+          "2.318717683844814212e+02",
+          "1.1885380052429900127e+02"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "4.1026279785309809394e-71",
+          "8.498857942480480658e-71",
+          "1.5097444892228548547e-70",
+          "2.6955103336909156339e-70",
+          "4.8784523414908278156e-70",
+          "8.908806576126611475e-70",
+          "1.6352595748095437914e-69"
+        ],
+        "norm_roundoff_indicator_decimal": "1.6981264276136276236e-14",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 1001,
+          "n_primes": 168,
+          "n_positive_intervals": 169,
+          "endpoint_x_decimal": "1.0000000000000000003e+03",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "1.0307915664536836552e-56",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "3.1331925361994985917e-14",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.2414305430598866818549238488009858967389277199897771897705165613066006382868692",
+        "-0.092809576282174589950763099818175471498883828657299469287996331954765784811262538",
+        "0.0081759825913840487785258602189190696301082428503470388010567777595632349787988936",
+        "0.034983182817088067804680074019410147071836092532435820005587149900009577295678362",
+        "-0.014378046134161526949583826657506564964103141799042902390421487832431254002131722",
+        "-0.011109037880303182594088570585253780047054295011726849756980680709503631480041239",
+        "0.029478471069844147632527882001050080200246593891027400367151166701856474217299638"
+      ],
+      "reference_l2_norm_sq_decimal": "1.6005073121763658120605910131093687078208276107426048404156364083077737437584791",
+      "reference_affine_l2_norm_sq_decimal": "0.050743901484723866927521009209437820051268402399680896111616713939747003665481498",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000064507615119901410326107228001022281022948343869339936171313076851097071343575014",
+        "0.0000000000000000009192369001818245285011161713427005307120036680452342151887374617691586913991194",
+        "0.0000000000000000006145258602189190696301082428503470388010567777595632349787988936104391241821435",
+        "0.00000000000000000020468007401941014707183609253243582000558714990000957729567836160237706490589093",
+        "0.00000000000000000013958382665750656496410314179904290239042148783243125400213172232229135445884973",
+        "0.00000000000000000027058857058525378004705429501172684975698068070950363148004123939898184134999753",
+        "0.00000000000000000017447211799894991979975340610897259963284883329814352578270036192347752366324904"
+      ],
+      "max_coefficient_absolute_error": 9.192369001818244e-19,
+      "norm_absolute_error": 1.839408986890631e-18,
+      "affine_norm_absolute_error": 1.4747899079056217e-19,
+      "reference_precision_comparison_decimal": "8.4288714415738691868039298555668555924901237166765204338505635779960155686243353e-36"
+    },
+    {
+      "x_nominal": 10000,
+      "degree": 2,
+      "interval_result": {
+        "T_decimal": "9.210340371976182736e+00",
+        "degree": 2,
+        "coefficients_decimal": [
+          "-1.2467698006965392442e+00",
+          "-5.9047297891747897407e-02",
+          "5.0136694548267960735e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          1
+        ],
+        "log_abs_coefficients_decimal": [
+          "2.2055604716802113297e-01",
+          "-2.8294164970513444647e+00",
+          "-2.9930021128712929795e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "2.3946568558866227612e-02",
+          "-3.071999929188568242e-01",
+          "-3.2496107548619405824e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "5.0136694548267960735e-02"
+        ],
+        "l2_norm_sq_decimal": "1.6114959352565334503e+00",
+        "affine_detrended_l2_norm_sq_decimal": "5.3574415939328445654e-02",
+        "projection_energy_decimal": "1.5604352074574313269e+00",
+        "affine_detrended_projection_energy_decimal": "2.5136881402263222554e-03",
+        "energy_ratio": 0.9683147027044944,
+        "affine_detrended_energy_ratio": 0.046919562185670956,
+        "coefficient_roundoff_indicators_decimal": [
+          "2.8681266507846294349e-13",
+          "4.96765199830790797e-13",
+          "6.413193360513933158e-13"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.9177965473566161256e+01",
+          "2.5067409116951433113e+01"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "3.0769709838982357046e-71",
+          "6.1129751120270058913e-71",
+          "1.0137998380113344257e-70"
+        ],
+        "norm_roundoff_indicator_decimal": "1.104896179803797458e-12",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 10001,
+          "n_primes": 1229,
+          "n_positive_intervals": 1230,
+          "endpoint_x_decimal": "1.0000000000000000001e+04",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "7.7309367484026274145e-57",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "1.8787402038313592215e-12",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.2467698006965392462745342970292604643833486779820991119193442248307096798236935",
+        "-0.059047297891747900872496474385072085966684805898183582093812996415380111701822488",
+        "0.050136694548267956939295566552886777303449587962448913073459034114633292545241285"
+      ],
+      "reference_l2_norm_sq_decimal": "1.6114959352565334551350329312020182185531084051931302633417514871176858098089217",
+      "reference_affine_l2_norm_sq_decimal": "0.053574415939328445011058232781258265320865082681675902033074489597868010701925274",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000207453429702926046438334867798209911191934422483070967982369350316319199253893",
+        "0.0000000000000000034654964743850720859666848058981835820938129964153801117018224882702247077401389",
+        "0.000000000000000003795704433447113222696550412037551086926540965885366707454758715487818622724004"
+      ],
+      "max_coefficient_absolute_error": 3.795704433447113e-18,
+      "norm_absolute_error": 4.8350329312020185e-18,
+      "affine_norm_absolute_error": 6.429417672187417e-19,
+      "reference_precision_comparison_decimal": "1.9446066923181607100401377869358133680483569931906174001138027222315870169955407e-40"
+    },
+    {
+      "x_nominal": 10000,
+      "degree": 4,
+      "interval_result": {
+        "T_decimal": "9.210340371976182736e+00",
+        "degree": 4,
+        "coefficients_decimal": [
+          "-1.2467698006965392442e+00",
+          "-5.9047297891747897407e-02",
+          "5.0136694548267960735e-02",
+          "2.2196888193137390792e-02",
+          "-3.0903160494779651576e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        "log_abs_coefficients_decimal": [
+          "2.2055604716802113297e-01",
+          "-2.8294164970513444647e+00",
+          "-2.9930021128712929795e+00",
+          "-3.8078031714091410758e+00",
+          "-3.4768968189243666892e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "2.3946568558866227612e-02",
+          "-3.071999929188568242e-01",
+          "-3.2496107548619405824e-01",
+          "-4.13426976379173034e-01",
+          "-3.7749927565145555394e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "5.0136694548267960735e-02",
+          "2.2196888193137390792e-02",
+          "-3.0903160494779651576e-02"
+        ],
+        "l2_norm_sq_decimal": "1.6114959352565334503e+00",
+        "affine_detrended_l2_norm_sq_decimal": "5.3574415939328445654e-02",
+        "projection_energy_decimal": "1.5618829146314560787e+00",
+        "affine_detrended_projection_energy_decimal": "3.961395314251074076e-03",
+        "energy_ratio": 0.9692130649915791,
+        "affine_detrended_energy_ratio": 0.0739419225538034,
+        "coefficient_roundoff_indicators_decimal": [
+          "2.8681482787930535068e-13",
+          "4.96767164243867924e-13",
+          "6.413215162467127563e-13",
+          "7.588207101177026931e-13",
+          "8.6042201694049424683e-13"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.9177965473566161256e+01",
+          "2.5067409116951433113e+01",
+          "6.205449443263887448e+01",
+          "5.118509435625359187e+01"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "3.0769709838982357046e-71",
+          "6.1129751120270058913e-71",
+          "1.0137998380113344257e-70",
+          "1.6706967922550251833e-70",
+          "2.7826088042239894171e-70"
+        ],
+        "norm_roundoff_indicator_decimal": "1.104896179803797458e-12",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 10001,
+          "n_primes": 1229,
+          "n_positive_intervals": 1230,
+          "endpoint_x_decimal": "1.0000000000000000001e+04",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "7.7309367484026274145e-57",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "1.8787458288474779852e-12",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.2467698006965392462745342970292604643833486779820991119193442248307096798236935",
+        "-0.059047297891747900872496474385072085966684805898183582093812996415380111701822488",
+        "0.050136694548267956939295566552886777303449587962448913073459034114633292545241285",
+        "0.022196888193137387721770605752666910823196487883908963486983928716137219238468071",
+        "-0.030903160494779653570345983490918098906544313307198866465348250257076080607509241"
+      ],
+      "reference_l2_norm_sq_decimal": "1.6114959352565334551350329312020182185531084051931302633417514871176858098089217",
+      "reference_affine_l2_norm_sq_decimal": "0.053574415939328445011058232781258265320865082681675902033074489597868010701925274",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000207453429702926046438334867798209911191934422483070967982369350316319199253893",
+        "0.0000000000000000034654964743850720859666848058981835820938129964153801117018224882702247077401389",
+        "0.000000000000000003795704433447113222696550412037551086926540965885366707454758715487818622724004",
+        "0.0000000000000000030702293942473330891768035121160910365130160712838627807615319293545498902069974",
+        "0.0000000000000000019943459834909180989065443133071988664653482502570760806075092406935128137917618"
+      ],
+      "max_coefficient_absolute_error": 3.795704433447113e-18,
+      "norm_absolute_error": 4.8350329312020185e-18,
+      "affine_norm_absolute_error": 6.429417672187417e-19,
+      "reference_precision_comparison_decimal": "6.9867330405515166534353727836891489703813490296797767594028546406654291716645342e-38"
+    },
+    {
+      "x_nominal": 10000,
+      "degree": 6,
+      "interval_result": {
+        "T_decimal": "9.210340371976182736e+00",
+        "degree": 6,
+        "coefficients_decimal": [
+          "-1.2467698006965392442e+00",
+          "-5.9047297891747897407e-02",
+          "5.0136694548267960735e-02",
+          "2.2196888193137390792e-02",
+          "-3.0903160494779651576e-02",
+          "5.7414184496607809045e-03",
+          "1.7279587380680025778e-02"
+        ],
+        "coefficient_signs": [
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "log_abs_coefficients_decimal": [
+          "2.2055604716802113297e-01",
+          "-2.8294164970513444647e+00",
+          "-2.9930021128712929795e+00",
+          "-3.8078031714091410758e+00",
+          "-3.4768968189243666892e+00",
+          "-5.160048982513314685e+00",
+          "-4.0582293943241906846e+00"
+        ],
+        "log_abs_over_T_decimal": [
+          "2.3946568558866227612e-02",
+          "-3.071999929188568242e-01",
+          "-3.2496107548619405824e-01",
+          "-4.13426976379173034e-01",
+          "-3.7749927565145555394e-01",
+          "-5.602451998640054377e-01",
+          "-4.4061665806314296413e-01"
+        ],
+        "affine_detrended_coefficients_decimal": [
+          "0e+00",
+          "0e+00",
+          "5.0136694548267960735e-02",
+          "2.2196888193137390792e-02",
+          "-3.0903160494779651576e-02",
+          "5.7414184496607809045e-03",
+          "1.7279587380680025778e-02"
+        ],
+        "l2_norm_sq_decimal": "1.6114959352565334503e+00",
+        "affine_detrended_l2_norm_sq_decimal": "5.3574415939328445654e-02",
+        "projection_energy_decimal": "1.5622144626573167403e+00",
+        "affine_detrended_projection_energy_decimal": "4.2929433401117356752e-03",
+        "energy_ratio": 0.969418804279285,
+        "affine_detrended_energy_ratio": 0.08013047393691378,
+        "coefficient_roundoff_indicators_decimal": [
+          "2.868169906801477579e-13",
+          "4.96769128656945051e-13",
+          "6.413236964420321968e-13",
+          "7.5882309955474467567e-13",
+          "8.604247608934511676e-13",
+          "9.51237300770563472e-13",
+          "1.0341073926588571162e-12"
+        ],
+        "coefficient_cancellation_indicators_decimal": [
+          "1e+00",
+          "1.9177965473566161256e+01",
+          "2.5067409116951433113e+01",
+          "6.205449443263887448e+01",
+          "5.118509435625359187e+01",
+          "3.323595115293080046e+02",
+          "1.3636325832879457286e+02"
+        ],
+        "kernel_series_tail_estimates_decimal": [
+          "3.0769709838982357046e-71",
+          "6.1129751120270058913e-71",
+          "1.0137998380113344257e-70",
+          "1.6706967922550251833e-70",
+          "2.7826088042239894171e-70",
+          "4.676302348956241779e-70",
+          "7.9041927130712646666e-70"
+        ],
+        "norm_roundoff_indicator_decimal": "1.104896179803797458e-12",
+        "metadata": {
+          "object": "exact_continuous_theta_sqrt_residual",
+          "evaluation": "prime_interval_analytic_identities_in_longdouble",
+          "certified_interval_result": false,
+          "error_metadata_role": "roundoff_indicators_and_series_tail_estimates_not_certified_bounds",
+          "prime_prefix_status": "generated_by_complete_finite_sieve",
+          "prime_limit": 10001,
+          "n_primes": 1229,
+          "n_positive_intervals": 1230,
+          "endpoint_x_decimal": "1.0000000000000000001e+04",
+          "max_interval_log_width_decimal": "6.9314718055994530943e-01",
+          "working_precision_bits": 64,
+          "working_dtype": "float128",
+          "exponential_series_order": 40,
+          "norm_series_tail_estimate_decimal": "7.7309367484026274145e-57",
+          "moments_below_roundoff_indicator": [],
+          "affine_detrend_norm_status": "continuous_orthogonal_P1_difference",
+          "affine_norm_subtraction_indicator_decimal": "1.878751453863596749e-12",
+          "RH_proved": false,
+          "B_ABS_growth_bound_proved": false
+        }
+      },
+      "reference_coefficients_decimal": [
+        "-1.2467698006965392462745342970292604643833486779820991119193442248307096798236935",
+        "-0.059047297891747900872496474385072085966684805898183582093812996415380111701822488",
+        "0.050136694548267956939295566552886777303449587962448913073459034114633292545241285",
+        "0.022196888193137387721770605752666910823196487883908963486983928716137219238468071",
+        "-0.030903160494779653570345983490918098906544313307198866465348250257076080607509241",
+        "0.0057414184496607794799715607823108703834403371211801196028165424280195342058887849",
+        "0.017279587380680023892450968682813242652614330252885317855337983514228354493530309"
+      ],
+      "reference_l2_norm_sq_decimal": "1.6114959352565334551350329312020182185531084051931302633417514871176858098089217",
+      "reference_affine_l2_norm_sq_decimal": "0.053574415939328445011058232781258265320865082681675902033074489597868010701925274",
+      "coefficient_absolute_errors_decimal": [
+        "0.00000000000000000207453429702926046438334867798209911191934422483070967982369350316319199253893",
+        "0.0000000000000000034654964743850720859666848058981835820938129964153801117018224882702247077401389",
+        "0.000000000000000003795704433447113222696550412037551086926540965885366707454758715487818622724004",
+        "0.0000000000000000030702293942473330891768035121160910365130160712838627807615319293545498902069974",
+        "0.0000000000000000019943459834909180989065443133071988664653482502570760806075092406935128137917618",
+        "0.0000000000000000014245284392176891296165596628788198803971834575719804657941112150637024814360756",
+        "0.0000000000000000018855490313171867573473856697471146821446620164857716455064696913851229824196588"
+      ],
+      "max_coefficient_absolute_error": 3.795704433447113e-18,
+      "norm_absolute_error": 4.8350329312020185e-18,
+      "affine_norm_absolute_error": 6.429417672187417e-19,
+      "reference_precision_comparison_decimal": "8.8220004977668563391019568106594106896651941130995462167231372269904474178395657e-36"
+    }
+  ]
+}

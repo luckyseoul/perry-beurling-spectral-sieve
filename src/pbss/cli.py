@@ -12,6 +12,7 @@ Examples:
   pbss diagnose --demo
   pbss sensitivity --confirm-53
   pbss scorecard --x-max 1e6
+  pbss moments --T 10 --degree 4
 """
 from __future__ import annotations
 
@@ -119,6 +120,17 @@ def _positive_float(value: str) -> float:
     if result <= 0:
         raise argparse.ArgumentTypeError("must be positive")
     return result
+
+
+def _positive_decimal(value: str) -> str:
+    """Keep a decimal window input for the longdouble arithmetic evaluator."""
+    try:
+        parsed = np.longdouble(value)
+    except (TypeError, ValueError, OverflowError) as exc:
+        raise argparse.ArgumentTypeError("must be a finite positive number") from exc
+    if not np.isfinite(parsed) or parsed <= 0:
+        raise argparse.ArgumentTypeError("must be a finite positive number")
+    return value
 
 
 def _nonnegative_float(value: str) -> float:
@@ -411,6 +423,30 @@ def cmd_hstar(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_moments(args: argparse.Namespace) -> int:
+    from .arithmetic_moments import arithmetic_moments
+
+    result = arithmetic_moments(
+        args.T, degree=args.degree, max_prime_limit=args.max_prime_limit,
+    )
+    report = {**_report("moments"), **result.to_dict()}
+    metadata = report["metadata"]
+    print("PBSS moments (continuous arithmetic integrals)")
+    print(f"  T={report['T_decimal']}  degree={result.degree}  primes={metadata['n_primes']}")
+    print(f"  working_precision_bits={metadata['working_precision_bits']}")
+    for k, coefficient in enumerate(report["coefficients_decimal"]):
+        print(f"  c_{k}={coefficient}")
+    print(f"  l2_norm_sq={report['l2_norm_sq_decimal']}")
+    print(f"  affine_detrended_l2_norm_sq={report['affine_detrended_l2_norm_sq_decimal']}")
+    print(f"  affine_detrended_Rd={report['affine_detrended_energy_ratio']}")
+    print("  Finite-window evaluation; no all-window growth bound established.")
+    print(BANNER)
+    if args.json_out:
+        _write_json(args.json_out, report)
+        print(f"Wrote {args.json_out}", file=sys.stderr)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="pbss",
@@ -475,6 +511,14 @@ def build_parser() -> argparse.ArgumentParser:
     hs.add_argument("--results-dir", default="", help="override results directory")
     hs.add_argument("--json-out", default="")
     hs.set_defaults(func=cmd_hstar)
+
+    mo = sub.add_parser("moments", help="signed absolute theta moments from complete prime intervals")
+    mo.add_argument("--T", type=_positive_decimal, default="10", help="positive logarithmic window length")
+    mo.add_argument("--degree", "-d", type=_integer_at_least(0), default=4, help="maximum degree (0..32)")
+    mo.add_argument("--max-prime-limit", type=_integer_at_least(2), default=1_000_000,
+                    help="explicit bound on the complete prime prefix to generate")
+    mo.add_argument("--json-out", default="", help="write decimal coefficients, norms and precision metadata")
+    mo.set_defaults(func=cmd_moments)
 
     return p
 
