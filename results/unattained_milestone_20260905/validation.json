@@ -1,0 +1,28 @@
+{
+  "base_commit": "9819f4c72fef1746dcbdf4ef3544572fe9bb2325",
+  "status": "proved_analytic_spectrum_obstruction",
+  "RH_proved": false,
+  "ordinary_prime_unattained_converse_proved": false,
+  "prime_realization_asserted": false,
+  "arithmetic_residue_coefficients_included": true,
+  "review": {
+    "root": "passed_full_proof_and_corollary",
+    "cli": "derived_and_checked_full_proof",
+    "methodology": "independent_cold_review_passed_full_proof_and_corollary",
+    "projection": "independent_continuation_regularity_and_corollary_review_passed",
+    "external_peer_review": false,
+    "formal_verification": false
+  },
+  "validation_scope": "Proof and status documentation only; no additional numerical experiment required. Previous 373-test implementation snapshot is unchanged.",
+  "unchanged_previously_tested_python_files": 75,
+  "source_sha256": {
+    "README.md": "52088b7d2e9f2ee5efb8c52502b5c990a978a60c9113f26b062bc063b26392a9",
+    "docs/STATUS.md": "52a26467872977f1bf4179826298b6ea8841bce68cfbde022b27e2cc0532dfc6",
+    "docs/README.md": "e3341afc26d6257bb641f717b2e35764f7a81021fdc97c94af820e8292e6b184",
+    "docs/THEOREM_B_PACKAGE.md": "bab67ede1ed3b8d310a401a6d0c03b2ff3dde26d4c068332b81e61f8e18e827c",
+    "docs/THEOREMS_AB.md": "2aceb5f59438f2ff20f84e4d5aeb53d7b59f37e4a43d79ebd63a2797dd0cc4fb",
+    "docs/RH_CLOSEOUT_ROADMAP.md": "8d696690b65d29bea43b82fbd26443764665e43a2dd912e3d32df98d8cdfa53e",
+    "docs/UNATTAINED_SPECTRUM_OBSTRUCTION.md": "35e86653609eb2c65525a1a5ff75c2f6d5bda2f00605f827360ff1bc1e85a2b8",
+    "docs/UNATTAINED_MILESTONE_20260905.md": "e9850b958b3197df362f5617ffb070516ec62b0b69d657e12f4cdae73b1cda6a"
+  }
+}

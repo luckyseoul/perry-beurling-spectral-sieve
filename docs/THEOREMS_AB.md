@@ -11,6 +11,14 @@ affine detrending**. The absolute-moment converse is an RH equivalence; the
 normalized fast-decay converse remains open. Unconditionally, the exact continuous
 detrended ratio has lower limit zero. Unconditional RH remains **open**.
 
+The [attained-boundary theorem](ATTAINED_BOUNDARY_CONVERSE.md) proves the
+normalized converse if a rightmost off-critical zero exists. The
+[unattained-spectrum example](UNATTAINED_SPECTRUM_OBSTRUCTION.md) demonstrates
+the need for additional arithmetic input in the remaining case. Either
+one-sided subexponential bound on one fixed signed moment would suffice for
+RH by the [signed oscillation theorem](SIGNED_MOMENT_OSCILLATION.md); neither
+bound has been proved unconditionally.
+
 ---
 
 ## 0. Definitions

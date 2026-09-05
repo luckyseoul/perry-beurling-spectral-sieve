@@ -156,6 +156,12 @@ The [attained-boundary theorem](docs/ATTAINED_BOUNDARY_CONVERSE.md) now isolates
 the remaining normalized case: a supremum of zero real parts that no zero
 attains. The [signed criterion](docs/SIGNED_MOMENT_OSCILLATION.md) reduces the
 absolute target to either one-sided bound, still unproved unconditionally.
+An [explicit infinite spectrum](docs/UNATTAINED_SPECTRUM_OBSTRUCTION.md) shows
+why the remaining normalized case needs additional arithmetic input: its
+genuine poles approach an unattained boundary while every fixed-degree ratio
+decays faster than any inverse power, even with the arithmetic residue
+coefficients. This is an analytic spectrum example with no prime realization
+asserted.
 
 Explicit-formula residual: `pbss.probes.explicit_formula_residual` · peel scan:
 `experiments/run_explicit_formula_peel.py` → `results/explicit_formula_peel/`.

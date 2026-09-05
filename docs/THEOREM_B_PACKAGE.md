@@ -103,6 +103,16 @@ then forces limsup T R_d>0. This excludes O(T^-2) without requiring a spectral
 gap or a finite zero block. The case in which the supremum is unattained,
 approached only at unbounded heights, remains open.
 
+The [unattained-spectrum obstruction](UNATTAINED_SPECTRUM_OBSTRUCTION.md)
+proves that the current spectral hypotheses cannot close that case by
+themselves. An explicit continuous series has a meromorphic Laplace transform
+with genuine poles a_n+i gamma_n, where a_n approaches 1/4 and gamma_n tends
+to infinity, but its fixed-degree detrended ratios decay faster than every
+inverse power. A proved variant has exactly the residue coefficients -1/rho_n
+from the arithmetic transform. The local counting upper bound and even a
+quantified vanishing energy prefactor hold. No prime realization or functional
+equation is supplied, so the ordinary-prime case is still open.
+
 A positive discrete Beurling system can have actual simple zeta zeros at
 11/20 ± i gamma while R_d=O(exp(-T/10)/T) for every fixed d>=2. Its
 [construction](BEURLING_NORMALIZED_COUNTEREXAMPLE.md) proves that positivity,

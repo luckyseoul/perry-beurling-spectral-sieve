@@ -53,6 +53,17 @@ coefficients. See the [numerical checkpoint](ARITHMETIC_MOMENTS_MILESTONE_202609
 and [integral derivation](EXACT_ARITHMETIC_MOMENTS.md). These finite checks do not
 establish the all-window growth bound.
 
+**Unattained-boundary audit (2026-09-05):** a
+[continuous exponential spectrum](UNATTAINED_SPECTRUM_OBSTRUCTION.md) has
+genuine meromorphic poles approaching an unattained positive real-part
+supremum, yet every fixed-degree detrended ratio decays faster than every
+inverse power of T. This remains true with the arithmetic residue coefficients
+`-1/rho`. Thus discreteness, the local counting upper bound, these residue
+coefficients, and the current vanishing energy prefactor do not suffice for
+the normalized converse. The example has no asserted prime realization or
+functional equation. The ordinary-prime case remains open; the
+[checkpoint](UNATTAINED_MILESTONE_20260905.md) records the remaining implication.
+
 **Diagnostic review (2026-09-05):** the sampled projection now uses weighted
 QR, the CLI and Beurling scorecard have validated input/error paths, and the
 control experiment checks separation on two grids with fixed preprocessing.

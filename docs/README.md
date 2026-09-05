@@ -23,6 +23,8 @@
 | [`WEIL_TRANSFER_OBSTRUCTION.md`](WEIL_TRANSFER_OBSTRUCTION.md) | Why an indefinite-form restriction does not give coercivity |
 | [`SIGNED_MOMENT_OSCILLATION.md`](SIGNED_MOMENT_OSCILLATION.md) | Each off-line zero forces both signs of exponential moment excursions |
 | [`ATTAINED_BOUNDARY_CONVERSE.md`](ATTAINED_BOUNDARY_CONVERSE.md) | Normalized converse when the rightmost real part is attained |
+| [`UNATTAINED_SPECTRUM_OBSTRUCTION.md`](UNATTAINED_SPECTRUM_OBSTRUCTION.md) | Discrete meromorphic poles with arithmetic residue coefficients and superpolynomial ratio decay |
+| [`UNATTAINED_MILESTONE_20260905.md`](UNATTAINED_MILESTONE_20260905.md) | Reviewed limit of the current spectral inference and precise arithmetic target |
 | [`BEURLING_NORMALIZED_COUNTEREXAMPLE.md`](BEURLING_NORMALIZED_COUNTEREXAMPLE.md) | Discrete positive primes with off-line zeta zeros and exponentially small ratios |
 | [`SIGNED_BOUNDARY_MILESTONE_20260905.md`](SIGNED_BOUNDARY_MILESTONE_20260905.md) | Successor proof checkpoint and remaining one-sided bound |
 | [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) | M1–M7 proofs |

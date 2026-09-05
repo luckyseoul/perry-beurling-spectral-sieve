@@ -21,6 +21,18 @@ They use exact continuous moments and continuous orthogonal detrending. The
 older milestone wording below does not certify a transfer to fixed sampled
 arrays or arbitrary weights.
 
+The current target has been narrowed further: a normalized converse is
+[proved when the rightmost off-critical real part is attained](ATTAINED_BOUNDARY_CONVERSE.md).
+For an unattained supremum, the
+[explicit spectrum obstruction](UNATTAINED_SPECTRUM_OBSTRUCTION.md) shows
+that discrete poles, arithmetic residue coefficients, the local counting
+upper bound, and the current energy estimate do not suffice. A further
+ordinary-prime argument is required. The alternative target is either
+one-sided subexponential bound on the exact signed moment c_2(T), as proved
+in [SIGNED_MOMENT_OSCILLATION.md](SIGNED_MOMENT_OSCILLATION.md). The new
+[continuous evaluator](EXACT_ARITHMETIC_MOMENTS.md) exposes this moment on
+finite windows without settling its asymptotic growth.
+
 ---
 
 ## Current baseline (PBSS, 2026-09-05)
