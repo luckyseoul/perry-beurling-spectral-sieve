@@ -1,0 +1,7 @@
+Command: python3 -m pytest -n 86 tests -q
+Host: local workspace (88 CPU threads; 86 workers)
+Exit status: 0
+332 passed in 17.45s
+
+These regressions verify implemented diagnostics and finite proof identities.
+They do not prove an all-window arithmetic growth bound or RH.

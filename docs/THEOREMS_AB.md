@@ -1,13 +1,15 @@
 # Theorems A & B — precise statements (PBSS)
 
-**Status date:** 2026-08-11  
+**Status date:** 2026-09-05 (continuous arithmetic proof and converse audit)\
 **Not an unconditional proof of the Riemann Hypothesis.**
 
 This document locks definitions so numerics, code, and math refer to the same objects.
 Proved results in this repo are **about the diagnostic** (lemmas M1–M7, including
 finite-mode A₀ and the \(R_d\) perturbation majorant M7). Full Theorem A is
-**closed conditionally** under RH + cited ANT inputs. Full Theorem B is packaged to a
-**single residual step B-RES**. Unconditional RH remains **open**.
+**proved under RH for the exact continuous unweighted residual with orthogonal
+affine detrending**. The absolute-moment converse is an RH equivalence; the
+normalized fast-decay converse remains open. Unconditionally, the exact continuous
+detrended ratio has lower limit zero. Unconditional RH remains **open**.
 
 ---
 
@@ -122,7 +124,7 @@ For a **finite** superposition of critical-line modes
 \[
 q_T^{(N)}(u)=\sum_{n=1}^{N}a_n\sin(t_n T u+\phi_n)
 \]
-(\(N<\infty\), \(t_n>0\), \(a\not\equiv0\)),
+(\(N<\infty\), distinct \(t_n>0\), \(a\not\equiv0\)),
 \[
 R_d\bigl(q_T^{(N)}\bigr)=O_d(T^{-2})\qquad(T\to\infty)
 \]
@@ -131,8 +133,9 @@ code: `lemmas.bound_R_d_finite_mode_sum`, `probes.finite_cl_superposition`,
 `probes.explicit_formula_residual`.
 
 This is the bridge from pure A₀ to truncated explicit-formula residuals. Infinite
-zero sums and the arithmetic residual are handled in Full A by **cited ANT-1…3 + M7**
-(package closed conditionally), not by M5 alone.
+zero sums and the arithmetic residual are handled by the explicit uniform moment
+bound and positive mean-square theorem in
+[`CONTINUOUS_THEOREM_A.md`](CONTINUOUS_THEOREM_A.md), not by M5 alone.
 
 ### Scaffolding toward full A (2026-07-26)
 
@@ -152,24 +155,28 @@ Shipped (not full A):
 
 Writeup: [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md). Campaign:
 `results/theorem_a_scaffold/`. Historical scaffolding path only — **Full A is closed
-conditionally** in [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) (scaffold is not sole support).
+conditionally for the exact continuous unweighted residual** in
+[`CONTINUOUS_THEOREM_A.md`](CONTINUOUS_THEOREM_A.md) (the scaffold is not a proof input).
 
-### Full Theorem A (**closed conditionally**)
+### Full Theorem A (**proved under RH for the exact continuous residual**)
 
 **Hypothesis (RH).** All non-trivial zeros of \(\zeta\) satisfy \(\mathrm{Re}\,\rho=\tfrac12\).
 
-**Claim.** For the arithmetic residual \(q_T\) built from \(\theta(x)-x\) (or an
-equivalent explicit-formula residual) on the window of length \(T\),
+**Theorem under RH.** Let \(Q(y)=e^{-y/2}(\theta(e^y)-e^y)\) and
+\(q_T=(I-P_1)Q(T\cdot)\), with continuous orthogonal affine detrend. For fixed
+\(d\ge2\), with no added weight or smoothing,
 \[
-R_d(q_T)\to0\qquad(T\to\infty).
+R_d(q_T)=O_d(T^{-2})\qquad(T\to\infty).
 \]
 
 **Package:** [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) · code `pbss.ab_closure`.
 
-**Status:** **Closed conditionally.** Every required step is **proved** (M5–M7) or
-**cited** (ANT-1 infinite tail under RH; ANT-2 arithmetic remainder; ANT-3 EF
-identification) with hypotheses listed and conclusions adapted to the shipped residual,
-\(W_\alpha\), and \(R_d\). Scaffold tail majorants are diagnostic only.  
+**Status:** **Proved conditional continuous theorem.** The proof explicitly handles
+the formula's sign and phase, growing-zero-block uniformity, the prime-square
+constant, and the positive denominator. See
+[`CONTINUOUS_THEOREM_A.md`](CONTINUOUS_THEOREM_A.md) and its precise primary sources.
+The earlier generic ANT adaptations are superseded. Optional weighted and sampled
+transfers are separate obligations. Scaffold tail majorants remain diagnostic only.\
 **Unconditional RH remains open.** Roadmap:
 [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) (**not** a proof of RH).
 
@@ -209,17 +216,30 @@ for all large \(T\), then it **cannot** be of the form “high-frequency only”
 in the sense of M2 with \(\varepsilon\to0\). Equivalently (M4): vanishing of
 \(R_d\) is **necessary** for the absence of a persistent low-degree component.
 
-### Full Theorem B (**package complete — single residual step B-RES**)
+### Full Theorem B (**normalized converse open**)
 
 **Claim.** If \(R_d(q_T^{\mathrm{arith}})\) decays sufficiently rapidly as
 \(T\to\infty\), then \(\zeta\) has no zero with \(\mathrm{Re}\,\rho\neq\tfrac12\).
 
 **Package:** [`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md) · `pbss.ab_closure`.
 
-**Status:** **Package complete.** Model B₀ (M2–M4) is **proved**. Model off-critical
-obstruction is **proved as a model**. The **only** remaining open step is **B-RES**
-(arithmetic off-critical injection after EF cancellations) — RH-hard. No other
-unlabeled Full-B gaps. B₀ alone is **not** Full B. Unconditional RH remains **open**.
+**Status:** The normalized fast-decay converse remains **open**. The phrase
+“sufficiently rapidly” requires a fixed rate and normalization; mere vanishing
+and \(O(T^{-2})\) are different assertions. A pure off-critical real mode has
+phase-dependent troughs and provides no uniform positive floor.
+
+Two distinct arithmetic theorems are now available:
+
+- **B-ABS:** one fixed absolute Legendre moment has subexponential growth if and
+  only if RH holds; the equivalent growth bound remains unproved unconditionally.
+  See [`ABSOLUTE_MOMENT_CONVERSE.md`](ABSOLUTE_MOMENT_CONVERSE.md).
+- **Normalized recurrence:** \(\liminf R_d(q_T)=0\) unconditionally for the exact
+  continuous affine-detrended θ residual. This does not prove a full limit or rate.
+  The positive-floor B-RES formulation is consequently RH-equivalent and open.
+  See [`NORMALIZED_RECURRENCE_THEOREM.md`](NORMALIZED_RECURRENCE_THEOREM.md).
+
+Neither finite model checks nor an RH equivalence establishes its unproved side.
+Unconditional RH remains **open**.
 
 ---
 
@@ -241,14 +261,13 @@ peel column records \(R_d\) after stripping the first \(N\) modes from a fixed
 
 ## 4. What is open
 
-1. **Unconditional RH** (non-goal of Full A; blocked for Full B solely by **B-RES**).  
-2. **B-RES** — arithmetic off-critical injection (only Full-B residual step).  
-3. Sharp rate \(O(T^{-2(d+1)})\) for model or arithmetic residuals.  
-4. Legacy normalization with \(P\approx3.92\).  
-5. Independent re-proof of classical ANT-1…3 constants inside this repo (currently
-   **cited**, not re-derived).  
+1. **Unconditional RH**, including the equivalent absolute-moment growth bound.\
+2. The **normalized fast-decay converse** and the RH-equivalent positive-floor B-RES formulation.\
+3. A full normalized limit or rate **without RH**; the unconditional theorem proves only a lower limit of zero.\
+4. Legacy normalization with \(P\approx3.92\).\
+5. Quantitative transfer from the proved continuous theorem to sampled or optionally weighted residuals.\
 6. Finite-\(T\) arithmetic plateau explanation (secondary terms) — consistent with
-   conditional A, not a gap in the Full-A label table.
+   conditional A, without constituting an asymptotic proof.
 
 ### Marathon campaigns (measured)
 
@@ -264,8 +283,8 @@ See `results/multi_T_scan.json` .
 
 Expected qualitative picture (must match the run):
 
-- Critical-line \(R_d(T)\) **falls** roughly like \(T^{-2}\).  
-- Persistent defect \(R_d\equiv\varepsilon^2\) **flat**.  
+- Critical-line \(R_d(T)\) **falls** roughly like \(T^{-2}\).\
+- Persistent defect \(R_d\equiv\varepsilon^2\) **flat**.\
 - Clear gap for large \(T\): defect stays high, RH-like mode drops.
 
 This supports A₀/B₀. It does **not** prove RH.

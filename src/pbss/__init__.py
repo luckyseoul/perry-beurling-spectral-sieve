@@ -90,6 +90,7 @@ from .plateau_secondary import plateau_secondary_report
 from .ant_audit import ant_interface_audit
 from .zero_proportion_feasibility import zero_proportion_feasibility_report
 from .b_res_threshold import b_res_threshold_report
+from .hstar_anticancellation import hstar_anticancellation_report, lemma_statement
 from .measure_sensitivity import (
     confirm_sensitivity_claim,
     gamma_weight,
@@ -178,6 +179,8 @@ __all__ = [
     "ant_interface_audit",
     "zero_proportion_feasibility_report",
     "b_res_threshold_report",
+    "hstar_anticancellation_report",
+    "lemma_statement",
     "confirm_sensitivity_claim",
     "gamma_weight",
     "sensitivity_experiment",

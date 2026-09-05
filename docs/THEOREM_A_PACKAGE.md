@@ -1,13 +1,13 @@
-# Full Theorem A — closed conditional package
+# Full Theorem A — proved for the exact continuous residual under RH
 
-**Date:** 2026-08-11  
-**Status:** **Full A closed conditionally** (RH + cited ANT-1…ANT-3 + proved M5/M6/M7).  
-**Unconditional RH:** **open** — this package does **not** prove RH.  
+**Date:** 2026-09-05 (corrected arithmetic proof); package history 2026-08-11\
+**Status:** **Proved conditional continuous theorem**, using the exact explicit formula and a cited positive mean-square limit.\
+**Unconditional RH:** **open** — this package does **not** prove RH.\
 **Arithmetic numerics:** soft plateau \(R_d\sim0.15\)–\(0.19\) is **not** a counterexample to
 conditional A (finite-\(T\) probe vs \(T\to\infty\) under RH + ANT).
 
-Pointers: [`THEOREMS_AB.md`](THEOREMS_AB.md) · [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) ·  
-[`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md) · [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md) ·  
+Pointers: [`THEOREMS_AB.md`](THEOREMS_AB.md) · [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) ·\
+[`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md) · [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md) ·\
 [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) · Code: `pbss.ab_closure`, `pbss.theorem_a_chain`
 
 ---
@@ -16,15 +16,21 @@ Pointers: [`THEOREMS_AB.md`](THEOREMS_AB.md) · [`PROOFS_LEMMAS.md`](PROOFS_LEMM
 
 **This document does not contain an unconditional proof of the Riemann Hypothesis.**
 
-“Closed Full A” means: the implication
+The proof now concerns the **exact continuous**, unweighted θ residual with
+continuous orthogonal affine detrending and fixed degree \(d\ge2\). Under RH,
+its ratio satisfies \(R_d=O_d(T^{-2})\).
 
-> **RH + listed cited analytic inputs ⇒** \(R_d(w\,q_T^{\mathrm{arith}})\to0\)
+**Proof:** [`CONTINUOUS_THEOREM_A.md`](CONTINUOUS_THEOREM_A.md), with exact primary
+source statements and the complete adaptation. The sampled model API does not
+verify a continuous limit theorem. Optional weighted and sampled transfers remain
+separate obligations.
 
-has **no unlabeled gaps**. Every required step is either **proved in-repo** or **cited**
-as a named classical theorem with hypotheses listed and conclusions adapted to the
-**shipped** residual, weight class \(W_\alpha\), and metric \(R_d\).  
-Scaffold-only majorants (`bound_infinite_zero_tail_scaffold`) are **diagnostic only** and
-are **not** the sole support of any required step.
+**Correction of the August package.** Generic references alone did not establish
+its stated sign/phase identification, growing-mode uniformity, prime-square
+remainder, or positive relative norm floor. The new proof supplies these steps
+explicitly for the continuous unweighted object. The former broad claim that all
+of the shipped residual/weight interfaces were already matched is superseded.
+Scaffold-only tail majorants remain diagnostic and are not proof inputs.
 
 ---
 
@@ -34,27 +40,26 @@ are **not** the sole support of any required step.
 
 - Log window: \(x=e^{uT}\), \(u\in[0,1]\).
 - Orthonormal shifted Legendre \(\{\varphi_k\}\); \(P_d\) onto \(V_d\); \(R_d=\|P_dq\|_2^2/\|q\|_2^2\).
-- **Arithmetic residual** (shipped):  
-  \(q_T^{\mathrm{arith}}=\mathrm{detrend}\bigl((\theta(e^{uT})-e^{uT})/\sqrt{e^{uT}}\bigr)\)  
-  (default deg1; `probes.arithmetic_residual`).
-- Optional **admissible weight** \(w\in W_\alpha\) (`pbss.weights`).
+- **Exact continuous arithmetic residual:**
+  \(Q(y)=e^{-y/2}(\theta(e^y)-e^y)\),
+  \(q_T=(I-P_1)Q(T\cdot)\), where \(P_1\) is orthogonal in continuous \(L^2(du)\).
+- No additional weight or smoothing operator is included in this theorem.
 
-### Theorem A (Full, conditional) — **closed as a package**
+### Theorem A (conditional continuous form)
 
-**Assume:**
-
-1. **RH:** every non-trivial zero of \(\zeta\) has \(\mathrm{Re}\,\rho=\tfrac12\).  
-2. **ANT-3, ANT-1, ANT-2** as in §3 (cited classical explicit-formula inputs).  
-3. Optional **ANT-4** if working with \(w\in W_\alpha\) throughout.
-
-**Claim.** For each fixed degree \(d\),
+**Assume RH.** For each fixed integer \(d\ge2\),
 \[
-R_d\bigl(w\,q_T^{\mathrm{arith}}\bigr)\to 0\qquad(T\to\infty)
+R_d(q_T)=O_d(T^{-2}),\qquad
+\|q_T\|_2^2\longrightarrow
+2\sum_{\gamma>0}\frac{m_\gamma^2}{1/4+\gamma^2}>0.
 \]
-(with \(w\equiv 1\) allowed when ANT-4 is not used).
+The external inputs are the classical explicit formula and the mean-square theorem
+identified in §3. Simplicity and linear independence of ordinates are not assumed.
+For \(d=0,1\), the numerator vanishes by detrending and supplies no converse information.
 
-**Rate (model side):** \(O_d(T^{-2})\) from M5/M6 for finite truncations; arithmetic rate
-inherits the cited truncated-EF rates under RH (not sharpened here).
+`probes.arithmetic_residual` computes samples and a sample least-squares detrend.
+That implementation is a numerical diagnostic; transferring the theorem to a
+refining grid requires quantitative quadrature and detrend error bounds.
 
 ---
 
@@ -66,103 +71,87 @@ inherits the cited truncated-EF rates under RH (not sharpened here).
 | M5 finite CL / truncated EF | **Proved** | `PROOFS_LEMMAS.md`; `lemmas.bound_R_d_finite_mode_sum` |
 | M6 weighted model decay | **Proved** | `PROOFS_LEMMAS.md`; weighted majorants |
 | M7 \(R_d\) perturbation majorant | **Proved** | `PROOFS_LEMMAS.md` (M7); `ab_closure.energy_ratio_perturbation_bound` |
-| ANT-3 EF identification | **Cited** | Davenport Ch.17 / Ingham IV / Titchmarsh §3.5 / Ivić Ch.12 — §3 |
-| ANT-1 infinite zero tail under RH | **Cited** | Truncated EF under RH + \(N(T)\) — §3 |
-| ANT-2 arithmetic remainder | **Cited** | Classical EF remainders / \(\psi-\theta\) — §3 |
-| ANT-4 weight transfer | **Cited (optional)** | M6 + \(W_\alpha\) bulk — §3 |
+| ANT-3 exact ψ formula | **Cited precisely** | Akbary–Ng–Shahabi (1.5) — §3 |
+| ANT-1 uniform polynomial moments | **Proved adaptation** | Uniform coefficient series and cutoff \(G=e^T\) |
+| ANT-2 prime-square correction | **Proved adaptation** | Explicit constant \(-1\) and \(L^1\cap L^2\) secondary error |
+| ANT-MS positive denominator | **Cited + adapted** | Akbary–Ng–Shahabi Cor. 1.15(i) |
+| ANT-4 optional weight transfer | **Not established here** | Separate extension; model M6 is insufficient alone |
+| Sampled grid/detrend transfer | **Not established here** | Separate numerical error estimates required |
 | Scaffold zero-tail model | **Diagnostic only** | Not a required Full-A step |
-| Full A under RH+ANT | **Closed conditional** | §4 deduction |
-| Unconditional RH | **Open** | Non-goal |
+| Continuous Full A under RH | **Proved conditional** | `CONTINUOUS_THEOREM_A.md` |
+| Unconditional RH | **Open** | The theorem assumes RH |
 
 Machine-readable: `pbss.ab_closure.full_a_gap_table()`, `ant_citations()`.
 
 ---
 
-## 3. Cited ANT inputs (hypotheses + adapted conclusions)
+## 3. Exact ANT inputs and continuous adaptations
 
-### ANT-3 — Explicit-formula identification
+The primary source is Akbary, Ng, and Shahabi, *Limiting distributions of the
+classical error terms of prime number theory*, Q. J. Math. **65** (2014), 743–780.
+Numbers below refer to [arXiv:1306.1657v1](https://arxiv.org/abs/1306.1657v1), also
+available as the [author PDF](https://www.cs.uleth.ca/~akbary/Akbary-Ng-Shahabi.pdf).
 
-**Classical references.** Davenport, *Multiplicative Number Theory*, Ch. 17; Ingham,
-*The Distribution of Prime Numbers*, Ch. IV; Titchmarsh, *The Theory of the Riemann
-Zeta-function*, §3.5 / Ch. IX; Ivić, *The Riemann Zeta-Function*, Ch. 12.
+### ANT-3 — Exact normalized ψ formula
 
-**Hypotheses.** A classical explicit formula for \(\psi\) (or \(\theta\)) is taken with a
-fixed \(C^1\) (or smoother) smoothing compatible with the log-window map \(x=e^{uT}\) and
-the shipped normalization \((\cdot)/\sqrt{x}\) plus deg1 detrend.
-
-**Adapted conclusion (PBSS objects).** There exist \(N=N(T)\to\infty\) and remainder fields
-such that in \(L^2([0,1])\)
+Equation (1.5) gives, under RH,
 \[
-w\,q_T^{\mathrm{arith}}
-= w\,q_T^{(N)} + w\,r_{N,T}^{\mathrm{tail}} + w\,r_T^{\mathrm{arith}} + e_T,
+F_\psi(y)=\operatorname{Re}\sum_{0<\gamma\le G}
+\frac{-2m_\gamma e^{i\gamma y}}{1/2+i\gamma}
++O\!\left(\frac{e^{y/2}(y+\log G)^2}{G}+ye^{-y/2}\right).
 \]
-with \(\|e_T\|_2/\|w q_T^{\mathrm{arith}}\|_2\to0\) (identification error). Here
-\(q_T^{(N)}\) is a finite critical-line mode sum of the form used by
-`explicit_formula_residual` (amplitudes \(\asymp 2/|\rho_n|\) after the window map).
+The sign and phase are part of the identity. A generic positive-amplitude model
+sum cannot be substituted with a vanishing relative error merely by matching
+its ordinates.
 
-**Not proved in-repo:** the classical EF itself; only the *adaptation labels* and the
-in-repo map from mode sums to \(R_d\) (M5/M6/M7).
+### ANT-1 — Uniform polynomial moments
 
-### ANT-1 — Infinite zero tail under RH
+Choose \(G=e^T\). Integration by parts bounds each fixed polynomial moment of
+a retained mode by \(C_g/(\gamma T)\). Since
+\(\sum m_\gamma/(\gamma|1/2+i\gamma|)<\infty\), the summed bound is uniform in
+\(G\); the integrated explicit-formula error is also \(O_g(T^{-1})\).
+Thus \(\int_0^1F_\psi(Tu)g(u)du=O_g(T^{-1})\).
+This replaces the unsupported passage from fixed-block M5 to an arbitrary
+schedule \(N(T)\), and the former insufficient illustrative cutoff scales.
 
-**Classical references.** Truncated explicit formulae under RH (Titchmarsh Ch. IX–X;
-Ivić Ch. 12; Davenport Ch. 17–18); Riemann–von Mangoldt \(N(T)\).
+### ANT-2 — Explicit prime-square correction
 
-**Hypotheses.** RH; height cutoff \(G=G(T)\to\infty\) so zeros with \(|\gamma|>G\) contribute
-\(o(1)\) in the smoothed formula after the window map and weight \(w\).
-
-**Adapted conclusion.** Along \(N=N(T)\) retaining \(|\gamma|\le G(T)\),
+The prime-power identity and RH estimates give
 \[
-\delta_{\mathrm{tail}}:=\frac{\|w\,r_{N,T}^{\mathrm{tail}}\|_2}{\|w\,q_T^{(N)}\|_2}\to0.
+Q(y)=F_\psi(y)-1+h(y),\qquad h\in L^1\cap L^2.
 \]
-Finite blocks obey \(R_d(w q_T^{(N)})=O_d(T^{-2})\) by **M5/M6**; diagonal \(N\to\infty\)
-uses **M7**.
+The continuous affine detrend removes the constant \(-1\). The remaining term
+has \(O(T^{-1})\) polynomial moments and \(O(T^{-1})\) squared norm.
+The elementary bound \(\psi-\theta=O(\sqrt{x}\log x)\) alone would not prove this.
 
-### ANT-2 — Arithmetic remainder
+### ANT-MS — Positive mean-square limit
 
-**Classical references.** Explicit-formula remainder terms (Davenport Ch. 17; Ingham IV);
-\(\psi-\theta=O(\sqrt{x}\log x)\) classically.
-
-**Hypotheses.** Prime-power, trivial-zero, and contour contributions collected in
-\(r_T^{\mathrm{arith}}\) after the same smoothing.
-
-**Adapted conclusion.**
+Corollary 1.15(i), specialized to \(L=\zeta\), gives
 \[
-\delta_{\mathrm{arith}}:=\frac{\|w\,r_T^{\mathrm{arith}}\|_2}{\|w\,q_T^{(N)}\|_2}\to0.
+T^{-1}\int_0^T F_\psi(y)^2dy\longrightarrow
+V=2\sum_{\gamma>0}\frac{m_\gamma^2}{1/4+\gamma^2}\in(0,\infty).
 \]
+The explicit correction and detrend leave the same norm limit. This establishes
+the denominator needed by the arithmetic ratio, with no guessed model norm floor.
 
-### ANT-4 — Weight transfer (optional)
+### ANT-4 — Optional weight transfer
 
-**Support.** In-repo **M6** for model residuals; \(w\in W_\alpha\) multiplies all terms in
-the ANT-3 identity. Bulk non-vanishing of \(\|w q\|_2\) as in `pbss.weights`.
+The continuous arithmetic theorem above is unweighted. M6 covers fixed regular
+weights on model sums, but a bounded endpoint taper alone does not prove that
+weighted arithmetic norms are comparable to unweighted norms. This extension is
+not included in the proved statement.
 
----
+## 4. Conditional deduction
 
-## 4. Conditional deduction (no unlabeled gaps)
+Under RH, ANT-3 and the uniform calculation in ANT-1 give \(O_k(T^{-1})\)
+coefficients. ANT-2 removes the prime-square constant explicitly. Therefore
+\(\|P_dq_T\|_2^2=O_d(T^{-2})\). ANT-MS gives \(\|q_T\|_2^2\to V>0\), proving
+\(R_d(q_T)=O_d(T^{-2})\).
 
-Under RH + ANT-3 + ANT-1 + ANT-2 (+ optional ANT-4):
-
-1. **Identification (ANT-3):**  
-   \(w q_T^{\mathrm{arith}}=w q_T^{(N)}+w r^{\mathrm{tail}}+w r^{\mathrm{arith}}+e_T\) with
-   \(\|e_T\|/\|w q^{\mathrm{arith}}\|\to0\).
-
-2. **Model decay (M5, M6):** \(R_d(w q_T^{(N)})=O_d(T^{-2})\to0\) for each admissible
-   truncation schedule \(N=N(T)\) built from critical-line modes.
-
-3. **Small remainders (ANT-1, ANT-2):**  
-   \(\delta:=\delta_{\mathrm{tail}}+\delta_{\mathrm{arith}}+\|e_T\|/\|\cdot\|\to0\).
-
-4. **Perturbation (M7):** if \(R_0=R_d(w q_T^{(N)})\to0\) and \(\delta\to0\) with \(\delta<1\), then
-   \[
-   R_d(w q_T^{\mathrm{arith}})
-   \le \frac{\bigl(\sqrt{R_0}+\delta\bigr)^2}{(1-\delta)^2}\to0.
-   \]
-
-**Therefore Full Theorem A holds under RH + the cited inputs.**  
-No step remains “scaffolding only.” Unconditional RH is not obtained.
-
-Code: `ab_closure.energy_ratio_perturbation_bound`, `full_a_gap_table`, `ant_citations`,
-`conditional_full_a_report`.
+Every estimate and its scope is detailed in
+[`CONTINUOUS_THEOREM_A.md`](CONTINUOUS_THEOREM_A.md). The generic M7 perturbation
+lemma remains valid, but finite sampled M7 checks are not the proof of these
+arithmetic hypotheses.
 
 ---
 
@@ -172,7 +161,7 @@ Code: `ab_closure.energy_ratio_perturbation_bound`, `full_a_gap_table`, `ant_cit
 |----------|---------|----------------------------|
 | Grand / extend-\(x\) plateau | Arith \(R_4\sim0.15\)–\(0.19\) | **No** — finite \(T\); conditional A is \(T\to\infty\) under RH+ANT |
 | Open-plateau peel | Model zeros ≠ full arith identity | Consistent with needing ANT-2/3, not a refutation |
-| Model CL/EF M5–M6 tests | Decay under majorants | **Yes for models** |
+| Model CL/EF M5–M6 tests | Agreement with model majorants | **No** — numerical model checks |
 
 ---
 
@@ -180,11 +169,11 @@ Code: `ab_closure.energy_ratio_perturbation_bound`, `full_a_gap_table`, `ant_cit
 
 | Item | Status |
 |------|--------|
-| Full A statement under RH | **Complete** (§1) |
+| Continuous Full A under RH | **Proved**, exact unweighted statement (§1) |
 | Model lemmas M1–M6 + M7 | **Proved** |
-| ANT-1…ANT-3 | **Cited** with full hypotheses (§3) |
-| Conditional deduction | **Closed** (§4) |
+| ANT-3 / ANT-MS | **Precisely cited**; ANT-1 / ANT-2 **adaptations proved** (§3) |
+| Optional weighted and sampled transfers | **Separate, not established here** |
 | Unconditional RH | **Open** |
-| Machine status | `full_arithmetic_A = "closed_conditional"` |
+| Machine status | `full_arithmetic_A = "proved_conditional_continuous"` |
 
-**Full arithmetic Theorem A is closed conditionally. RH remains open.**
+**Continuous arithmetic Theorem A is proved under RH. RH remains open.**

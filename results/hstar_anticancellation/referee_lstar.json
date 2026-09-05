@@ -1,0 +1,2 @@
+{"overall":"PASS-WITH-NOTE","tool":"openai-referee__math_review","date":"2026-08-19",
+ "summary":"L* statement shape coherent, non-circular, correctly weaker than H*; not RH/proportion. Notes: require q not in ran(P_d), alpha in [0,1]. caller_action=do_not_branch"}

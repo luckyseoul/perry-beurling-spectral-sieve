@@ -1,18 +1,34 @@
 # Status: Perry–Beurling Spectral Sieve
 
-**Date:** 2026-09-05 (diagnostic review); 2026-08-11 (Full A/B package closure); 2026-07-29 (tight stress)
+**Date:** 2026-09-05 (diagnostic repair and arithmetic proof audit)
 **Repo:** `luckyseoul/perry-beurling-spectral-sieve`
 
 ## Explicit non-claim
 
 **This repository does not contain an unconditional proof of the Riemann Hypothesis.**
 
-What *is* claimed: model lemmas **M1–M7**, multi-\(T\) numerics, truncated explicit-formula
-residuals, arithmetic zero-peel diagnostics, Beurling battery scorecards, extended-\(x\)
-scans, and MC instrument stress. **Full Theorem A** is **closed conditionally** under
-RH + cited ANT-1…3 + M5–M7 ([`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md)). **Full Theorem B**
-is packaged to a **single residual step B-RES** ([`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md)).
-**Unconditional RH remains open.**
+Current verified results include the corrected model lemmas and weighted sampled
+projection, plus three exact continuous arithmetic statements:
+
+- Under RH, the continuous degree-one detrended θ residual has
+  \(R_d=O(T^{-2})\) for fixed \(d\ge2\):
+  [continuous Theorem A](CONTINUOUS_THEOREM_A.md).
+- Unconditionally, that residual has \(\liminf R_d=0\):
+  [recurrence theorem](NORMALIZED_RECURRENCE_THEOREM.md). This is not a full limit.
+- Subexponential growth of any one fixed **absolute** Legendre moment is
+  equivalent to RH: [B-ABS](ABSOLUTE_MOMENT_CONVERSE.md). Its unconditional
+  growth bound remains unproved.
+
+**Normalized B remains open.** Its positive-floor B-RES formulation is itself
+RH-equivalent. The old claim that an intact off-critical model has a persistent
+positive ratio is false: its ratio vanishes, with phase troughs at scale
+\(T^{-3}\). See the [exact model proof](OFF_CRITICAL_PHASE_OBSTRUCTION.md),
+[corrected B package](THEOREM_B_PACKAGE.md), and
+[Weil transfer obstruction](WEIL_TRANSFER_OBSTRUCTION.md).
+These arithmetic theorems use continuous orthogonal detrending; fixed sampled
+arrays and optional weights need separate transfer estimates.
+The integrated proof/status package passed 332 tests; its evidence and next
+target are in the [arithmetic review checkpoint](ARITHMETIC_PROOF_REVIEW_20260905.md).
 
 **Diagnostic review (2026-09-05):** the sampled projection now uses weighted
 QR, the CLI and Beurling scorecard have validated input/error paths, and the
@@ -30,7 +46,12 @@ Full writeup: [`THEOREMS_AB.md`](THEOREMS_AB.md) · Proofs: [`PROOFS_LEMMAS.md`]
 **Earlier record (Nov 2025 – Jun 2026):** [`PROJECT_RECORD_2025-11_to_2026-06.md`](PROJECT_RECORD_2025-11_to_2026-06.md) ·  
 **External ref (Anthropic zeta proportion bound, Aug 2026):** [`related/anthropic-riemann-zeta/`](related/anthropic-riemann-zeta/) ·  
 **Jensen/moment hierarchy blindness (Λ):** [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md) ·  
-**Post-Jensen ranks 2–5:** plateau secondaries [`ARITHMETIC_PLATEAU_SECONDARY.md`](ARITHMETIC_PLATEAU_SECONDARY.md) · ANT audit [`ANT_INTERFACE_AUDIT.md`](ANT_INTERFACE_AUDIT.md) · zero-proportion feasibility [`ZERO_PROPORTION_FEASIBILITY.md`](ZERO_PROPORTION_FEASIBILITY.md) · B-RES threshold [`B_RES_THRESHOLD.md`](B_RES_THRESHOLD.md)
+**Post-Jensen ranks 2–5:** plateau secondaries [`ARITHMETIC_PLATEAU_SECONDARY.md`](ARITHMETIC_PLATEAU_SECONDARY.md) · ANT audit [`ANT_INTERFACE_AUDIT.md`](ANT_INTERFACE_AUDIT.md) · zero-proportion feasibility [`ZERO_PROPORTION_FEASIBILITY.md`](ZERO_PROPORTION_FEASIBILITY.md) · corrected B-RES threshold [`B_RES_THRESHOLD.md`](B_RES_THRESHOLD.md) · corrected model cancellation campaign [`HSTAR_ANTICANCELLATION.md`](HSTAR_ANTICANCELLATION.md).
+
+**Historical record below:** campaign measurements remain as recorded. Earlier
+labels such as “package complete,” “sole residual,” and the phase-independent
+coercivity claim are superseded by the current status above. They are not live
+claims of arithmetic closure.
 
 
 ---

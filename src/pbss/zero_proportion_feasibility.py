@@ -87,4 +87,11 @@ def zero_proportion_feasibility_report() -> Dict[str, Any]:
             "claim Anthropic methods close B-RES",
             "run large zero-count campaigns without a new theorem statement",
         ],
+        "related_but_distinct": (
+            "The anti-cancellation model audit is a different axis "
+            "(pbss.hstar_anticancellation / docs/HSTAR_ANTICANCELLATION.md). "
+            "Its former Weil coercivity proxy was retracted; exact phase limits "
+            "and arithmetic recurrence supersede that claim. Proportion candidates "
+            "remain STOP."
+        ),
     }

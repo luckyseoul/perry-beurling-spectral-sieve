@@ -28,10 +28,7 @@ from .weights import admissible_weight, apply_weight
 from .zeros import explicit_formula_amplitudes, zeta_zero_ordinates
 
 BANNER = "NOT AN UNCONDITIONAL PROOF OF RH"
-# Full A: closed conditionally under RH + cited ANT (see ab_closure / THEOREM_A_PACKAGE).
-# Not unconditional; RH remains open.
-FULL_A_STATUS = "closed_conditional"
-RH_STATUS = "open"
+from .ab_closure import FULL_A_STATUS, RH_STATUS
 
 
 def model_chain_report(
@@ -126,14 +123,17 @@ def model_chain_report(
             },
         },
         "proved_model_decay_ok": bool(proved_ok),
+        "evidence_kind": "sampled_model_report",
+        "continuous_limit_verified_by_this_run": False,
         "full_arithmetic_A_status": FULL_A_STATUS,
         "rh_status": RH_STATUS,
         "banner": BANNER,
         "note": (
             "Model chain only (M5/M6 majorants + scaffolding diagnostic tail). "
-            "Full arithmetic Theorem A is closed *conditionally* under RH + "
-            "cited ANT-1..3 + M7 — see docs/THEOREM_A_PACKAGE.md / pbss.ab_closure. "
-            "RH remains open. Scaffold tail is not a required Full-A step."
+            "The exact continuous arithmetic theorem is proved under RH using "
+            "the explicit formula and positive mean square; see docs/CONTINUOUS_THEOREM_A.md. "
+            "This sampled model report does not verify that theorem or its sampled transfer. "
+            "RH remains open; the scaffold tail is diagnostic only."
         ),
     }
 

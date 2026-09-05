@@ -1,103 +1,104 @@
-# Full Theorem B — package complete (single residual step)
+# Theorem B: arithmetic converse and remaining growth estimate
 
-**Date:** 2026-08-11  
-**Status:** **Package complete** with exactly **one** named open residual step **B-RES**.  
-**Model B₀:** **proved** (M2–M4).  
-**Unconditional RH:** **open** — blocked solely by B-RES.
+**Date:** 2026-09-05. **RH:** open.
+The earlier label “package complete, blocked solely by B-RES” conflated a
+conditional implication with an unconditional proof. This document supersedes
+that label and the claimed positive-floor support from intact off-critical modes.
 
-Pointers: [`THEOREMS_AB.md`](THEOREMS_AB.md) · [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) ·  
-[`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) · Code: `pbss.ab_closure`
+## Current results
 
----
+| Statement | Status | Proof |
+|---|---|---|
+| Persistent low-degree mass gives a positive ratio (model B₀) | Proved projection statement | [M2–M4](PROOFS_LEMMAS.md) |
+| Real off-critical mode has a persistent positive ratio | False for the stated continuous model | [Exact phase obstruction](OFF_CRITICAL_PHASE_OBSTRUCTION.md) |
+| RH implies \(R_d=O(T^{-2})\) for the exact continuously detrended arithmetic residual | Proved conditional theorem | [Continuous A](CONTINUOUS_THEOREM_A.md) |
+| Arithmetic \(\liminf R_d=0\) for that residual | Proved unconditionally | [Recurrence theorem](NORMALIZED_RECURRENCE_THEOREM.md) |
+| An off-critical zero forces \(\liminf R_d>0\) | RH-equivalent; open | Recurrence corollary |
+| A fixed absolute moment is subexponential iff RH | Proved equivalence (B-ABS) | [Absolute-moment converse](ABSOLUTE_MOMENT_CONVERSE.md) |
+| A specified normalized decay rate implies RH | Open; no complete argument here | Scope below |
+| Unconditional bound needed to deduce RH | Open | B-ABS growth condition |
 
-## Explicit non-claim
+Machine-readable: `pbss.ab_closure.package_status()` reports
+`full_B="open_normalized_converse"`,
+`absolute_moment_converse="proved_rh_equivalence"`, and
+`normalized_recurrence="proved_unconditional_continuous"`.
 
-**This document does not prove the Riemann Hypothesis.**  
-Full B as an implication “fast arithmetic \(R_d\Rightarrow\) RH” remains **open** and is
-reduced to a **single** residual analytic step (B-RES). Model obstruction B₀ is **not**
-Full B.
+## Definitions and B-ABS
 
----
-
-## 1. Precise statements
-
-### Model theorem B₀ (**proved**)
-
-If \(R_d(q_T)\ge\varepsilon_0^2>0\) uniformly for large \(T\), then \(q_T\) cannot be of the
-form “high-frequency only” in the sense of M2 with \(\varepsilon\to0\) (M4).  
-Vanishing of \(R_d\) is **necessary** for the absence of persistent low-degree mass.
-
-### Model off-critical directional lemma (**proved as model**)
-
-For \(\sigma\in(\tfrac12,1)\) and \(q_T^{\sigma,t}(u)=e^{T(\sigma-1/2)u}\sin(tTu)\),
-the energy ratio \(R_d(q_T^{\sigma,t})\) remains bounded away from the pure critical-line
-decay scale: empirically \(R_d(\mathrm{off})/R_d(\mathrm{cl})\) **grows** with \(T\)
-(`ab_closure.off_critical_model_obstruction`). This is a **model** obstruction, not B-RES.
-
-### Full Theorem B (**claim**)
-
-**Claim.** If \(R_d(q_T^{\mathrm{arith}})\) decays sufficiently rapidly as \(T\to\infty\)
-(e.g. \(R_d=o(1)\), or \(O(T^{-2})\) under a fixed normalization), then \(\zeta\) has no
-non-trivial zero with \(\mathrm{Re}\,\rho\neq\tfrac12\).
-
----
-
-## 2. Gap table
-
-| Step | Disposition | Support |
-|------|-------------|---------|
-| B₀ / M2–M4 | **Proved** | `PROOFS_LEMMAS.md` |
-| Model off-critical vs CL | **Proved (model)** | `ab_closure.off_critical_model_obstruction` |
-| **B-RES** arithmetic converse residual | **Open (sole residual)** | §3 |
-| Full B | **Package complete** | Reduces exactly to B-RES |
-| Unconditional RH via B | **Open** | Blocked only by B-RES |
-
-Machine-readable: `pbss.ab_closure.full_b_gap_table()`,
-`package_status()["full_B"] == "package_complete_single_residual"`.
-
----
-
-## 3. The single residual step **B-RES**
-
-**B-RES (Arithmetic off-critical injection).**  
-Let \(\rho=\sigma+it\) be a non-trivial zero with \(\sigma\neq\tfrac12\). Then, after the
-shipped normalization and detrend defining \(q_T^{\mathrm{arith}}\), and after accounting
-for the full explicit-formula expansion (main oscillatory sum, secondary main terms, and
-remainders), the family \((q_T^{\mathrm{arith}})_{T\to\infty}\) satisfies
+Let \(Q(y)=e^{-y/2}(\theta(e^y)-e^y)\). Fix one integer \(k\ge0\), and set
 \[
-\liminf_{T\to\infty} R_d\bigl(q_T^{\mathrm{arith}}\bigr) > 0
+c_k(T)=\int_0^1Q(Tu)\varphi_k(u)\,du.
 \]
-(or a quantified positive lower envelope incompatible with the “sufficiently rapid decay”
-hypothesis of Full B).
+Then RH is equivalent to the assertion that for every \(\epsilon>0\),
+\[
+|c_k(T)|=O_\epsilon(e^{\epsilon T})\qquad(T\to\infty).
+\]
+For \(k\ge2\), continuous orthogonal degree-one detrending leaves this moment
+unchanged. The statement concerns all sufficiently large windows, not a
+subsequence or a finite collection of measurements.
 
-**Threshold form \(H^*\) (rank 5):** see [`B_RES_THRESHOLD.md`](B_RES_THRESHOLD.md) and
-`pbss.b_res_threshold` — B-RES = \(H^*\) for arithmetic \(\zeta\); model cancellation
-counterexample shows \(H^*\) is necessary. **Still open / RH-hard.**
+The proof keeps the arithmetic denominator out of the criterion. The Laplace
+transform of \(Q\) has residue \(-m_\rho/\rho\) at every off-critical zero
+\(s=\rho-1/2\) in the right half-plane. The transform of
+\(T^{k+1}c_k(T)\) retains a nonzero pole of order \(k+1\). Subexponential
+growth would make that transform holomorphic there, excluding such zeros.
+No isolated rightmost zero, finite truncation, simplicity, or independence
+hypothesis is assumed.
 
-**Status:** **Open.** This is the only Full-B gap. It is essentially **RH-hard**: a proof
-of B-RES for the true arithmetic residual would force all zeros onto the line whenever
-\(R_d\to0\).
+**What is missing:** an unconditional proof of the displayed absolute-growth
+bound. The equivalence itself does not supply it.
 
-**Why model off-critical is not enough.** The model mode \(e^{T(\sigma-1/2)u}\sin(tTu)\)
-shows that *if* an off-critical contribution appears *uncontaminated* in the residual,
-\(R_d\) need not vanish. The residual step is to prove that a genuine zero of \(\zeta\)
-**must** leave such a non-cancellable footprint in \(q_T^{\mathrm{arith}}\) after all
-other terms.
+## The normalized positive-floor B-RES formulation
 
-**What is explicitly not left open:** multiple unlabeled converse gaps; treating B₀ as
-Full B; claiming RH from model ratios alone.
+With \(q_T=(I-P_1)Q(T\cdot)\), fixed \(d\ge2\), and the same continuous
+inner product, the recurrence theorem gives
+\[
+\liminf_{T\to\infty}R_d(q_T)=0
+\]
+unconditionally. Its proof shows that an eventual positive raw projection
+floor would force polynomial cumulative energy, hence RH by the arithmetic
+Laplace transform. Continuous A then contradicts the assumed detrended floor.
 
----
+Thus the particular B-RES implication
+\[
+\text{off-critical zero exists}\ \Longrightarrow\ \liminf R_d(q_T)>0
+\]
+is itself equivalent to RH. Under RH it is vacuously true; combined with
+unconditional recurrence it implies RH. This does not prove the implication.
 
-## 4. Package status summary
+The old component-only \(H^*\) was insufficient even as a projection argument:
+other projected components may cancel \(P_dq_{\rm off}\). A sufficient margin
+must also control the projected remainder. See [B_RES_THRESHOLD.md](B_RES_THRESHOLD.md).
 
-| Item | Status |
-|------|--------|
-| Full B claim written | **Complete** |
-| Model B₀ | **Proved** |
-| Model off-critical support | **Proved (model)** |
-| Unlabeled gaps besides B-RES | **None** |
-| B-RES | **Open (sole)** |
-| RH | **Open** |
+## Why the model route did not establish B-RES
 
-**Full B package complete. RH open. B-RES is the only remaining converse step.**
+For the intact mode \(e^{ATu}\sin(tTu)\), \(A,t>0\), the exact continuous
+ratio tends to zero. Its generic upper scale is \(T^{-1}\); phase troughs
+have scale \(T^{-3}\) for \(d\ge1\). Hence neither nonvanishing nor a
+phase-independent \(T^{-1}\) lower bound follows from off-critical origin.
+Finite sampled comparisons against a critical-line mode establish only those
+measured comparisons. Forced projection cancellation is a useful control,
+but is not needed to make this intact mode's ratio vanish.
+
+The localized Weil proxy also lacks the positive coercivity estimate needed
+to turn an indefinite quadratic form into a lower bound for projection energy;
+[WEIL_TRANSFER_OBSTRUCTION.md](WEIL_TRANSFER_OBSTRUCTION.md) proves that an
+injective restriction alone cannot provide it.
+
+## Scope of an unresolved normalized converse
+
+The statements “\(R_d=o(1)\)” and “\(R_d=O(T^{-2})\)” are different hypotheses;
+the former does not imply the latter. A valid normalized converse must state
+one precise rate for one precise residual, degree, measure, and preprocessing.
+It must also control the absolute size of the residual or otherwise retain the
+arithmetic information lost on normalization:
+\[
+|c_k(T)|\le\|q_T\|_2\sqrt{R_d(q_T)}.
+\]
+A decaying ratio alone does not bound an exponentially growing absolute norm.
+The recurrence theorem establishes neither a full limit nor a decay rate.
+
+Even conditional A together with a valid converse for its matching rate would
+give an equivalence; an unconditional proof of the decay property would still
+be required to deduce RH. Fixed sample arrays, injected model signals, and
+finite GPU or high-precision checks do not supply that proof.

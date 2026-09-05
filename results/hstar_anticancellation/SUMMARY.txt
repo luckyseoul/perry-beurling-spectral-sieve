@@ -1,0 +1,17 @@
+NOT AN UNCONDITIONAL PROOF OF RH
+lemma=L_star_local_anticancellation status=partial_lemma
+grid_rows=84 meets_eps_star=84/84 (100.0%)
+eps_star_global_half_min=8.153704e-03
+slice_sigma0.9_d4 n=7 all_constraint=True
+T=8.0  R_pure=2.4154e-02  R_cancel=4.6971e-12  C_pure=1.5542e-01  signal=1
+T=12.0  R_pure=1.6425e-02  R_cancel=3.3153e-12  C_pure=1.2816e-01  signal=1
+T=16.0  R_pure=1.2387e-02  R_cancel=2.5139e-12  C_pure=1.1130e-01  signal=1
+T=24.0  R_pure=8.2582e-03  R_cancel=1.6745e-12  C_pure=9.0875e-02  signal=1
+T=32.0  R_pure=6.1658e-03  R_cancel=1.2484e-12  C_pure=7.8523e-02  signal=1
+T=48.0  R_pure=4.0448e-03  R_cancel=8.1762e-13  C_pure=6.3599e-02  signal=1
+T=64.0  R_pure=2.9619e-03  R_cancel=5.9821e-13  C_pure=5.4423e-02  signal=1
+analytic_envelope n=84 above_half=84/84 median_rel_err=0.0220
+arith_bridge n=24 ok=24/24 mean_pred_ratio=0.9984
+partial_cancel T=16 monotone_decreasing=True C_d=[0.11129612718373579, 0.08369883743306328, 0.055907647725778165, 0.027985927778334533, 1.5855281064256908e-06]
+partial_cancel T=32 monotone_decreasing=True C_d=[0.07852270294727992, 0.05897136673230603, 0.03935193936256116, 0.019686898426065243, 1.1173208588247072e-06]
+partial_cancel T=64 monotone_decreasing=True C_d=[0.054423310828491236, 0.040843779508785226, 0.027241578763040026, 0.013624230135642413, 7.734390489782721e-07]

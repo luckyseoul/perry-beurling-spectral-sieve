@@ -17,4 +17,10 @@ CLI: `PYTHONPATH=src python3 -m pbss …` — see `docs/TOOL.md`.
 
 ## Non-claim
 
-Not an unconditional proof of RH. Full A is closed conditionally; Full B reduces to B-RES.
+Not an unconditional proof of RH. Conditional A is proved for the exact continuous
+degree-one-detrended theta residual; see `docs/CONTINUOUS_THEOREM_A.md`.
+`docs/ABSOLUTE_MOMENT_CONVERSE.md` proves an RH equivalence whose unconditional
+growth bound remains open. The normalized converse remains open, and
+`docs/NORMALIZED_RECURRENCE_THEOREM.md` proves unconditional liminf zero for the
+same continuous residual. Do not identify these theorems with fixed sampled
+arrays, arbitrary weights, or an unconditional proof of their RH hypotheses.

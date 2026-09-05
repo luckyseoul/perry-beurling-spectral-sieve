@@ -1,9 +1,11 @@
 """
 Rank-5: B-RES as a threshold / obstruction problem (not full RH).
 
-Formalizes the *weakest model hypothesis* that makes an off-critical mode force
-nonvanishing R_d, and a model counterexample when that hypothesis fails
-(cancellation / projection orthogonalization).
+Records a sufficient total-projection hypothesis and finite sampled controls.
+The old component-only hypothesis omitted projected remainder cancellation.
+Even an intact continuous off-critical mode has R_d = O(1/T), with deeper
+phase-dependent troughs. For the exact continuous arithmetic residual, the
+positive-floor version of B-RES is equivalent to RH; it is not established here.
 
 **Does not solve B-RES for arithmetic ζ.** Does not claim RH.
 """
@@ -15,13 +17,23 @@ import numpy as np
 
 from .probes import (
     probe_critical_line_mode,
-    probe_off_critical_mode,
     sample_grid,
 )
 from .projection import energy_ratio, project
 
 BANNER = "NOT AN UNCONDITIONAL PROOF OF RH"
 B_RES_ID = "B-RES"
+
+
+def _scaled_mode(u: np.ndarray, *, T: float, sigma: float, t: float) -> np.ndarray:
+    """A common exponential scale leaves the ratio unchanged and avoids overflow."""
+    T, sigma, t = float(T), float(sigma), float(t)
+    if not all(np.isfinite(x) for x in (T, sigma, t)) or T <= 0 or t <= 0:
+        raise ValueError("T and t must be positive; T, sigma and t must be finite")
+    exponent, frequency = T * (sigma - 0.5), T * t
+    if not np.isfinite(exponent) or not np.isfinite(frequency):
+        raise ValueError("model exponent and frequency must be finite")
+    return np.exp(exponent * u - max(exponent, 0.0)) * np.sin(frequency * u)
 
 
 def off_critical_rd_lower_model(
@@ -32,9 +44,9 @@ def off_critical_rd_lower_model(
     degree: int = 4,
     n_points: int = 2048,
 ) -> Dict[str, float]:
-    """R_d of pure off-critical model mode (envelope intact)."""
+    """Finite sampled ratio; the legacy name does not assert a lower bound."""
     u = sample_grid(int(n_points))
-    q = probe_off_critical_mode(u, T=float(T), sigma=float(sigma), t=float(t))
+    q = _scaled_mode(u, T=T, sigma=sigma, t=t)
     r = float(energy_ratio(q, u, int(degree)))
     r_cl = float(
         energy_ratio(probe_critical_line_mode(u, T=float(T), t=float(t)), u, int(degree))
@@ -67,9 +79,9 @@ def cancelled_off_critical_rd(
     alone does not force liminf R_d > 0.
     """
     u = sample_grid(int(n_points))
-    q = probe_off_critical_mode(u, T=float(T), sigma=float(sigma), t=float(t))
+    q = _scaled_mode(u, T=T, sigma=sigma, t=t)
     # subtract P_d q
-    pr = project(q, u, degree=int(degree), T=float(T))
+    pr = project(q, u, degree=int(degree), T=1.0)
     # reconstruct low part from coefficients
     from .basis import shifted_legendre_values
 
@@ -88,31 +100,28 @@ def cancelled_off_critical_rd(
 
 
 def threshold_hypothesis_statement() -> Dict[str, str]:
-    """
-    Weakest *model* hypothesis H* sufficient for nonvanishing R_d from an
-    off-critical contribution — the shape of what B-RES must prove for ζ.
-    """
+    """Sufficient projection margin, including the missing remainder term."""
     return {
         "id": "H_star_injection",
         "statement": (
-            "H*: After all EF main terms, secondary terms, and admissible weights, "
-            "an off-critical zero ρ=σ+it contributes a residual component q_off whose "
-            "correlation with V_d stays bounded below: "
-            "liminf_T ||P_d q_off|| / ||q_arith|| ≥ ε(σ,t,d) > 0 "
-            "(no total cancellation into V_d^⊥)."
+            "For q_arith=q_off+q_rest, a sufficient H* is "
+            "liminf_T (||P_d q_off||-||P_d q_rest||)/||q_arith|| ≥ ε > 0. "
+            "A lower bound on ||P_d q_off|| alone is insufficient."
         ),
         "implies": (
-            "Under H*, liminf R_d(q_arith) ≥ ε^2 > 0 whenever such a zero exists, "
-            "hence rapid R_d→0 forces no off-critical zeros (model Full B)."
+            "The reverse triangle inequality gives liminf R_d(q_arith) ≥ ε^2. "
+            "The strengthened component margin is sufficient, not necessary."
         ),
         "counterexample_below": (
-            "If H* fails (perfect V_d-orthogonalization of the off-critical piece), "
-            "R_d may vanish — see cancelled_off_critical_rd."
+            "An intact continuous off-mode already has R_d=O(1/T). Also "
+            "q_rest=-P_d q_off+h_perp cancels its projected contribution exactly."
         ),
         "status_for_zeta": (
-            "B-RES is exactly the claim that H* holds for the true arithmetic residual "
-            "of ζ. Open / RH-hard. Not proved here."
+            "For exact continuous degree-one detrending and fixed d>=2, "
+            "liminf R_d=0 unconditionally. The assertion off-critical zero => "
+            "liminf R_d>0 is therefore RH-equivalent and remains open."
         ),
+        "scope": "Exact continuous theta residual, du projection; no sampled transfer asserted.",
     }
 
 
@@ -131,6 +140,9 @@ def b_res_threshold_report(
         "banner": BANNER,
         "rh_claimed": False,
         "b_res_solved": False,
+        "normalized_b_res_floor": "rh_equivalent_open",
+        "normalized_recurrence": "proved_unconditional_continuous",
+        "model_asymptotic": "vanishing_with_phase_dependent_troughs",
         "rank": 5,
         "title": "B-RES threshold / obstruction package",
         "B_RES_id": B_RES_ID,
@@ -139,8 +151,9 @@ def b_res_threshold_report(
         "model_cancellation_counterexample": cancel,
         "pure_above_cancel": bool(pure_above_cancel),
         "conclusion": (
-            "Full B reduces to B-RES = H* for arithmetic ζ. Model modes satisfy a "
-            "positive R_d lower direction; forced V_d kill shows H* is necessary. "
-            "Do not attack full RH; only prove H* or a weaker unconditional lemma."
+            "Finite sampled controls do not prove a projection floor. Exact "
+            "continuous off-modes vanish; the arithmetic liminf is also zero "
+            "unconditionally. B-ABS proves an absolute-moment RH equivalence; "
+            "its unconditional growth bound and the normalized converse remain open."
         ),
     }

@@ -1,0 +1,388 @@
+{
+  "package": {
+    "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+    "rh": "open",
+    "full_arithmetic_A": "proved_conditional_continuous",
+    "full_B": "open_normalized_converse",
+    "full_B_residual_step_id": "B-RES",
+    "full_B_residual_step": "The positive-floor B-RES formulation is RH-equivalent and open; continuous normalized recurrence gives liminf R_d=0 unconditionally.",
+    "continuous_scope": {
+      "residual": "Q(y)=exp(-y/2)*(theta(exp(y))-exp(y))",
+      "window": "q_T(u)=(I-P_1)Q(Tu), u in [0,1]",
+      "measure": "continuous Lebesgue du",
+      "detrend": "continuous orthogonal affine projection P_1",
+      "degree": "fixed integer d>=2",
+      "weight": "none beyond Lebesgue measure",
+      "sampled_transfer_proved": false,
+      "weighted_transfer_proved": false
+    },
+    "absolute_moment_converse": "proved_rh_equivalence",
+    "absolute_moment_growth_bound": "open_unconditional",
+    "normalized_recurrence": "proved_unconditional_continuous",
+    "normalized_b_res_floor": "rh_equivalent_open",
+    "normalized_full_limit": "open_unconditional",
+    "normalized_rate": "proved_only_under_rh",
+    "rh_claimed": false,
+    "evidence_kind": "theorem_registry",
+    "model_A0": "proved",
+    "model_B0": "proved",
+    "conditional_deduction_A": "RH + exact explicit formula + positive mean-square theorem imply R_d((I-P_1)Q(Tu))=O_d(T^-2), fixed d>=2, continuous unweighted residual.",
+    "writeup_A": "docs/CONTINUOUS_THEOREM_A.md",
+    "writeup_B": "docs/THEOREM_B_PACKAGE.md",
+    "writeup_absolute_moments": "docs/ABSOLUTE_MOMENT_CONVERSE.md",
+    "writeup_normalized_recurrence": "docs/NORMALIZED_RECURRENCE_THEOREM.md",
+    "roadmap": "docs/RH_CLOSEOUT_ROADMAP.md",
+    "note": "Continuous A is proved under RH. B-ABS is an equivalence and normalized recurrence proves only liminf zero. Neither establishes a normalized fast-decay converse or the equivalent absolute bound. RH remains open."
+  },
+  "A": [
+    {
+      "step": "M1-M7 diagnostic model lemmas",
+      "disposition": "proved_model",
+      "scope": "continuous projection lemmas with their stated hypotheses",
+      "required_for_continuous_A": false,
+      "support": "docs/PROOFS_LEMMAS.md"
+    },
+    {
+      "step": "ANT-3 exact psi explicit formula",
+      "disposition": "cited_exact_statement",
+      "scope": "continuous, under RH",
+      "required_for_continuous_A": true,
+      "support": "Akbary-Ng-Shahabi equation (1.5)"
+    },
+    {
+      "step": "ANT-1 uniform polynomial moments and ANT-2 prime-square correction",
+      "disposition": "proved_continuous_adaptation",
+      "scope": "continuous, under RH",
+      "required_for_continuous_A": true,
+      "support": "docs/CONTINUOUS_THEOREM_A.md sections 1-2"
+    },
+    {
+      "step": "ANT-MS positive mean-square denominator",
+      "disposition": "cited_exact_statement",
+      "scope": "continuous, under RH",
+      "required_for_continuous_A": true,
+      "support": "Akbary-Ng-Shahabi Corollary 1.15(i); continuous adaptation section 3"
+    },
+    {
+      "step": "Full A: RH implies R_d((I-P_1)Q(Tu))=O_d(T^-2)",
+      "disposition": "proved_conditional_continuous",
+      "scope": "exact continuous theta residual, fixed d>=2, no added weight",
+      "required_for_continuous_A": true,
+      "support": "docs/CONTINUOUS_THEOREM_A.md"
+    },
+    {
+      "step": "ANT-4 optional weighted arithmetic transfer",
+      "disposition": "open_transfer",
+      "scope": "optional extension beyond the proved theorem",
+      "required_for_continuous_A": false,
+      "support": "Requires weighted numerator and denominator estimates"
+    },
+    {
+      "step": "Sampled grid and regression transfer",
+      "disposition": "open_transfer",
+      "scope": "sampled diagnostic, not the continuous theorem",
+      "required_for_continuous_A": false,
+      "support": "Requires quantitative quadrature and detrend errors as T grows"
+    },
+    {
+      "step": "Unconditional RH",
+      "disposition": "open",
+      "scope": "arithmetic zeta",
+      "required_for_continuous_A": false,
+      "support": "The proved arithmetic decay theorem assumes RH"
+    }
+  ],
+  "B": [
+    {
+      "step": "B0 / M2-M4 persistent orthogonal low-degree defect",
+      "disposition": "proved_model",
+      "support": "docs/PROOFS_LEMMAS.md M2-M4; this is not an arithmetic converse"
+    },
+    {
+      "step": "Pure off-critical mode",
+      "disposition": "phase_dependent_model",
+      "support": "docs/OFF_CRITICAL_PHASE_OBSTRUCTION.md; empirical ratios are not a uniform positive floor"
+    },
+    {
+      "step": "B-ABS absolute Legendre moment converse",
+      "disposition": "proved_rh_equivalence",
+      "support": "docs/ABSOLUTE_MOMENT_CONVERSE.md; equivalent absolute growth bound is unproved unconditionally"
+    },
+    {
+      "step": "Normalized recurrence: liminf R_d=0",
+      "disposition": "proved_unconditional_continuous",
+      "support": "docs/NORMALIZED_RECURRENCE_THEOREM.md; no full limit or rate"
+    },
+    {
+      "step": "B-RES positive-floor formulation",
+      "disposition": "rh_equivalent_open",
+      "support": "By normalized recurrence, the off-zero implies positive-floor assertion is equivalent to RH"
+    },
+    {
+      "step": "Full B: normalized fast decay implies RH",
+      "disposition": "open_normalized_converse",
+      "support": "Absolute-moment and recurrence theorems do not establish this normalized implication"
+    },
+    {
+      "step": "Unconditional RH",
+      "disposition": "open",
+      "support": "An RH-equivalent condition is not an unconditional proof of that condition"
+    }
+  ],
+  "ANT": {
+    "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+    "rh_claimed": false,
+    "rank": 3,
+    "title": "continuous theorem and sampled-interface audit",
+    "evidence_kind": "theorem_and_source_registry",
+    "analytic_inputs_verified_by_this_call": false,
+    "sampled_transfer_proved": false,
+    "weighted_transfer_proved": false,
+    "pbss_objects": {
+      "residual": "q_T=(I-P_1)[exp(-Tu/2)*(theta(exp(Tu))-exp(Tu))]",
+      "window": "u in [0,1], continuous Lebesgue du",
+      "detrend": "continuous orthogonal affine projection P_1",
+      "degree": "fixed integer d>=2",
+      "metric": "R_d=||P_d q||_2^2/||q||_2^2, shifted Legendre V_d",
+      "weight": "no added weight in the proved arithmetic theorem",
+      "mode_sum": "Re sum[-2 m_gamma exp(i gamma y)/(1/2+i gamma)], with correct sign and phases",
+      "sampled_residual": "probes.arithmetic_residual returns finite samples with sample least-squares detrend"
+    },
+    "checklist": [
+      {
+        "id": "ANT-3",
+        "pbss_target": "exact normalized psi formula before the explicit theta correction",
+        "required_matches": [
+          "RH",
+          "ANS equation (1.5)",
+          "negative coefficient sign and full complex phases"
+        ],
+        "uniformity_notes": [
+          "Choose one cutoff G=exp(T) on log(2)<=y<=T"
+        ],
+        "status": "cited_exact_statement",
+        "required_for_continuous_A": true,
+        "action": "use_exact_source_statement",
+        "citation_name": "Exact normalized psi explicit formula",
+        "classical_refs": [
+          "Akbary-Ng-Shahabi, arXiv:1306.1657v1, equation (1.5), p. 2"
+        ],
+        "adapted_conclusion": "F_psi(y)=Re sum_{0<gamma<=G}[-2 m_gamma exp(i gamma y)/(1/2+i gamma)] + O(exp(y/2)*(y+log G)^2/G + y exp(-y/2)).",
+        "source_url": "https://www.cs.uleth.ca/~akbary/Akbary-Ng-Shahabi.pdf",
+        "proof": "docs/CONTINUOUS_THEOREM_A.md, section 1"
+      },
+      {
+        "id": "ANT-1",
+        "pbss_target": "O(1/T) moments of the full psi residual",
+        "required_matches": [
+          "sum m_gamma/(gamma*abs(rho)) converges",
+          "integrated explicit-formula error is O(1/T)"
+        ],
+        "uniformity_notes": [
+          "The zero-block constant is independent of G; no arbitrary-N M5 inference"
+        ],
+        "status": "proved_continuous_adaptation",
+        "required_for_continuous_A": true,
+        "action": "use_continuous_theorem_section_1",
+        "citation_name": "Uniform control of the growing zero-block moments",
+        "classical_refs": [
+          "Akbary-Ng-Shahabi equation (1.5); classical N(H)=O(H log(H+2))"
+        ],
+        "adapted_conclusion": "Integral_0^1 F_psi(Tu)g(u)du=O_g(1/T), uniformly in the retained zero block because sum m_gamma/(gamma*abs(1/2+i gamma)) converges.",
+        "source_url": "https://www.cs.uleth.ca/~akbary/Akbary-Ng-Shahabi.pdf",
+        "proof": "docs/CONTINUOUS_THEOREM_A.md, section 1"
+      },
+      {
+        "id": "ANT-2",
+        "pbss_target": "Q_theta=F_psi-1+h with h in L1 intersect L2",
+        "required_matches": [
+          "prime-square constant isolated",
+          "continuous affine detrend removes -1"
+        ],
+        "uniformity_notes": [
+          "h(Tu) has O(1/T) moments and O(1/T) squared norm"
+        ],
+        "status": "proved_continuous_adaptation",
+        "required_for_continuous_A": true,
+        "action": "use_continuous_theorem_section_2",
+        "citation_name": "Explicit prime-square correction and integrable secondary error",
+        "classical_refs": [
+          "Exact identity psi(x)-theta(x)=sum_{j>=2} theta(x^(1/j)); RH error estimate"
+        ],
+        "adapted_conclusion": "Q_theta(y)=F_psi(y)-1+h(y), h in L1 intersect L2. The detrend removes -1; h(Tu) contributes O(1/T) moments and O(1/T) squared norm.",
+        "source_url": null,
+        "proof": "docs/CONTINUOUS_THEOREM_A.md, section 2"
+      },
+      {
+        "id": "ANT-MS",
+        "pbss_target": "positive limiting norm of continuous q_T",
+        "required_matches": [
+          "ANS Corollary 1.15(i), L=zeta",
+          "RH",
+          "retain zero multiplicities"
+        ],
+        "uniformity_notes": [
+          "No simplicity or linear independence assumption; V>0"
+        ],
+        "status": "cited_exact_statement",
+        "required_for_continuous_A": true,
+        "action": "use_mean_square_theorem_and_section_3",
+        "citation_name": "Positive mean-square limit for the exact psi residual",
+        "classical_refs": [
+          "Akbary-Ng-Shahabi, arXiv:1306.1657v1, Corollary 1.15(i), p. 11, L=zeta"
+        ],
+        "adapted_conclusion": "(1/T) Integral_0^T F_psi(y)^2 dy -> V=2 sum_{gamma>0} m_gamma^2/(1/4+gamma^2), 0<V<infinity. The continuous affine-detrended theta residual has the same norm limit.",
+        "source_url": "https://www.cs.uleth.ca/~akbary/Akbary-Ng-Shahabi.pdf",
+        "proof": "docs/CONTINUOUS_THEOREM_A.md, section 3"
+      },
+      {
+        "id": "ANT-4",
+        "pbss_target": "optional weighted arithmetic residual",
+        "required_matches": [
+          "weighted numerator bound",
+          "positive weighted denominator"
+        ],
+        "uniformity_notes": [
+          "M6 proves model transfer only; a bounded taper does not prove norm comparability"
+        ],
+        "status": "gap_named",
+        "required_for_continuous_A": false,
+        "action": "separate_optional_extension",
+        "citation_name": "Optional transfer to a weighted arithmetic residual",
+        "classical_refs": [
+          "M6 covers fixed absolutely continuous weights on model modes"
+        ],
+        "adapted_conclusion": "Not included in the continuous arithmetic theorem. Bounded weights alone do not ensure comparable weighted and unweighted norms.",
+        "source_url": null,
+        "proof": "docs/CONTINUOUS_THEOREM_A.md, scope"
+      },
+      {
+        "id": "SAMPLED",
+        "pbss_target": "probes.arithmetic_residual returns finite samples with sample least-squares detrend",
+        "required_matches": [
+          "grid refinement as T grows",
+          "quadrature and detrend errors on the claimed scale"
+        ],
+        "uniformity_notes": [
+          "Fixed samples do not inherit the continuous limit theorem"
+        ],
+        "status": "gap_named",
+        "required_for_continuous_A": false,
+        "action": "separate_sampled_transfer"
+      },
+      {
+        "id": "M7",
+        "pbss_target": "projection-ratio perturbation bound",
+        "required_matches": [
+          "R(q0+r)<=(sqrt(R(q0))+delta)^2/(1-delta)^2 when delta<1"
+        ],
+        "uniformity_notes": [
+          "A finite numerical check does not prove that delta tends to zero"
+        ],
+        "status": "proved_model",
+        "required_for_continuous_A": false,
+        "action": "retain_model_lemma"
+      }
+    ],
+    "unlabeled_count": 0,
+    "gap_named_count": 2,
+    "required_gap_count": 0,
+    "full_a_status": "proved_conditional_continuous",
+    "freeze_continuous_theorem_packaging": true,
+    "freeze_full_a_packaging": false,
+    "recommendation": "Use the exact continuous theorem and its primary sources. Keep optional weighted and sampled transfers separate; finite model checks do not establish a T-limit.",
+    "gap_table_A": [
+      {
+        "step": "M1-M7 diagnostic model lemmas",
+        "disposition": "proved_model",
+        "scope": "continuous projection lemmas with their stated hypotheses",
+        "required_for_continuous_A": false,
+        "support": "docs/PROOFS_LEMMAS.md"
+      },
+      {
+        "step": "ANT-3 exact psi explicit formula",
+        "disposition": "cited_exact_statement",
+        "scope": "continuous, under RH",
+        "required_for_continuous_A": true,
+        "support": "Akbary-Ng-Shahabi equation (1.5)"
+      },
+      {
+        "step": "ANT-1 uniform polynomial moments and ANT-2 prime-square correction",
+        "disposition": "proved_continuous_adaptation",
+        "scope": "continuous, under RH",
+        "required_for_continuous_A": true,
+        "support": "docs/CONTINUOUS_THEOREM_A.md sections 1-2"
+      },
+      {
+        "step": "ANT-MS positive mean-square denominator",
+        "disposition": "cited_exact_statement",
+        "scope": "continuous, under RH",
+        "required_for_continuous_A": true,
+        "support": "Akbary-Ng-Shahabi Corollary 1.15(i); continuous adaptation section 3"
+      },
+      {
+        "step": "Full A: RH implies R_d((I-P_1)Q(Tu))=O_d(T^-2)",
+        "disposition": "proved_conditional_continuous",
+        "scope": "exact continuous theta residual, fixed d>=2, no added weight",
+        "required_for_continuous_A": true,
+        "support": "docs/CONTINUOUS_THEOREM_A.md"
+      },
+      {
+        "step": "ANT-4 optional weighted arithmetic transfer",
+        "disposition": "open_transfer",
+        "scope": "optional extension beyond the proved theorem",
+        "required_for_continuous_A": false,
+        "support": "Requires weighted numerator and denominator estimates"
+      },
+      {
+        "step": "Sampled grid and regression transfer",
+        "disposition": "open_transfer",
+        "scope": "sampled diagnostic, not the continuous theorem",
+        "required_for_continuous_A": false,
+        "support": "Requires quantitative quadrature and detrend errors as T grows"
+      },
+      {
+        "step": "Unconditional RH",
+        "disposition": "open",
+        "scope": "arithmetic zeta",
+        "required_for_continuous_A": false,
+        "support": "The proved arithmetic decay theorem assumes RH"
+      }
+    ]
+  },
+  "threshold": {
+    "banner": "NOT AN UNCONDITIONAL PROOF OF RH",
+    "rh_claimed": false,
+    "b_res_solved": false,
+    "normalized_b_res_floor": "rh_equivalent_open",
+    "normalized_recurrence": "proved_unconditional_continuous",
+    "model_asymptotic": "vanishing_with_phase_dependent_troughs",
+    "rank": 5,
+    "title": "B-RES threshold / obstruction package",
+    "B_RES_id": "B-RES",
+    "threshold_hypothesis": {
+      "id": "H_star_injection",
+      "statement": "For q_arith=q_off+q_rest, a sufficient H* is liminf_T (||P_d q_off||-||P_d q_rest||)/||q_arith|| \u2265 \u03b5 > 0. A lower bound on ||P_d q_off|| alone is insufficient.",
+      "implies": "The reverse triangle inequality gives liminf R_d(q_arith) \u2265 \u03b5^2. The strengthened component margin is sufficient, not necessary.",
+      "counterexample_below": "An intact continuous off-mode already has R_d=O(1/T). Also q_rest=-P_d q_off+h_perp cancels its projected contribution exactly.",
+      "status_for_zeta": "For exact continuous degree-one detrending and fixed d>=2, liminf R_d=0 unconditionally. The assertion off-critical zero => liminf R_d>0 is therefore RH-equivalent and remains open.",
+      "scope": "Exact continuous theta residual, du projection; no sampled transfer asserted."
+    },
+    "model_off_critical": {
+      "T": 20.0,
+      "sigma": 0.9,
+      "R_d_off": 0.009918411726164991,
+      "R_d_cl": 0.0009970075902358119,
+      "ratio": 9.948180759405345
+    },
+    "model_cancellation_counterexample": {
+      "T": 20.0,
+      "sigma": 0.9,
+      "R_d_after_Vd_kill": 2.772022125434317e-33,
+      "threshold_hypothesis_holds": false,
+      "note": "Forced V_d removal \u21d2 R_d\u22480; model of cancellation below B-RES threshold"
+    },
+    "pure_above_cancel": true,
+    "conclusion": "Finite sampled controls do not prove a projection floor. Exact continuous off-modes vanish; the arithmetic liminf is also zero unconditionally. B-ABS proves an absolute-moment RH equivalence; its unconditional growth bound and the normalized converse remain open."
+  }
+}

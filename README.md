@@ -41,9 +41,9 @@ The framework is a **classifier / diagnostic**, not a full proof of RH.
 |:------------------------------:|:-----------------------:|
 | <img src="docs/figures/grand_Rd_vs_T.png" alt="Grand campaign R_d versus T" width="420"/> | <img src="docs/figures/grand_arith_focus_linear.png" alt="Arithmetic residual R4 soft plateau" width="420"/> |
 
-| Beurling battery | Status map |
+| Beurling battery | Historical status map |
 |:----------------:|:----------:|
-| <img src="docs/figures/beurling_battery_Rd_vs_T.png" alt="Beurling ordinary vs defective R_d vs T" width="420"/> | <img src="docs/figures/status_map.png" alt="Theorem A/B status map" width="420"/> |
+| <img src="docs/figures/beurling_battery_Rd_vs_T.png" alt="Beurling ordinary vs defective R_d vs T" width="420"/> | <img src="docs/figures/status_map.png" alt="Historical Theorem A/B status map; see current status table below" width="420"/> |
 
 More figures: [`docs/figures/`](docs/figures/) (canonical; paper uses the same files).
 
@@ -123,10 +123,22 @@ those values**; it reports \(R_d\) and \(S_d\) from the shipped path. See
 | **Finite-mode A₀** finite CL sum \(R_d=O(T^{-2})\) | **Proved** (Lemma M5) |
 | **Weighted model A₀** \(R_d(w q)=O(T^{-2})\) for \(w\in W_\alpha\) | **Proved** (Lemma M6) |
 | **M7** \(R_d\) perturbation majorant | **Proved** |
-| **A** arithmetic residual under RH | **Closed conditionally** (RH + cited ANT-1…3 + M5–M7) |
+| **A** exact continuous arithmetic residual under RH | **Proved conditionally**, with continuous affine detrending |
 | **B₀** persistent defect \(\Rightarrow R_d=\varepsilon^2\not\to0\) | **Proved** (Lemmas M2–M4) |
-| **B** fast residual decay \(\Rightarrow\) RH | **Package complete** — sole open step **B-RES** |
+| **Arithmetic recurrence** \(\liminf R_d=0\) | **Proved unconditionally**, for that continuous residual |
+| **B-ABS** subexponential absolute moment \(\Leftrightarrow\) RH | **Proved equivalence**; unconditional growth bound remains open |
+| **B** specified normalized decay \(\Rightarrow\) RH | **Open**; the positive-floor B-RES formulation is RH-equivalent |
 | **RH** unconditional | **Open** |
+
+The arithmetic statements use the exact continuous θ residual and orthogonal
+degree-one detrending, with fixed \(d\ge2\). They do not identify a fixed sampled
+array with its continuous limit. The proof package now includes
+[continuous A](docs/CONTINUOUS_THEOREM_A.md),
+[unconditional recurrence](docs/NORMALIZED_RECURRENCE_THEOREM.md), and the
+[absolute-moment converse](docs/ABSOLUTE_MOMENT_CONVERSE.md).
+The [exact off-critical model](docs/OFF_CRITICAL_PHASE_OBSTRUCTION.md) also has
+\(R_d\to0\), with phase-dependent troughs. Its formerly claimed positive
+floor was incorrect.
 
 Explicit-formula residual: `pbss.probes.explicit_formula_residual` · peel scan:
 `experiments/run_explicit_formula_peel.py` → `results/explicit_formula_peel/`.

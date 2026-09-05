@@ -8,11 +8,17 @@
 |-----|------|
 | [`TOOL.md`](TOOL.md) | **CLI / library usage** for general math |
 | [`DIAGNOSTIC_REVIEW_20260905.md`](DIAGNOSTIC_REVIEW_20260905.md) | Numerical and methodology corrections, validation, replay |
+| [`ARITHMETIC_PROOF_REVIEW_20260905.md`](ARITHMETIC_PROOF_REVIEW_20260905.md) | Continuous proofs, retractions, 332-test replay and remaining bound |
 | [`MEASURE_SENSITIVITY.md`](MEASURE_SENSITIVITY.md) | Gamma-weight ≥53% sensitivity confirmation |
 | [`STATUS.md`](STATUS.md) | Current claims, campaigns, non-claims |
 | [`THEOREMS_AB.md`](THEOREMS_AB.md) | Locked definitions; Full A/B disposition |
-| [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) | Full A closed conditionally |
-| [`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md) | Full B → sole residual **B-RES** |
+| [`THEOREM_A_PACKAGE.md`](THEOREM_A_PACKAGE.md) | Conditional continuous A and sampled-transfer scope |
+| [`THEOREM_B_PACKAGE.md`](THEOREM_B_PACKAGE.md) | Absolute converse proved; normalized converse open |
+| [`CONTINUOUS_THEOREM_A.md`](CONTINUOUS_THEOREM_A.md) | RH implies continuous arithmetic \(R_d=O(T^{-2})\) |
+| [`ABSOLUTE_MOMENT_CONVERSE.md`](ABSOLUTE_MOMENT_CONVERSE.md) | One fixed subexponential absolute moment iff RH |
+| [`NORMALIZED_RECURRENCE_THEOREM.md`](NORMALIZED_RECURRENCE_THEOREM.md) | Unconditional continuous \(\liminf R_d=0\) |
+| [`OFF_CRITICAL_PHASE_OBSTRUCTION.md`](OFF_CRITICAL_PHASE_OBSTRUCTION.md) | Exact vanishing model and sharp phase troughs |
+| [`WEIL_TRANSFER_OBSTRUCTION.md`](WEIL_TRANSFER_OBSTRUCTION.md) | Why an indefinite-form restriction does not give coercivity |
 | [`PROOFS_LEMMAS.md`](PROOFS_LEMMAS.md) | M1–M7 proofs |
 
 ## History (do not confuse with live theorem status)
@@ -29,8 +35,8 @@
 |-----|------|
 | [`JENSEN_MOMENT_HIERARCHY_BLINDNESS.md`](JENSEN_MOMENT_HIERARCHY_BLINDNESS.md) | Λ certificate blindness |
 | [`ARITHMETIC_PLATEAU_SECONDARY.md`](ARITHMETIC_PLATEAU_SECONDARY.md) | Plateau via secondary EF terms |
-| [`ANT_INTERFACE_AUDIT.md`](ANT_INTERFACE_AUDIT.md) | Full A citation freeze |
-| [`B_RES_THRESHOLD.md`](B_RES_THRESHOLD.md) | B-RES = H\* threshold packaging |
+| [`ANT_INTERFACE_AUDIT.md`](ANT_INTERFACE_AUDIT.md) | Analytic-input audit and scope corrections |
+| [`B_RES_THRESHOLD.md`](B_RES_THRESHOLD.md) | Corrected remainder margin; positive-floor B-RES is RH-equivalent |
 | [`ZERO_PROPORTION_FEASIBILITY.md`](ZERO_PROPORTION_FEASIBILITY.md) | Anthropic-class STOP |
 | [`EF_IDENTIFY_ATTACK.md`](EF_IDENTIFY_ATTACK.md) | EF identification attack |
 | [`KILL021_ENRICH_M.md`](KILL021_ENRICH_M.md) | Kill-0.21 enrichments |

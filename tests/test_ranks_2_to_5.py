@@ -46,14 +46,32 @@ def test_rank2_enrich_scan_uses_real_ed_metric():
         assert 0.0 <= r["Ed_r_over_l2q"] <= 1.0 + 1e-9
 
 
-def test_rank3_ant_audit_freezes_full_a():
+def test_rank3_ant_audit_keeps_unresolved_transfers_visible():
     aud = ant_interface_audit()
     assert aud["rh_claimed"] is False
     assert aud["unlabeled_count"] == 0
-    assert aud["freeze_full_a_packaging"] is True
-    assert aud["full_a_status"] == "closed_conditional"
+    assert aud["freeze_full_a_packaging"] is False
+    assert aud["freeze_continuous_theorem_packaging"] is True
+    assert aud["required_gap_count"] == 0
+    assert aud["gap_named_count"] == 2
+    assert aud["analytic_inputs_verified_by_this_call"] is False
+    assert aud["sampled_transfer_proved"] is False
+    assert aud["full_a_status"] == "proved_conditional_continuous"
     ids = {r["id"] for r in aud["checklist"]}
-    assert {"ANT-1", "ANT-2", "ANT-3", "M7"}.issubset(ids)
+    assert {"ANT-1", "ANT-2", "ANT-3", "ANT-MS", "SAMPLED", "M7"}.issubset(ids)
+
+
+def test_rank3_named_required_gap_prevents_freezing_even_when_all_rows_are_labeled(monkeypatch):
+    import pbss.ant_audit as module
+
+    rows = module.interface_checklist()
+    next(row for row in rows if row["id"] == "ANT-MS")["status"] = "gap_named"
+    monkeypatch.setattr(module, "interface_checklist", lambda: rows)
+    aud = module.ant_interface_audit()
+    assert aud["unlabeled_count"] == 0
+    assert aud["required_gap_count"] == 1
+    assert aud["freeze_continuous_theorem_packaging"] is False
+    assert aud["freeze_full_a_packaging"] is False
 
 
 def test_rank4_zero_proportion_stops():
@@ -68,6 +86,9 @@ def test_rank5_b_res_threshold_not_solved():
     rep = b_res_threshold_report(T=16.0, sigma=0.9, degree=4)
     assert rep["b_res_solved"] is False
     assert rep["rh_claimed"] is False
+    assert rep["normalized_b_res_floor"] == "rh_equivalent_open"
+    assert rep["normalized_recurrence"] == "proved_unconditional_continuous"
+    assert rep["model_asymptotic"] == "vanishing_with_phase_dependent_troughs"
     assert rep["pure_above_cancel"] is True
     assert rep["model_off_critical"]["R_d_off"] > rep["model_cancellation_counterexample"][
         "R_d_after_Vd_kill"
@@ -82,3 +103,13 @@ def test_rank5_cancellation_near_zero_rd():
     assert c["R_d_after_Vd_kill"] < 1e-6
     o = off_critical_rd_lower_model(18.0, degree=4, n_points=2048)
     assert o["R_d_off"] > 0.01
+
+
+def test_rank5_large_T_avoids_common_exponential_overflow_on_fixed_samples():
+    # This checks arithmetic range and discrete projection cancellation only;
+    # a fixed grid does not certify the continuous high-T ratio.
+    pure = off_critical_rd_lower_model(4000.0, degree=4, n_points=2048)
+    cancelled = cancelled_off_critical_rd(4000.0, degree=4, n_points=2048)
+    assert 0.0 <= pure["R_d_off"] <= 1.0
+    assert 0.0 <= pure["R_d_cl"] <= 1.0
+    assert cancelled["R_d_after_Vd_kill"] < 1e-12

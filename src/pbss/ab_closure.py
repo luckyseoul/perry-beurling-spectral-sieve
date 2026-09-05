@@ -1,16 +1,14 @@
-"""
-Full Theorems A and B — package closure surface (not unconditional RH).
+"""Proof-status registry and sampled model checks; not an unconditional RH proof.
 
-Full A: closed *conditionally* as a complete deduction
-  RH + cited ANT inputs (hypotheses listed) + proved in-repo M5/M6/M7
-  ⇒ R_d(w q_T^arith) → 0.
-Scaffold-only majorants are *not* the sole support for any required step.
+Continuous A: RH implies R_d=O(T^-2) for the exact theta residual with the
+continuous orthogonal affine detrend, fixed d>=2, and no additional weight.
+B-ABS: one absolute Legendre moment has subexponential growth iff RH.
+Normalized recurrence: liminf R_d=0 unconditionally for that continuous detrend.
+The positive-floor version of B-RES is consequently RH-equivalent and open.
 
-Full B: package complete with exactly one named residual open step (B-RES),
-  which is RH-hard. Model obstruction B₀ (M2–M4) and model off-critical
-  lower bounds are proved in-repo.
-
-See docs/THEOREM_A_PACKAGE.md, docs/THEOREM_B_PACKAGE.md.
+The sampled functions below check model calculations, not these limit theorems.
+See CONTINUOUS_THEOREM_A.md, ABSOLUTE_MOMENT_CONVERSE.md, and
+NORMALIZED_RECURRENCE_THEOREM.md for the actual proofs and hypotheses.
 """
 from __future__ import annotations
 
@@ -26,7 +24,6 @@ from .lemmas import (
 from .probes import (
     normalize_l2,
     probe_critical_line_mode,
-    probe_off_critical_mode,
     sample_grid,
 )
 from .projection import energy_ratio, project_coefficients
@@ -35,10 +32,21 @@ from .weights import admissible_weight, apply_weight
 BANNER = "NOT AN UNCONDITIONAL PROOF OF RH"
 
 # Machine-readable dispositions (synced with docs)
-FULL_A_STATUS = "closed_conditional"  # under RH + cited ANT-1..4; not unconditional
-FULL_B_STATUS = "package_complete_single_residual"  # only B-RES open
+FULL_A_STATUS = "proved_conditional_continuous"
+FULL_B_STATUS = "open_normalized_converse"
 RH_STATUS = "open"
 B_RESIDUAL_STEP_ID = "B-RES"
+
+CONTINUOUS_SCOPE = {
+    "residual": "Q(y)=exp(-y/2)*(theta(exp(y))-exp(y))",
+    "window": "q_T(u)=(I-P_1)Q(Tu), u in [0,1]",
+    "measure": "continuous Lebesgue du",
+    "detrend": "continuous orthogonal affine projection P_1",
+    "degree": "fixed integer d>=2",
+    "weight": "none beyond Lebesgue measure",
+    "sampled_transfer_proved": False,
+    "weighted_transfer_proved": False,
+}
 
 
 # ---------------------------------------------------------------------------
@@ -121,220 +129,221 @@ def rd_goes_to_zero_from_decomposition(
 
 
 def ant_citations() -> List[Dict[str, Any]]:
+    """Exact external inputs and their proved continuous adaptations.
+
+    This is a source registry, not an executable verification of the citations.
+    The former generic ANT adaptations are superseded by the cited equations
+    and the deductions in docs/CONTINUOUS_THEOREM_A.md.
     """
-    Named external inputs for Full A. Each is **Cited (ANT)** — not proved here.
-    Constants are adapted to PBSS objects in docs/THEOREM_A_PACKAGE.md § cited forms.
-    """
+    source = "https://www.cs.uleth.ca/~akbary/Akbary-Ng-Shahabi.pdf"
     return [
         {
             "id": "ANT-3",
-            "name": "Explicit-formula identification for the Chebyshev residual",
+            "name": "Exact normalized psi explicit formula",
             "role": "identification",
-            "status": "cited",
+            "status": "cited_exact_statement",
             "classical_refs": [
-                "Davenport, Multiplicative Number Theory, Ch. 17 (explicit formula for ψ)",
-                "Ingham, The Distribution of Prime Numbers, Ch. IV",
-                "Titchmarsh, The Theory of the Riemann Zeta-function, §3.5 / Ch. IX",
-                "Ivić, The Riemann Zeta-Function, Ch. 12 (explicit formulae)",
+                "Akbary-Ng-Shahabi, arXiv:1306.1657v1, equation (1.5), p. 2",
             ],
-            "hypotheses": [
-                "ψ (or θ) is written via a classical explicit formula with a fixed "
-                "C¹ (or smoother) test / window map compatible with x=e^{uT}.",
-                "The shipped residual q_T^arith = detrend((θ(e^{uT})−e^{uT})/√(e^{uT})) "
-                "differs from a linear image of (ψ−x)/√x by an error o_{L²}(1) "
-                "under the same detrend (ψ−θ = O(√x log x) classically; under RH better).",
-            ],
+            "source_url": source,
+            "hypotheses": ["RH", "y>=log(2), cutoff G>1, exact psi residual"],
             "adapted_conclusion": (
-                "For each fixed d and admissible w∈W_α there exist N=N(T)→∞ and "
-                "remainders r_{N,T}^{tail}, r_T^{arith} such that in L²([0,1]):\n"
-                "  w q_T^arith = w q_T^{(N)} + w r_{N,T}^{tail} + w r_T^{arith} + e_T,\n"
-                "with ‖e_T‖₂ / ‖w q_T^arith‖₂ → 0 (identification error)."
+                "F_psi(y)=Re sum_{0<gamma<=G}[-2 m_gamma exp(i gamma y)/(1/2+i gamma)] "
+                "+ O(exp(y/2)*(y+log G)^2/G + y exp(-y/2))."
             ),
-            "constants_note": (
-                "Amplitude map a_n ∼ 2/|ρ_n| for the cos/sin log-window modes matches "
-                "the leading explicit-formula coefficient after the change of variables "
-                "x=e^{uT} and the √x normalization; lower-order phase/smoothing factors "
-                "are absorbed into r_T^{arith} (ANT-2)."
-            ),
+            "constants_note": "The negative sign, phases and multiplicities are retained.",
             "not_proved_in_repo": True,
+            "adaptation_proved_in_repo": True,
+            "proof": "docs/CONTINUOUS_THEOREM_A.md, section 1",
         },
         {
             "id": "ANT-1",
-            "name": "Infinite zero-tail control under RH",
-            "role": "zero_tail",
-            "status": "cited",
+            "name": "Uniform control of the growing zero-block moments",
+            "role": "moment_uniformity",
+            "status": "proved_continuous_adaptation",
             "classical_refs": [
-                "Zero density / truncated explicit formulae under RH: "
-                "Titchmarsh Ch. IX–X; Ivić Ch. 12; Davenport Ch. 17–18",
-                "N(T)=(T/2π)log(T/2π)−T/2π+O(log T) (Riemann–von Mangoldt)",
+                "Akbary-Ng-Shahabi equation (1.5); classical N(H)=O(H log(H+2))",
             ],
+            "source_url": source,
             "hypotheses": [
-                "RH: every non-trivial zero has Re ρ = 1/2.",
-                "Choose G=G(T)→∞ (e.g. G = T^κ log² T for a fixed κ∈(0,1], or "
-                "G = exp(c√log T) per standard truncated EF practice) so that the "
-                "contribution of zeros with |γ|>G to the smoothed explicit formula, "
-                "after the log-window map and weight w∈W_α, is o(1) in L²([0,1]).",
+                "RH", "G=exp(T)", "fixed polynomial test g on [0,1]",
             ],
             "adapted_conclusion": (
-                "Under RH + the cited truncation theorems, if q_T^{(N)} retains all "
-                "zeros with |γ|≤G(T)=N-scale, then\n"
-                "  δ_tail := ‖w r_{N,T}^{tail}‖₂ / ‖w q_T^{(N)}‖₂ → 0 (T→∞),\n"
-                "and R_d(w q_T^{(N)}) = O_d(T^{-2}) by in-repo M5/M6 for each fixed "
-                "block of modes (pass N→∞ along a diagonal with M7)."
+                "Integral_0^1 F_psi(Tu)g(u)du=O_g(1/T), uniformly in the retained "
+                "zero block because sum m_gamma/(gamma*abs(1/2+i gamma)) converges."
             ),
             "constants_note": (
-                "PBSS does not re-derive zero-density constants; it imports the standard "
-                "truncated-EF tail bounds under RH and maps them to L²([0,1], w² du) via "
-                "the fixed C¹ change of variables u=log x / T (Jacobian tracked in "
-                "docs/THEOREM_A_PACKAGE.md)."
+                "Uses direct moment bounds; does not assert a relative L2 tail "
+                "estimate or use fixed-N M5 constants on an arbitrary N(T)."
             ),
-            "not_proved_in_repo": True,
+            "not_proved_in_repo": False,
+            "adaptation_proved_in_repo": True,
+            "proof": "docs/CONTINUOUS_THEOREM_A.md, section 1",
         },
         {
             "id": "ANT-2",
-            "name": "Arithmetic / prime-power / contour remainder",
+            "name": "Explicit prime-square correction and integrable secondary error",
             "role": "arith_remainder",
-            "status": "cited",
+            "status": "proved_continuous_adaptation",
             "classical_refs": [
-                "Davenport Ch. 17 (remainder after zero sum)",
-                "Ingham Ch. IV; Titchmarsh explicit formula remainders",
-                "ψ(x)−θ(x)=O(√x log x) (elementary); under RH O(x^{1/2+ε}) class bounds",
+                "Exact identity psi(x)-theta(x)=sum_{j>=2} theta(x^(1/j)); RH error estimate",
             ],
-            "hypotheses": [
-                "The explicit formula is taken with a fixed smoothing compatible with "
-                "the deg1-detrend H_θ,√ residual.",
-                "Prime-power, trivial-zero, and contour contributions collected in "
-                "r_T^{arith} satisfy ‖w r_T^{arith}‖₂ / ‖w q_T^arith‖₂ → 0 as T→∞ "
-                "(classical estimates after the window map).",
-            ],
+            "hypotheses": ["RH", "exact theta and psi", "continuous affine detrend"],
             "adapted_conclusion": (
-                "δ_arith := ‖w r_T^{arith}‖₂ / ‖w q_T^{(N)}‖₂ → 0 along the same "
-                "N=N(T) as ANT-1/ANT-3."
+                "Q_theta(y)=F_psi(y)-1+h(y), h in L1 intersect L2. "
+                "The detrend removes -1; h(Tu) contributes O(1/T) moments and O(1/T) squared norm."
             ),
-            "constants_note": (
-                "Endpoint weight w∈W_α (M6 class) only improves constants relative to "
-                "flat L²; it does not replace ANT-2."
+            "constants_note": "An O(sqrt(x) log x) bound alone would not prove this conclusion.",
+            "not_proved_in_repo": False,
+            "adaptation_proved_in_repo": True,
+            "proof": "docs/CONTINUOUS_THEOREM_A.md, section 2",
+        },
+        {
+            "id": "ANT-MS",
+            "name": "Positive mean-square limit for the exact psi residual",
+            "role": "denominator",
+            "status": "cited_exact_statement",
+            "classical_refs": [
+                "Akbary-Ng-Shahabi, arXiv:1306.1657v1, Corollary 1.15(i), p. 11, L=zeta",
+            ],
+            "source_url": source,
+            "hypotheses": ["RH", "exact psi residual; no simplicity or linear independence assumption"],
+            "adapted_conclusion": (
+                "(1/T) Integral_0^T F_psi(y)^2 dy -> V="
+                "2 sum_{gamma>0} m_gamma^2/(1/4+gamma^2), 0<V<infinity. "
+                "The continuous affine-detrended theta residual has the same norm limit."
             ),
+            "constants_note": "This supplies the positive denominator; it is not a guessed model norm floor.",
             "not_proved_in_repo": True,
+            "adaptation_proved_in_repo": True,
+            "proof": "docs/CONTINUOUS_THEOREM_A.md, section 3",
         },
         {
             "id": "ANT-4",
-            "name": "Weight-class transfer for arithmetic residuals",
+            "name": "Optional transfer to a weighted arithmetic residual",
             "role": "weight_transfer",
-            "status": "cited_optional",
-            "classical_refs": [
-                "In-repo M6 proves weight transfer for *model* CL/EF residuals",
-                "Arithmetic transfer: same w∈W_α multiplies all terms in ANT-3 identity; "
-                "L^∞(w)<∞ and bulk non-vanishing of ‖w q‖ are as in pbss.weights",
-            ],
+            "status": "not_established_for_this_extension",
+            "classical_refs": ["M6 covers fixed absolutely continuous weights on model modes"],
             "hypotheses": [
-                "w∈W_α as in pbss.weights (Tukey/Hanning class).",
-                "‖w q_T^arith‖₂ ≍ ‖q_T^arith‖₂ up to T-independent factors on the "
-                "bulk (endpoint mass controlled by construction of W_α).",
+                "A separate weighted numerator estimate and positive weighted denominator are required.",
             ],
             "adapted_conclusion": (
-                "R_d(w q_T^arith)→0 whenever the unweighted decomposition satisfies "
-                "the M7 hypotheses with δ→0 and R_d(q_T^{(N)})→0 (M5)."
+                "Not included in the continuous arithmetic theorem. Bounded weights "
+                "alone do not ensure comparable weighted and unweighted norms."
             ),
-            "constants_note": "Optional if one works throughout with weighted residuals.",
+            "constants_note": "Optional model tapers remain diagnostic tools.",
             "not_proved_in_repo": True,
+            "adaptation_proved_in_repo": False,
+            "proof": "docs/CONTINUOUS_THEOREM_A.md, scope",
         },
     ]
 
 
-def full_a_gap_table() -> List[Dict[str, str]]:
-    """Every Full-A step with final disposition (no unlabeled / scaffold-only required)."""
+def full_a_gap_table() -> List[Dict[str, Any]]:
+    """Separate the proved continuous theorem from optional and sampled transfers."""
     return [
         {
-            "step": "M1–M4 diagnostic lemmas",
-            "disposition": "proved",
-            "support": "docs/PROOFS_LEMMAS.md; tests/test_lemmas.py",
+            "step": "M1-M7 diagnostic model lemmas",
+            "disposition": "proved_model",
+            "scope": "continuous projection lemmas with their stated hypotheses",
+            "required_for_continuous_A": False,
+            "support": "docs/PROOFS_LEMMAS.md",
         },
         {
-            "step": "M5 finite CL / truncated EF decay",
-            "disposition": "proved",
-            "support": "docs/PROOFS_LEMMAS.md; lemmas.bound_R_d_finite_mode_sum",
+            "step": "ANT-3 exact psi explicit formula",
+            "disposition": "cited_exact_statement",
+            "scope": "continuous, under RH",
+            "required_for_continuous_A": True,
+            "support": "Akbary-Ng-Shahabi equation (1.5)",
         },
         {
-            "step": "M6 weighted model decay",
-            "disposition": "proved",
-            "support": "docs/PROOFS_LEMMAS.md; lemmas.bound_R_d_weighted_*",
+            "step": "ANT-1 uniform polynomial moments and ANT-2 prime-square correction",
+            "disposition": "proved_continuous_adaptation",
+            "scope": "continuous, under RH",
+            "required_for_continuous_A": True,
+            "support": "docs/CONTINUOUS_THEOREM_A.md sections 1-2",
         },
         {
-            "step": "M7 R_d perturbation / triangle majorant",
-            "disposition": "proved",
-            "support": "docs/PROOFS_LEMMAS.md (M7); ab_closure.energy_ratio_perturbation_bound",
+            "step": "ANT-MS positive mean-square denominator",
+            "disposition": "cited_exact_statement",
+            "scope": "continuous, under RH",
+            "required_for_continuous_A": True,
+            "support": "Akbary-Ng-Shahabi Corollary 1.15(i); continuous adaptation section 3",
         },
         {
-            "step": "ANT-3 EF identification for q_T^arith",
-            "disposition": "cited",
-            "support": "Davenport/Ingham/Titchmarsh explicit formula; ant_citations()[ANT-3]",
+            "step": "Full A: RH implies R_d((I-P_1)Q(Tu))=O_d(T^-2)",
+            "disposition": FULL_A_STATUS,
+            "scope": "exact continuous theta residual, fixed d>=2, no added weight",
+            "required_for_continuous_A": True,
+            "support": "docs/CONTINUOUS_THEOREM_A.md",
         },
         {
-            "step": "ANT-1 infinite zero tail under RH",
-            "disposition": "cited",
-            "support": "Truncated EF under RH; ant_citations()[ANT-1]",
+            "step": "ANT-4 optional weighted arithmetic transfer",
+            "disposition": "open_transfer",
+            "scope": "optional extension beyond the proved theorem",
+            "required_for_continuous_A": False,
+            "support": "Requires weighted numerator and denominator estimates",
         },
         {
-            "step": "ANT-2 arithmetic remainder",
-            "disposition": "cited",
-            "support": "Classical EF remainders; ant_citations()[ANT-2]",
-        },
-        {
-            "step": "ANT-4 weight transfer (optional)",
-            "disposition": "cited_optional",
-            "support": "M6 + W_α bulk; ant_citations()[ANT-4]",
-        },
-        {
-            "step": "Full A: RH+ANT ⇒ R_d(w q_T^arith)→0",
-            "disposition": "closed_conditional",
-            "support": "M5+M6+M7 + ANT-1..3 (cited); docs/THEOREM_A_PACKAGE.md",
+            "step": "Sampled grid and regression transfer",
+            "disposition": "open_transfer",
+            "scope": "sampled diagnostic, not the continuous theorem",
+            "required_for_continuous_A": False,
+            "support": "Requires quantitative quadrature and detrend errors as T grows",
         },
         {
             "step": "Unconditional RH",
             "disposition": "open",
-            "support": "Non-goal of Full A",
+            "scope": "arithmetic zeta",
+            "required_for_continuous_A": False,
+            "support": "The proved arithmetic decay theorem assumes RH",
         },
     ]
 
 
 def full_b_gap_table() -> List[Dict[str, str]]:
-    """Full B package: model pieces proved; single residual step B-RES open."""
+    """Record distinct normalized and absolute converse statements."""
     return [
         {
-            "step": "B₀ / M2–M4 persistent low-degree obstruction",
-            "disposition": "proved",
-            "support": "docs/PROOFS_LEMMAS.md M2–M4",
-        },
-        {
-            "step": "Model off-critical mode: nonvanishing / growth of R_d vs CL",
+            "step": "B0 / M2-M4 persistent orthogonal low-degree defect",
             "disposition": "proved_model",
-            "support": "ab_closure.off_critical_model_obstruction; probes.probe_off_critical_mode",
+            "support": "docs/PROOFS_LEMMAS.md M2-M4; this is not an arithmetic converse",
         },
         {
-            "step": "B-RES arithmetic converse residual",
-            "disposition": "open_single_residual",
-            "support": (
-                "Named residual step only: every off-critical zero of ζ forces a "
-                "nonvanishing asymptotic contribution to R_d(q_T^arith) after all "
-                "EF cancellations/secondary terms. RH-hard; see THEOREM_B_PACKAGE.md"
-            ),
+            "step": "Pure off-critical mode",
+            "disposition": "phase_dependent_model",
+            "support": "docs/OFF_CRITICAL_PHASE_OBSTRUCTION.md; empirical ratios are not a uniform positive floor",
         },
         {
-            "step": "Full B: fast R_d(q_T^arith) ⇒ RH",
-            "disposition": "package_complete_single_residual",
-            "support": "Reduces exactly to B-RES; no other unlabeled gaps",
+            "step": "B-ABS absolute Legendre moment converse",
+            "disposition": "proved_rh_equivalence",
+            "support": "docs/ABSOLUTE_MOMENT_CONVERSE.md; equivalent absolute growth bound is unproved unconditionally",
         },
         {
-            "step": "Unconditional RH via Full B",
+            "step": "Normalized recurrence: liminf R_d=0",
+            "disposition": "proved_unconditional_continuous",
+            "support": "docs/NORMALIZED_RECURRENCE_THEOREM.md; no full limit or rate",
+        },
+        {
+            "step": "B-RES positive-floor formulation",
+            "disposition": "rh_equivalent_open",
+            "support": "By normalized recurrence, the off-zero implies positive-floor assertion is equivalent to RH",
+        },
+        {
+            "step": "Full B: normalized fast decay implies RH",
+            "disposition": FULL_B_STATUS,
+            "support": "Absolute-moment and recurrence theorems do not establish this normalized implication",
+        },
+        {
+            "step": "Unconditional RH",
             "disposition": "open",
-            "support": "Blocked solely by B-RES",
+            "support": "An RH-equivalent condition is not an unconditional proof of that condition",
         },
     ]
 
 
 # ---------------------------------------------------------------------------
-# Model off-critical obstruction (supports Full B package, not B-RES)
+# Sampled off-critical comparison (not an arithmetic converse)
 # ---------------------------------------------------------------------------
 
 
@@ -345,23 +354,25 @@ def off_critical_model_obstruction(
     t: float = 14.134725,
     degree: int = 4,
     n_points: int = 4096,
-) -> Dict[str, float]:
+) -> Dict[str, Any]:
     """
     Compare R_d of off-critical vs critical-line pure modes at the same T,t.
 
-    Returns empirical R_d values and their ratio. For σ>1/2 the envelope
-    e^{T(σ−1/2)u} injects low-frequency mass; R_d(off)/R_d(cl) grows with T
-    (directional model evidence for a converse mechanism — not B-RES).
+    Returns sampled R_d values and their ratio at this T. The real sinusoid
+    has a phase-dependent leading term, so this does not establish monotone
+    growth or a uniform positive lower envelope as T varies.
     """
+    from .b_res_threshold import _scaled_mode
+
     T = float(T)
-    if T <= 0:
-        raise ValueError("T > 0")
+    if not np.isfinite(T) or T <= 0:
+        raise ValueError("T must be positive and finite")
     if not (0.0 < float(sigma) < 1.0):
         raise ValueError("sigma in (0,1)")
     u = sample_grid(int(n_points))
     d = int(degree)
+    q_off = _scaled_mode(u, T=T, sigma=float(sigma), t=t)
     q_cl = probe_critical_line_mode(u, T=T, t=t)
-    q_off = probe_off_critical_mode(u, T=T, sigma=float(sigma), t=t)
     r_cl = float(energy_ratio(q_cl, u, d))
     r_off = float(energy_ratio(q_off, u, d))
     ratio = r_off / max(r_cl, 1e-30)
@@ -373,6 +384,8 @@ def off_critical_model_obstruction(
         "R_d_cl": r_cl,
         "R_d_off": r_off,
         "ratio_off_over_cl": float(ratio),
+        "evidence_kind": "sampled_model_comparison",
+        "uniform_lower_bound_proved": False,
     }
 
 
@@ -414,7 +427,7 @@ def verify_m7_on_grid(
 
 
 def package_status() -> Dict[str, Any]:
-    """Machine-readable Full A/B package status (synced with docs)."""
+    """Theorem registry; calling this function does not verify a proof or an RH hypothesis."""
     return {
         "banner": BANNER,
         "rh": RH_STATUS,
@@ -422,22 +435,33 @@ def package_status() -> Dict[str, Any]:
         "full_B": FULL_B_STATUS,
         "full_B_residual_step_id": B_RESIDUAL_STEP_ID,
         "full_B_residual_step": (
-            "B-RES: off-critical zeros of ζ force nonvanishing asymptotic "
-            "R_d(q_T^arith) after EF cancellations (RH-hard; only Full-B gap)"
+            "The positive-floor B-RES formulation is RH-equivalent and open; "
+            "continuous normalized recurrence gives liminf R_d=0 unconditionally."
         ),
+        "continuous_scope": dict(CONTINUOUS_SCOPE),
+        "absolute_moment_converse": "proved_rh_equivalence",
+        "absolute_moment_growth_bound": "open_unconditional",
+        "normalized_recurrence": "proved_unconditional_continuous",
+        "normalized_b_res_floor": "rh_equivalent_open",
+        "normalized_full_limit": "open_unconditional",
+        "normalized_rate": "proved_only_under_rh",
+        "rh_claimed": False,
+        "evidence_kind": "theorem_registry",
         "model_A0": "proved",
         "model_B0": "proved",
         "conditional_deduction_A": (
-            "RH + ANT-1 + ANT-2 + ANT-3 (+ optional ANT-4) + M5 + M6 + M7 "
-            "⇒ R_d(w q_T^arith) → 0"
+            "RH + exact explicit formula + positive mean-square theorem "
+            "imply R_d((I-P_1)Q(Tu))=O_d(T^-2), fixed d>=2, continuous unweighted residual."
         ),
-        "writeup_A": "docs/THEOREM_A_PACKAGE.md",
+        "writeup_A": "docs/CONTINUOUS_THEOREM_A.md",
         "writeup_B": "docs/THEOREM_B_PACKAGE.md",
+        "writeup_absolute_moments": "docs/ABSOLUTE_MOMENT_CONVERSE.md",
+        "writeup_normalized_recurrence": "docs/NORMALIZED_RECURRENCE_THEOREM.md",
         "roadmap": "docs/RH_CLOSEOUT_ROADMAP.md",
         "note": (
-            "Full A is closed *conditionally* (cited ANT, not unconditional). "
-            "Full B is packaged to a single residual step B-RES. "
-            "RH remains open."
+            "Continuous A is proved under RH. B-ABS is an equivalence and "
+            "normalized recurrence proves only liminf zero. Neither establishes "
+            "a normalized fast-decay converse or the equivalent absolute bound. RH remains open."
         ),
     }
 
@@ -452,8 +476,8 @@ def conditional_full_a_report(
     """
     One-T checkable report for the *model* pieces of the Full A chain + status labels.
 
-    Does not assert that ANT citations are proved; records disposition and
-    empirical model decay.
+    Finite-grid model checks accompany the theorem registry. They neither
+    verify the cited analytic inputs nor prove a continuous limit theorem.
     """
     from .theorem_a_chain import model_chain_report
 
@@ -472,6 +496,10 @@ def conditional_full_a_report(
         "full_a_status": FULL_A_STATUS,
         "full_b_status": FULL_B_STATUS,
         "rh_status": RH_STATUS,
+        "evidence_kind": "sampled_model_report",
+        "continuous_scope": dict(CONTINUOUS_SCOPE),
+        "continuous_limit_verified_by_this_run": False,
+        "rh_verified_by_this_run": False,
         "gap_table_A": full_a_gap_table(),
         "gap_table_B": full_b_gap_table(),
         "ant_ids": [c["id"] for c in ant_citations()],

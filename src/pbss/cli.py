@@ -380,6 +380,37 @@ def cmd_version(_: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_hstar(args: argparse.Namespace) -> int:
+    from .hstar_anticancellation import hstar_anticancellation_report
+
+    rep = hstar_anticancellation_report(
+        write_results=bool(args.write_results),
+        results_dir=args.results_dir or None,
+        heavy=bool(args.heavy) or bool(args.write_results),
+    )
+    print("PBSS hstar (model cancellation audit)")
+    print(f"  lemma={rep['lemma']['id']}  status={rep['candidate_status']}")
+    print(f"  axis={rep['axis']}")
+    print(f"  grid_n_rows={rep.get('grid_n_rows')}  constraint_frac={rep.get('grid_constraint_fraction')}")
+    print(f"  all_constraint_signals={rep['all_constraint_signals']}")
+    print(f"  partial_cancel_monotone={rep.get('partial_cancel_monotone')}")
+    print(f"  rh_claimed={rep['rh_claimed']}  b_res_solved={rep['b_res_solved']}")
+    eps = rep.get("eps_star") or {}
+    print(f"  eps_star_half_min={eps.get('eps_star_global_half_min')}")
+    for r in rep["multi_T_proxy"]:
+        print(
+            f"  T={r['T']:.1f}  R_pure={r['R_d_pure']:.4e}  "
+            f"R_cancel={r['R_d_cancelled']:.4e}  C_pure={r['C_d_pure']:.4e}"
+        )
+    print(BANNER)
+    if args.json_out:
+        _write_json(args.json_out, {**_report("hstar"), **rep})
+        print(f"Wrote {args.json_out}", file=sys.stderr)
+    if rep.get("artifacts"):
+        print(f"Artifacts: {rep['artifacts']}", file=sys.stderr)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="pbss",
@@ -434,6 +465,16 @@ def build_parser() -> argparse.ArgumentParser:
     sc.add_argument("--n-points", type=_integer_at_least(2), default=2048)
     sc.add_argument("--json-out", default="")
     sc.set_defaults(func=cmd_scorecard)
+
+    hs = sub.add_parser(
+        "hstar",
+        help="corrected model cancellation audit; no arithmetic coercivity claim",
+    )
+    hs.add_argument("--write-results", action="store_true", help="write corrected results/hstar_corrected/")
+    hs.add_argument("--heavy", action="store_true", help="full (T,σ,d) ProcessPool grid")
+    hs.add_argument("--results-dir", default="", help="override results directory")
+    hs.add_argument("--json-out", default="")
+    hs.set_defaults(func=cmd_hstar)
 
     return p
 

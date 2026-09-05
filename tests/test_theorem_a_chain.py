@@ -19,18 +19,20 @@ from pbss.theorem_a_chain import (  # noqa: E402
 def test_package_status_does_not_claim_rh():
     s = package_status()
     assert s["conditional_theorem_a_package"] == "complete"
-    assert s["full_arithmetic_A"] == "closed_conditional"
+    assert s["full_arithmetic_A"] == "proved_conditional_continuous"
     assert s["rh"] == "open"
     assert "NOT AN UNCONDITIONAL PROOF OF RH" in s["banner"]
-    # Full B packaged; not RH
-    assert s.get("full_B") == "package_complete_single_residual"
+    # A proved absolute converse does not establish the normalized converse.
+    assert s.get("full_B") == "open_normalized_converse"
 
 
 def test_model_chain_report_fields_and_labels():
     row = model_chain_report(20.0, degree=4, n_zeros=8, n_points=2048)
     assert row["T"] == 20.0
-    assert row["full_arithmetic_A_status"] == "closed_conditional"
+    assert row["full_arithmetic_A_status"] == "proved_conditional_continuous"
     assert row["rh_status"] == "open"
+    assert row["evidence_kind"] == "sampled_model_report"
+    assert row["continuous_limit_verified_by_this_run"] is False
     emp = row["empirical"]
     assert 0.0 <= emp["R_d_cl"] <= 1.0 + 1e-9
     assert 0.0 <= emp["R_d_ef"] <= 1.0 + 1e-9
