@@ -50,6 +50,7 @@
 | [`KILL021_ENRICH_M.md`](KILL021_ENRICH_M.md) | Kill-0.21 enrichments |
 | [`INFINITE_TAIL_REMAINDER.md`](INFINITE_TAIL_REMAINDER.md) | Tail scaffolding note |
 | [`THEOREM_A_SCAFFOLD.md`](THEOREM_A_SCAFFOLD.md) | Historical A scaffold path |
+| [`EXTERNAL_CHECK_20260912.md`](EXTERNAL_CHECK_20260912.md) | External session record: re-checks, mesh sweep, generalized obstruction theorem (branch `external-check-20260912`) |
 | [`RH_CLOSEOUT_ROADMAP.md`](RH_CLOSEOUT_ROADMAP.md) | Aspirational milestones (RH not closed) |
 
 ## Campaign briefs
