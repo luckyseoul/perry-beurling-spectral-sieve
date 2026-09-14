@@ -1,0 +1,418 @@
+[
+ {
+  "name": "doc_b1",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   100
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "doc_b1_T100"
+ },
+ {
+  "name": "doc_b1",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "doc_b1_T400"
+ },
+ {
+  "name": "doc_b1",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   1600
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "doc_b1_T1600"
+ },
+ {
+  "name": "doc_b1",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   6400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "doc_b1_T6400"
+ },
+ {
+  "name": "dens_b075",
+  "beta": 0.75,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   100
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "dens_b075_T100"
+ },
+ {
+  "name": "dens_b075",
+  "beta": 0.75,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "dens_b075_T400"
+ },
+ {
+  "name": "dens_b075",
+  "beta": 0.75,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   1600
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "dens_b075_T1600"
+ },
+ {
+  "name": "dens_b075",
+  "beta": 0.75,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   6400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "dens_b075_T6400"
+ },
+ {
+  "name": "dens_b050",
+  "beta": 0.5,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   100
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "dens_b050_T100"
+ },
+ {
+  "name": "dens_b050",
+  "beta": 0.5,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "dens_b050_T400"
+ },
+ {
+  "name": "dens_b050",
+  "beta": 0.5,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   1600
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "dens_b050_T1600"
+ },
+ {
+  "name": "amp_q05",
+  "beta": 1.0,
+  "q": 0.5,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   100
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "amp_q05_T100"
+ },
+ {
+  "name": "amp_q05",
+  "beta": 1.0,
+  "q": 0.5,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "amp_q05_T400"
+ },
+ {
+  "name": "amp_q05",
+  "beta": 1.0,
+  "q": 0.5,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   1600
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "amp_q05_T1600"
+ },
+ {
+  "name": "amp_q15",
+  "beta": 1.0,
+  "q": 1.5,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   100
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "amp_q15_T100"
+ },
+ {
+  "name": "amp_q15",
+  "beta": 1.0,
+  "q": 1.5,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "amp_q15_T400"
+ },
+ {
+  "name": "amp_q15",
+  "beta": 1.0,
+  "q": 1.5,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "log",
+  "D": 1.0,
+  "p": 1.0,
+  "Ts": [
+   1600
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "amp_q15_T1600"
+ },
+ {
+  "name": "def_D05",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 0.5,
+  "p": 1.0,
+  "Ts": [
+   100
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_D05_T100"
+ },
+ {
+  "name": "def_D05",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 0.5,
+  "p": 1.0,
+  "Ts": [
+   400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_D05_T400"
+ },
+ {
+  "name": "def_D05",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 0.5,
+  "p": 1.0,
+  "Ts": [
+   1600
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_D05_T1600"
+ },
+ {
+  "name": "def_p05",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 1.0,
+  "p": 0.5,
+  "Ts": [
+   100
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_p05_T100"
+ },
+ {
+  "name": "def_p05",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 1.0,
+  "p": 0.5,
+  "Ts": [
+   400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_p05_T400"
+ },
+ {
+  "name": "def_p05",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 1.0,
+  "p": 0.5,
+  "Ts": [
+   1600
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_p05_T1600"
+ },
+ {
+  "name": "def_p2",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 1.0,
+  "p": 2.0,
+  "Ts": [
+   100
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_p2_T100"
+ },
+ {
+  "name": "def_p2",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 1.0,
+  "p": 2.0,
+  "Ts": [
+   400
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_p2_T400"
+ },
+ {
+  "name": "def_p2",
+  "beta": 1.0,
+  "q": 1.0,
+  "A": 0.25,
+  "n0": 8,
+  "deficit": "pow",
+  "D": 1.0,
+  "p": 2.0,
+  "Ts": [
+   1600
+  ],
+  "dmax": 4,
+  "topk": 48,
+  "jobname": "def_p2_T1600"
+ }
+]
