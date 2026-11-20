@@ -50,6 +50,29 @@ No prime realization is asserted.
 [Formula data](results/readme_figures_20260905/unattained_spectrum.json) ·
 [SVG](docs/figures/unattained_spectrum.svg).
 
+### New (2026-11-20): ψ − θ correction and the R₄ plateau test
+
+Theorem A uses the prime-only residual built from θ. The explicit formula, and
+outside work such as the Lean archive behind the November 2026 RH claim, use
+ψ, which also counts prime powers. The difference shifts every continuous
+Legendre moment by an exact, RH-free amount that needs only primes up to
+\(\sqrt X\):
+
+| Quantity | Value |
+|---|---|
+| \(c_2[\psi]-c_2[\theta]\) at \(X=5\times10^{10}\) | −0.201121262828 (exact evaluation) |
+| Large-window form | \(0.645123988808\ldots/\log X\), constant \(=2\sqrt5\,(C_3-B-\gamma-1)\) |
+| Leading term overtakes the next term | only for \(\log X\gtrsim530\) |
+
+Swapping θ for ψ does **not** remove the R₄ plateau. The continuous ψ residual
+has 4–5× the R₄ of θ at every window from \(10^3\) to \(10^8\) (0.50 versus
+0.098 at \(10^8\)). Within θ, \(Tc_2\) has settled and \(R_2\) falls at nearly
+the \(T^{-2}\) rate; the plateau sits in degree 3, where \(Tc_3\) is still
+drifting. The mechanism remains open.
+[Explainer](docs/PSI_THETA_CORRECTION.md) ·
+[Script](experiments/check_psi_theta_correction.py) ·
+[Data](results/psi_theta_correction_20261120/).
+
 ### Pipeline and earlier campaigns
 
 <p align="center">
@@ -231,6 +254,8 @@ docs/related/       # third-party reference PDFs
   Blog: [anthropic.com/research/riemann-zeta](https://www.anthropic.com/research/riemann-zeta) ·  
   Local PDFs + notes: [`docs/related/anthropic-riemann-zeta/`](docs/related/anthropic-riemann-zeta/)  
   (Third-party; not part of PBSS; different theorem class — see that README.)
+- **Alpöge (20 Nov 2026):** [note](https://alpo.ge/remark.pdf) claiming a proof of RH and of GRH for Dirichlet L-functions, with a Lean archive as the only evidence; no independent build reported at the time of writing.  
+  If confirmed, continuous Theorem A would hold unconditionally, since RH is its only unproved hypothesis. See [`docs/PSI_THETA_CORRECTION.md`](docs/PSI_THETA_CORRECTION.md) §5.
 
 ### Jensen / de Bruijn–Newman (same author, pre-PBSS survivor)
 
