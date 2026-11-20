@@ -19,7 +19,7 @@ Nothing here assumes or proves RH.
   sign at every reachable endpoint. It is overtaken by the next term until
   \(\log X\approx 533\), because the prime-cube term decays on a log-scale of 6.
 - The prime powers do **not** explain the R₄ plateau. The continuous ψ residual
-  has 4–5× the R₄ of the θ residual at every window from \(10^3\) to \(10^8\),
+  has at least 4× (4.1–8.6×) the R₄ of the θ residual at every window from \(10^3\) to \(10^8\),
   still rising. Within θ, \(T c_2\) has settled, while \(T c_3\) is still
   drifting; the plateau is carried by degree 3 at these windows.
 
@@ -195,6 +195,12 @@ comparisons with it need the \(\Delta_k\) of §1.
 ```bash
 PYTHONPATH=src python3 experiments/check_psi_theta_correction.py \
     --r4-x 1e3,1e4,1e5,1e6,1e7,1e8
+```
+
+Tests (13, about 20 s; each compares against an independent reference):
+
+```bash
+PYTHONPATH=src python3 -m pytest tests/test_psi_theta_correction.py
 ```
 
 Requires `mpmath`. Parts 1–3 take about 3 minutes; the \(10^8\) window of §4

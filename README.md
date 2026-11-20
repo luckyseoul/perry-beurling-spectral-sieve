@@ -65,7 +65,7 @@ Legendre moment by an exact, RH-free amount that needs only primes up to
 | Leading term overtakes the next term | only for \(\log X\gtrsim530\) |
 
 Swapping θ for ψ does **not** remove the R₄ plateau. The continuous ψ residual
-has 4–5× the R₄ of θ at every window from \(10^3\) to \(10^8\) (0.50 versus
+has at least 4× the R₄ of θ at every window from \(10^3\) to \(10^8\) (0.50 versus
 0.098 at \(10^8\)). Within θ, \(Tc_2\) has settled and \(R_2\) falls at nearly
 the \(T^{-2}\) rate; the plateau sits in degree 3, where \(Tc_3\) is still
 drifting. The mechanism remains open.

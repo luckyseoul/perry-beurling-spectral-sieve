@@ -104,26 +104,34 @@ def integral_g_times_poly(ev, T, coeffs):
     return total
 
 
-def part_a(xs, dps):
-    mpm.mp.dps = dps
-    rows = []
-    for X in xs:
+def exact_corrections(X, dps: int = 40) -> dict:
+    """Exact Delta_k (k = 1..4), K_m(T) (m = 0, 1, 2) and the three-term split of Delta_2 at endpoint X."""
+    with mpm.workdps(dps):
         X = mpm.mpf(X)
         T = mpm.log(X)
         ev = prime_power_events(X)
         delta = {k: integral_g_times_poly(ev, T, legendre_coeffs_in_y(k, T)) / T for k in range(1, DEGREE + 1)}
         K = [integral_g_times_poly(ev, T, [0] * m + [1]) - T ** (m + 1) / (m + 1) for m in range(3)]
         split = [mpm.sqrt(5) * K[0] / T, -6 * mpm.sqrt(5) * K[1] / T ** 2, 6 * mpm.sqrt(5) * K[2] / T ** 3]
-        rows.append({
-            "X": mpm.nstr(X, 6), "T": mpm.nstr(T, 15), "prime_power_jumps": len(ev),
-            "delta_k": {str(k): mpm.nstr(v, 15) for k, v in delta.items()},
-            "K_m_T": [mpm.nstr(v, 15) for v in K],
-            "delta_2_three_terms": [mpm.nstr(v, 12) for v in split],
-            "delta_2_from_terms": mpm.nstr(sum(split), 15),
-        })
-        print(f"[A] X={mpm.nstr(X, 4):>8} T={mpm.nstr(T, 8):>10}  Delta_2={mpm.nstr(delta[2], 13):>17}"
-              f"  Delta_3={mpm.nstr(delta[3], 9):>12}  Delta_4={mpm.nstr(delta[4], 9):>12}"
-              f"  terms={[mpm.nstr(v, 6) for v in split]}", flush=True)
+    return {"X": X, "T": T, "events": len(ev), "delta": delta, "K": K, "split": split}
+
+
+def part_a(xs, dps):
+    rows = []
+    for X in xs:
+        r = exact_corrections(X, dps)
+        with mpm.workdps(dps):
+            delta, K, split, T = r["delta"], r["K"], r["split"], r["T"]
+            rows.append({
+                "X": mpm.nstr(r["X"], 6), "T": mpm.nstr(T, 15), "prime_power_jumps": r["events"],
+                "delta_k": {str(k): mpm.nstr(v, 15) for k, v in delta.items()},
+                "K_m_T": [mpm.nstr(v, 15) for v in K],
+                "delta_2_three_terms": [mpm.nstr(v, 12) for v in split],
+                "delta_2_from_terms": mpm.nstr(sum(split), 15),
+            })
+            print(f"[A] X={mpm.nstr(r['X'], 4):>8} T={mpm.nstr(T, 8):>10}  Delta_2={mpm.nstr(delta[2], 13):>17}"
+                  f"  Delta_3={mpm.nstr(delta[3], 9):>12}  Delta_4={mpm.nstr(delta[4], 9):>12}"
+                  f"  terms={[mpm.nstr(v, 6) for v in split]}", flush=True)
     return rows
 
 
@@ -154,31 +162,45 @@ def G_eps(eps):
     return (core - 1 + k3 - j2) / s
 
 
+def closed_form_constants(dps: int = 40) -> dict:
+    """B, C3, K0(inf) = 2 (C3 - B - gamma - 1) and sqrt5 * K0(inf)."""
+    with mpm.workdps(dps):
+        B = sum(prime_log_zeta(mpm.mpf(m)) for m in range(2, 400) if _converging(mpm.mpf(m)))
+        C3 = sum(prime_log_zeta(mpm.mpf(m) / 2) for m in range(3, 800) if _converging(mpm.mpf(m) / 2))
+        K0 = 2 * (C3 - B - mpm.euler - 1)
+        return {"B": B, "C3": C3, "K0": K0, "sqrt5_K0": mpm.sqrt(5) * K0}
+
+
+def cauchy_moments(dps: int = 30, radius: str = "0.05", points: int = 48) -> list:
+    """K_m(inf) = (-1)^m G^{(m)}(0), m = 0, 1, 2, by the trapezoid rule for Cauchy's formula."""
+    with mpm.workdps(dps):
+        r = mpm.mpf(radius)
+        pts = [r * mpm.exp(2j * mpm.pi * k / points) for k in range(points)]
+        vals = [G_eps(z) for z in pts]
+        return [mpm.re((-1) ** m * factorial(m) * sum(v / z ** m for v, z in zip(vals, pts)) / points)
+                for m in range(3)]
+
+
 def part_b(dps_closed, dps_cauchy):
-    mpm.mp.dps = dps_closed
-    B = sum(prime_log_zeta(mpm.mpf(m)) for m in range(2, 400) if _converging(mpm.mpf(m)))
-    C3 = sum(prime_log_zeta(mpm.mpf(m) / 2) for m in range(3, 800) if _converging(mpm.mpf(m) / 2))
-    K0_closed = 2 * (C3 - B - mpm.euler - 1)
-    out = {"B": mpm.nstr(B, 25), "C3": mpm.nstr(C3, 25), "K0_inf_closed_form": mpm.nstr(K0_closed, 25),
-           "large_window_constant_sqrt5_K0": mpm.nstr(mpm.sqrt(5) * K0_closed, 25)}
-    print(f"[B] B={mpm.nstr(B, 18)}  C3={mpm.nstr(C3, 18)}  K0(inf)={mpm.nstr(K0_closed, 18)}"
-          f"  sqrt5*K0={mpm.nstr(mpm.sqrt(5) * K0_closed, 15)}", flush=True)
-    mpm.mp.dps = dps_cauchy
-    r, M = mpm.mpf("0.05"), 48
-    pts = [r * mpm.exp(2j * mpm.pi * k / M) for k in range(M)]
-    vals = [G_eps(z) for z in pts]
-    K = [mpm.re((-1) ** m * factorial(m) * sum(v / z ** m for v, z in zip(vals, pts)) / M) for m in range(3)]
-    roots = mpm.polyroots([6 * K[2], -6 * K[1], K[0]])
-    Ts = sorted(1 / mpm.re(z) for z in roots if abs(mpm.im(z)) < mpm.mpf(10) ** (-10))
-    out.update({
-        "K_m_inf_cauchy": [mpm.nstr(v, 15) for v in K],
-        "closed_minus_cauchy_K0": mpm.nstr(K0_closed - K[0], 3),
-        "delta_2_sign_changes_T_limiting_moments": [mpm.nstr(t, 8) for t in Ts],
-        "delta_2_sign_changes_log10X": [mpm.nstr(t / mpm.log(10), 6) for t in Ts],
-        "leading_term_exceeds_next_for_T_above": mpm.nstr(6 * K[1] / K[0], 8),
-    })
-    print(f"[B] Cauchy K0,K1,K2 = {[mpm.nstr(v, 12) for v in K]}  sign changes at T = {[mpm.nstr(t, 6) for t in Ts]}"
-          f"  (6 K1/K0 = {mpm.nstr(6 * K[1] / K[0], 6)})", flush=True)
+    c = closed_form_constants(dps_closed)
+    with mpm.workdps(dps_closed):
+        out = {"B": mpm.nstr(c["B"], 25), "C3": mpm.nstr(c["C3"], 25), "K0_inf_closed_form": mpm.nstr(c["K0"], 25),
+               "large_window_constant_sqrt5_K0": mpm.nstr(c["sqrt5_K0"], 25)}
+        print(f"[B] B={mpm.nstr(c['B'], 18)}  C3={mpm.nstr(c['C3'], 18)}  K0(inf)={mpm.nstr(c['K0'], 18)}"
+              f"  sqrt5*K0={mpm.nstr(c['sqrt5_K0'], 15)}", flush=True)
+    K = cauchy_moments(dps_cauchy)
+    with mpm.workdps(dps_cauchy):
+        roots = mpm.polyroots([6 * K[2], -6 * K[1], K[0]])
+        Ts = sorted(1 / mpm.re(z) for z in roots if abs(mpm.im(z)) < mpm.mpf(10) ** (-10))
+        out.update({
+            "K_m_inf_cauchy": [mpm.nstr(v, 15) for v in K],
+            "closed_minus_cauchy_K0": mpm.nstr(c["K0"] - K[0], 3),
+            "delta_2_sign_changes_T_limiting_moments": [mpm.nstr(t, 8) for t in Ts],
+            "delta_2_sign_changes_log10X": [mpm.nstr(t / mpm.log(10), 6) for t in Ts],
+            "leading_term_exceeds_next_for_T_above": mpm.nstr(6 * K[1] / K[0], 8),
+        })
+        print(f"[B] Cauchy K0,K1,K2 = {[mpm.nstr(v, 12) for v in K]}  sign changes at T = {[mpm.nstr(t, 6) for t in Ts]}"
+              f"  (6 K1/K0 = {mpm.nstr(6 * K[1] / K[0], 6)})", flush=True)
     return out
 
 
@@ -245,6 +267,7 @@ def continuous_moments(X: int, kind: str, chunk: int = 400_000) -> dict:
 
 
 def self_check_theta(X: int = 100_000) -> dict:
+    """Compare the theta path with pbss.arithmetic_moments at endpoint X."""
     try:
         sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
         from pbss.arithmetic_moments import arithmetic_moments

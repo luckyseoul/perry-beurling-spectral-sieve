@@ -58,7 +58,7 @@ shifts each continuous moment by an exact, RH-free amount
 (\(c_2[\psi]-c_2[\theta]=-0.201121262828\) at \(X=5\times10^{10}\)). Its
 large-window constant has the closed form \(2\sqrt5\,(C_3-B-\gamma-1)\), but its
 leading term only dominates near \(\log X\approx530\). The continuous ψ residual
-has 4–5× the R₄ of θ from \(10^3\) to \(10^8\), so the prime powers do not explain
+has at least 4× the R₄ of θ from \(10^3\) to \(10^8\), so the prime powers do not explain
 the plateau; within θ the drift sits in degree 3. Theorem A's θ step needs only
 unconditional \(L^1\cap L^2\) control of \(h\), so RH enters through \(F\) alone.
 A posted RH claim (Alpöge, 2026-11-20) is unverified. See
