@@ -8,6 +8,7 @@
 |-----|------|
 | [`TOOL.md`](TOOL.md) | **CLI / library usage** for general math |
 | [`EXACT_ARITHMETIC_MOMENTS.md`](EXACT_ARITHMETIC_MOMENTS.md) | Continuous signed moments from complete prime intervals, with precision provenance |
+| [`PSI_THETA_CORRECTION.md`](PSI_THETA_CORRECTION.md) | Exact RH-free ψ − θ moment correction, closed-form constant, θ versus ψ R₄ plateau test (2026-11-20) |
 | [`ARITHMETIC_MOMENTS_MILESTONE_20260905.md`](ARITHMETIC_MOMENTS_MILESTONE_20260905.md) | 373-test replay and independent 80-digit moment validation |
 | [`DIAGNOSTIC_REVIEW_20260905.md`](DIAGNOSTIC_REVIEW_20260905.md) | Numerical and methodology corrections, validation, replay |
 | [`ARITHMETIC_PROOF_REVIEW_20260905.md`](ARITHMETIC_PROOF_REVIEW_20260905.md) | Continuous proofs, retractions, 332-test replay and remaining bound |

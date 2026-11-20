@@ -1,6 +1,6 @@
 # Status: Perry–Beurling Spectral Sieve
 
-**Date:** 2026-09-05 (diagnostic repair and arithmetic proof audit)
+**Date:** 2026-11-20 (ψ − θ correction and plateau test; previous audit 2026-09-05)
 **Repo:** `luckyseoul/perry-beurling-spectral-sieve`
 
 ## Explicit non-claim
@@ -52,6 +52,17 @@ their amplitudes and precision provenance. The full suite passed **373 tests**;
 coefficients. See the [numerical checkpoint](ARITHMETIC_MOMENTS_MILESTONE_20260905.md)
 and [integral derivation](EXACT_ARITHMETIC_MOMENTS.md). These finite checks do not
 establish the all-window growth bound.
+
+**ψ − θ correction and plateau test (2026-11-20):** the prime-power difference
+shifts each continuous moment by an exact, RH-free amount
+(\(c_2[\psi]-c_2[\theta]=-0.201121262828\) at \(X=5\times10^{10}\)). Its
+large-window constant has the closed form \(2\sqrt5\,(C_3-B-\gamma-1)\), but its
+leading term only dominates near \(\log X\approx530\). The continuous ψ residual
+has at least 4× the R₄ of θ from \(10^3\) to \(10^8\), so the prime powers do not explain
+the plateau; within θ the drift sits in degree 3. Theorem A's θ step needs only
+unconditional \(L^1\cap L^2\) control of \(h\), so RH enters through \(F\) alone.
+A posted RH claim (Alpöge, 2026-11-20) is unverified. See
+[`PSI_THETA_CORRECTION.md`](PSI_THETA_CORRECTION.md).
 
 **Unattained-boundary audit (2026-09-05):** a
 [continuous exponential spectrum](UNATTAINED_SPECTRUM_OBSTRUCTION.md) has
