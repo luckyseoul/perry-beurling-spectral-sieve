@@ -190,6 +190,11 @@ same continuous θ residual. It would not change any finite-window result
 above. The archive works with Mathlib's `vonMangoldt` (ψ-type sums), so
 comparisons with it need the \(\Delta_k\) of §1.
 
+*Update 2026-11-26.* Several groups have since machine-checked the archive and
+a compact edition with identical statements; human peer review is pending.
+The R₄ plateau mechanism left open above is explained in
+[`RH_PROOF_SIMPLIFICATIONS.md`](RH_PROOF_SIMPLIFICATIONS.md) §4.
+
 ## Reproduce
 
 ```bash

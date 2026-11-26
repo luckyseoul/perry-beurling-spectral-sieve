@@ -24,3 +24,6 @@ growth bound remains open. The normalized converse remains open, and
 `docs/NORMALIZED_RECURRENCE_THEOREM.md` proves unconditional liminf zero for the
 same continuous residual. Do not identify these theorems with fixed sampled
 arrays, arbitrary weights, or an unconditional proof of their RH hypotheses.
+External status (2026-11-26): RH has a machine-checked Lean proof (Alpöge), with human
+review pending. PBSS's RH-conditional results hold relative to it, and PBSS itself
+proves nothing about RH; see `docs/RH_PROOF_SIMPLIFICATIONS.md`.

@@ -1,6 +1,6 @@
 # Status: Perry–Beurling Spectral Sieve
 
-**Date:** 2026-11-20 (ψ − θ correction and plateau test; previous audit 2026-09-05)
+**Date:** 2026-11-26 (RH proof simplifications, moment asymptotics, plateau explained; previous 2026-11-20, audit 2026-09-05)
 **Repo:** `luckyseoul/perry-beurling-spectral-sieve`
 
 ## Explicit non-claim
@@ -61,8 +61,18 @@ leading term only dominates near \(\log X\approx530\). The continuous ψ residua
 has at least 4× the R₄ of θ from \(10^3\) to \(10^8\), so the prime powers do not explain
 the plateau; within θ the drift sits in degree 3. Theorem A's θ step needs only
 unconditional \(L^1\cap L^2\) control of \(h\), so RH enters through \(F\) alone.
-A posted RH claim (Alpöge, 2026-11-20) is unverified. See
-[`PSI_THETA_CORRECTION.md`](PSI_THETA_CORRECTION.md).
+See [`PSI_THETA_CORRECTION.md`](PSI_THETA_CORRECTION.md).
+
+**RH proof simplifications and moment asymptotics (2026-11-26):** the Alpöge RH/GRH
+Lean proof has been machine-checked by several groups (full archive, and a compact
+edition with identical statements); human peer review is pending. Theorem A and the
+RH direction of B-ABS now hold relative to that proof. Under RH,
+\(Tc_k[F]=S_k(T)+O_k(T)\) exactly, with Mellin constants \(\mu_j=(-1)^j\Phi^{(j)}(\tfrac12)\)
+and an explicit envelope for \(O_k\). The expansion matches exact prime data to 4.8e-4 for
+\(X\le10^9\) and predicts the measured R₄ (ψ and θ) to 6.4e-4 relative. The plateau
+is Theorem A's pre-asymptotic regime: 90% of the \(k=4\) limit needs \(\log X\approx411\).
+The limiting \(T^2R_4\) is 5169.9 (ψ) and 6092.3 (θ) for simple zeros. See
+[`RH_PROOF_SIMPLIFICATIONS.md`](RH_PROOF_SIMPLIFICATIONS.md).
 
 **Unattained-boundary audit (2026-09-05):** a
 [continuous exponential spectrum](UNATTAINED_SPECTRUM_OBSTRUCTION.md) has

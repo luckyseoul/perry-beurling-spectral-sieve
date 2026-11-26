@@ -3,6 +3,10 @@
 **Date:** 2026-09-05
 **Status:** Conditional theorem for the exact continuous arithmetic residual.
 **Unconditional RH:** Open. RH is a hypothesis throughout this deduction.
+**Update 2026-11-26:** RH now has a machine-checked Lean proof (Alpöge; checked by
+several groups, human review pending). Theorem A therefore holds relative to that
+proof. Explicit limiting constants for \(T^2R_d\) are in
+[`RH_PROOF_SIMPLIFICATIONS.md`](RH_PROOF_SIMPLIFICATIONS.md) §5.
 
 This supplies a precise arithmetic implication using a cited mean-square theorem
 and explicit estimates. It does not identify a fixed sampled array with a

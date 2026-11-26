@@ -8,6 +8,7 @@
 |-----|------|
 | [`TOOL.md`](TOOL.md) | **CLI / library usage** for general math |
 | [`EXACT_ARITHMETIC_MOMENTS.md`](EXACT_ARITHMETIC_MOMENTS.md) | Continuous signed moments from complete prime intervals, with precision provenance |
+| [`RH_PROOF_SIMPLIFICATIONS.md`](RH_PROOF_SIMPLIFICATIONS.md) | The 2026-11 RH proof's simplified route, its ramp statistic in PBSS, exact RH expansion of the moments, R₄ plateau explained, explicit Theorem A constants (2026-11-26) |
 | [`PSI_THETA_CORRECTION.md`](PSI_THETA_CORRECTION.md) | Exact RH-free ψ − θ moment correction, closed-form constant, θ versus ψ R₄ plateau test (2026-11-20) |
 | [`ARITHMETIC_MOMENTS_MILESTONE_20260905.md`](ARITHMETIC_MOMENTS_MILESTONE_20260905.md) | 373-test replay and independent 80-digit moment validation |
 | [`DIAGNOSTIC_REVIEW_20260905.md`](DIAGNOSTIC_REVIEW_20260905.md) | Numerical and methodology corrections, validation, replay |
