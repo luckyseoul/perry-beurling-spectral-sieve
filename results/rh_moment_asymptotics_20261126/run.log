@@ -1,0 +1,18 @@
+[0] 200 zeros (gamma_N = 396.382); workers = 1
+[A] published G reproduced (max diff 4.6e-04); scan to 1e+08: max|r|/A2 = 0.535; windows all within envelope: True (3.0s)
+[B] mu_0 = -3.372183419225665 (2 - 2 zeta'/zeta(1/2) = -3.372183419225665); mu_8 / pole term = 1.000000
+[C] X=1e+03  T=6.908  max|after zeros|/tail bound = 0.012  within RH envelope: True  (0.2s)
+[C] X=1e+04  T=9.210  max|after zeros|/tail bound = 0.003  within RH envelope: True  (0.0s)
+[C] X=1e+05  T=11.513  max|after zeros|/tail bound = 0.010  within RH envelope: True  (0.0s)
+[C] X=1e+06  T=13.816  max|after zeros|/tail bound = 0.007  within RH envelope: True  (0.0s)
+[C] X=1e+07  T=16.118  max|after zeros|/tail bound = 0.021  within RH envelope: True  (0.2s)
+[C] X=1e+08  T=18.421  max|after zeros|/tail bound = 0.013  within RH envelope: True  (2.0s)
+[C] X=1e+09  T=20.723  max|after zeros|/tail bound = 0.038  within RH envelope: True  (20.1s)
+[D] R4 predicted from the expansion vs measured: max relative diff 6.38e-04; T^2 R4 limit (psi, simple zeros) = 5169.9; T_90% for k=2,3,4 = [124.8, 247.6, 411.4]
+[C] prediction X=5e+10: T c_k[theta] = -28.2060±0.0042, +1.9597±0.0072, +0.6907±0.0093, -1.3065±0.0110, +0.5225±0.0125
+[C] prediction X=1e+12: T c_k[theta] = -31.2239±0.0042, +2.3836±0.0072, +0.4592±0.0093, -1.3594±0.0110, +0.8408±0.0125
+[done] /home/claude/perry-beurling-spectral-sieve/experiments/../results/rh_moment_asymptotics_20261126/rh_moment_asymptotics.json (46s)
+
+real	0m46.601s
+user	0m44.644s
+sys	0m1.427s

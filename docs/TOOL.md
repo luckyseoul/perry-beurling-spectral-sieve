@@ -30,6 +30,7 @@ PYTHONPATH=src python3 -m pbss version
 | `pbss sensitivity --confirm-53` | Confirm ≥53% relative gain claim |
 | `pbss scorecard --x-max 1e6` | Ordinary vs gapped/thinned Beurling systems |
 | `pbss moments --T 10 -d 4` | Signed absolute ordinary-prime moments and continuous norms |
+| `pbss asymptotics --x 1e7 --ramp-y 1e4` | Exact ψ moments vs the RH expansion, θ predictions, ramp window ([RH_PROOF_SIMPLIFICATIONS.md](RH_PROOF_SIMPLIFICATIONS.md)) |
 
 ## Library API (general use)
 

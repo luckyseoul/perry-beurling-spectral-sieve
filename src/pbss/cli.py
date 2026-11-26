@@ -447,6 +447,35 @@ def cmd_moments(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_asymptotics(args: argparse.Namespace) -> int:
+    from . import rh_moment_asymptotics as R
+
+    X = float(args.x)
+    psi = R.prime_sum_moments(X, args.degree, "psi")
+    pred = R.predict_moments(X, args.degree)
+    T = pred["T"]
+    report = {**_report("asymptotics"), "X": X, "T": T, "degree": args.degree, "psi": psi, "prediction": pred,
+              "ramp": R.ramp_window(args.ramp_y, 1.5) if args.ramp_y else None,
+              "assumption": "S_k, O_k and the envelopes assume RH (machine-checked Lean proof, human review pending)"}
+    print("PBSS asymptotics (exact prime-sum moments vs the RH expansion)")
+    print(f"  X={X:.6g}  T={T:.6f}  zeros={pred['zeros']}  mu_0={R.psi_mellin_constants()[0]:.12f}")
+    print("   k   T*c_k[psi]       S_k(T)     S_k+O_k   |rest|<=bound   T*c_k[theta] pred")
+    for row, tc in zip(pred["rows"], psi["Tc"]):
+        rest = tc - row["Tc_psi_pred"]
+        print(f"  {row['k']:2d} {tc:+12.6f} {row['S_k']:+12.6f} {row['Tc_psi_pred']:+11.6f}"
+              f"   {abs(rest):.1e}<={row['zero_tail_bound']:.1e}   {row['Tc_theta_pred']:+12.6f}")
+    if report["ramp"]:
+        r = report["ramp"]
+        print(f"  ramp window [{r['Y']:.3g}, {r['Y']:.3g}^1.5]: r in [{r['min_r']:+.5f}, {r['max_r']:+.5f}]"
+              f"  RH envelope +-{R.RH_A2:.6f}")
+    print("  Expansion and envelopes are consequences of RH; they do not prove it.")
+    print(BANNER)
+    if args.json_out:
+        _write_json(args.json_out, report)
+        print(f"Wrote {args.json_out}", file=sys.stderr)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="pbss",
@@ -519,6 +548,13 @@ def build_parser() -> argparse.ArgumentParser:
                     help="explicit bound on the complete prime prefix to generate")
     mo.add_argument("--json-out", default="", help="write decimal coefficients, norms and precision metadata")
     mo.set_defaults(func=cmd_moments)
+
+    asy = sub.add_parser("asymptotics", help="exact psi moments vs the RH expansion; theta predictions; ramp window")
+    asy.add_argument("--x", type=float, default=1e6, help="endpoint X (window [1, X], T = log X)")
+    asy.add_argument("--degree", "-d", type=_integer_at_least(0), default=4, help="maximum degree (0..8)")
+    asy.add_argument("--ramp-y", type=float, default=0.0, help="also report the ramp window [Y, Y^1.5]")
+    asy.add_argument("--json-out", default="", help="write the full report as JSON")
+    asy.set_defaults(func=cmd_asymptotics)
 
     return p
 

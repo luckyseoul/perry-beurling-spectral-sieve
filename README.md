@@ -50,6 +50,31 @@ No prime realization is asserted.
 [Formula data](results/readme_figures_20260905/unattained_spectrum.json) ·
 [SVG](docs/figures/unattained_spectrum.svg).
 
+### New (2026-11-26): the RH proof's ramp statistic and the R₄ plateau explained
+
+RH and GRH for Dirichlet L-functions now have a Lean proof (Alpöge, with
+Claude). Several groups have machine-checked it, and a 76,000-line compact
+edition exists. Human peer review is pending. Step 1 of the proof is an upper
+bound for a ramp-smoothed prime-power sum \(G(x)\) on windows \([Y,Y^{3/2}]\).
+PBSS now evaluates that statistic exactly and uses the same explicit formula
+to give its own moments an exact expansion under RH:
+
+| Result | Value |
+|---|---|
+| Published \(G(10^4..2\cdot10^6)\) | reproduced: 1.749, 3.671, 11.040, −12.268 |
+| \(\max_{x\le10^8}|G-\log2\pi|/\sqrt x\) | 0.535 of the RH envelope \(2+\gamma-\log4\pi\) |
+| \(Tc_k\) vs RH expansion, \(X=10^3..10^9\), \(k\le4\) | remainder ≤ 4.8e-4 after 200 zeros |
+| R₄ predicted vs measured, ψ and θ, \(10^3..10^8\) | agree to 6.4e-4 relative |
+| Window needed for 90% of the \(k=2,3,4\) limits | \(\log X\approx\) 125, 248, 411 |
+| \(\lim T^2R_4\) (simple zeros), ψ / θ | 5169.9 / 6092.3 (Theorem A's constant) |
+
+The plateau is Theorem A's pre-asymptotic regime. A small-\(x\) boundary layer,
+seen through the Mellin constants \(\mu_j=(-1)^j\Phi^{(j)}(\tfrac12)\), sets it,
+and the explicit formula accounts for it completely.
+[Explainer](docs/RH_PROOF_SIMPLIFICATIONS.md) ·
+[Script](experiments/check_rh_moment_asymptotics.py) ·
+[Data](results/rh_moment_asymptotics_20261126/) · `pbss asymptotics --x 1e7`.
+
 ### New (2026-11-20): ψ − θ correction and the R₄ plateau test
 
 Theorem A uses the prime-only residual built from θ. The explicit formula, and
@@ -68,7 +93,7 @@ Swapping θ for ψ does **not** remove the R₄ plateau. The continuous ψ resid
 has at least 4× the R₄ of θ at every window from \(10^3\) to \(10^8\) (0.50 versus
 0.098 at \(10^8\)). Within θ, \(Tc_2\) has settled and \(R_2\) falls at nearly
 the \(T^{-2}\) rate; the plateau sits in degree 3, where \(Tc_3\) is still
-drifting. The mechanism remains open.
+drifting. The mechanism is explained in the 2026-11-26 section above.
 [Explainer](docs/PSI_THETA_CORRECTION.md) ·
 [Script](experiments/check_psi_theta_correction.py) ·
 [Data](results/psi_theta_correction_20261120/).
@@ -254,7 +279,7 @@ docs/related/       # third-party reference PDFs
   Blog: [anthropic.com/research/riemann-zeta](https://www.anthropic.com/research/riemann-zeta) ·  
   Local PDFs + notes: [`docs/related/anthropic-riemann-zeta/`](docs/related/anthropic-riemann-zeta/)  
   (Third-party; not part of PBSS; different theorem class — see that README.)
-- **Alpöge (20 Nov 2026):** [note](https://alpo.ge/remark.pdf) claiming a proof of RH and of GRH for Dirichlet L-functions, with a Lean archive as the only evidence; no independent build reported at the time of writing.  
+- **Alpöge (20 Nov 2026):** [note](https://alpo.ge/remark.pdf) claiming a proof of RH and of GRH for Dirichlet L-functions, with a Lean archive. Machine-checked by several groups by 26 Nov 2026 (full archive and compact edition); human peer review pending. See [RH_PROOF_SIMPLIFICATIONS.md](docs/RH_PROOF_SIMPLIFICATIONS.md).  
   If confirmed, continuous Theorem A would hold unconditionally, since RH is its only unproved hypothesis. See [`docs/PSI_THETA_CORRECTION.md`](docs/PSI_THETA_CORRECTION.md) §5.
 
 ### Jensen / de Bruijn–Newman (same author, pre-PBSS survivor)
